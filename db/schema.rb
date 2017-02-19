@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219160212) do
+ActiveRecord::Schema.define(version: 20170219194046) do
+
+  create_table "herbs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.string   "name"
+    t.string   "latin_name"
+    t.string   "tea_dosage_amount"
+    t.string   "tea_steep_time"
+    t.string   "tea_steep_temperature"
+    t.string   "tincture_dosage_amount"
+    t.text     "general_description",    limit: 65535
+    t.text     "tea_preparation",        limit: 65535
+    t.text     "tincture_preparation",   limit: 65535
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string   "name"

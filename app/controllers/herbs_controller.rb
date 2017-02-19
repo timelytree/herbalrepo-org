@@ -1,0 +1,3 @@
+class Herbs < ApplicationController
+
+end
