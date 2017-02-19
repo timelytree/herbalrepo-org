@@ -1,0 +1,15 @@
+!!! 5
+%html(lang="en-US")
+  %head
+    %title Herbal Repository | An index of the world's plant medecines
+    %meta(charset="UTF-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    = favicon_link_tag 'favicon.ico'
+    = csrf_meta_tag
+    %link{rel: 'stylesheet', type: 'text/css', href: '/styles.css'}
+    %script{src: '/scripts.js', type: 'text/javascript'}
+    %link{rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600'}
+  %body.body#body
+    -# = render 'layouts/landscapeOVERLAY'
+    -# = render 'layouts/flashNotice'
+    = yield

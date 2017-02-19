@@ -1,0 +1,15 @@
+bower.json
+/.bundle
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+.byebug_history
+/node_modules
+/test
+/public
+.DS_Store
+/app/assets/images
+/app/assets/videos
