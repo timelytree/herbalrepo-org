@@ -13,3 +13,4 @@ bower.json
 .DS_Store
 /app/assets/images
 /app/assets/videos
+/config/database.yml
