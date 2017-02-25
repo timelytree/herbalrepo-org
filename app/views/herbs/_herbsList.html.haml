@@ -1,0 +1,6 @@
+#leftPANEL
+  .box.flex-c
+    %img{src: './images/logo.png', id: 'logo'}
+    %h5 An index of herbs and their medicinal properties
+  - @herbs.each_with_index do |herb|
+    %p.herbITEM{data:{id: herb.id}}= herb.name

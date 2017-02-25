@@ -108,10 +108,23 @@ a {
   height: 100%;
   float: left;
   padding: 25px;
+  position: relative;
 }
 #leftPANEL {
   border-right: 1px solid $gray300;
+  .box {
+    margin-bottom: 25px;
+    #logo {
+      width: 200px;
+      margin-bottom: 25px;
+    }
+    h5 {
+      font-weight: 600;
+    }
+  }
 }
+
+
 
 //
 //

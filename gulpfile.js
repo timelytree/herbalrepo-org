@@ -30,6 +30,7 @@ gulp.task('scss', function() {
 
 gulp.task('js', function() {
   return gulp.src([
+      config.jsPath + 'jquery311.min.js',
       config.jsPath + 'imagesLoaded.js',
       config.jsPath + 'googleMapINIT.js',
       config.jsPath + '1_scriptFrame.js',

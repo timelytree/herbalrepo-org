@@ -7,14 +7,15 @@ end
 
 gem 'rails', '~> 5.0.1'
 gem 'haml-rails'
-gem 'puma', '~> 3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 gem 'mysql2'
 gem 'rename'
 
-group :development, :test do
-  gem 'byebug', platform: :mri
+group :development do
+  gem 'thin'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :development do
