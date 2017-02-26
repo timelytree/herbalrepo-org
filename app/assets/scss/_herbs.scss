@@ -3,10 +3,30 @@
 .herbITEM {
   cursor: pointer;
   display: inline-block;
+  position: relative;
   float: left;
-  clear: both;
+  width: calc(33.333% - 6.6667px);
+  margin-right: 10px;
   &:hover {
     text-decoration: underline;
+  }
+  &:nth-child(3n + 1) {
+    margin-right: 0;
+  }
+  .herbIMG {
+    @include centerImage;
+    width: 100%;
+    padding-top: 100%;
+  }
+  .herbItemINFO {
+    background: white;
+    padding: 10px;
+    p {
+      &:last-child {
+        font-style: italic;
+        font-size: 80%;
+      }
+    }
   }
 }
 

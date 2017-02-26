@@ -3,4 +3,8 @@
     %img{src: './images/logo.png', id: 'logo'}
     %h5 An index of herbs and their medicinal properties
   - @herbs.each_with_index do |herb|
-    %p.herbITEM{data:{id: herb.id}}= herb.name
+    .herbITEM{data:{id: herb.id}}
+      .herbIMG{style: "background-image: url('./uploads/#{herb.thumbnail}')"}
+      .herbItemINFO
+        %p= herb.name
+        %p= herb.latin_name

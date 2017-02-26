@@ -1,10 +1,10 @@
 = form_tag('/login', id: 'loginFORM', class: 'flex-c') do
   .container.flex-c
     .box
-      %label.subtitle Username
+      %label.subtitle{for: 'usernameFIELD'} Username
       %input{type: 'text', name: 'username', id: 'usernameFIELD', autocomplete: :off, placeholder: 'username'}
     .box
-      %label.subtitle Password
+      %label.subtitle{for: 'passwordFIELD'} Password
       %input{type: 'text', name: 'password', id: 'passwordFIELD', autocomplete: :off, placeholder: 'password'}
     .box
       %input{type: 'submit', value: 'SUBMIT'}
