@@ -1,0 +1,7 @@
+- if !logged_in?
+  #loginB Login
+- else
+  #adminTOOLBAR.flex-r
+    #newHerbB New Herb
+    = form_tag('/logout', method: 'delete') do
+      %input{type: 'submit', id: 'logoutB', value: 'Logout'}

@@ -1,0 +1,12 @@
+- if flash[:notice] != nil && !flash[:notice].empty?
+  #flashNOTICE.flex-c
+    %p.flex-c= flash[:notice]
+    .countdown 3
+    .countdown 2
+    .countdown 1
+- elsif flash[:error] != nil && !flash[:error].empty?
+  #flashNOTICE.flex-c
+    %p.flex-c= flash[:error]
+    .countdown 3
+    .countdown 2
+    .countdown 1

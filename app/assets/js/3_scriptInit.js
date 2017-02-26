@@ -2,6 +2,8 @@
 //------------------------------------------------------------------------------
 function globalInit() {
   run(init.global.ajaxSetup);
+  run(core.global.loginFormINT);
+  run(init.global.flashNOTICE);
 }
 
 function desktop() {

@@ -1,7 +1,8 @@
 /////////////////////////////////////////////////////////////////// function key
 var init = {
   global: {
-    ajaxSetup: 'ajaxSetup'
+    ajaxSetup: 'ajaxSetup',
+    flashNOTICE: 'flashNOTICE'
   },
   desktop: {
   },
@@ -11,6 +12,7 @@ var init = {
 
 var core = {
   global: {
+    loginFormINT: 'loginFormINT'
   },
   desktop: {
     herbPanelINT: 'herbPanelINT',
@@ -30,8 +32,63 @@ function ajaxSetup() {
   $.ajaxSetup({ headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') } });
 }
 
+function flashNOTICE() {
+  var notice = E('flashNOTICE'),
+      countdown = cE('countdown'),
+      num = 3,
+      flash = false,
+      i = 0,
+      timer = null;
+
+  if (notice) {
+    addC(notice, 'activeFlashNOTICE');
+    timer = window.setTimeout(function() {
+      remC(notice, 'activeFlashNOTICE');
+      clearTimeout(timer);
+    }, 2500);
+  }
+
+  // if (notice && !flash) {
+  //   flash = true; delayAddC(e.notice, 'activeFlashNotice', 400);
+  //   interval = window.setInterval(function() {
+  //     if (num === 0) { remC(e.notice, 'activeFlashNotice'); flash = true; clearInterval(interval); return false; }
+  //     else {
+  //       addC(e.countdown[i], 'inactive');
+  //       if (i !== 2) { remC(e.countdown[(i+1)], 'hidden'); }
+  //       i = (i + 1); num = num - 1;
+  //     }
+  //   }, 1000);
+  // }
+}
+
 ///////////////////////////////////////////////////////////////// core functions
 //------------------------------------------------------------------------------
+function loginFormINT() {
+  var form = E('loginFORM'),
+      loginB = E('loginB'),
+      closeB = E('cancelLoginB'),
+      usernameFIELD = E('usernameFIELD'),
+      passwordFIELD = E('passwordFIELD'),
+      timer = null;
+
+  function toggleFORM(stat) {
+    switch (stat) {
+      case 'on': addC(form, 'activeLoginFORM'); break;
+      case 'off': remC(form, 'activeLoginFORM'); break;
+    }
+  }
+
+  if (loginB) { loginB.onclick = function() { toggleFORM('on'); } }  
+  closeB.onclick = function() {
+    toggleFORM('off');
+    timer = window.setTimeout(function() {
+      usernameFIELD.value = '';
+      passwordFIELD.value = '';
+      clearTimeout(timer);
+    }, 150);
+  }
+}
+
 function herbPanelINT() {
   var herbs = cE('herbITEM'),
       panel = E('herbPANEL');

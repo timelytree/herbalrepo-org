@@ -101,8 +101,142 @@ a {
   z-index: 3;
 }
 
+input[type="submit"] {
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+#flashNOTICE {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: black;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: 250ms;
+  &.activeFlashNOTICE {
+    opacity: 1;
+    visibility: visible;
+  }
+  p {
+    color: white;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+  }
+  .countdown {
+    @include flex-c;
+    display: none;
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+    height: 100%;
+    width: 25px;
+    color: white;
+  }
+}
+
 ///////////////////////////////////////////////////////////////// Other elements
 //------------------------------------------------------------------------------
+.subtitle {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+#loginB, #adminTOOLBAR {
+  position: absolute;
+  bottom: 0;
+  right: 25px;
+  height: 25px;
+}
+
+#loginB, #logoutB {
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 10px;
+  line-height: 12px;
+  transition: 150ms;
+  &:hover {
+    transition: 150ms;
+    opacity: 1;
+  }
+}
+
+#adminTOOLBAR {
+  div {
+    font-size: 10px;
+    line-height: 12px;
+    margin-right: 15px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+#loginFORM {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: 150ms;
+  &.activeLoginFORM {
+    transition: 150ms;
+    opacity: 1;
+    visibility: visible;
+  }
+  .box {
+    margin-bottom: 15px;
+    &:nth-child(2) {
+      margin-bottom: 25px;
+    }
+  }
+  .subtitle, input[type="text"], input[type="submit"], #cancelLoginB {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  input[type="text"] {
+    width: 200px;
+    border: 1px solid $gray400;
+    padding: 5px;
+    margin-top: 5px;
+    transition: 150ms;
+    &:focus {
+      transition: 150ms;
+      border-color: black;
+    }
+  }
+  input[type="submit"] {
+    background: black;
+    color: white;
+    padding: 8px 15px;
+    transition: 150ms;
+    &:hover {
+      transition: 150ms;
+      background: $gray700;
+    }
+  }
+  #cancelLoginB {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 150ms;
+    &:hover {
+      transition: 150ms;
+      opacity: 1;
+    }
+  }
+}
+
 #leftPANEL, #rightPANEL {
   width: 50%;
   height: 100%;

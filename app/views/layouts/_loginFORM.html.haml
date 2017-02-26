@@ -1,0 +1,11 @@
+= form_tag('/login', id: 'loginFORM', class: 'flex-c') do
+  .box
+    %label.subtitle Username
+    %input{type: 'text', name: 'username', id: 'usernameFIELD', autocomplete: :off, placeholder: 'username'}
+  .box
+    %label.subtitle Password
+    %input{type: 'text', name: 'password', id: 'passwordFIELD', autocomplete: :off, placeholder: 'password'}
+  .box
+    %input{type: 'submit', value: 'SUBMIT'}
+  .box
+    #cancelLoginB cancel
