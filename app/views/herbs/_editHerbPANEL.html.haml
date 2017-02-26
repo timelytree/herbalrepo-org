@@ -1,0 +1,32 @@
+- if logged_in?
+  = form_tag('/herbs', method: 'patch', multipart: true, id: 'editHerbPANEL', class: 'flex-c') do
+    %input{type: 'hidden', name: 'id', value: '', id: 'editHerbID', autocomplete: :off, placeholder: 'Name'}
+    .container
+      .box
+        %label.subtitle{for: 'editNameFIELD'} Name
+        %input{type: 'text', name: 'herbs[name]', id: 'editNameFIELD', autocomplete: :off, placeholder: 'Name'}
+      .box
+        %label.subtitle{for: 'editLatinNameFIELD'} Latin name
+        %input{type: 'text', name: 'herbs[latin_name]', id: 'editLatinNameFIELD', autocomplete: :off, placeholder: 'Latin Name'}
+      .box
+        %label.subtitle{for: 'editGeneralDescriptionTEXTAREA'} General Description
+        %textarea{name: 'herbs[general_description]', id: 'editGeneralDescriptionTEXTAREA', autocomplete: :off, placeholder: 'General Description'}
+      .box
+        %label.subtitle{for: 'editTeaDosageAmountFIELD'} Tea dosage amount
+        %input{type: 'text', name: 'herbs[tea_dosage_amount]', id: 'editTeaDosageAmountFIELD', autocomplete: :off, placeholder: 'Tea dosage amount'}
+      .box
+        %label.subtitle{for: 'editTeaSteepTimeFIELD'} Tea steep time
+        %input{type: 'text', name: 'herbs[tea_steep_time]', id: 'editTeaSteepTimeFIELD', autocomplete: :off, placeholder: 'Tea steep time'}
+      .box
+        %label.subtitle{for: 'editTeaSteepTemperatureFIELD'} Tea steep temperature
+        %input{type: 'text', name: 'herbs[tea_steep_temperature]', id: 'editTeaSteepTemperatureFIELD', autocomplete: :off, placeholder: 'Tea steep temperature'}
+      .box
+        %label.subtitle{for: 'editTeaPreparationTEXTAREA'} Tea Preparation
+        %textarea{name: 'herbs[tea_preparation]', id: 'editTeaPreparationTEXTAREA', autocomplete: :off, placeholder: 'Tea Preparation'}
+      -# .box
+      -#   %label.subtitle{for: 'editHerbImageUPLOAD'} Upload Image
+      -#   %input{type: 'file', name: 'herbs[image]', id: 'editHerbImageUPLOAD'}
+      .box
+        %input{type: 'submit', value: 'SUBMIT'}
+      .box
+        .cancelB#cancelEditHerbB cancel

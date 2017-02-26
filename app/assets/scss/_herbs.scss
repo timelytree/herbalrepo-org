@@ -30,6 +30,24 @@
   }
 }
 
+#editHerbB {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1000;
+  padding: 8px 15px;
+  background: $red500;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 150ms;
+  &:hover {
+    transition: 150ms;
+    background: $red700;
+  }
+}
+
 #herbPANEL {
   position: absolute;
   top: 25px;

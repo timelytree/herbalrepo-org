@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get '/herbs/:id', to: 'herbs#show'
   post '/herbs', to: 'herbs#create'
+  patch '/herbs', to: 'herbs#update'
 end

@@ -230,7 +230,7 @@ input[type="submit"] {
   }
 }
 
-#loginFORM, #newHerbPANEL {
+#loginFORM, #newHerbPANEL, #editHerbPANEL {
   position: absolute;
   top: 0;
   left: 0;
@@ -281,13 +281,19 @@ input[type="submit"] {
   }
 }
 
-#newHerbPANEL {
+#newHerbPANEL, #editHerbPANEL {
   .box {
     &:last-child {
       margin-bottom: 0;
     }
   }
 }
+
+/*#editHerbPANEL {
+  opacity: 1;
+  visibility: visible;
+  left: 200px;
+}*/
 
 #leftPANEL, #rightPANEL {
   width: 50%;
@@ -306,6 +312,15 @@ input[type="submit"] {
     }
     h5 {
       font-weight: 600;
+    }
+  }
+}
+
+#rightPANEL {
+  &.active {
+    #editHerbB {
+      opacity: 1;
+      visibility: visible;
     }
   }
 }

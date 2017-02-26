@@ -1,30 +1,31 @@
-= form_tag('/herbs', method: 'post', multipart: true, id: 'newHerbPANEL', class: 'flex-c') do
-  .container
-    .box
-      %label.subtitle{for: 'nameFIELD'} Name
-      %input{type: 'text', name: 'herbs[name]', id: 'nameFIELD', autocomplete: :off, placeholder: 'Name'}
-    .box
-      %label.subtitle{for: 'latinNameFIELD'} Latin name
-      %input{type: 'text', name: 'herbs[latin_name]', id: 'latinNameFIELD', autocomplete: :off, placeholder: 'Latin Name'}
-    .box
-      %label.subtitle{for: 'generalDescriptionTEXTAREA'} General Description
-      %textarea{name: 'herbs[general_description]', id: 'generalDescriptionTEXTAREA', autocomplete: :off, placeholder: 'General Description'}
-    .box
-      %label.subtitle{for: 'teaDosageAmountFIELD'} Tea dosage amount
-      %input{type: 'text', name: 'herbs[tea_dosage_amount]', id: 'teaDosageAmountFIELD', autocomplete: :off, placeholder: 'Tea dosage amount'}
-    .box
-      %label.subtitle{for: 'teaSteepTimeFIELD'} Tea steep time
-      %input{type: 'text', name: 'herbs[tea_steep_time]', id: 'teaSteepTimeFIELD', autocomplete: :off, placeholder: 'Tea steep time'}
-    .box
-      %label.subtitle{for: 'teaSteepTemperatureFIELD'} Tea steep temperature
-      %input{type: 'text', name: 'herbs[tea_steep_temperature]', id: 'teaSteepTemperatureFIELD', autocomplete: :off, placeholder: 'Tea steep temperature'}
-    .box
-      %label.subtitle{for: 'teaPreparationTEXTAREA'} Tea Preparation
-      %textarea{name: 'herbs[tea_preparation]', id: 'teaPreparationTEXTAREA', autocomplete: :off, placeholder: 'Tea Preparation'}
-    .box
-      %label.subtitle{for: 'herbImageUPLOAD'} Upload Image
-      %input{type: 'file', name: 'herbs[image]', id: 'herbImageUPLOAD'}
-    .box
-      %input{type: 'submit', value: 'SUBMIT'}
-    .box
-      .cancelB#cancelNewHerbB cancel
+- if logged_in?
+  = form_tag('/herbs', method: 'post', multipart: true, id: 'newHerbPANEL', class: 'flex-c') do
+    .container
+      .box
+        %label.subtitle{for: 'newNameFIELD'} Name
+        %input{type: 'text', name: 'herbs[name]', id: 'newNameFIELD', autocomplete: :off, placeholder: 'Name'}
+      .box
+        %label.subtitle{for: 'newLatinNameFIELD'} Latin name
+        %input{type: 'text', name: 'herbs[latin_name]', id: 'newLatinNameFIELD', autocomplete: :off, placeholder: 'Latin Name'}
+      .box
+        %label.subtitle{for: 'newGeneralDescriptionTEXTAREA'} General Description
+        %textarea{name: 'herbs[general_description]', id: 'newGeneralDescriptionTEXTAREA', autocomplete: :off, placeholder: 'General Description'}
+      .box
+        %label.subtitle{for: 'newTeaDosageAmountFIELD'} Tea dosage amount
+        %input{type: 'text', name: 'herbs[tea_dosage_amount]', id: 'newTeaDosageAmountFIELD', autocomplete: :off, placeholder: 'Tea dosage amount'}
+      .box
+        %label.subtitle{for: 'newTeaSteepTimeFIELD'} Tea steep time
+        %input{type: 'text', name: 'herbs[tea_steep_time]', id: 'newTeaSteepTimeFIELD', autocomplete: :off, placeholder: 'Tea steep time'}
+      .box
+        %label.subtitle{for: 'newTeaSteepTemperatureFIELD'} Tea steep temperature
+        %input{type: 'text', name: 'herbs[tea_steep_temperature]', id: 'newTeaSteepTemperatureFIELD', autocomplete: :off, placeholder: 'Tea steep temperature'}
+      .box
+        %label.subtitle{for: 'newTeaPreparationTEXTAREA'} Tea Preparation
+        %textarea{name: 'herbs[tea_preparation]', id: 'newTeaPreparationTEXTAREA', autocomplete: :off, placeholder: 'Tea Preparation'}
+      .box
+        %label.subtitle{for: 'newHerbImageUPLOAD'} Upload Image
+        %input{type: 'file', name: 'herbs[image]', id: 'newHerbImageUPLOAD'}
+      .box
+        %input{type: 'submit', value: 'SUBMIT'}
+      .box
+        .cancelB#cancelNewHerbB cancel

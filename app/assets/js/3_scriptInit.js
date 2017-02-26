@@ -9,6 +9,7 @@ function globalInit() {
 function desktop() {
   run(core.desktop.herbPanelINT);
   run(core.desktop.herbCreatePanelTOGGLE);
+  run(core.desktop.herbEditPanelTOGGLE);
 }
 
 function mobile() {
