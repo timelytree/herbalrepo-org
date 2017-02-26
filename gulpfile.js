@@ -32,6 +32,7 @@ gulp.task('js', function() {
   return gulp.src([
       config.jsPath + 'jquery311.min.js',
       config.jsPath + 'imagesLoaded.js',
+      config.jsPath + 'showdown.min.js',
       config.jsPath + 'googleMapINIT.js',
       config.jsPath + '1_scriptFrame.js',
       config.jsPath + '2_scriptCore.js',

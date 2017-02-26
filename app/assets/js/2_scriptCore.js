@@ -132,7 +132,8 @@ function populateHerbPanel(data) {
       teaDosageAmountFIELD = E('editTeaDosageAmountFIELD'),
       teaSteepTimeFIELD = E('editTeaSteepTimeFIELD'),
       teaSteepTemperatureFIELD = E('editTeaSteepTemperatureFIELD'),
-      teaPreparationTEXTAREA = E('editTeaPreparationTEXTAREA');
+      teaPreparationTEXTAREA = E('editTeaPreparationTEXTAREA'),
+      converter = new showdown.Converter();
 
   var html = `
     <section>
@@ -142,7 +143,7 @@ function populateHerbPanel(data) {
 
     <section id="teaGeneralDESCRIPTION">
       <div class="subtitle">Description</div>
-      <div>`+data.general_description+`</div>
+      <div>`+converter.makeHtml(data.general_description)+`</div>
     </section>
 
     <section id="teaINFO">
@@ -161,7 +162,7 @@ function populateHerbPanel(data) {
           <div class="teaInfoDATA">`+data.tea_steep_temperature+`</div>
         </div>
       </div>
-      <div>`+data.tea_preparation+`</div>
+      <div>`+converter.makeHtml(data.tea_preparation)+`</div>
     </section>
   `
   herbPANEL.innerHTML = html;
