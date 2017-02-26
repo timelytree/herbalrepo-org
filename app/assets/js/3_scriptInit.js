@@ -2,14 +2,13 @@
 //------------------------------------------------------------------------------
 function globalInit() {
   run(init.global.ajaxSetup);
-  run(core.global.loginFormINT);
+  run(core.global.loginFormTOGGLE);
   run(init.global.flashNOTICE);
 }
 
 function desktop() {
   run(core.desktop.herbPanelINT);
-  switch (p.Current) {
-  }
+  run(core.desktop.herbCreatePanelTOGGLE);
 }
 
 function mobile() {

@@ -12,11 +12,12 @@ var init = {
 
 var core = {
   global: {
-    loginFormINT: 'loginFormINT'
+    loginFormTOGGLE: 'loginFormTOGGLE'
   },
   desktop: {
     herbPanelINT: 'herbPanelINT',
-    populateHerbPanel: 'populateHerbPanel'
+    populateHerbPanel: 'populateHerbPanel',
+    herbCreatePanelTOGGLE: 'herbCreatePanelTOGGLE'
   },
   mobile: {
   }
@@ -63,7 +64,7 @@ function flashNOTICE() {
 
 ///////////////////////////////////////////////////////////////// core functions
 //------------------------------------------------------------------------------
-function loginFormINT() {
+function loginFormTOGGLE() {
   var form = E('loginFORM'),
       loginB = E('loginB'),
       closeB = E('cancelLoginB'),
@@ -73,12 +74,12 @@ function loginFormINT() {
 
   function toggleFORM(stat) {
     switch (stat) {
-      case 'on': addC(form, 'activeLoginFORM'); break;
-      case 'off': remC(form, 'activeLoginFORM'); break;
+      case 'on': addC(form, 'active'); break;
+      case 'off': remC(form, 'active'); break;
     }
   }
 
-  if (loginB) { loginB.onclick = function() { toggleFORM('on'); } }  
+  if (loginB) { loginB.onclick = function() { toggleFORM('on'); } }
   closeB.onclick = function() {
     toggleFORM('off');
     timer = window.setTimeout(function() {
@@ -162,6 +163,42 @@ function populateHerbPanel(data) {
   `
 
   panel.innerHTML = html;
+}
+
+function herbCreatePanelTOGGLE() {
+  var form = E('newHerbPANEL'),
+      newHerbB = E('newHerbB'),
+      closeB = E('cancelNewHerbB'),
+      nameFIELD = E('nameFIELD'),
+      latinNameFIELD = E('latinNameFIELD'),
+      generalDescriptionTEXTAREA = E('generalDescriptionTEXTAREA'),
+      teaDosageAmountFIELD = E('teaDosageAmountFIELD'),
+      teaSteepTimeFIELD = E('teaSteepTimeFIELD'),
+      teaSteepTemperatureFIELD = E('teaSteepTemperatureFIELD'),
+      teaPreparationTEXTAREA = E('teaPreparationTEXTAREA'),
+      timer = null;
+
+  function toggleFORM(stat) {
+    switch (stat) {
+      case 'on': addC(form, 'active'); break;
+      case 'off': remC(form, 'active'); break;
+    }
+  }
+
+  if (newHerbB) { newHerbB.onclick = function() { toggleFORM('on'); } }
+  closeB.onclick = function() {
+    toggleFORM('off');
+    timer = window.setTimeout(function() {
+      nameFIELD.value = '';
+      latinNameFIELD.value = '';
+      generalDescriptionTEXTAREA.value = '';
+      teaDosageAmountFIELD.value = '';
+      teaSteepTimeFIELD.value = '';
+      teaSteepTemperatureFIELD.value = '';
+      teaPreparationTEXTAREA.value = '';
+      clearTimeout(timer);
+    }, 150);
+  }
 }
 
 //

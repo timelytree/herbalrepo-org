@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   get '/herbs/:id', to: 'herbs#show'
+  post '/herbs', to: 'herbs#create'
 end
