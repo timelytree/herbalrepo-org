@@ -1,26 +1,29 @@
-= form_tag('/herbs', method: 'post', id: 'newHerbPANEL', class: 'flex-c') do
+= form_tag('/herbs', method: 'post', multipart: true, id: 'newHerbPANEL', class: 'flex-c') do
   .container
     .box
-      %label.subtitle Name
+      %label.subtitle{for: 'nameFIELD'} Name
       %input{type: 'text', name: 'herbs[name]', id: 'nameFIELD', autocomplete: :off, placeholder: 'Name'}
     .box
-      %label.subtitle Latin name
+      %label.subtitle{for: 'latinNameFIELD'} Latin name
       %input{type: 'text', name: 'herbs[latin_name]', id: 'latinNameFIELD', autocomplete: :off, placeholder: 'Latin Name'}
     .box
-      %label.subtitle General Description
+      %label.subtitle{for: 'generalDescriptionTEXTAREA'} General Description
       %textarea{name: 'herbs[general_description]', id: 'generalDescriptionTEXTAREA', autocomplete: :off, placeholder: 'General Description'}
     .box
-      %label.subtitle Tea dosage amount
+      %label.subtitle{for: 'teaDosageAmountFIELD'} Tea dosage amount
       %input{type: 'text', name: 'herbs[tea_dosage_amount]', id: 'teaDosageAmountFIELD', autocomplete: :off, placeholder: 'Tea dosage amount'}
     .box
-      %label.subtitle Tea steep time
+      %label.subtitle{for: 'teaSteepTimeFIELD'} Tea steep time
       %input{type: 'text', name: 'herbs[tea_steep_time]', id: 'teaSteepTimeFIELD', autocomplete: :off, placeholder: 'Tea steep time'}
     .box
-      %label.subtitle Tea steep temperature
+      %label.subtitle{for: 'teaSteepTemperatureFIELD'} Tea steep temperature
       %input{type: 'text', name: 'herbs[tea_steep_temperature]', id: 'teaSteepTemperatureFIELD', autocomplete: :off, placeholder: 'Tea steep temperature'}
     .box
-      %label.subtitle Tea Preparation
+      %label.subtitle{for: 'teaPreparationTEXTAREA'} Tea Preparation
       %textarea{name: 'herbs[tea_preparation]', id: 'teaPreparationTEXTAREA', autocomplete: :off, placeholder: 'Tea Preparation'}
+    .box
+      %label.subtitle{for: 'herbImageUPLOAD'} Upload Image
+      %input{type: 'file', name: 'herbs[image]', id: 'herbImageUPLOAD'}
     .box
       %input{type: 'submit', value: 'SUBMIT'}
     .box

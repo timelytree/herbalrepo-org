@@ -176,6 +176,7 @@ function herbCreatePanelTOGGLE() {
       teaSteepTimeFIELD = E('teaSteepTimeFIELD'),
       teaSteepTemperatureFIELD = E('teaSteepTemperatureFIELD'),
       teaPreparationTEXTAREA = E('teaPreparationTEXTAREA'),
+      herbImageUPLOAD = E('herbImageUPLOAD'),
       timer = null;
 
   function toggleFORM(stat) {
@@ -196,6 +197,7 @@ function herbCreatePanelTOGGLE() {
       teaSteepTimeFIELD.value = '';
       teaSteepTemperatureFIELD.value = '';
       teaPreparationTEXTAREA.value = '';
+      herbImageUPLOAD.value = '';
       clearTimeout(timer);
     }, 150);
   }
