@@ -1,23 +1,75 @@
 @media only screen and (min-width: 560px) and (max-width: 737px) and (orientation: landscape) {
 }
 
-@media only screen and (max-width: 1025px) {
-}
-
 @media only screen and (max-width: 770px) {
-}
+  #nav {
+    width: 100%;
+  }
 
-@media only screen and (max-width: 737px) {
-}
-
-@media only screen and (min-width: 737px) and (max-width: 1024px) {
-}
-
-@media only screen and (min-width: 1440px) {
-}
-
-@media only screen and (max-width: 737px) {
+  #leftPANEL, #rightPANEL {
+    width: 100%;
+    float: none;
+  }
+  #rightPANEL {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    z-index: 100;
+    &.active {
+      visibility: visible;
+    }
+    #selectIND {
+      display: none;
+    }
+  }
 }
 
 @media only screen and (max-width: 415px) {
+  .console {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    top: 15px;
+    left: 15px;
+  }
+
+  #nav {
+    height: 30px;
+  }
+
+  #leftPANEL {
+    padding-top: 30px;
+    .box {
+      padding: 15px;
+    }
+  }
+
+  #herbLIST {
+    .herbITEM {
+      width: calc(50% - 5px);
+      margin-bottom: 10px;
+      margin-right: 10px;
+      &:nth-child(3n) {
+        margin-right: 10px;
+      }
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
 }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//

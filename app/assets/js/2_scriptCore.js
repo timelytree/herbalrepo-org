@@ -13,10 +13,10 @@ var init = {
 var core = {
   global: {
     loginFormTOGGLE: 'loginFormTOGGLE',
-    navINT: 'navINT'
+    navINT: 'navINT',
+    herbPanelINT: 'herbPanelINT',
   },
   desktop: {
-    herbPanelINT: 'herbPanelINT',
     populateHerbPanel: 'populateHerbPanel',
     herbCreatePanelTOGGLE: 'herbCreatePanelTOGGLE',
     herbEditPanelTOGGLE: 'herbEditPanelTOGGLE'
@@ -94,7 +94,16 @@ function loginFormTOGGLE() {
 
 function herbPanelINT() {
   var herbs = cE('herbITEM'),
+      rightPANEL = E('rightPANEL'),
+      closeB = E('herbPanelCloseB'),
       panel = E('herbPANEL');
+
+  function mobileTOGGLE(stat) {
+    switch (stat) {
+      case 'on': addC(rightPANEL, 'active'); delayAddC(closeB, 'active'); break;
+      case 'off': remC(rightPANEL, 'active'); remC(closeB, 'active'); break;
+    }
+  }
 
   function togglePANEL(stat) {
     switch (stat) {
@@ -110,6 +119,7 @@ function herbPanelINT() {
         url: '/herbs/'+id+'',
         type: 'get',
         success: function(data) {
+          if (w.Width < 770) { mobileTOGGLE('on'); }
           togglePANEL('on');
           run(core.desktop.populateHerbPanel, data);
         }
@@ -117,8 +127,9 @@ function herbPanelINT() {
     }
   }
 
-  panel.onclick = function() {
-    // togglePANEL('off');
+  closeB.onclick = function() {
+    mobileTOGGLE('off');
+    togglePANEL('off');
   }
 }
 
