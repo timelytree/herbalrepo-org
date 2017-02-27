@@ -12,7 +12,8 @@ var init = {
 
 var core = {
   global: {
-    loginFormTOGGLE: 'loginFormTOGGLE'
+    loginFormTOGGLE: 'loginFormTOGGLE',
+    navINT: 'navINT'
   },
   desktop: {
     herbPanelINT: 'herbPanelINT',
@@ -258,6 +259,34 @@ function herbEditPanelTOGGLE() {
       }, 150);
     }
   }
+}
+
+function navINT() {
+  var buttons = cE('navB'),
+      closeB = E('closeB'),
+      currPAGE = null;
+
+  function togglePAGE() {
+
+  }
+
+  function togglePAGE(stat) {
+    switch (stat) {
+      case 'on': addC(currPAGE, 'active'); delayAddC(closeB, 'active', 250); break;
+      case 'off': delayRemC(currPAGE, 'active', 150); remC(closeB, 'active'); break;
+    }
+  }
+
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].onclick = function() {
+      var id = gA(this, 'page'),
+          page = E(id);
+      currPAGE = page;
+      togglePAGE('on');
+    }
+  }
+
+  closeB.onclick = function() { togglePAGE('off'); }
 }
 
 //

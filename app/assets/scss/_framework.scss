@@ -43,7 +43,6 @@ h4 { font-size: 30px; line-height: 32px; }
 h5 { font-size: 20px; line-height: 22px; }
 h6 { font-size: 18px; line-height: 20px; }
 p, li, a, div { font-size: 16px; line-height: 18px; }
-/*li { list-style: none; }*/
 a {
   text-decoration: none;
   cursor: pointer;
@@ -101,12 +100,12 @@ a {
   z-index: 3;
 }
 
-input[type="text"], input[type="submit"], textarea {
+input[type="text"], input[type="password"], input[type="submit"], textarea {
   font-size: 12px;
   line-height: 12px;
 }
 
-input[type="text"], textarea, input[type="file"] {
+input[type="text"], input[type="password"], textarea, input[type="file"] {
   font-size: 12px;
   line-height: 12px;
   border: 1px solid $gray400;
@@ -119,7 +118,7 @@ input[type="text"], textarea, input[type="file"] {
   }
 }
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
   width: 200px;
 }
 
@@ -189,6 +188,15 @@ input[type="submit"] {
 
 ///////////////////////////////////////////////////////////////// Other elements
 //------------------------------------------------------------------------------
+#logo {
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 40%;
+  margin-right: 10px;
+  opacity: 0.075;
+}
+
 .subtitle {
   font-weight: 600;
   text-transform: uppercase;
@@ -236,7 +244,7 @@ input[type="submit"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(250, 250, 250, 0.97);
+  background: $transWhite;
   z-index: 100;
   opacity: 0;
   visibility: hidden;
@@ -289,39 +297,80 @@ input[type="submit"] {
   }
 }
 
-/*#editHerbPANEL {
-  opacity: 1;
-  visibility: visible;
-  left: 200px;
-}*/
+#nav {
+  @include display-flex;
+  @include flex-middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50px;
+  border-right: 1px solid $gray300;
+  border-bottom: 1px solid $gray300;
+  z-index: 10;
+  padding: 0 10px;
+  z-index: 100;
+  background: $gray100;
+  .navB {
+    cursor: pointer;
+    margin-right: 10px;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
 
 #leftPANEL, #rightPANEL {
   width: 50%;
   height: 100%;
   float: left;
-  padding: 25px;
   position: relative;
+  z-index: 10;
 }
 #leftPANEL {
+  padding-top: 50px;
+  padding-bottom: 10px;
   border-right: 1px solid $gray300;
+  overflow-y: scroll;
   .box {
-    margin-bottom: 25px;
-    #logo {
-      width: 150px;
-      margin-bottom: 25px;
-    }
+    margin-bottom: 10px;
+    border-bottom: 1px solid $gray300;
+    padding: 25px;
     h5 {
       font-weight: 600;
     }
   }
 }
-
 #rightPANEL {
   &.active {
     #editHerbB {
       opacity: 1;
       visibility: visible;
     }
+  }
+}
+
+#closeB {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  width: 25px;
+  z-index: 1010;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition: 150ms;
+  &.active {
+    opacity: 0.5;
+    visibility: visible;
+    @include transform(translateY(10px));
+  }
+  &:hover {
+    transition: 150ms;
+    opacity: 1;
   }
 }
 

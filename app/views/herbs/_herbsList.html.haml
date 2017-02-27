@@ -1,10 +1,10 @@
 #leftPANEL
-  .box.flex-c
-    %img{src: './images/logo.png', id: 'logo'}
+  .box.flex-r
     %h5 An index of herbs and their medicinal properties
-  - @herbs.each_with_index do |herb|
-    .herbITEM{data:{id: herb.id}}
-      .herbIMG{style: "background-image: url('./uploads/#{herb.thumbnail}')"}
-      .herbItemINFO
-        %p= herb.name
-        %p= herb.latin_name
+  #herbLIST
+    - @herbs.each_with_index do |herb|
+      .herbITEM{data:{id: herb.id}}
+        .herbIMG{style: "background-image: url('./uploads/#{herb.thumbnail}')"}
+        .herbItemINFO
+          %p= herb.name
+          %p= herb.latin_name
