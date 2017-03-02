@@ -1,4 +1,6 @@
 class Herb < ActiveRecord::Base
+  has_and_belongs_to_many :categories
+
   def as_json(options={})
     {
       id: self.id,
