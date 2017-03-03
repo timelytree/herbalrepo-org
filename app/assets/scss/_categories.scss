@@ -1,0 +1,46 @@
+////////////////////////////////////////////////////////////////////////// Index
+//------------------------------------------------------------------------------
+.categoryTILE {
+  width: calc(33.333% - 6.6667px);
+  margin-right: 10px;
+  float: left;
+  height: 120px;
+  position: relative;
+  &:hover p {
+    text-decoration: underline;
+  }
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+  &[data-category="digestion"],
+  &[data-category="mind"],
+  &[data-category="sleep"],
+  &[data-category="energy"] {
+    @include centerImage;
+    background-size: 50px;
+    background-position-y: calc(50% - 15px);
+  }
+  &[data-category="digestion"] { background-image: url('./images/icons/stomach_icon_black.svg'); }
+  &[data-category="mind"] { background-image: url('./images/icons/brain_icon_black.svg'); }
+  &[data-category="sleep"] { background-image: url('./images/icons/sleep_icon_black.svg'); }
+  &[data-category="energy"] { background-image: url('./images/icons/sleep_icon_black.svg'); }
+  p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+  }
+}
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//

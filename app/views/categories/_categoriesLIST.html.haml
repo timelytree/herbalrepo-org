@@ -1,0 +1,7 @@
+#leftPANEL
+  .box.flex-r
+    %h5 An index of herbs and their medicinal properties
+  #categoryLIST
+    - @categories.each do |category|
+      %a{href: "/category/#{category.id}", class: 'categoryTILE', data:{category: category.name.downcase}}
+        %p= category.name

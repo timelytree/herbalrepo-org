@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def landing
-    @herbs = Herb.all
+  def landing;
+    @categories = Category.all
   end
 end

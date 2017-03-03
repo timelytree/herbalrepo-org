@@ -1,10 +1,10 @@
 #leftPANEL
-  .box.flex-r
-    %h5 An index of herbs and their medicinal properties
+  .box
+    %h5= @category.name
   #herbLIST
     - @herbs.each_with_index do |herb|
       .herbITEM{data:{id: herb.id}}
-        .herbIMG{style: "background-image: url('./uploads/#{herb.thumbnail}')"}
+        .herbIMG{style: "background-image: url('../uploads/#{herb.thumbnail}')"}
         .herbItemINFO
           %p= herb.name
           %p= herb.latin_name
