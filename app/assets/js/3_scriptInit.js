@@ -5,8 +5,7 @@ function globalInit() {
   run(core.global.loginFormTOGGLE);
   run(init.global.flashNOTICE);
   run(core.global.navINT);
-  run(core.desktop.herbCreatePanelTOGGLE);
-
+  if (E('newHerbPANEL')) { run(core.desktop.herbCreatePanelTOGGLE); }
   switch (p.Current) {
     case 'herbPAGE':
       run(core.global.herbPanelINT);

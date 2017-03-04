@@ -141,7 +141,6 @@ function populateHerbPanel(data) {
       nameFIELD = E('editNameFIELD'),
       editHerbB = E('editHerbB'),
       id = E('editHerbID'),
-      categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX'),
       latinNameFIELD = E('editLatinNameFIELD'),
       generalDescriptionTEXTAREA = E('editGeneralDescriptionTEXTAREA'),
       teaDosageAmountFIELD = E('editTeaDosageAmountFIELD'),
@@ -182,6 +181,7 @@ function populateHerbPanel(data) {
   `
   herbPANEL.innerHTML = html;
   if (editHerbB) {
+    var categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX');
     addC(rightPANEL, 'active');
     id.value = data.id;
     nameFIELD.value = data.name;
@@ -208,7 +208,6 @@ function herbCreatePanelTOGGLE() {
   var form = E('newHerbPANEL'),
       newHerbB = E('newHerbB'),
       closeB = E('cancelNewHerbB'),
-      categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX'),
       nameFIELD = E('newNameFIELD'),
       latinNameFIELD = E('newLatinNameFIELD'),
       generalDescriptionTEXTAREA = E('newGeneralDescriptionTEXTAREA'),
@@ -227,6 +226,7 @@ function herbCreatePanelTOGGLE() {
   }
 
   if (newHerbB) {
+    var categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX');
     newHerbB.onclick = function() { toggleFORM('on'); }
     closeB.onclick = function() {
       toggleFORM('off');
@@ -250,7 +250,6 @@ function herbEditPanelTOGGLE() {
   var form = E('editHerbPANEL'),
       editHerbB = E('editHerbB'),
       closeB = E('cancelEditHerbB'),
-      categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX'),
       nameFIELD = E('editNameFIELD'),
       latinNameFIELD = E('editLatinNameFIELD'),
       generalDescriptionTEXTAREA = E('editGeneralDescriptionTEXTAREA'),
@@ -269,6 +268,7 @@ function herbEditPanelTOGGLE() {
   }
 
   if (editHerbB) {
+    var categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX');
     editHerbB.onclick = function() { toggleFORM('on'); }
     closeB.onclick = function() {
       toggleFORM('off');
