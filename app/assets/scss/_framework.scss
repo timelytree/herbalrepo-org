@@ -188,6 +188,12 @@ input[type="submit"] {
 
 ///////////////////////////////////////////////////////////////// Other elements
 //------------------------------------------------------------------------------
+#selectIND {
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
 #logo {
   position: absolute;
   bottom: -10%;
@@ -326,7 +332,7 @@ input[type="submit"] {
   z-index: 10;
   z-index: 100;
   background: $gray100;
-  #backToHomeB {
+  #backB {
     position: relative;
     margin-left: -50px;
     width: 50px;

@@ -15,7 +15,7 @@ var core = {
     loginFormTOGGLE: 'loginFormTOGGLE',
     navINT: 'navINT',
     herbPanelINT: 'herbPanelINT',
-    backToHomeANIM: 'backToHomeANIM'
+    backButtonANIM: 'backButtonANIM'
   },
   desktop: {
     populateHerbPanel: 'populateHerbPanel',
@@ -316,8 +316,8 @@ function navINT() {
   closeB.onclick = function() { togglePAGE('off'); }
 }
 
-function backToHomeANIM() {
-  var button = E('backToHomeB');
+function backButtonANIM() {
+  var button = E('backB');
   delayAddC(button, 'active', 500);
 }
 

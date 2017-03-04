@@ -1,6 +1,13 @@
 #nav
-  %a{href: '/', id: 'backToHomeB', class: 'flex-c'}
-    %img{src: '../images/icons/chevron_left_black.svg'}
+  - if @back == nil || @back[:controller] == 'pages'
+    %a{href: '/', id: 'backB', class: 'flex-c'}
+      %img{src: '../images/icons/chevron_left_black.svg'}
+  - elsif @back[:controller] == 'categories'
+    %a{href: "/category/#{@back[:id]}", id: 'backB', class: 'flex-c'}
+      %img{src: '../images/icons/chevron_left_black.svg'}
+  - else
+    %a{href: '/', id: 'backB', class: 'flex-c'}
+      %img{src: '../images/icons/chevron_left_black.svg'}
   .navB{data:{page:'aboutPAGE'}} About Us
   .divider.flex-c |
   .navB{data:{page:'contactPAGE'}} Contact Us

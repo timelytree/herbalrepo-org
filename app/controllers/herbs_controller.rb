@@ -4,6 +4,7 @@ class HerbsController < ApplicationController
     @herb = Herb.find(params[:id])
     @categories = Category.all
     @herbs = Herb.all
+    @back = Rails.application.routes.recognize_path(request.referrer)
     respond_to do |format|
       format.json { render json: @herb }
       format.html
