@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   patch '/herbs', to: 'herbs#update'
 
   get '/category', to: 'pages#landing'
-  get '/category/:id', to: 'categories#show'
+  get '/category/:slug', to: 'categories#show'
 
   # get '/herbs/:id', to: 'herbs#show'
   # post '/herbs', to: 'herbs#create'
