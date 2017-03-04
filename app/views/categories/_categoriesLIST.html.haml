@@ -4,4 +4,6 @@
   #categoryLIST
     - @categories.each do |category|
       %a{href: "/category/#{category.id}", class: 'categoryTILE', data:{category: category.name.downcase}}
-        %p= category.name
+        %div.flex-c
+          %img{src: "./images/icons/#{category.name.downcase}_icon_black.svg"}
+          %p= category.name
