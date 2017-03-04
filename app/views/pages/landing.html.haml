@@ -4,10 +4,15 @@
   = render 'herbs/editHerbPANEL'
   = render 'herbs/newHerbPANEL'
   .console
-    %img{src: './images/icons/close_icon_black.svg', id: 'closeB'}
+    %img{src: '../images/icons/close_icon_black.svg', id: 'closeB'}
     = render 'pages/about'
     = render 'pages/contact'
     = render 'layouts/nav'
     = render 'categories/categoriesLIST'
-    = render 'herbs/herbPanel'
-    %img{src: './images/logo.png', id: 'logo'}
+    #rightPANEL.flex-c
+      %img{src: '../images/icons/close_icon_black.svg', id: 'herbPanelCloseB'}
+      - if logged_in?
+        #editHerbB Edit Herb
+      #herbPANEL.flex-c
+        #selectIND Select a category from the left to view more information
+    %img{src: '../images/logo.png', id: 'logo'}

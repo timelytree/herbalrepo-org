@@ -9,5 +9,10 @@
     = render 'pages/contact'
     = render 'layouts/nav'
     = render 'herbs/herbsList'
-    = render 'herbs/herbPanel'
+    #rightPANEL.flex-c
+      %img{src: '../images/icons/close_icon_black.svg', id: 'herbPanelCloseB'}
+      - if logged_in?
+        #editHerbB Edit Herb
+      #herbPANEL.flex-c
+        #selectIND Select an herb from the left to view more information
     %img{src: '../images/logo.png', id: 'logo'}

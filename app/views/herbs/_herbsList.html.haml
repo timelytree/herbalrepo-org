@@ -1,9 +1,12 @@
 #leftPANEL
   .box
-    %h5= @category.name
+    - if params[:controller] == 'herbs'
+      %h5 All Herbs
+    - else
+      %h5= @category.name
   #herbLIST
     - @herbs.each_with_index do |herb|
-      .herbITEM{data:{id: herb.id}}
+      %a{href: "/herbs/#{herb.id}", class: 'herbITEM'}
         .herbIMG{style: "background-image: url('../uploads/#{herb.thumbnail}')"}
         .herbItemINFO
           %p= herb.name

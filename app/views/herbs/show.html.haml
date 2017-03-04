@@ -1,0 +1,36 @@
+.wrapper#herbPAGE
+  = render 'layouts/adminTOOLBAR'
+  = render 'layouts/loginFORM'
+  = render 'herbs/editHerbPANEL'
+  = render 'herbs/newHerbPANEL'
+  .console
+    %img{src: '../images/icons/close_icon_black.svg', id: 'closeB'}
+    = render 'pages/about'
+    = render 'pages/contact'
+    = render 'layouts/nav'
+    = render 'herbs/herbsList'
+    #rightPANEL.flex-c
+      %img{src: '../images/icons/close_icon_black.svg', id: 'herbPanelCloseB'}
+      - if logged_in?
+        #editHerbB Edit Herb
+      #herbPANEL
+        %section
+          #herbNAME= @herb.name
+          #herbLatinNAME= @herb.latin_name
+        %section
+          .subtitile Description
+          %div= @herb.general_description
+        %section#teaINFO
+          .subtitle Tea Preparation
+          #teaPrepGuide.flex-r
+            .teaInfoBOX.flex-c
+              .teaInfoTITLE Dosage Amount
+              .teaInfoDATA= @herb.tea_dosage_amount
+            .teaInfoBOX.flex-c
+              .teaInfoTITLE Steep Time
+              .teaInfoDATA= @herb.tea_steep_time
+            .teaInfoBOX.flex-c
+              .teaInfoTITLE Steep Temperature
+              .teaInfoDATA= @herb.tea_steep_temperature
+          %div= @herb.tea_preparation
+    %img{src: '../images/logo.png', id: 'logo'}

@@ -1,10 +1,15 @@
 ////////////////////////////////////////////////////////////////////////// Index
 //------------------------------------------------------------------------------
+#categoryLIST {
+  padding: 0 10px;
+}
+
 .categoryTILE {
   width: calc(33.333% - 6.6667px);
   margin-right: 10px;
   float: left;
-  height: 120px;
+  padding-top: calc(33.333% - 6.6667px);
+  border: 1px solid $gray300;
   position: relative;
   &:hover p {
     text-decoration: underline;
