@@ -3,7 +3,7 @@
     %a{href: '/', id: 'backB', class: 'flex-c'}
       %img{src: '../images/icons/chevron_left_black.svg'}
   - elsif @back[:controller] == 'categories'
-    %a{href: "/category/#{@back_slug}", id: 'backB', class: 'flex-c'}
+    %a{href: "/category/#{@back[:slug]}", id: 'backB', class: 'flex-c'}
       %img{src: '../images/icons/chevron_left_black.svg'}
   - else
     %a{href: '/', id: 'backB', class: 'flex-c'}

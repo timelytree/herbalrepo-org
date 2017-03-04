@@ -5,9 +5,6 @@ class HerbsController < ApplicationController
     @categories = Category.all
     @herbs = Herb.all
     @back = Rails.application.routes.recognize_path(request.referrer)
-    if @back[:id] != nil
-      @back_slug = Category.find(@back[:id]).slug
-    end
     respond_to do |format|
       format.json { render json: @herb }
       format.html
