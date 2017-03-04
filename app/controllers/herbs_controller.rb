@@ -26,16 +26,14 @@ class HerbsController < ApplicationController
   end
 
   def update
-    binding.pry
-    head :ok
-    # @herb = Herb.find(params[:id])
-    # if @herb.update(herb_params)
-    #   flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
-    #   redirect_to root_path
-    # else
-    #   flash[:error] = "Something went wrong, try again!"
-    #   redirect_to root_path
-    # end
+    @herb = Herb.find(params[:id])
+    if @herb.update(herb_params)
+      flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
+      redirect_to root_path
+    else
+      flash[:error] = "Something went wrong, try again!"
+      redirect_to root_path
+    end
   end
 
   private
