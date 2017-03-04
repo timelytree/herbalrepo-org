@@ -135,11 +135,13 @@ function herbPanelINT() {
 }
 
 function populateHerbPanel(data) {
-  var rightPANEL = E('rightPANEL'),
+  var form = E('editHerbPANEL'),
+      rightPANEL = E('rightPANEL'),
       herbPANEL = E('herbPANEL'),
       nameFIELD = E('editNameFIELD'),
       editHerbB = E('editHerbB'),
       id = E('editHerbID'),
+      categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX'),
       latinNameFIELD = E('editLatinNameFIELD'),
       generalDescriptionTEXTAREA = E('editGeneralDescriptionTEXTAREA'),
       teaDosageAmountFIELD = E('editTeaDosageAmountFIELD'),
@@ -189,6 +191,15 @@ function populateHerbPanel(data) {
     teaSteepTimeFIELD.value = data.tea_steep_time;
     teaSteepTemperatureFIELD.value = data.tea_steep_temperature;
     teaPreparationTEXTAREA.value = data.tea_preparation;
+
+    for (var i = 0; i < data.categories.length; i++) {
+      var num = data.categories[i];
+      for (var j = 0; j < categoryCHECKBOXES.length; j++) {
+        var checkbox = categoryCHECKBOXES[j],
+            id = gA(categoryCHECKBOXES[j], 'id');
+        if (id == num) { checkbox.checked = true; }
+      }
+    }
     // herbImageUPLOAD.value = '';
   }
 }
@@ -197,6 +208,7 @@ function herbCreatePanelTOGGLE() {
   var form = E('newHerbPANEL'),
       newHerbB = E('newHerbB'),
       closeB = E('cancelNewHerbB'),
+      categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX'),
       nameFIELD = E('newNameFIELD'),
       latinNameFIELD = E('newLatinNameFIELD'),
       generalDescriptionTEXTAREA = E('newGeneralDescriptionTEXTAREA'),
@@ -227,6 +239,7 @@ function herbCreatePanelTOGGLE() {
         teaSteepTemperatureFIELD.value = '';
         teaPreparationTEXTAREA.value = '';
         herbImageUPLOAD.value = '';
+        for (var i = 0; i < categoryCHECKBOXES.length; i++) { categoryCHECKBOXES[i].checked = false; }
         clearTimeout(timer);
       }, 150);
     }

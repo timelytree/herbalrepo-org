@@ -9,6 +9,12 @@
         %label.subtitle{for: 'editLatinNameFIELD'} Latin name
         %input{type: 'text', name: 'herbs[latin_name]', id: 'editLatinNameFIELD', autocomplete: :off, placeholder: 'Latin Name'}
       .box
+        .subtitle Category
+        - @categories.each_with_index do |c, ind|
+          .checkboxROW
+            %input{type: 'checkbox', name: 'herbs[category_ids][]', id: "editCategoryCHECKBOX-#{ind}", class: 'categoryCHECKBOX', value: c.id, data:{id:c.id}}
+            %label{for: "editCategoryCHECKBOX-#{ind}"}= c.name
+      .box
         %label.subtitle{for: 'editGeneralDescriptionTEXTAREA'} General Description
         %textarea{name: 'herbs[general_description]', id: 'editGeneralDescriptionTEXTAREA', autocomplete: :off, placeholder: 'General Description'}
       .box

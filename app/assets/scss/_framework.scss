@@ -295,6 +295,22 @@ input[type="submit"] {
       margin-bottom: 0;
     }
   }
+  .checkboxROW {
+    display: inline-block;
+    width: 100%;
+    label, input[type="checkbox"] {
+      cursor: pointer;
+    }
+    label {
+      font-size: 12px;
+      line-height: 14px;
+      float: left;
+    }
+    input[type="checkbox"] {
+      float: left;
+      margin-right: 5px;
+    }
+  }
 }
 
 #nav {
@@ -325,7 +341,8 @@ input[type="submit"] {
       margin-left: 0;
     }
     img {
-      width: 25px;
+      width: 20px;
+      opacity: 0.75;
     }
   }
   .navB {

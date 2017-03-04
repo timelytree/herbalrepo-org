@@ -1,6 +1,7 @@
 class HerbsController < ApplicationController
   def show
     @herb = Herb.find(params[:id])
+    @categories = Category.all
     respond_to do |format|
       format.json { render json: @herb }
       format.html
@@ -25,21 +26,31 @@ class HerbsController < ApplicationController
   end
 
   def update
-    @herb = Herb.find(params[:id])
-
-    if @herb.update(herb_params)
-      flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
-      redirect_to root_path
-    else
-      flash[:error] = "Something went wrong, try again!"
-      redirect_to root_path
-    end
+    binding.pry
+    head :ok
+    # @herb = Herb.find(params[:id])
+    # if @herb.update(herb_params)
+    #   flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
+    #   redirect_to root_path
+    # else
+    #   flash[:error] = "Something went wrong, try again!"
+    #   redirect_to root_path
+    # end
   end
 
   private
 
   def herb_params
-    params.require(:herbs).permit(:name, :latin_name, :general_description, :tea_dosage_amount, :tea_steep_time, :tea_steep_temperature, :tea_preparation)
+    params.require(:herbs).permit(
+      :name,
+      :latin_name,
+      :general_description,
+      :tea_dosage_amount,
+      :tea_steep_time,
+      :tea_steep_temperature,
+      :tea_preparation,
+      category_ids: []
+    )
   end
 
   def upload(file, name, ext)

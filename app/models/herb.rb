@@ -12,7 +12,8 @@ class Herb < ActiveRecord::Base
       tincture_dosage_amount: self.tincture_dosage_amount,
       general_description: self.general_description,
       tea_preparation: self.tea_preparation,
-      tincture_preparation: self.tincture_preparation
+      tincture_preparation: self.tincture_preparation,
+      categories: self.categories.ids
     }
   end
 end
