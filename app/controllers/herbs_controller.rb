@@ -1,10 +1,15 @@
 class HerbsController < ApplicationController
   def show
-    session[:return_to] ||= request.referer
     @herb = Herb.find(params[:id])
     @categories = Category.all
-    @herbs = Herb.all
     @back = Rails.application.routes.recognize_path(request.referrer)
+    if @back[:controller] == 'pages'
+      session.delete(:current_category)
+      @herbs = Herb.all
+    elsif @back[:controller] == 'categories' || @back[:controller] == 'herbs'
+      @herbs = Category.find_by_name(session[:current_category]).herbs
+    end
+
     respond_to do |format|
       format.json { render json: @herb }
       format.html
