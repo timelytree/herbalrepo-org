@@ -6,14 +6,6 @@
       %h5 All Herbs
     - else
       %h5= session[:current_category]
-
-    -# - binding.pry
-    -# - if params[:controller] == 'categories'
-    -#   %h5= @category.name
-    -# - elsif @back != nil || @back[:controller] == 'categories' || @back[:controller] == 'herbs'
-    -#   %h5= @back[:slug]
-    -# - else
-    -#   %h5 All Herbs
   #herbLIST
     - @herbs.each_with_index do |herb|
       %a{href: "/herbs/#{herb.id}", class: 'herbITEM'}
