@@ -1,6 +1,6 @@
 class HerbsController < ApplicationController
   def show
-    @herb = Herb.find(params[:id])
+    @herb = Herb.find_by_slug(params[:slug])
     @categories = Category.all
     @back = Rails.application.routes.recognize_path(request.referrer)
     if @back[:controller] == 'pages'

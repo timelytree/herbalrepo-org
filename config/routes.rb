@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   get '/herbs', to: 'pages#landing'
-  get '/herbs/:id', to: 'herbs#show'
+  get '/herbs/:slug', to: 'herbs#show'
   post '/herbs', to: 'herbs#create'
   patch '/herbs', to: 'herbs#update'
 
