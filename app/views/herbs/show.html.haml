@@ -13,7 +13,7 @@
       %img{src: '../images/icons/close_icon_black.svg', id: 'herbPanelCloseB'}
       - if logged_in?
         #editHerbB Edit Herb
-      #herbPANEL
+      #herbPANEL{data:{categories:@herb.categories.ids}}
         %section
           #herbNAME= @herb.name
           #herbLatinNAME= @herb.latin_name

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root :to => 'pages#landing'
 
-  post   '/login',   to: 'sessions#create'
+  post '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
   get '/herbs', to: 'pages#landing'

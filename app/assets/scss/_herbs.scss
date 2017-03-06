@@ -1,5 +1,11 @@
 /////////////////////////////////////////////////////////////////////////// View
 //------------------------------------------------------------------------------
+#herbPAGE {
+  #editHerbB {
+    display: block;
+  }
+}
+
 #herbLIST {
   padding: 0 10px;
   .herbITEM {
@@ -43,8 +49,6 @@
   background: $red500;
   color: white;
   cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
   transition: 150ms;
   &:hover {
     transition: 150ms;

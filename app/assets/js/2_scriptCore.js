@@ -14,7 +14,6 @@ var core = {
   global: {
     loginFormTOGGLE: 'loginFormTOGGLE',
     navINT: 'navINT',
-    herbPanelINT: 'herbPanelINT',
     backButtonANIM: 'backButtonANIM'
   },
   desktop: {
@@ -93,116 +92,116 @@ function loginFormTOGGLE() {
   }
 }
 
-function herbPanelINT() {
-  var herbs = cE('herbITEM'),
-      rightPANEL = E('rightPANEL'),
-      closeB = E('herbPanelCloseB'),
-      panel = E('herbPANEL');
-
-  function mobileTOGGLE(stat) {
-    switch (stat) {
-      case 'on': addC(rightPANEL, 'active'); delayAddC(closeB, 'active'); break;
-      case 'off': remC(rightPANEL, 'active'); remC(closeB, 'active'); break;
-    }
-  }
-
-  function togglePANEL(stat) {
-    switch (stat) {
-      case 'on': addC(panel, 'activeHerbPANEL'); break;
-      case 'off': remC(panel, 'activeHerbPANEL'); break;
-    }
-  }
-
-  for (var i = 0; i < herbs.length; i++) {
-    herbs[i].onclick = function() {
-      var id = gA(this, 'id');
-      $.ajax({
-        url: '/herbs/'+id+'',
-        type: 'get',
-        success: function(data) {
-          if (w.Width < 770) { mobileTOGGLE('on'); }
-          togglePANEL('on');
-          run(core.desktop.populateHerbPanel, data);
-        }
-      });
-    }
-  }
-
-  closeB.onclick = function() {
-    mobileTOGGLE('off');
-    togglePANEL('off');
-  }
-}
-
-function populateHerbPanel(data) {
-  var form = E('editHerbPANEL'),
-      rightPANEL = E('rightPANEL'),
-      herbPANEL = E('herbPANEL'),
-      nameFIELD = E('editNameFIELD'),
-      editHerbB = E('editHerbB'),
-      id = E('editHerbID'),
-      latinNameFIELD = E('editLatinNameFIELD'),
-      generalDescriptionTEXTAREA = E('editGeneralDescriptionTEXTAREA'),
-      teaDosageAmountFIELD = E('editTeaDosageAmountFIELD'),
-      teaSteepTimeFIELD = E('editTeaSteepTimeFIELD'),
-      teaSteepTemperatureFIELD = E('editTeaSteepTemperatureFIELD'),
-      teaPreparationTEXTAREA = E('editTeaPreparationTEXTAREA'),
-      converter = new showdown.Converter();
-
-  var html = `
-    <section>
-      <div id="herbNAME">`+data.name+`</div>
-      <div id="herbLatinNAME">`+data.latin_name+`</div>
-    </section>
-
-    <section id="teaGeneralDESCRIPTION">
-      <div class="subtitle">Description</div>
-      <div>`+converter.makeHtml(data.general_description)+`</div>
-    </section>
-
-    <section id="teaINFO">
-      <div class="subtitle">Tea Preparation</div>
-      <div id="teaPrepGuide" class="flex-r">
-        <div class="teaInfoBOX flex-c">
-          <div class="teaInfoTITLE">Dosage Amount</div>
-          <div class="teaInfoDATA">`+data.tea_dosage_amount+`</div>
-        </div>
-        <div class="teaInfoBOX flex-c">
-          <div class="teaInfoTITLE">Steep Time</div>
-          <div class="teaInfoDATA">`+data.tea_steep_time+`</div>
-        </div>
-        <div class="teaInfoBOX flex-c">
-          <div class="teaInfoTITLE">Steep Temperature</div>
-          <div class="teaInfoDATA">`+data.tea_steep_temperature+`</div>
-        </div>
-      </div>
-      <div>`+converter.makeHtml(data.tea_preparation)+`</div>
-    </section>
-  `
-  herbPANEL.innerHTML = html;
-  if (editHerbB) {
-    var categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX');
-    addC(rightPANEL, 'active');
-    id.value = data.id;
-    nameFIELD.value = data.name;
-    latinNameFIELD.value = data.latin_name;
-    generalDescriptionTEXTAREA.value = data.general_description;
-    teaDosageAmountFIELD.value = data.tea_dosage_amount;
-    teaSteepTimeFIELD.value = data.tea_steep_time;
-    teaSteepTemperatureFIELD.value = data.tea_steep_temperature;
-    teaPreparationTEXTAREA.value = data.tea_preparation;
-
-    for (var i = 0; i < data.categories.length; i++) {
-      var num = data.categories[i];
-      for (var j = 0; j < categoryCHECKBOXES.length; j++) {
-        var checkbox = categoryCHECKBOXES[j],
-            id = gA(categoryCHECKBOXES[j], 'id');
-        if (id == num) { checkbox.checked = true; }
-      }
-    }
-    // herbImageUPLOAD.value = '';
-  }
-}
+// function herbPanelINT() {
+//   var herbs = cE('herbITEM'),
+//       rightPANEL = E('rightPANEL'),
+//       closeB = E('herbPanelCloseB'),
+//       panel = E('herbPANEL');
+//
+//   function mobileTOGGLE(stat) {
+//     switch (stat) {
+//       case 'on': addC(rightPANEL, 'active'); delayAddC(closeB, 'active'); break;
+//       case 'off': remC(rightPANEL, 'active'); remC(closeB, 'active'); break;
+//     }
+//   }
+//
+//   function togglePANEL(stat) {
+//     switch (stat) {
+//       case 'on': addC(panel, 'activeHerbPANEL'); break;
+//       case 'off': remC(panel, 'activeHerbPANEL'); break;
+//     }
+//   }
+//
+//   for (var i = 0; i < herbs.length; i++) {
+//     herbs[i].onclick = function() {
+//       var id = gA(this, 'id');
+//       $.ajax({
+//         url: '/herbs/'+id+'',
+//         type: 'get',
+//         success: function(data) {
+//           if (w.Width < 770) { mobileTOGGLE('on'); }
+//           togglePANEL('on');
+//           run(core.desktop.populateHerbPanel, data);
+//         }
+//       });
+//     }
+//   }
+//
+//   closeB.onclick = function() {
+//     mobileTOGGLE('off');
+//     togglePANEL('off');
+//   }
+// }
+//
+// function populateHerbPanel(data) {
+//   var form = E('editHerbPANEL'),
+//       rightPANEL = E('rightPANEL'),
+//       herbPANEL = E('herbPANEL'),
+//       nameFIELD = E('editNameFIELD'),
+//       editHerbB = E('editHerbB'),
+//       id = E('editHerbID'),
+//       latinNameFIELD = E('editLatinNameFIELD'),
+//       generalDescriptionTEXTAREA = E('editGeneralDescriptionTEXTAREA'),
+//       teaDosageAmountFIELD = E('editTeaDosageAmountFIELD'),
+//       teaSteepTimeFIELD = E('editTeaSteepTimeFIELD'),
+//       teaSteepTemperatureFIELD = E('editTeaSteepTemperatureFIELD'),
+//       teaPreparationTEXTAREA = E('editTeaPreparationTEXTAREA'),
+//       converter = new showdown.Converter();
+//
+//   var html = `
+//     <section>
+//       <div id="herbNAME">`+data.name+`</div>
+//       <div id="herbLatinNAME">`+data.latin_name+`</div>
+//     </section>
+//
+//     <section id="teaGeneralDESCRIPTION">
+//       <div class="subtitle">Description</div>
+//       <div>`+converter.makeHtml(data.general_description)+`</div>
+//     </section>
+//
+//     <section id="teaINFO">
+//       <div class="subtitle">Tea Preparation</div>
+//       <div id="teaPrepGuide" class="flex-r">
+//         <div class="teaInfoBOX flex-c">
+//           <div class="teaInfoTITLE">Dosage Amount</div>
+//           <div class="teaInfoDATA">`+data.tea_dosage_amount+`</div>
+//         </div>
+//         <div class="teaInfoBOX flex-c">
+//           <div class="teaInfoTITLE">Steep Time</div>
+//           <div class="teaInfoDATA">`+data.tea_steep_time+`</div>
+//         </div>
+//         <div class="teaInfoBOX flex-c">
+//           <div class="teaInfoTITLE">Steep Temperature</div>
+//           <div class="teaInfoDATA">`+data.tea_steep_temperature+`</div>
+//         </div>
+//       </div>
+//       <div>`+converter.makeHtml(data.tea_preparation)+`</div>
+//     </section>
+//   `
+//   herbPANEL.innerHTML = html;
+//   if (editHerbB) {
+//     var categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX');
+//     addC(rightPANEL, 'active');
+//     id.value = data.id;
+//     nameFIELD.value = data.name;
+//     latinNameFIELD.value = data.latin_name;
+//     generalDescriptionTEXTAREA.value = data.general_description;
+//     teaDosageAmountFIELD.value = data.tea_dosage_amount;
+//     teaSteepTimeFIELD.value = data.tea_steep_time;
+//     teaSteepTemperatureFIELD.value = data.tea_steep_temperature;
+//     teaPreparationTEXTAREA.value = data.tea_preparation;
+//
+//     for (var i = 0; i < data.categories.length; i++) {
+//       var num = data.categories[i];
+//       for (var j = 0; j < categoryCHECKBOXES.length; j++) {
+//         var checkbox = categoryCHECKBOXES[j],
+//             id = gA(categoryCHECKBOXES[j], 'id');
+//         if (id == num) { checkbox.checked = true; }
+//       }
+//     }
+//     // herbImageUPLOAD.value = '';
+//   }
+// }
 
 function herbCreatePanelTOGGLE() {
   var form = E('newHerbPANEL'),
@@ -227,6 +226,7 @@ function herbCreatePanelTOGGLE() {
 
   if (newHerbB) {
     var categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX');
+
     newHerbB.onclick = function() { toggleFORM('on'); }
     closeB.onclick = function() {
       toggleFORM('off');
@@ -268,7 +268,18 @@ function herbEditPanelTOGGLE() {
   }
 
   if (editHerbB) {
-    var categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX');
+    var categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX'),
+        categories = JSON.parse(gA(E('herbPANEL'), 'categories'));
+
+    for (var i = 0; i < categories.length; i++) {
+      var num = categories[i];
+      for (var j = 0; j < categoryCHECKBOXES.length; j++) {
+        var checkbox = categoryCHECKBOXES[j],
+            id = gA(categoryCHECKBOXES[j], 'id');
+        if (id == num) { checkbox.checked = true; }
+      }
+    }
+
     editHerbB.onclick = function() { toggleFORM('on'); }
     closeB.onclick = function() {
       toggleFORM('off');

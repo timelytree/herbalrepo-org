@@ -34,7 +34,7 @@ class HerbsController < ApplicationController
   end
 
   def update
-    @herb = Herb.find(params[:id])
+    @herb = Herb.find_by_slug(params[:slug])
     if @herb.update(herb_params)
       flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
       redirect_to root_path
