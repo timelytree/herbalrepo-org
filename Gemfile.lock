@@ -121,6 +121,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    redcarpet (3.4.0)
     rename (1.0.5)
       activesupport
       rails (>= 3.0.0)
@@ -171,6 +172,7 @@ DEPENDENCIES
   pry
   pry-nav
   rails (~> 5.0.1)
+  redcarpet
   rename
   spring
   spring-watcher-listen (~> 2.0.0)

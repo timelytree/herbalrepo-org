@@ -105,6 +105,12 @@
         padding: 15px;
         width: calc(100% + 30px);
         padding-right: 45px;
+        section {
+          margin-bottom: 15px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
         #teaPrepGuide {
           @include flex-c;
           .teaInfoBOX {

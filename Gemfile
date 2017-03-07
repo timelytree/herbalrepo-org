@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 gem 'mysql2'
 gem 'rename'
+gem 'redcarpet'
 
 group :development do
   gem 'thin'

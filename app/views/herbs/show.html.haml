@@ -19,7 +19,7 @@
           #herbLatinNAME= @herb.latin_name
         %section
           .subtitle Description
-          %div= @herb.general_description
+          %div= markdown(@herb.general_description)
         %section#teaINFO
           .subtitle Tea Preparation
           #teaPrepGuide.flex-r
@@ -32,5 +32,5 @@
             .teaInfoBOX.flex-c
               .teaInfoTITLE Steep Temperature
               .teaInfoDATA= @herb.tea_steep_temperature
-          %div= @herb.tea_preparation
+          %div= markdown(@herb.tea_preparation)
     %img{src: '../images/logo.png', id: 'logo'}
