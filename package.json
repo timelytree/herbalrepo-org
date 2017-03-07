@@ -1,9 +1,9 @@
 {
-  "name": "Herbal Repository",
+  "name": "herbal-repository",
   "devDependencies": {
     "bower": "*",
     "browser-sync": "^2.17.5",
-    "gulp": "*",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "*",
     "gulp-if": "*",
