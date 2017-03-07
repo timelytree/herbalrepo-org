@@ -73,6 +73,9 @@
   }
   section {
     margin-bottom: 25px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   #herbNAME {
     font-size: 24px;

@@ -11,7 +11,6 @@ function globalInit() {
       run(core.global.backButtonANIM);
       break;
     case 'herbPAGE':
-      // run(core.global.herbPanelINT);
       run(core.desktop.herbEditPanelTOGGLE);
       run(core.global.backButtonANIM);
       break;

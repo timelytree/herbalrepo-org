@@ -1,31 +1,136 @@
+//////////////////////////////////////////////////////////// 560/737 + landscape
 @media only screen and (min-width: 560px) and (max-width: 737px) and (orientation: landscape) {
 }
 
+//////////////////////////////////////////////////////////////////////////// 770
 @media only screen and (max-width: 770px) {
   #nav {
     width: 100%;
+    border-right: 0;
+  }
+
+  #logo {
+    width: 80%;
   }
 
   #leftPANEL, #rightPANEL {
     width: 100%;
     float: none;
   }
-  #rightPANEL {
-    position: absolute;
-    top: 0;
-    left: 0;
-    visibility: hidden;
-    z-index: 100;
-    &.active {
-      visibility: visible;
+
+  #leftPANEL {
+    border-right: 0;
+  }
+
+  #landingPAGE, #categoryPAGE {
+    #rightPANEL {
+      display: none;
     }
-    #selectIND {
+  }
+
+  #herbPAGE {
+    #leftPANEL {
+      overflow-y: hidden;
+    }
+    #rightPANEL {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: calc(100% - 50px - 75px);
+      z-index: 100;
+      &.active {
+        visibility: visible;
+      }
+      #selectIND {
+        display: none;
+      }
+    }
+    #herbLIST {
       display: none;
     }
   }
 }
 
+//////////////////////////////////////////////////////////////////////////// 737
+@media only screen and (max-width: 737px) {
+  #logo {
+    width: 50%;
+    bottom: -20%;
+    left: -10%;
+  }
+
+  #nav {
+    height: 30px;
+    #backB {
+      width: 30px;
+      margin-left: -30px;
+      img {
+        width: 15px;
+      }
+    }
+  }
+
+  #aboutPAGE, #contactPAGE {
+    display: block;
+    padding-top: 15px;
+    overflow-y: scroll;
+    width: calc(100% + 30px);
+    padding-right: 30px;
+    h5, p {
+      margin: 0 auto;
+      margin-bottom: 15px;
+    }
+    h5 {
+      text-align: center;
+    }
+  }
+
+  #leftPANEL {
+    padding: 30px 30px 0 0;
+    width: calc(100% + 30px);
+    .box {
+      padding: 10px;
+      height: 50px;
+      h5 {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  #herbPAGE {
+    #rightPANEL {
+      height: calc(100% - 30px - 50px);
+      #herbPANEL {
+        padding: 15px;
+        width: calc(100% + 30px);
+        padding-right: 45px;
+        #teaPrepGuide {
+          @include flex-c;
+          .teaInfoBOX {
+            width: 100%;
+            border: 0;
+            .teaInfoTITLE {
+              border-color: $gray300;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+}
+
+//////////////////////////////////////////////////////////////////////////// 415
 @media only screen and (max-width: 415px) {
+  #logo {
+    width: 80%;
+    bottom: -10%;
+    left: -10%;
+  }
+
   .console {
     width: calc(100% - 30px);
     height: calc(100% - 30px);
@@ -33,14 +138,13 @@
     left: 15px;
   }
 
-  #nav {
-    height: 30px;
+  #loginB, #adminTOOLBAR {
+    display: none;
   }
 
-  #leftPANEL {
-    padding-top: 30px;
-    .box {
-      padding: 15px;
+  #aboutPAGE, #contactPAGE {
+    h5, p {
+      width: calc(100% - 30px);
     }
   }
 
@@ -54,6 +158,28 @@
       }
       &:nth-child(2n) {
         margin-right: 0;
+      }
+    }
+  }
+
+  .categoryTILE {
+    width: calc(50% - 5px);
+    margin-right: 10px;
+    padding-top: calc(50% - 5px);
+    margin-bottom: 10px;
+    &:nth-child(3n) {
+      margin-right: 10px;
+    }
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+    div {
+      img {
+        width: 35px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 18px;
       }
     }
   }
