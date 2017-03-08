@@ -14,3 +14,5 @@ bower.json
 /app/assets/images
 /app/assets/videos
 /config/database.yml
+/config/secrets.yml
+/vendor/cache/
