@@ -1,11 +1,14 @@
 /////////////////////////////////////////////////////////////////////////// View
 //------------------------------------------------------------------------------
 #herbPAGE {
-  p, h1, h2, h3, h4, h5, h6, ul, li, div, a, section {
-    font-family: $font2;
-  }
   #editHerbB {
     display: block;
+  }
+  #herbPANEL {
+    p, h1, h2, h3, h4, h5, h6, ul, li, div, a, section {
+      font-family: $font2;
+      color: black;
+    }
   }
 }
 
@@ -34,6 +37,7 @@
       background: white;
       padding: 10px;
       p {
+        color: black;
         &:last-child {
           font-style: italic;
           font-size: 80%;
