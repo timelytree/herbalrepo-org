@@ -27,7 +27,7 @@ textarea { resize: none; }
 p, h1, h2, h3, h4, h5, h6, ul, li, div, a, section {
   margin: 0;
   padding: 0;
-  font-family: $font;
+  font-family: $font1;
   font-weight: 400;
   color: black;
   box-sizing: border-box;
@@ -188,12 +188,6 @@ input[type="submit"] {
 
 ///////////////////////////////////////////////////////////////// Other elements
 //------------------------------------------------------------------------------
-#selectIND {
-  font-size: 20px;
-  line-height: 22px;
-  font-weight: 600;
-}
-
 #logo {
   position: absolute;
   bottom: -10%;
@@ -204,7 +198,7 @@ input[type="submit"] {
 }
 
 .subtitle {
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 5px;
 }
@@ -390,7 +384,6 @@ input[type="submit"] {
     height: 75px;
     padding-left: 10px;
     h5 {
-      font-weight: 600;
       &:first-letter {
         text-transform: capitalize;
       }
