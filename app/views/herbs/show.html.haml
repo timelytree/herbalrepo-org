@@ -17,8 +17,8 @@
         %section
           #herbNAME= @herb.name
           #herbLatinNAME= @herb.latin_name
-        %section
-          .subtitle Description
+        %section#description
+          .subtitle Description & Research
           %div= markdown(@herb.general_description)
         %section#teaINFO
           .subtitle Tea Preparation

@@ -17,7 +17,7 @@
       .box
         %label.subtitle{for: 'editGeneralDescriptionTEXTAREA'} General Description
         %textarea{name: 'herbs[general_description]', id: 'editGeneralDescriptionTEXTAREA', autocomplete: :off, placeholder: 'General Description'}
-          = @herb.general_description
+          ~ @herb.general_description
       .box
         %label.subtitle{for: 'editTeaDosageAmountFIELD'} Tea dosage amount
         %input{type: 'text', name: 'herbs[tea_dosage_amount]', id: 'editTeaDosageAmountFIELD', value: @herb.tea_dosage_amount, autocomplete: :off, placeholder: 'Tea dosage amount'}
@@ -30,7 +30,7 @@
       .box
         %label.subtitle{for: 'editTeaPreparationTEXTAREA'} Tea Preparation
         %textarea{name: 'herbs[tea_preparation]', id: 'editTeaPreparationTEXTAREA', autocomplete: :off, placeholder: 'Tea Preparation'}
-          = @herb.tea_preparation
+          ~ @herb.tea_preparation
       .box
         %input{type: 'submit', value: 'SUBMIT'}
       .box

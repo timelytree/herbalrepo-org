@@ -281,21 +281,7 @@ function herbEditPanelTOGGLE() {
     }
 
     editHerbB.onclick = function() { toggleFORM('on'); }
-    closeB.onclick = function() {
-      toggleFORM('off');
-      timer = window.setTimeout(function() {
-        nameFIELD.value = '';
-        latinNameFIELD.value = '';
-        generalDescriptionTEXTAREA.value = '';
-        teaDosageAmountFIELD.value = '';
-        teaSteepTimeFIELD.value = '';
-        teaSteepTemperatureFIELD.value = '';
-        teaPreparationTEXTAREA.value = '';
-        for (var i = 0; i < categoryCHECKBOXES.length; i++) { categoryCHECKBOXES[i].checked = false; }
-        // herbImageUPLOAD.value = '';
-        clearTimeout(timer);
-      }, 150);
-    }
+    closeB.onclick = function() { toggleFORM('off'); }
   }
 }
 
