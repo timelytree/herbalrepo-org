@@ -304,10 +304,6 @@ function navINT() {
       closeB = E('closeB'),
       currPAGE = null;
 
-  function togglePAGE() {
-
-  }
-
   function togglePAGE(stat) {
     switch (stat) {
       case 'on': addC(currPAGE, 'active'); delayAddC(closeB, 'active', 250); break;
@@ -317,10 +313,11 @@ function navINT() {
 
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].onclick = function() {
-      var id = gA(this, 'page'),
-          page = E(id);
-      currPAGE = page;
-      togglePAGE('on');
+      var id = gA(this, 'page');
+      if (id != null) {
+        currPAGE = E(id);
+        togglePAGE('on');
+      }
     }
   }
 

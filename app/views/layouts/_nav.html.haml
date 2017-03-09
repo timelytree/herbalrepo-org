@@ -1,13 +1,16 @@
 #nav
   - if @back == nil || @back[:controller] == 'pages'
-    %a{href: '/', id: 'backB', class: 'flex-c'}
+    %a{href: '/', id: 'backB'}
       %img{src: '../images/icons/chevron_left_black.svg'}
   - elsif @back[:controller] == 'categories'
-    %a{href: "/category/#{@back[:slug]}", id: 'backB', class: 'flex-c'}
+    %a{href: "/category/#{@back[:slug]}", id: 'backB'}
       %img{src: '../images/icons/chevron_left_black.svg'}
   - else
-    %a{href: '/', id: 'backB', class: 'flex-c'}
+    %a{href: '/', id: 'backB'}
       %img{src: '../images/icons/chevron_left_black.svg'}
-  .navB{data:{page:'aboutPAGE'}} About Us
-  .divider.flex-c |
-  .navB{data:{page:'contactPAGE'}} Contact Us
+  %a{href: '/', class: 'navB'} Home
+  .navB{data:{page:'aboutPAGE'}} About
+  %a{href: 'https://www.instagram.com/herbalrepo/', target: '_blank', class: 'navB shareB'}
+    %img{src: '../images/icons/instagram_icon_black.svg'}
+  %a{href: 'https://www.pinterest.com/herbalrepo/', target: '_blank', class: 'navB shareB'}
+    %img{src: '../images/icons/pinterest_icon_black.svg'}
