@@ -14,20 +14,8 @@
             %input{type: 'checkbox', name: 'herbs[category_ids][]', id: "newCategoryCHECKBOX-#{ind}", class: 'categoryCHECKBOX', value: c.id, data:{id:c.id}}
             %label{for: "newCategoryCHECKBOX-#{ind}"}= c.name
       .box
-        %label.subtitle{for: 'newGeneralDescriptionTEXTAREA'} General Description
-        %textarea{name: 'herbs[general_description]', id: 'newGeneralDescriptionTEXTAREA', autocomplete: :off, placeholder: 'General Description'}
-      .box
-        %label.subtitle{for: 'newTeaDosageAmountFIELD'} Tea dosage amount
-        %input{type: 'text', name: 'herbs[tea_dosage_amount]', id: 'newTeaDosageAmountFIELD', autocomplete: :off, placeholder: 'Tea dosage amount'}
-      .box
-        %label.subtitle{for: 'newTeaSteepTimeFIELD'} Tea steep time
-        %input{type: 'text', name: 'herbs[tea_steep_time]', id: 'newTeaSteepTimeFIELD', autocomplete: :off, placeholder: 'Tea steep time'}
-      .box
-        %label.subtitle{for: 'newTeaSteepTemperatureFIELD'} Tea steep temperature
-        %input{type: 'text', name: 'herbs[tea_steep_temperature]', id: 'newTeaSteepTemperatureFIELD', autocomplete: :off, placeholder: 'Tea steep temperature'}
-      .box
-        %label.subtitle{for: 'newTeaPreparationTEXTAREA'} Tea Preparation
-        %textarea{name: 'herbs[tea_preparation]', id: 'newTeaPreparationTEXTAREA', autocomplete: :off, placeholder: 'Tea Preparation'}
+        %label.subtitle{for: 'newInformationTEXTAREA'} General Description
+        %textarea{name: 'herbs[information]', id: 'newInformationTEXTAREA', autocomplete: :off, placeholder: 'Information'}
       .box
         %label.subtitle{for: 'newHerbImageUPLOAD'} Upload Image
         %input{type: 'file', name: 'herbs[image]', id: 'newHerbImageUPLOAD'}

@@ -50,11 +50,7 @@ class HerbsController < ApplicationController
     params.require(:herbs).permit(
       :name,
       :latin_name,
-      :general_description,
-      :tea_dosage_amount,
-      :tea_steep_time,
-      :tea_steep_temperature,
-      :tea_preparation,
+      :information,
       category_ids: []
     )
   end

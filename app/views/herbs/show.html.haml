@@ -19,18 +19,5 @@
           #herbLatinNAME= @herb.latin_name
         %section#description
           .subtitle Description & Research
-          %div= markdown(@herb.general_description)
-        %section#teaINFO
-          .subtitle Tea Preparation
-          #teaPrepGuide.flex-r
-            .teaInfoBOX.flex-c
-              .teaInfoTITLE Dosage Amount
-              .teaInfoDATA= @herb.tea_dosage_amount
-            .teaInfoBOX.flex-c
-              .teaInfoTITLE Steep Time
-              .teaInfoDATA= @herb.tea_steep_time
-            .teaInfoBOX.flex-c
-              .teaInfoTITLE Steep Temperature
-              .teaInfoDATA= @herb.tea_steep_temperature
-          %div= markdown(@herb.tea_preparation)
+          %div= markdown(@herb.information)
     %img{src: '../images/logo.png', id: 'logo'}

@@ -15,22 +15,9 @@
             %input{type: 'checkbox', name: 'herbs[category_ids][]', id: "editCategoryCHECKBOX-#{ind}", class: 'categoryCHECKBOX', value: c.id, data:{id:c.id}}
             %label{for: "editCategoryCHECKBOX-#{ind}"}= c.name
       .box
-        %label.subtitle{for: 'editGeneralDescriptionTEXTAREA'} General Description
-        %textarea{name: 'herbs[general_description]', id: 'editGeneralDescriptionTEXTAREA', autocomplete: :off, placeholder: 'General Description'}
-          ~ @herb.general_description
-      .box
-        %label.subtitle{for: 'editTeaDosageAmountFIELD'} Tea dosage amount
-        %input{type: 'text', name: 'herbs[tea_dosage_amount]', id: 'editTeaDosageAmountFIELD', value: @herb.tea_dosage_amount, autocomplete: :off, placeholder: 'Tea dosage amount'}
-      .box
-        %label.subtitle{for: 'editTeaSteepTimeFIELD'} Tea steep time
-        %input{type: 'text', name: 'herbs[tea_steep_time]', id: 'editTeaSteepTimeFIELD', value: @herb.tea_steep_time, autocomplete: :off, placeholder: 'Tea steep time'}
-      .box
-        %label.subtitle{for: 'editTeaSteepTemperatureFIELD'} Tea steep temperature
-        %input{type: 'text', name: 'herbs[tea_steep_temperature]', id: 'editTeaSteepTemperatureFIELD', value: @herb.tea_steep_temperature, autocomplete: :off, placeholder: 'Tea steep temperature'}
-      .box
-        %label.subtitle{for: 'editTeaPreparationTEXTAREA'} Tea Preparation
-        %textarea{name: 'herbs[tea_preparation]', id: 'editTeaPreparationTEXTAREA', autocomplete: :off, placeholder: 'Tea Preparation'}
-          ~ @herb.tea_preparation
+        %label.subtitle{for: 'editInformationTEXTAREA'} Information
+        %textarea{name: 'herbs[information]', id: 'editInformationTEXTAREA', autocomplete: :off, placeholder: 'Information'}
+          ~ @herb.information
       .box
         %input{type: 'submit', value: 'SUBMIT'}
       .box
