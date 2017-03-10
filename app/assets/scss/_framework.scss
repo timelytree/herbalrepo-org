@@ -321,25 +321,6 @@ input[type="submit"] {
   z-index: 10;
   z-index: 100;
   background: $gray100;
-  #backB {
-    @include flex-c;
-    position: relative;
-    margin-left: -50px;
-    width: 50px;
-    height: 100%;
-    border-right: 1px solid $gray300;
-    transition: 150ms;
-    &:hover {
-      background: $gray300;
-    }
-    &.active {
-      margin-left: 0;
-    }
-    img {
-      width: 20px;
-      opacity: 0.75;
-    }
-  }
   .navB {
     @include flex-c;
     height: 100%;
@@ -350,7 +331,7 @@ input[type="submit"] {
     font-size: 12px;
     line-height: 14px;
     &:hover {
-      background: $gray200;
+      background: white;
     }
     &:last-child {
       margin-right: 0;
@@ -384,13 +365,17 @@ input[type="submit"] {
     margin-bottom: 10px;
     border-bottom: 1px solid $gray300;
     position: relative;
-    height: 75px;
-    padding-left: 10px;
+    padding: 10px;
     p, h5 {
       &:first-letter {
         text-transform: capitalize;
       }
     }
+  }
+  .title {
+    padding: 0 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
   }
 }
 #rightPANEL {

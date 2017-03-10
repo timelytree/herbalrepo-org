@@ -8,11 +8,11 @@ function globalInit() {
   if (E('newHerbPANEL')) { run(core.desktop.herbCreatePanelTOGGLE); }
   switch (p.Current) {
     case 'categoryPAGE':
-      run(core.global.backButtonANIM);
       break;
     case 'herbPAGE':
       run(core.desktop.herbEditPanelTOGGLE);
-      run(core.global.backButtonANIM);
+      break;
+    case 'herbIndexPAGE':
       break;
   }
 }

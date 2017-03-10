@@ -13,8 +13,7 @@ var init = {
 var core = {
   global: {
     loginFormTOGGLE: 'loginFormTOGGLE',
-    navINT: 'navINT',
-    backButtonANIM: 'backButtonANIM'
+    navINT: 'navINT'
   },
   desktop: {
     populateHerbPanel: 'populateHerbPanel',
@@ -308,11 +307,6 @@ function navINT() {
   }
 
   closeB.onclick = function() { togglePAGE('off'); }
-}
-
-function backButtonANIM() {
-  var button = E('backB');
-  delayAddC(button, 'active', 500);
 }
 
 //

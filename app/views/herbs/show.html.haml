@@ -8,7 +8,21 @@
     = render 'pages/about'
     = render 'pages/contact'
     = render 'layouts/nav'
-    = render 'herbs/herbsList'
+    #leftPANEL
+      #categoryLIST.box
+        - @categories.each do |category|
+          %a{href: "/category/#{category.slug}", class: 'categoryTILE', data:{category: category.name.downcase}}
+            %div.flex-c
+              %img{src: "../images/icons/#{category.name.downcase}_icon_black.svg"}
+              %p= category.name
+      %h6.title= @title
+      #herbLIST
+        - @herbs.each_with_index do |herb|
+          %a{href: "/herbs/#{herb.slug}", class: 'herbITEM'}
+            .herbIMG{style: "background-image: url('../uploads/#{herb.thumbnail}')"}
+            .herbItemINFO
+              %p= herb.name
+              %p= herb.latin_name
     #rightPANEL.flex-c
       %img{src: '../images/icons/close_icon_black.svg', id: 'herbPanelCloseB'}
       - if logged_in?

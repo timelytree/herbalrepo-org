@@ -1,13 +1,4 @@
 #nav
-  - if @back == nil || @back[:controller] == 'pages'
-    %a{href: '/', id: 'backB'}
-      %img{src: '../images/icons/chevron_left_black.svg'}
-  - elsif @back[:controller] == 'categories'
-    %a{href: "/category/#{@back[:slug]}", id: 'backB'}
-      %img{src: '../images/icons/chevron_left_black.svg'}
-  - else
-    %a{href: '/', id: 'backB'}
-      %img{src: '../images/icons/chevron_left_black.svg'}
   %a{href: '/', class: 'navB'} Home
   .navB{data:{page:'aboutPAGE'}} About
   %a{href: 'https://www.instagram.com/herbalrepo/', target: '_blank', class: 'navB shareB'}

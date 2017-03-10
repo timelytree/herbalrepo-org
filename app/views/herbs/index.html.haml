@@ -1,6 +1,7 @@
-.wrapper#categoryPAGE
+.wrapper#herbIndexPAGE
   = render 'layouts/adminTOOLBAR'
   = render 'layouts/loginFORM'
+  = render 'herbs/editHerbPANEL'
   = render 'herbs/newHerbPANEL'
   .console
     %img{src: '../images/icons/close_icon_black.svg', id: 'closeB'}
@@ -12,15 +13,9 @@
         - @categories.each do |category|
           %a{href: "/category/#{category.slug}", class: 'categoryTILE', data:{category: category.name.downcase}}
             %div.flex-c
-              %img{src: "../images/icons/#{category.name.downcase}_icon_black.svg"}
+              %img{src: "./images/icons/#{category.name.downcase}_icon_black.svg"}
               %p= category.name
-      %h6.title
-        - if params[:controller] == 'categories'
-          = @category.name
-        - elsif session[:current_category] == nil
-          All Herbs
-        - else
-          = session[:current_category]
+      %h6.title ALL HERBS
       #herbLIST
         - @herbs.each_with_index do |herb|
           %a{href: "/herbs/#{herb.slug}", class: 'herbITEM'}
@@ -29,9 +24,5 @@
               %p= herb.name
               %p= herb.latin_name
     #rightPANEL.flex-c
-      %img{src: '../images/icons/close_icon_black.svg', id: 'herbPanelCloseB'}
-      - if logged_in?
-        #editHerbB Edit Herb
-      %div.flex-c
-        #selectIND Select an herb from the left to view more information
+      #selectIND Select an herb or category to view more information
     %img{src: '../images/logo.png', id: 'logo'}

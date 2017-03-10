@@ -5,8 +5,5 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @back = Rails.application.routes.recognize_path(request.referrer)
     session[:current_category] = @category.name.downcase
-    if @back[:controller] != 'pages'
-      session[:current_category] = @category.name.downcase
-    end
   end
 end
