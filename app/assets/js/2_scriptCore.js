@@ -21,6 +21,7 @@ var core = {
     herbEditPanelTOGGLE: 'herbEditPanelTOGGLE'
   },
   mobile: {
+    categoryListANIM: 'categoryListANIM'
   }
 }
 
@@ -307,6 +308,29 @@ function navINT() {
   }
 
   closeB.onclick = function() { togglePAGE('off'); }
+}
+
+function categoryListANIM() {
+  var leftPANEL = E('leftPANEL'),
+      rightPANEL = E('rightPANEL'),
+      button = E('categoryListTOGGLE'),
+      panelSTAT = false;
+
+  function togglePAGE(stat) {
+    switch (stat) {
+      case 'on': addC(leftPANEL, 'active'); break;
+      case 'off': remC(leftPANEL, 'active'); break;
+    }
+  }
+
+  button.onclick = function() {
+    if (!panelSTAT) { togglePAGE('on'); panelSTAT = true; }
+    else if (panelSTAT) { togglePAGE('off'); panelSTAT = false; }
+  }
+
+  var timer = window.setTimeout(function() {
+    addC(rightPANEL, 'active'); clearTimeout(timer);
+  }, 600);
 }
 
 //

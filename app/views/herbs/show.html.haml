@@ -27,6 +27,9 @@
       %img{src: '../images/icons/close_icon_black.svg', id: 'herbPanelCloseB'}
       - if logged_in?
         #editHerbB Edit Herb
+      #categoryListTOGGLE
+        %p Categories
+        %img{src: '../images/icons/close_icon_black.svg'}
       #herbPANEL{data:{categories:@herb.categories.ids}}
         %section
           #herbNAME= @herb.name

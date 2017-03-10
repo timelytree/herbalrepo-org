@@ -1,9 +1,21 @@
 ////////////////////////////////////////////////////////////////////////// Index
 //------------------------------------------------------------------------------
 #categoryLIST {
-  padding: 0 10px;
+  padding: 10px;
   display: inline-block;
   width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $gray300;
+  position: relative;
+  p, h5 {
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
+
+#categoryListTOGGLE {
+  display: none;
 }
 
 .categoryTILE {
@@ -22,6 +34,9 @@
   &:nth-child(5n) {
     margin-right: 0;
   }
+  &:nth-child(n + 6) {
+    margin-top: 10px;
+  }
   div {
     position: absolute;
     top: 0;
@@ -31,15 +46,14 @@
     img {
       width: 30px;
       opacity: 0.75;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
   }
   p {
     width: 100%;
     text-align: center;
-    padding: 5px;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 14px;
     text-transform: uppercase;
     transition: 250ms;
   }

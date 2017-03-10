@@ -318,8 +318,7 @@ input[type="submit"] {
   height: 50px;
   border-right: 1px solid $gray300;
   border-bottom: 1px solid $gray300;
-  z-index: 10;
-  z-index: 100;
+  z-index: 1000;
   background: $gray100;
   .navB {
     @include flex-c;
@@ -359,19 +358,6 @@ input[type="submit"] {
   padding-bottom: 10px;
   border-right: 1px solid $gray300;
   overflow-y: scroll;
-  .box {
-    @include display-flex;
-    @include flex-middle;
-    margin-bottom: 10px;
-    border-bottom: 1px solid $gray300;
-    position: relative;
-    padding: 10px;
-    p, h5 {
-      &:first-letter {
-        text-transform: capitalize;
-      }
-    }
-  }
   .title {
     padding: 0 10px;
     margin-bottom: 10px;
