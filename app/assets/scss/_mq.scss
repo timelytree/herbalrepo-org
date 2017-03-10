@@ -1,5 +1,23 @@
 //////////////////////////////////////////////////////////// 560/737 + landscape
-@media only screen and (min-width: 560px) and (max-width: 737px) and (orientation: landscape) {
+@media only screen and (min-width: 771px) and (max-width: 1366px) {
+  .categoryTILE {
+    width: calc(33.333% - 6.66667px);
+    padding-top: calc(33.333% - 6.66667px);
+    &:nth-child(5n) {
+      margin-right: 10px;
+    }
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &:nth-child(n + 4) {
+      margin-top: 10px;
+    }
+    div {
+      img {
+        margin-bottom: 5px;
+      }
+    }
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////// 770

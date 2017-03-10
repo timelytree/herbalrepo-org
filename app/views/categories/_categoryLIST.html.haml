@@ -1,0 +1,6 @@
+#categoryLIST.box
+  - @categories.each do |category|
+    %a{href: "/category/#{category.slug}", class: 'categoryTILE', data:{category: category.name.downcase}}
+      %div.flex-c
+        %img{src: "../images/icons/#{strip_string(category.name.downcase)}_icon_black.svg"}
+        %p= category.name

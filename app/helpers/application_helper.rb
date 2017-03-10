@@ -14,17 +14,12 @@ module ApplicationHelper
   def display_decimal(num, pre)
     number_with_precision(num, precision: pre)
   end
-
+  
   def strip_string(item)
-    #strip the string & downcase
     string = item.strip.downcase
-    #blow away apostrophes
     string.gsub! /['`]/, ""
-    #replace all non alphanumeric, underscore or periods with underscore
     string.gsub! /[^0-9A-Za-z]/, '-'
-    #convert double dash to single dash
     string.gsub! /-+/,"-"
-    #strip off leading/trailing dash
     string.gsub! /\A[-\.]+|[-\.]+\z/, ""
     return string
   end

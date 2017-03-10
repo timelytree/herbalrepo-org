@@ -8,20 +8,9 @@
     = render 'pages/contact'
     = render 'layouts/nav'
     #leftPANEL
-      #categoryLIST.box
-        - @categories.each do |category|
-          %a{href: "/category/#{category.slug}", class: 'categoryTILE', data:{category: category.name.downcase}}
-            %div.flex-c
-              %img{src: "./images/icons/#{category.name.downcase}_icon_black.svg"}
-              %p= category.name
+      = render 'categories/categoryLIST'
       %h6.title ALL HERBS
-      #herbLIST
-        - @herbs.each_with_index do |herb|
-          %a{href: "/herbs/#{herb.slug}", class: 'herbITEM'}
-            .herbIMG{style: "background-image: url('../uploads/#{herb.thumbnail}')"}
-            .herbItemINFO
-              %p= herb.name
-              %p= herb.latin_name
+      = render 'herbs/herbLIST'
     #rightPANEL.flex-c
       #selectIND Select an herb or category to view more information
     %img{src: '../images/logo.png', id: 'logo'}

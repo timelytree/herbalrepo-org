@@ -7,11 +7,6 @@
   margin-bottom: 10px;
   border-bottom: 1px solid $gray300;
   position: relative;
-  p, h5 {
-    &:first-letter {
-      text-transform: capitalize;
-    }
-  }
 }
 
 #categoryListTOGGLE {
@@ -55,6 +50,14 @@
     font-size: 12px;
     line-height: 14px;
     text-transform: uppercase;
+    padding: 0 10px;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
     transition: 250ms;
   }
 }
