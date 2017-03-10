@@ -13,5 +13,4 @@ bower.json
 .DS_Store
 /app/assets/videos
 /config/database.yml
-/config/secrets.yml
 /vendor/cache/

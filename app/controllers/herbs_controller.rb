@@ -39,10 +39,10 @@ class HerbsController < ApplicationController
     @herb = Herb.find_by_slug(params[:slug])
     if @herb.update(herb_params)
       flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
-      redirect_to :back
+      redirect_to "/herbs/#{@herb.slug}"
     else
       flash[:error] = "Something went wrong, try again!"
-      redirect_to :back
+      redirect_to "/herbs/#{@herb.slug}"
     end
   end
 
