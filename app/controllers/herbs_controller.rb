@@ -9,11 +9,6 @@ class HerbsController < ApplicationController
     elsif @back[:controller] == 'categories' || @back[:controller] == 'herbs'
       @herbs = Category.find_by_name(session[:current_category]).herbs
     end
-
-    respond_to do |format|
-      format.json { render json: @herb }
-      format.html
-    end
   end
 
   def create
