@@ -1,7 +1,6 @@
 /////////////////////////////////////////////////////////////////// function key
 var init = {
   global: {
-    ajaxSetup: 'ajaxSetup',
     flashNOTICE: 'flashNOTICE'
   },
   desktop: {
@@ -13,7 +12,8 @@ var init = {
 var core = {
   global: {
     loginFormTOGGLE: 'loginFormTOGGLE',
-    navINT: 'navINT'
+    navINT: 'navINT',
+    lazyLoad: 'lazyLoad'
   },
   desktop: {
     populateHerbPanel: 'populateHerbPanel',
@@ -31,10 +31,6 @@ var core = {
 
 ///////////////////////////////////////////////////////////////// init functions
 //------------------------------------------------------------------------------
-function ajaxSetup() {
-  $.ajaxSetup({ headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') } });
-}
-
 function flashNOTICE() {
   var notice = E('flashNOTICE'),
       countdown = cE('countdown'),
@@ -331,6 +327,14 @@ function categoryListANIM() {
   var timer = window.setTimeout(function() {
     addC(rightPANEL, 'active'); clearTimeout(timer);
   }, 600);
+}
+
+function lazyLoad() {
+  var myLazyLoad = new LazyLoad({
+    container: document.getElementById('herbLIST'),
+    elements_selector: ".herbIMG",
+    callback_set: function(d) { d.style.backgroundSize = 'cover'; }
+  });
 }
 
 //

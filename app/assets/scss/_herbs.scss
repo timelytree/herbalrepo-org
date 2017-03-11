@@ -28,6 +28,12 @@
     ul, ol {
       padding-left: 15px;
     }
+    ol {
+      li {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
   }
 }
 
@@ -49,6 +55,8 @@
     }
     .herbIMG {
       @include centerImage;
+      background-image: url('../images/preloader.svg');
+      background-size: 75px;
       width: 100%;
       padding-top: 100%;
     }
