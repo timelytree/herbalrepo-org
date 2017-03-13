@@ -150,12 +150,6 @@ function herbEditPanelTOGGLE() {
       latinNameFIELD = E('editLatinNameFIELD'),
       informationTEXTAREA = E('editInformationTEXTAREA'),
       herbImageUPLOAD = E('editHerbImageUPLOAD'),
-      informationPREVIEW = form.getElementsByClassName('editInformationPREVIEW')[0],
-      previewCONTAINER = form.getElementsByClassName('previewCONTAINER')[0],
-      namePREVIEW = form.getElementsByClassName('editNamePREVIEW')[0],
-      latinNamePREVIEW = form.getElementsByClassName('editLatinNamePREVIEW')[0],
-      infoB = form.getElementsByClassName('editInfoB')[0],
-      generalINFO = form.getElementsByClassName('formGeneralINFO')[0],
       converter = new showdown.Converter({ disableForced4SpacesIndentedSublists: true }),
       timer = null,
       generalInfoToggleSTAT = false;
@@ -179,7 +173,13 @@ function herbEditPanelTOGGLE() {
   }
 
   if (editHerbB) {
-    var categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX'),
+    var informationPREVIEW = form.getElementsByClassName('editInformationPREVIEW')[0],
+        previewCONTAINER = form.getElementsByClassName('previewCONTAINER')[0],
+        namePREVIEW = form.getElementsByClassName('editNamePREVIEW')[0],
+        latinNamePREVIEW = form.getElementsByClassName('editLatinNamePREVIEW')[0],
+        infoB = form.getElementsByClassName('editInfoB')[0],
+        generalINFO = form.getElementsByClassName('formGeneralINFO')[0],
+        categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX'),
         categories = JSON.parse(gA(E('herbPANEL'), 'categories'));
 
     for (var i = 0; i < categories.length; i++) {

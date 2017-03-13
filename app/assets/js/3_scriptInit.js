@@ -7,14 +7,10 @@ function globalInit() {
   run(core.global.lazyLoad);
   if (E('newHerbPANEL')) { run(core.desktop.herbCreatePanelTOGGLE); }
   switch (p.Current) {
-    case 'categoryPAGE':
-      break;
     case 'herbPAGE':
       run(core.desktop.herbEditPanelTOGGLE);
       run(core.mobile.categoryListANIM);
       run(core.global.markdown);
-      break;
-    case 'herbIndexPAGE':
       break;
   }
 }
