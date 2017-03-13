@@ -149,6 +149,7 @@
     padding-top: 0;
     left: 0;
     width: 50%;
+    overflow: hidden;
     .section {
       display: inline-block;
       width: 100%;
@@ -181,9 +182,8 @@
     }
     .informationSECTION {
       padding: 0;
-      height: calc(100% - 75px);
+      height: calc(100% - 50px);
       overflow: hidden;
-      border-top: 1px solid $gray300;
       textarea {
         width: calc(100% + 25px);
         height: 100%;
