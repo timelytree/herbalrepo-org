@@ -1,59 +1,60 @@
 /////////////////////////////////////////////////////////////////////////// View
 //------------------------------------------------------------------------------
+#herbPAGE #herbPANEL, .previewCONTAINER  {
+  p, h1, h2, h3, h4, h5, h6, ul, li, div, a, section {
+    font-family: $font2;
+    color: black;
+  }
+  a {
+    display: inline-block;
+    color: $blue800;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 16px;
+    border-bottom: 1px solid $gray300;
+    padding-bottom: 5px;
+  }
+  h6 {
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  ul, ol {
+    padding-left: 15px;
+  }
+  ol {
+    li, a {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+  #description {
+    margin-top: 10px;
+  }
+  #herbNAME, .editNamePREVIEW, .newNamePREVIEW {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  #herbLatinNAME, .editLatinNamePREVIEW, .newLatinNamePREVIEW {
+    font-style: italic;
+  }
+}
+
 #herbPAGE {
   #editHerbB {
     display: block;
-  }
-  #herbPANEL, .previewCONTAINER {
-    p, h1, h2, h3, h4, h5, h6, ul, li, div, a, section {
-      font-family: $font2;
-      color: black;
-    }
-    a {
-      display: inline-block;
-      color: $blue800;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    p {
-      margin-bottom: 10px;
-    }
-    h3 {
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      margin-top: 15px;
-      font-size: 14px;
-      line-height: 16px;
-      border-bottom: 1px solid $gray300;
-      padding-bottom: 5px;
-    }
-    h6 {
-      font-size: 12px;
-      line-height: 14px;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    ul, ol {
-      padding-left: 15px;
-    }
-    ol {
-      li, a {
-        font-size: 12px;
-        line-height: 14px;
-      }
-    }
-    #description {
-      margin-top: 10px;
-    }
-    #herbNAME, .editNamePREVIEW, .newNamePREVIEW {
-      font-size: 24px;
-      line-height: 26px;
-    }
-    #herbLatinNAME, .editLatinNamePREVIEW, .newLatinNamePREVIEW {
-      font-style: italic;
-    }
   }
   #herbPANEL {
     position: absolute;
@@ -145,7 +146,6 @@
     border: 1px solid $gray300;
   }
   .inputCONTAINER {
-    border-right: 0;
     padding-top: 0;
     left: 0;
     width: 50%;
@@ -203,6 +203,7 @@
     padding-right: 50px;
     background: white;
     overflow-y: scroll;
+    border-left: 0;
   }
   .formTOOLBAR {
     @include display-flex;
@@ -249,7 +250,7 @@
     z-index: 50;
     padding-top: 25px;
     background: $gray100;
-    border-bottom: 1px solid $gray100;
+    border-bottom: 1px solid $gray300;
     @include transform(translateY(-120%));
     transition: 150ms;
     &.active {
