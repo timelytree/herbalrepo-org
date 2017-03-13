@@ -12,6 +12,7 @@ function globalInit() {
     case 'herbPAGE':
       run(core.desktop.herbEditPanelTOGGLE);
       run(core.mobile.categoryListANIM);
+      run(core.global.markdown);
       break;
     case 'herbIndexPAGE':
       break;

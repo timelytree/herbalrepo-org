@@ -24,5 +24,5 @@
           #herbNAME= @herb.name
           #herbLatinNAME= @herb.latin_name
         %section#description
-          %div= markdown(@herb.information)
+          = @herb.information.html_safe
     %img{src: '../images/logo.png', id: 'logo'}

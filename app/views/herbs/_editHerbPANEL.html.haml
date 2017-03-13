@@ -1,24 +1,30 @@
 - if logged_in?
-  = form_tag('/herbs', method: 'patch', multipart: true, id: 'editHerbPANEL', class: 'flex-c') do
+  = form_tag('/herbs', method: 'patch', multipart: true, id: 'editHerbPANEL') do
     %input{type: 'hidden', name: 'slug', value: @herb.slug, id: 'editHerbID', autocomplete: :off, placeholder: 'Name'}
-    .container
-      .box
-        %label.subtitle{for: 'editNameFIELD'} Name
-        %input{type: 'text', name: 'herbs[name]', id: 'editNameFIELD', value: @herb.name, autocomplete: :off, placeholder: 'Name'}
-      .box
-        %label.subtitle{for: 'editLatinNameFIELD'} Latin name
-        %input{type: 'text', name: 'herbs[latin_name]', id: 'editLatinNameFIELD', value: @herb.latin_name, autocomplete: :off, placeholder: 'Latin Name'}
-      .box
-        .subtitle Category
-        - @categories.each_with_index do |c, ind|
-          .checkboxROW
-            %input{type: 'checkbox', name: 'herbs[category_ids][]', id: "editCategoryCHECKBOX-#{ind}", class: 'categoryCHECKBOX', value: c.id, data:{id:c.id}}
-            %label{for: "editCategoryCHECKBOX-#{ind}"}= c.name
-      .box
-        %label.subtitle{for: 'editInformationTEXTAREA'} Information
+    .inputCONTAINER
+      .formTOOLBAR
+        .editInfoB#editGeneralInfoB INFORMATION
+        %input{type: 'submit', class: 'saveB', value: 'SAVE'}
+        .cancelB#cancelEditHerbB CANCEL
+      .formGeneralINFO
+        .section
+          .box
+            %label.subtitle{for: 'editNameFIELD'} Name
+            %input{type: 'text', name: 'herbs[name]', id: 'editNameFIELD', value: @herb.name, autocomplete: :off, placeholder: 'Name'}
+          .box
+            %label.subtitle{for: 'editLatinNameFIELD'} Latin name
+            %input{type: 'text', name: 'herbs[latin_name]', id: 'editLatinNameFIELD', value: @herb.latin_name, autocomplete: :off, placeholder: 'Latin Name'}
+        .section
+          .subtitle Category
+          .box.categoriesBOX
+            - @categories.each_with_index do |c, ind|
+              .checkboxROW
+                %input{type: 'checkbox', name: 'herbs[category_ids][]', id: "editCategoryCHECKBOX-#{ind}", class: 'categoryCHECKBOX', value: c.id, data:{id:c.id}}
+                %label{for: "editCategoryCHECKBOX-#{ind}"}= c.name
+      .section.informationSECTION
         %textarea{name: 'herbs[information]', id: 'editInformationTEXTAREA', autocomplete: :off, placeholder: 'Information'}
           ~ @herb.information
-      .box
-        %input{type: 'submit', value: 'SUBMIT'}
-      .box
-        .cancelB#cancelEditHerbB cancel
+    .previewCONTAINER
+      .editNamePREVIEW
+      .editLatinNamePREVIEW
+      .editInformationPREVIEW

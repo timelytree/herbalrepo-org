@@ -1,7 +1,6 @@
 #herbLIST
   - @herbs.each_with_index do |herb|
     %a{href: "/herbs/#{herb.slug}", class: 'herbITEM'}
-      -# .herbIMG{style: "background-image: url('')"}
       .herbIMG{data:{original:"../uploads/#{herb.thumbnail}"}}
       .herbItemINFO
         %p= herb.name

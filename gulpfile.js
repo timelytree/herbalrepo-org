@@ -31,6 +31,7 @@ gulp.task('scss', function() {
 gulp.task('js', function() {
   return gulp.src([
       config.jsPath + 'lazyload.min.js',
+      config.jsPath + 'showdown.min.js',
       config.jsPath + '1_scriptFrame.js',
       config.jsPath + '2_scriptCore.js',
       config.jsPath + '3_scriptInit.js',

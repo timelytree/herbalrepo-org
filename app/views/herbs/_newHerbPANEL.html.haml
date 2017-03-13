@@ -1,25 +1,31 @@
 - if logged_in?
   = form_tag('/herbs', method: 'post', multipart: true, id: 'newHerbPANEL', class: 'flex-c') do
-    .container
-      .box
-        %label.subtitle{for: 'newNameFIELD'} Name
-        %input{type: 'text', name: 'herbs[name]', id: 'newNameFIELD', autocomplete: :off, placeholder: 'Name'}
-      .box
-        %label.subtitle{for: 'newLatinNameFIELD'} Latin name
-        %input{type: 'text', name: 'herbs[latin_name]', id: 'newLatinNameFIELD', autocomplete: :off, placeholder: 'Latin Name'}
-      .box
-        .subtitle Category
-        - @categories.each_with_index do |c, ind|
-          .checkboxROW
-            %input{type: 'checkbox', name: 'herbs[category_ids][]', id: "newCategoryCHECKBOX-#{ind}", class: 'categoryCHECKBOX', value: c.id, data:{id:c.id}}
-            %label{for: "newCategoryCHECKBOX-#{ind}"}= c.name
-      .box
-        %label.subtitle{for: 'newInformationTEXTAREA'} General Description
+    .inputCONTAINER
+      .formTOOLBAR
+        .newInfoB#newGeneralInfoB INFORMATION
+        %input{type: 'submit', class: 'saveB', value: 'SAVE'}
+        .cancelB#cancelNewHerbB CANCEL
+      .formGeneralINFO
+        .section
+          .box
+            %label.subtitle{for: 'newNameFIELD'} Name
+            %input{type: 'text', name: 'herbs[name]', id: 'newNameFIELD', autocomplete: :off, placeholder: 'Name'}
+          .box
+            %label.subtitle{for: 'newLatinNameFIELD'} Latin name
+            %input{type: 'text', name: 'herbs[latin_name]', id: 'newLatinNameFIELD', autocomplete: :off, placeholder: 'Latin Name'}
+          .box
+            %label.subtitle{for: 'newHerbImageUPLOAD'} Upload Image
+            %input{type: 'file', name: 'herbs[image]', id: 'newHerbImageUPLOAD'}
+        .section
+          .subtitle Category
+          .box.categoriesBOX
+            - @categories.each_with_index do |c, ind|
+              .checkboxROW
+                %input{type: 'checkbox', name: 'herbs[category_ids][]', id: "newCategoryCHECKBOX-#{ind}", class: 'categoryCHECKBOX', value: c.id, data:{id:c.id}}
+                %label{for: "newCategoryCHECKBOX-#{ind}"}= c.name
+      .section.informationSECTION
         %textarea{name: 'herbs[information]', id: 'newInformationTEXTAREA', autocomplete: :off, placeholder: 'Information'}
-      .box
-        %label.subtitle{for: 'newHerbImageUPLOAD'} Upload Image
-        %input{type: 'file', name: 'herbs[image]', id: 'newHerbImageUPLOAD'}
-      .box
-        %input{type: 'submit', value: 'SUBMIT'}
-      .box
-        .cancelB#cancelNewHerbB cancel
+    .previewCONTAINER
+      .newNamePREVIEW
+      .newLatinNamePREVIEW
+      .newInformationPREVIEW
