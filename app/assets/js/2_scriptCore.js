@@ -246,8 +246,8 @@ function categoryListANIM() {
 
   function togglePAGE(stat) {
     switch (stat) {
-      case 'on': addC(leftPANEL, 'active'); break;
-      case 'off': remC(leftPANEL, 'active'); break;
+      case 'on': addC(leftPANEL, 'active'); addC(button, 'active'); break;
+      case 'off': remC(leftPANEL, 'active'); remC(button, 'active'); break;
     }
   }
 
