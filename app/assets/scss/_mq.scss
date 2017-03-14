@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////// 560/737 + landscape
+/////////////////////////////////////////////////////////////////////// 771-1366
 @media only screen and (min-width: 771px) and (max-width: 1366px) {
   .categoryTILE {
     width: calc(33.333% - 6.66667px);
@@ -122,6 +122,12 @@
       display: none;
     }
   }
+
+  #aboutPAGE {
+    .section {
+      width: 70%;
+    }
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////// 737
@@ -142,18 +148,25 @@
     }
   }
 
-  #aboutPAGE, #contactPAGE {
-    display: block;
-    padding-top: 15px;
-    overflow-y: scroll;
-    width: calc(100% + 30px);
-    padding-right: 30px;
-    h5, p {
-      margin: 0 auto;
-      margin-bottom: 15px;
+  #closeB {
+    height: 30px;
+    width: 30px;
+    img {
+      width: 12px;
     }
-    h5 {
-      text-align: center;
+  }
+
+  #aboutPAGE, #contactPAGE {
+    .header {
+      height: 30px;
+      padding: 0 10px;
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 10px;
+    }
+    .section {
+      width: 100%;
+      padding: 0 10px;
     }
   }
 
@@ -196,12 +209,6 @@
 
   #loginB, #adminTOOLBAR {
     display: none;
-  }
-
-  #aboutPAGE, #contactPAGE {
-    h5, p {
-      width: calc(100% - 30px);
-    }
   }
 
   #herbLIST {

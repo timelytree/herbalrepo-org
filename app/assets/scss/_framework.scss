@@ -138,6 +138,13 @@ input[type="submit"] {
   }
 }
 
+.subtitle {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 700;
+}
+
 ///////////////////////////////////////////////////////////////// Other elements
 //------------------------------------------------------------------------------
 #logo {
@@ -226,9 +233,9 @@ input[type="submit"] {
   .box {
     margin-bottom: 15px;
   }
-  .subtitle, .cancelB {
+  .cancelB {
     font-size: 12px;
-    line-height: 12px;
+    line-height: 14px;
   }
   .cancelB {
     cursor: pointer;
@@ -315,24 +322,36 @@ input[type="submit"] {
   }
 }
 
-#closeB, #herbPanelCloseB {
+#closeB {
+  @include flex-c;
   position: absolute;
-  top: 15px;
-  right: 25px;
-  width: 25px;
+  top: -50px;
+  right: 0;
+  width: 50px;
+  height: 50px;
   z-index: 100000;
   opacity: 0;
   visibility: hidden;
   cursor: pointer;
+  border-left: 1px solid $gray300;
   transition: 150ms;
   &.active {
-    opacity: 0.5;
+    opacity: 1;
     visibility: visible;
-    @include transform(translateY(10px));
+    @include transform(translateY(50px));
+    img {
+      opacity: 1;
+    }
   }
   &:hover {
     transition: 150ms;
-    opacity: 1;
+    background: $gray100;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.3;
+    transition: 150ms;
   }
 }
 
