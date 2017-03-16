@@ -19,6 +19,6 @@
       = render 'herbs/herbLIST'
     .categoryPANEL#rightPANEL.flex-c
       %div.flex-c
-        %img{src: "../images/categories/#{strip_string(@category.name.downcase)}.svg", class: 'categoryIMG', id:"#{strip_string(@category.name.downcase)}IMG"}
+        %img{src: "../images/categories/#{strip_string(@category.name.downcase)}.svg", class: 'categoryIMG'}
         %h5= @category.name
     %img{src: '../images/logo.png', id: 'logo'}
