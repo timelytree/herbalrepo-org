@@ -1,8 +1,10 @@
 - if logged_in?
   = form_tag('/herbs', method: 'post', multipart: true, id: 'newHerbPANEL', class: 'flex-c') do
+    %input{type: 'hidden', name: 'herbs[draft_status]', value: 'draft', id: 'newHerbDraftStatus', autocomplete: :off, placeholder: 'Name'}
     .inputCONTAINER
       .formTOOLBAR
         .newInfoB#newGeneralInfoB INFORMATION
+        .draftB#draftNewHerbB
         %input{type: 'submit', class: 'saveB', value: 'SAVE'}
         .cancelB#cancelNewHerbB CANCEL
       .formGeneralINFO

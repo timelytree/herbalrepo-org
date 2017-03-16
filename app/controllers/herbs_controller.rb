@@ -53,6 +53,7 @@ class HerbsController < ApplicationController
       :name,
       :latin_name,
       :information,
+      :draft_status,
       category_ids: []
     )
   end

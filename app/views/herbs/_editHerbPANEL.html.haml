@@ -1,9 +1,11 @@
 - if logged_in?
   = form_tag('/herbs', method: 'patch', multipart: true, id: 'editHerbPANEL') do
     %input{type: 'hidden', name: 'slug', value: @herb.slug, id: 'editHerbID', autocomplete: :off, placeholder: 'Name'}
+    %input{type: 'hidden', name: 'herbs[draft_status]', value: @herb.draft_status, id: 'editHerbDraftStatus', autocomplete: :off, placeholder: 'Name'}
     .inputCONTAINER
       .formTOOLBAR
         .editInfoB#editGeneralInfoB INFORMATION
+        .draftB#draftEditHerbB{class: @herb.draft_status == 'live' ? 'live' : '', data:{status: @herb.draft_status == 'live' ? 'live' : 'draft'}}
         %input{type: 'submit', class: 'saveB', value: 'SAVE'}
         .cancelB#cancelEditHerbB CANCEL
       .formGeneralINFO

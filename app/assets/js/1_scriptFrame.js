@@ -25,7 +25,8 @@ function delayAddC(item, className, delay) { var timeout = window.setTimeout(fun
 function delayRemC(item, className, delay) { var timeout = window.setTimeout(function() { remC(item, className); }, delay); }
 // Run BOTH e.preventDefault and e.stopPropagation
 function stopE(e) { e.stopPropagation; e.preventDefault; }
-// Get attributes prefixed with 'data'
+// Get/Set attributes prefixed with 'data'
 function gA(item, att) { return item.getAttribute('data-'+att+''); }
+function sA(item, attName, att) { item.setAttribute('data-'+attName+'', att); }
 // Run a function within scriptInit.js using the global window object
 function run(func, params) { window[func](params); }

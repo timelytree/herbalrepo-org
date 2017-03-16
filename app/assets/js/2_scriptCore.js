@@ -91,9 +91,19 @@ function herbCreatePanelTOGGLE() {
       latinNamePREVIEW = form.getElementsByClassName('newLatinNamePREVIEW')[0],
       infoB = form.getElementsByClassName('newInfoB')[0],
       generalINFO = form.getElementsByClassName('formGeneralINFO')[0],
+      draftB = E('draftNewHerbB'),
+      draftStatusFIELD = E('newHerbDraftStatus'),
       converter = new showdown.Converter({ disableForced4SpacesIndentedSublists: true }),
       timer = null,
       generalInfoToggleSTAT = false;
+
+  function toggleDRAFT() {
+    var stat = draftStatusFIELD.value;
+    switch (stat) {
+      case 'live': remC(draftB, 'live'); draftStatusFIELD.value = 'draft'; break;
+      case 'draft': addC(draftB, 'live'); draftStatusFIELD.value = 'live'; break;
+    }
+  }
 
   function toggleFORM(stat) {
     switch (stat) {
@@ -122,6 +132,9 @@ function herbCreatePanelTOGGLE() {
 
     infoB.onclick = function() { toggleGeneralINFO(); }
     newHerbB.onclick = function() { toggleFORM('on'); }
+
+    draftB.onclick = function() { toggleDRAFT(); }
+
     closeB.onclick = function() {
       toggleFORM('off');
       timer = window.setTimeout(function() {
@@ -135,6 +148,8 @@ function herbCreatePanelTOGGLE() {
         informationPREVIEW.value = '';
         namePREVIEW.value = '';
         latinNamePREVIEW.value = '';
+        remC(draftB, 'live');
+        draftStatusFIELD.value = 'draft';
         for (var i = 0; i < categoryCHECKBOXES.length; i++) { categoryCHECKBOXES[i].checked = false; }
         clearTimeout(timer);
       }, 150);
@@ -152,7 +167,17 @@ function herbEditPanelTOGGLE() {
       herbImageUPLOAD = E('editHerbImageUPLOAD'),
       converter = new showdown.Converter({ disableForced4SpacesIndentedSublists: true }),
       timer = null,
-      generalInfoToggleSTAT = false;
+      generalInfoToggleSTAT = false,
+      draftB = null,
+      draftStatusFIELD = null,
+      initDraftSTATUS = null;
+
+  function toggleDRAFT(stat) {
+    switch (stat) {
+      case 'live': remC(draftB, 'live'); sA(draftB, 'status', 'draft'); draftStatusFIELD.value = 'draft'; break;
+      case 'draft': addC(draftB, 'live'); sA(draftB, 'status', 'live'); draftStatusFIELD.value = 'live'; break;
+    }
+  }
 
   function toggleFORM(stat) {
     switch (stat) {
@@ -180,6 +205,9 @@ function herbEditPanelTOGGLE() {
         infoB = form.getElementsByClassName('editInfoB')[0],
         generalINFO = form.getElementsByClassName('formGeneralINFO')[0],
         categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX'),
+        draftB = form.getElementsByClassName('draftB')[0],
+        draftStatusFIELD = E('editHerbDraftStatus'),
+        initDraftSTATUS = draftStatusFIELD.value;
         categories = JSON.parse(gA(E('herbPANEL'), 'categories'));
 
     for (var i = 0; i < categories.length; i++) {
@@ -201,10 +229,18 @@ function herbEditPanelTOGGLE() {
 
     infoB.onclick = function() { toggleGeneralINFO(); }
     editHerbB.onclick = function() { toggleFORM('on'); }
+
+    draftB.onclick = function() {
+      var status = gA(this, 'status');
+      toggleDRAFT(status);
+    }
+
     closeB.onclick = function() {
       toggleFORM('off');
       timer = window.setTimeout(function() {
         if (generalInfoToggleSTAT) { toggleGeneralINFO(); }
+        if (initDraftSTATUS == 'live') { toggleDRAFT('draft'); }
+        else if (initDraftSTATUS == 'draft') { toggleDRAFT('live'); }
         informationTEXTAREA.scrollTop = 0;
         previewCONTAINER.scrollTop = 0;
         clearTimeout(timer);
