@@ -307,6 +307,7 @@ input[type="submit"] {
   border-right: 1px solid $gray300;
   overflow-y: scroll;
   .title {
+    display: none;
     padding: 0 10px;
     margin-bottom: 10px;
     text-transform: uppercase;

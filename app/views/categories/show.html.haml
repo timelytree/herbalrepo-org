@@ -17,7 +17,8 @@
         - else
           = session[:current_category]
       = render 'herbs/herbLIST'
-    #rightPANEL.flex-c
+    .categoryPANEL#rightPANEL.flex-c
       %div.flex-c
-        #selectIND Select an herb from the left to view more information
+        %img{src: "../images/categories/#{strip_string(@category.name.downcase)}.svg", class: 'categoryIMG', id:"#{strip_string(@category.name.downcase)}IMG"}
+        %h5= @category.name
     %img{src: '../images/logo.png', id: 'logo'}

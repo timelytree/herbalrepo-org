@@ -13,6 +13,30 @@
   display: none;
 }
 
+.categoryPANEL {
+  .categoryIMG {
+    min-width: 175px;
+    opacity: 0.8;
+    margin-bottom: 25px;
+  }
+  #cardiovascularIMG {
+    width: 175px;
+  }
+  #mind-emotionIMG {
+    width: 225px;
+  }
+  #sleepIMG {
+    width: 210px;
+    opacity: 0.7;
+  }
+  #digestionIMG {
+    width: 275px;
+  }
+  h5 {
+    text-transform: uppercase;
+  }
+}
+
 .categoryTILE {
   width: calc(20% - 8px);
   margin-right: 10px;
