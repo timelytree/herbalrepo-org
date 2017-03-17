@@ -2,6 +2,7 @@ class HerbsController < ApplicationController
   def index
     @categories = Category.all
     @herbs = Herb.all
+    session.delete(:current_category)
   end
 
   def show

@@ -11,7 +11,11 @@ function globalInit() {
       run(core.desktop.herbEditPanelTOGGLE);
       run(core.mobile.categoryListANIM);
       run(core.global.markdown);
+      // run(core.global.categoryHIGHLIGHT)
       break;
+    case 'categoryPAGE':
+      // run(core.global.categoryHIGHLIGHT)
+    break;
   }
 }
 
