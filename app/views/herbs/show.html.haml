@@ -20,9 +20,8 @@
         %p Categories
         %img{src: '../images/icons/close_icon_black.svg'}
       #herbPANEL{data:{categories:@herb.categories.ids}}
-        %section
-          #herbNAME= @herb.name
-          #herbLatinNAME= @herb.latin_name
-        %section#description
+        #herbNAME= @herb.name
+        #herbLatinNAME= @herb.latin_name
+        #description
           = @herb.information.html_safe
     %img{src: '../images/logo.png', id: 'logo'}

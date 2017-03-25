@@ -43,15 +43,59 @@
       line-height: 14px;
     }
   }
-  #description {
-    margin-top: 10px;
+
+  #description, .editInformationPREVIEW {
+    margin-top: 12.5px;
   }
+
   #herbNAME, .editNamePREVIEW, .newNamePREVIEW {
     font-size: 24px;
     line-height: 26px;
   }
+
   #herbLatinNAME, .editLatinNamePREVIEW, .newLatinNamePREVIEW {
     font-style: italic;
+  }
+
+  .glance {
+    background: $gray100;
+    position: relative;
+    width: calc(100% + 50px);
+    left: -25px;
+    padding: 25px;
+    padding-bottom: 20px;
+    > ul {
+      display: inline-block;
+      padding: 0;
+      padding: 0 25px;
+      position: relative;
+      left: -25px;
+      width: calc(100% + 50px);
+      li {
+        width: 33.333%;
+        float: left;
+        list-style: none;
+        font-weight: 700;
+        ul {
+          display: inline-block;
+          width: 100%;
+          padding: 0;
+          margin-bottom: 5px;
+          li {
+            font-weight: 400;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.summary {
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 

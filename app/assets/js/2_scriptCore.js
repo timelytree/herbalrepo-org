@@ -55,7 +55,7 @@ function flashNOTICE() {
 function showdownINIT() {
   showdown.extension('divClass', function () {
     var x = 0;
-    var y = {
+    var ext = {
       type: 'lang',
       filter: function(text, converter, options) {
         var classNAMES = text.match(/\[(.*)--]/g),
@@ -79,7 +79,7 @@ function showdownINIT() {
         return newText;
       }
     };
-    return [y];
+    return [ext];
   });
 
   showdownCONVERT = new showdown.Converter({
