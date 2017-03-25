@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////// initialization functions
 //------------------------------------------------------------------------------
 function globalInit() {
+  run(core.global.showdownINIT);
   run(core.global.loginFormTOGGLE);
   run(init.global.flashNOTICE);
   run(core.global.navINT);

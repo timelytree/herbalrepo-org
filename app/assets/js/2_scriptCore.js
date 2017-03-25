@@ -11,6 +11,7 @@ var init = {
 
 var core = {
   global: {
+    showdownINIT: 'showdownINIT',
     loginFormTOGGLE: 'loginFormTOGGLE',
     navINT: 'navINT',
     lazyLoad: 'lazyLoad',
@@ -51,6 +52,42 @@ function flashNOTICE() {
 
 ///////////////////////////////////////////////////////////////// core functions
 //------------------------------------------------------------------------------
+function showdownINIT() {
+  showdown.extension('divClass', function () {
+    var x = 0;
+    var y = {
+      type: 'lang',
+      filter: function(text, converter, options) {
+        var classNAMES = text.match(/\[(.*)--]/g),
+            newText = text;
+        if ((x < 3) && (classNAMES != null)) {
+          ++x;
+          for (var i = 0; i < classNAMES.length; i++) {
+            var classNAME = classNAMES[i].match(/\[(.*)--]/)[1];
+            if (classNAME != '') {
+              var regex = new RegExp("\\["+classNAME+"--]([\\s\\S]*)\\[--"+classNAME+"]"),
+                  textSPLIT = newText.match(regex);
+              if (textSPLIT != null) {
+                var textSNIPPET = textSPLIT[1],
+                    html = showdownCONVERT.makeHtml(textSNIPPET);
+                newText = newText.replace(regex, '<div class="'+classNAME+'">'+html+'</div>');
+              }
+            }
+          }
+        }
+        x = 0;
+        return newText;
+      }
+    };
+    return [y];
+  });
+
+  showdownCONVERT = new showdown.Converter({
+    extensions: ['divClass'],
+    disableForced4SpacesIndentedSublists: true
+  });
+}
+
 function loginFormTOGGLE() {
   var form = E('loginFORM'),
       loginB = E('loginB'),
@@ -93,7 +130,6 @@ function herbCreatePanelTOGGLE() {
       generalINFO = form.getElementsByClassName('formGeneralINFO')[0],
       draftB = E('draftNewHerbB'),
       draftStatusFIELD = E('newHerbDraftStatus'),
-      converter = new showdown.Converter({ disableForced4SpacesIndentedSublists: true }),
       timer = null,
       generalInfoToggleSTAT = false;
 
@@ -126,7 +162,7 @@ function herbCreatePanelTOGGLE() {
   if (newHerbB) {
     var categoryCHECKBOXES = form.getElementsByClassName('categoryCHECKBOX');
 
-    informationTEXTAREA.oninput = function() { informationPREVIEW.innerHTML = converter.makeHtml(informationTEXTAREA.value); }
+    informationTEXTAREA.oninput = function() { informationPREVIEW.innerHTML = showdownCONVERT.makeHtml(informationTEXTAREA.value); }
     nameFIELD.oninput = function() { namePREVIEW.innerHTML = nameFIELD.value; }
     latinNameFIELD.oninput = function() { latinNamePREVIEW.innerHTML = latinNameFIELD.value; }
 
@@ -165,7 +201,6 @@ function herbEditPanelTOGGLE() {
       latinNameFIELD = E('editLatinNameFIELD'),
       informationTEXTAREA = E('editInformationTEXTAREA'),
       herbImageUPLOAD = E('editHerbImageUPLOAD'),
-      converter = new showdown.Converter({ disableForced4SpacesIndentedSublists: true }),
       timer = null,
       generalInfoToggleSTAT = false,
       draftB = null,
@@ -221,9 +256,9 @@ function herbEditPanelTOGGLE() {
 
     namePREVIEW.innerHTML = nameFIELD.value;
     latinNamePREVIEW.innerHTML = latinNameFIELD.value;
-    informationPREVIEW.innerHTML = converter.makeHtml(informationTEXTAREA.value);
+    informationPREVIEW.innerHTML = showdownCONVERT.makeHtml(informationTEXTAREA.value);
 
-    informationTEXTAREA.oninput = function() { informationPREVIEW.innerHTML = converter.makeHtml(informationTEXTAREA.value); }
+    informationTEXTAREA.oninput = function() { informationPREVIEW.innerHTML = showdownCONVERT.makeHtml(informationTEXTAREA.value); }
     nameFIELD.oninput = function() { namePREVIEW.innerHTML = nameFIELD.value; }
     latinNameFIELD.oninput = function() { latinNamePREVIEW.innerHTML = latinNameFIELD.value; }
 
@@ -307,11 +342,8 @@ function lazyLoad() {
 
 function markdown() {
   var container = E('description'),
-      converter = new showdown.Converter({
-        disableForced4SpacesIndentedSublists: true
-      }),
       text = container.innerHTML,
-      html = converter.makeHtml(text);
+      html = showdownCONVERT.makeHtml(text);
 
   container.innerHTML = html;
 }
