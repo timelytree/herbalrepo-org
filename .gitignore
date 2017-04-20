@@ -9,7 +9,8 @@ bower.json
 .byebug_history
 /node_modules
 /test
-/public
+/public/images
+/public/uploads
 .DS_Store
 /app/assets/videos
 /config/database.yml
