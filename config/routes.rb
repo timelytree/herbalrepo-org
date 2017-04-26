@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/category', to: 'pages#landing'
   get '/category/:slug', to: 'categories#show'
 
+  get '/about', to: 'pages#about'
+
   # get '/herbs/:id', to: 'herbs#show'
   # post '/herbs', to: 'herbs#create'
   # patch '/herbs', to: 'herbs#update'

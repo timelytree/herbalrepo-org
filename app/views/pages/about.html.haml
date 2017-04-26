@@ -1,0 +1,26 @@
+.wrapper.page#aboutPAGE
+  = render 'layouts/adminTOOLBAR'
+  = render 'layouts/loginFORM'
+  = render 'herbs/newHerbPANEL'
+  .console
+    #closeB
+      %img{src: '../images/icons/close_icon_black.svg'}
+    = render 'layouts/nav'
+    #leftPANEL
+      %h6.header ABOUT US
+      .Row
+        .subtitle OUR VISION
+        %p Here we aim to describe herbs and plants that have beneficial medicinal properties, focusing primarily on human clinical trials. We also catalogue results from animal trials, strong subjective evidence, and anecdotal evidence from various cultures that have used herbal medicines for thousands of years. Beyond serving as an encyclopedia of medicinal herbs, we strive to provide accurate dosage information for ingestion methods such as teas, tinctures, and capsules.
+      .Row
+        .subtitle WE ARE ARTISTS & SCIENTISTS
+        %p The most insightful perspectives are those that are strive to step outside the box, to see the details woven into a bigger picture. This website was created through a design-minded and technically-guided thought process with a two-fold goal:
+        %ul
+          %li To increase accessibility to information that is normally locked behind a paywall, written in a combination of easy-to-digest verbage accompanied by more in-depth descriptions.
+          %li Make it actually pleasant and easy on the eyes to read. We like it when text is well-presented as much as you do!
+      .Row
+        .subtitle COLLABORATE WITH US
+        %p This is an official call-out to the writers, scientists, artists, designers, coders, and all out there. Whether you want to write an entire review of a medicinal plant, or want to change even a single line, follow the link contribute link up top to submit something. You might just find you've had some fun contributing to the world of knowledge!
+    #rightPANEL.flex-c
+      %img{src: '../images/about.png'}
+      %a{href: 'http://www.chrischapmanfineart.com/art/white-sage/', target: '_blank'} Image by Chris Chapman
+    %img{src: '../images/logo.png', id: 'logo'}

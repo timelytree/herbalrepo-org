@@ -1112,42 +1112,32 @@ input[type="submit"] {
   /*opacity: 1;
   visibility: visible;*/ }
 
-.page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(250, 250, 250, 0.97);
-  z-index: 10000;
-  opacity: 0;
-  visibility: hidden;
-  overflow-y: scroll;
-  transition: 150ms; }
-  .page.active {
-    opacity: 1;
-    visibility: visible; }
+.page #leftPANEL {
+  padding: 25px;
+  padding-top: 75px; }
 
-#aboutPAGE .header {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  -ms-grid-row-align: center;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  padding: 0 25px;
-  border-bottom: 1px solid #E0E0E0;
+#aboutPAGE #rightPANEL img {
+  height: 60%;
+  margin-bottom: 15px; }
+
+#aboutPAGE #rightPANEL a {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 16px; }
+  #aboutPAGE #rightPANEL a:hover {
+    text-decoration: underline; }
+
+#aboutPAGE .header, #aboutPAGE .Row {
   margin-bottom: 25px; }
 
-#aboutPAGE .section {
-  padding: 0 25px;
-  width: 50%;
-  margin: 0 auto; }
+#aboutPAGE ul {
+  margin-top: 15px; }
+  #aboutPAGE ul li {
+    list-style: none;
+    margin-bottom: 5px;
+    padding-left: 25px; }
+    #aboutPAGE ul li:last-child {
+      margin-bottom: 0; }
 
 #categoryLIST {
   padding: 10px;
@@ -1313,9 +1303,7 @@ input[type="submit"] {
     #herbPAGE #rightPANEL #selectIND {
       display: none; }
   #herbPAGE #herbLIST {
-    display: none; }
-  #aboutPAGE .section {
-    width: 70%; } }
+    display: none; } }
 
 @media only screen and (max-width: 737px) {
   #logo {
@@ -1336,15 +1324,6 @@ input[type="submit"] {
   .categoryTILE p {
     font-size: 10px;
     line-height: 12px; }
-  #aboutPAGE .header, #contactPAGE .header {
-    height: 30px;
-    padding: 0 10px;
-    font-size: 14px;
-    line-height: 16px;
-    margin-bottom: 10px; }
-  #aboutPAGE .section, #contactPAGE .section {
-    width: 100%;
-    padding: 0 10px; }
   #leftPANEL {
     padding: 30px 30px 0 0;
     width: calc(100% + 30px); }
@@ -1355,7 +1334,9 @@ input[type="submit"] {
     #herbPAGE #rightPANEL #herbPANEL section {
       margin-bottom: 15px; }
       #herbPAGE #rightPANEL #herbPANEL section:last-child {
-        margin-bottom: 0; } }
+        margin-bottom: 0; }
+  .page #leftPANEL {
+    padding: 45px 45px 15px 15px; } }
 
 @media only screen and (max-width: 415px) {
   #logo {

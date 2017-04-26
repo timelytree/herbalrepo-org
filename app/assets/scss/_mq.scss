@@ -125,12 +125,6 @@
       display: none;
     }
   }
-
-  #aboutPAGE {
-    .section {
-      width: 70%;
-    }
-  }
 }
 
 //////////////////////////////////////////////////////////////////////////// 737
@@ -166,20 +160,6 @@
     }
   }
 
-  #aboutPAGE, #contactPAGE {
-    .header {
-      height: 30px;
-      padding: 0 10px;
-      font-size: 14px;
-      line-height: 16px;
-      margin-bottom: 10px;
-    }
-    .section {
-      width: 100%;
-      padding: 0 10px;
-    }
-  }
-
   #leftPANEL {
     padding: 30px 30px 0 0;
     width: calc(100% + 30px);
@@ -198,6 +178,12 @@
           }
         }
       }
+    }
+  }
+
+  .page {
+    #leftPANEL {
+      padding: 45px 45px 15px 15px;
     }
   }
 }
