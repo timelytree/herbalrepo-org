@@ -5,7 +5,7 @@
   }
 }
 
-#aboutPAGE {
+#aboutPAGE, #contributePAGE {
   #rightPANEL {
     img {
       height: 60%;
@@ -33,5 +33,17 @@
         margin-bottom: 0;
       }
     }
+  }
+  ol {
+    padding-left: 15px;
+  }
+}
+
+#contributePAGE {
+  form {
+    margin-top: 25px;
+  }
+  textarea {
+    height: 600px;
   }
 }

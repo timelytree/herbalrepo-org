@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/category/:slug', to: 'categories#show'
 
   get '/about', to: 'pages#about'
+  get '/contribute', to: 'pages#contribute'
 
   # get '/herbs/:id', to: 'herbs#show'
   # post '/herbs', to: 'herbs#create'

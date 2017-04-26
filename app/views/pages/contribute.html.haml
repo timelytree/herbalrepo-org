@@ -1,0 +1,38 @@
+.wrapper.page#contributePAGE
+  = render 'layouts/adminTOOLBAR'
+  = render 'layouts/loginFORM'
+  = render 'herbs/newHerbPANEL'
+  .console
+    #closeB
+      %img{src: '../images/icons/close_icon_black.svg'}
+    = render 'layouts/nav'
+    #leftPANEL
+      %h6.header CONTRIBUTE
+      .Row
+        %p This is an official call-out to the writers, scientists, artists, designers, coders, and all out there. Whether you want to write an entire review of a medicinal plant, or want to change even a single line, fill out the form below to submit something. You might just find you've had some fun contributing to the world of knowledge!
+      .Row
+        .subtitle NOTES & INSTRUCTIONS
+        %ol
+          %li Your name and email are optional.
+          %li Your email will only be used to contact you for clarification. We <b>do not and never will</b> sell or in any way distribute any of your personal information.
+          %li Most importantly, fill out the text box below with any and all information you'd like to contibute and your editor-in-chief will sift through and put it together.
+          %li Please <b>include references</b>! We can't really use information that isn't referenced.
+      = form_tag '/contribute' do
+        .Row
+          %label.subtitle{for: 'name'} name
+          = text_field_tag 'name', '', placeholder: 'Your name'
+        .Row
+          %label.subtitle{for: 'email'} email
+          = text_field_tag 'email', '', placeholder: 'Your email'
+        .Row
+          %label.subtitle{for: 'herb_sci_name'} herb scientific name
+          = text_field_tag 'herb_sci_name', '', placeholder: 'ex: Valeriana officinalis', required: true
+        .Row
+          %label.subtitle{for: 'text'} text
+          = text_area_tag 'text', '', required: true
+        .Row
+          = submit_tag 'submit'
+    #rightPANEL.flex-c
+      %img{src: '../images/contribute.png'}
+      %a{href: 'http://www.chrischapmanfineart.com/art/bush-poppy/', target: '_blank'} Image by Chris Chapman
+    %img{src: '../images/logo.png', id: 'logo'}

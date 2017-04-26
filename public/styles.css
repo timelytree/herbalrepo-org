@@ -444,9 +444,32 @@ a {
 .content {
   z-index: 3; }
 
+input[type="text"], textarea {
+  border: 1px solid #E0E0E0; }
+
+input[type="text"] {
+  padding: 5px;
+  font-size: 16px;
+  line-height: 18px;
+  width: 250px;
+  margin-top: 5px; }
+
 input[type="submit"] {
   border: 0;
-  border-radius: 0; }
+  border-radius: 0;
+  padding: 10px 15px;
+  background: #E0E0E0;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  transition: 150ms; }
+  input[type="submit"]:hover {
+    background: #A5D6A7; }
+
+textarea {
+  width: 100%;
+  height: 300px;
+  margin-top: 5px; }
 
 #flashNOTICE {
   position: absolute;
@@ -642,6 +665,8 @@ input[type="submit"] {
     text-transform: uppercase;
     font-size: 12px;
     line-height: 14px; }
+    #nav .navB.highlightB {
+      background: #C8E6C9; }
     #nav .navB:hover {
       background: white; }
     #nav .navB:last-child {
@@ -1116,28 +1141,37 @@ input[type="submit"] {
   padding: 25px;
   padding-top: 75px; }
 
-#aboutPAGE #rightPANEL img {
+#aboutPAGE #rightPANEL img, #contributePAGE #rightPANEL img {
   height: 60%;
   margin-bottom: 15px; }
 
-#aboutPAGE #rightPANEL a {
+#aboutPAGE #rightPANEL a, #contributePAGE #rightPANEL a {
   font-style: italic;
   font-size: 14px;
   line-height: 16px; }
-  #aboutPAGE #rightPANEL a:hover {
+  #aboutPAGE #rightPANEL a:hover, #contributePAGE #rightPANEL a:hover {
     text-decoration: underline; }
 
-#aboutPAGE .header, #aboutPAGE .Row {
+#aboutPAGE .header, #aboutPAGE .Row, #contributePAGE .header, #contributePAGE .Row {
   margin-bottom: 25px; }
 
-#aboutPAGE ul {
+#aboutPAGE ul, #contributePAGE ul {
   margin-top: 15px; }
-  #aboutPAGE ul li {
+  #aboutPAGE ul li, #contributePAGE ul li {
     list-style: none;
     margin-bottom: 5px;
     padding-left: 25px; }
-    #aboutPAGE ul li:last-child {
+    #aboutPAGE ul li:last-child, #contributePAGE ul li:last-child {
       margin-bottom: 0; }
+
+#aboutPAGE ol, #contributePAGE ol {
+  padding-left: 15px; }
+
+#contributePAGE form {
+  margin-top: 25px; }
+
+#contributePAGE textarea {
+  height: 600px; }
 
 #categoryLIST {
   padding: 10px;
