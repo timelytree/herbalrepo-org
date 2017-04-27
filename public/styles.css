@@ -445,7 +445,8 @@ a {
   z-index: 3; }
 
 input[type="text"], textarea {
-  border: 1px solid #E0E0E0; }
+  border: 1px solid #E0E0E0;
+  padding: 10px; }
 
 input[type="text"] {
   padding: 5px;

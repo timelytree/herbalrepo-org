@@ -20,16 +20,16 @@
       = form_tag '/contribute' do
         .Row
           %label.subtitle{for: 'name'} name
-          = text_field_tag 'name', '', placeholder: 'Your name'
+          = text_field_tag 'contribution[name]', '', placeholder: 'Your name'
         .Row
           %label.subtitle{for: 'email'} email
-          = text_field_tag 'email', '', placeholder: 'Your email'
+          = text_field_tag 'contribution[email]', '', placeholder: 'Your email'
         .Row
           %label.subtitle{for: 'herb_sci_name'} herb scientific name
-          = text_field_tag 'herb_sci_name', '', placeholder: 'ex: Valeriana officinalis', required: true
+          = text_field_tag 'contribution[herb_sci_name]', '', placeholder: 'ex: Valeriana officinalis', required: true
         .Row
           %label.subtitle{for: 'text'} text
-          = text_area_tag 'text', '', required: true
+          = text_area_tag 'contribution[text]', '', required: true
         .Row
           = submit_tag 'submit'
     #rightPANEL.flex-c
