@@ -25,10 +25,10 @@
           %label.subtitle{for: 'email'} email
           = text_field_tag 'contribution[email]', '', placeholder: 'Your email'
         .Row
-          %label.subtitle{for: 'herb_sci_name'} herb scientific name
+          %label.subtitle{for: 'herb_sci_name'} herb scientific name <sup>* required</sup>
           = text_field_tag 'contribution[herb_sci_name]', '', placeholder: 'ex: Valeriana officinalis', required: true
         .Row
-          %label.subtitle{for: 'text'} text
+          %label.subtitle{for: 'text'} text <sup>* required</sup>
           = text_area_tag 'contribution[text]', '', required: true
         .Row
           = submit_tag 'submit'
