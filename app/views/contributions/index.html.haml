@@ -20,13 +20,13 @@
       = form_tag '/contribute' do
         .Row
           %label.subtitle{for: 'name'} name
-          = text_field_tag 'contribution[name]', '', placeholder: 'Your name'
+          = text_field_tag 'contribution[name]', '', placeholder: 'Your name', autocomplete: :off
         .Row
           %label.subtitle{for: 'email'} email
-          = text_field_tag 'contribution[email]', '', placeholder: 'Your email'
+          = text_field_tag 'contribution[email]', '', placeholder: 'Your email', autocomplete: :off
         .Row
           %label.subtitle{for: 'herb_sci_name'} herb scientific name <sup>* required</sup>
-          = text_field_tag 'contribution[herb_sci_name]', '', placeholder: 'ex: Valeriana officinalis', required: true
+          = text_field_tag 'contribution[herb_sci_name]', '', placeholder: 'ex: Valeriana officinalis', required: true, autocomplete: :off
         .Row
           %label.subtitle{for: 'text'} text <sup>* required</sup>
           = text_area_tag 'contribution[text]', '', required: true
