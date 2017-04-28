@@ -1,6 +1,5 @@
 class ContributionsController < ApplicationController
   def create
-    binding.pry
     @contribution = Contribute.create(contribution_params)
 
     if @contribution.save
