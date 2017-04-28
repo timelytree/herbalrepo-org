@@ -1156,6 +1156,9 @@ textarea {
 #aboutPAGE .header, #aboutPAGE .Row, #contributePAGE .header, #contributePAGE .Row {
   margin-bottom: 25px; }
 
+#aboutPAGE .Row:last-child, #contributePAGE .Row:last-child {
+  margin-bottom: 0; }
+
 #aboutPAGE ul, #contributePAGE ul {
   margin-top: 15px; }
   #aboutPAGE ul li, #contributePAGE ul li {
@@ -1382,9 +1385,7 @@ textarea {
       #herbPAGE #rightPANEL #herbPANEL section:last-child {
         margin-bottom: 0; }
   .page #leftPANEL {
-    padding: 45px 45px 15px 15px; }
-  #aboutPAGE .Row:last-child, #contributePAGE .Row:last-child {
-    margin-bottom: 0; } }
+    padding: 45px 45px 15px 15px; } }
 
 @media only screen and (max-width: 415px) {
   #logo {

@@ -23,6 +23,11 @@
   .header, .Row {
     margin-bottom: 25px;
   }
+  .Row {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
   ul {
     margin-top: 15px;
     li {
