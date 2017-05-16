@@ -7,10 +7,6 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     = favicon_link_tag 'favicon.ico'
     = csrf_meta_tag
-    %link{rel: 'stylesheet', type: 'text/css', href: '/styles.css'}
-    %script{src: '/scripts.js', type: 'text/javascript'}
-    %link{rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700'}
-    %link{rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Quattrocento:400,700'}
     :javascript
       var host = window.location.host.split(':')[0];
       if (host != 'localhost') {
@@ -25,3 +21,5 @@
   %body.body#body
     = render 'layouts/flashNOTICE'
     = yield
+    %link{rel: 'stylesheet', type: 'text/css', href: '/styles.css'}
+    %script{src: '/scripts.js', type: 'text/javascript'}

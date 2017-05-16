@@ -1,3 +1,59 @@
+@font-face {
+  font-family: "Quattrocento Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Quattrocento Sans"), local("QuattrocentoSans"), url("https://fonts.gstatic.com/s/quattrocentosans/v9/efd6FGWWGX5Z3ztwLBrG9X1YW00lgGbZnyY5SugJ188.woff2") format("woff2");
+  unicode-range: U100-24F, U1E00-1EFF, U20A0-20AB, U20AD-20CF, U2C60-2C7F, UA720-A7FF; }
+
+@font-face {
+  font-family: "Quattrocento Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Quattrocento Sans"), local("QuattrocentoSans"), url("https://fonts.gstatic.com/s/quattrocentosans/v9/efd6FGWWGX5Z3ztwLBrG9czpYVnxV7fe3GzmF357o4o.woff2") format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2C6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215; }
+
+@font-face {
+  font-family: "Quattrocento Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Quattrocento Sans Bold"), local("QuattrocentoSans-Bold"), url("https://fonts.gstatic.com/s/quattrocentosans/v9/tXSgPxDl7Lk8Zr_5qX8FIYp00bKbsn_D4ns3hxoGOcoU24FapfJwyacJ6xNu5rm9.woff2") format("woff2");
+  unicode-range: U100-24F, U1E00-1EFF, U20A0-20AB, U20AD-20CF, U2C60-2C7F, UA720-A7FF; }
+
+@font-face {
+  font-family: "Quattrocento Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Quattrocento Sans Bold"), local("QuattrocentoSans-Bold"), url("https://fonts.gstatic.com/s/quattrocentosans/v9/tXSgPxDl7Lk8Zr_5qX8FISMwD46KpV4ZaXo4aI1TkGT3rGVtsTkPsbDajuO5ueQw.woff2") format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2C6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215; }
+
+@font-face {
+  font-family: "Quattrocento";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Quattrocento"), url("https://fonts.gstatic.com/s/quattrocento/v8/WZDISdyil4HsmirlOdBRFIjoYw3YTyktCCer_ilOlhE.woff2") format("woff2");
+  unicode-range: U100-24F, U1E00-1EFF, U20A0-20AB, U20AD-20CF, U2C60-2C7F, UA720-A7FF; }
+
+@font-face {
+  font-family: "Quattrocento";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Quattrocento"), url("https://fonts.gstatic.com/s/quattrocento/v8/WZDISdyil4HsmirlOdBRFBampu5_7CjHW5spxoeN3Vs.woff2") format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2C6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215; }
+
+@font-face {
+  font-family: "Quattrocento";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Quattrocento Bold"), local("Quattrocento-Bold"), url("https://fonts.gstatic.com/s/quattrocento/v8/Uvi-cRwyvqFpl9j3oT2mqkqWMeizceScn2Xpn1ZpsKI.woff2") format("woff2");
+  unicode-range: U100-24F, U1E00-1EFF, U20A0-20AB, U20AD-20CF, U2C60-2C7F, UA720-A7FF; }
+
+@font-face {
+  font-family: "Quattrocento";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Quattrocento Bold"), local("Quattrocento-Bold"), url("https://fonts.gstatic.com/s/quattrocento/v8/Uvi-cRwyvqFpl9j3oT2mqshHwsiXhsDb0smKjAA7Bek.woff2") format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2C6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215; }
+
 sub, sup {
   font-size: 75%;
   line-height: 0;
