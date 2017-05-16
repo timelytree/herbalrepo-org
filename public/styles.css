@@ -824,17 +824,16 @@ textarea {
 #herbPAGE #herbPANEL .glance, .previewCONTAINER .glance {
   background: #F5F5F5;
   position: relative;
-  width: calc(100% + 50px);
+  padding: 20px;
   left: -25px;
-  padding: 25px;
-  padding-bottom: 20px; }
+  width: calc(100% + 50px); }
   #herbPAGE #herbPANEL .glance > ul, .previewCONTAINER .glance > ul {
     display: inline-block;
-    padding: 0;
-    padding: 0 25px;
-    position: relative;
-    left: -25px;
-    width: calc(100% + 50px); }
+    width: 100%;
+    height: 100%;
+    padding-left: 0; }
+    #herbPAGE #herbPANEL .glance > ul > li, .previewCONTAINER .glance > ul > li {
+      padding: 5px; }
     #herbPAGE #herbPANEL .glance > ul li, .previewCONTAINER .glance > ul li {
       width: 33.333%;
       float: left;
@@ -960,6 +959,8 @@ textarea {
     top: 0;
     height: 100%;
     border: 1px solid #E0E0E0; }
+    #newHerbPANEL .inputCONTAINER textarea, #newHerbPANEL .previewCONTAINER textarea, #editHerbPANEL .inputCONTAINER textarea, #editHerbPANEL .previewCONTAINER textarea {
+      margin: 0; }
   #newHerbPANEL .inputCONTAINER, #editHerbPANEL .inputCONTAINER {
     padding-top: 0;
     left: 0;
