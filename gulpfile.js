@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     path = require('path'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    cleanCSS = require('gulp-clean-css');
 
 var config = {
   // publicPath: ''+path.resolve('../','../')+'/public',
@@ -25,6 +26,7 @@ gulp.task('scss', function() {
   return gulp.src(config.scssPath + '*.scss')
     .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
     .pipe(scss())
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest(config.cssDestPath))
 });
 
