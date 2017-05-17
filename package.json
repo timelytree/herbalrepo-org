@@ -7,13 +7,14 @@
     "gulp-clean-css": "^3.3.0",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "*",
+    "gulp-gzip": "^1.4.0",
     "gulp-if": "*",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "*",
     "gulp-prettify": "*",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "*",
-    "gulp-uglify": "^2.0.0",
+    "gulp-uglify": "^2.1.2",
     "gulp-useref": "*"
   }
 }

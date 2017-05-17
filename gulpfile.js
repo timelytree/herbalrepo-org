@@ -2,7 +2,6 @@ var gulp = require('gulp'),
     scss = require('gulp-sass'),
     plumber = require('gulp-plumber'),
     notify = require('gulp-notify'),
-    path = require('path'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
@@ -40,6 +39,7 @@ gulp.task('js', function() {
       config.jsPath + '4_scriptExec.js'
     ])
     .pipe(concat('scripts.js'))
+    .pipe(uglify())
     .pipe(gulp.dest(config.jsDestPath))
 });
 
