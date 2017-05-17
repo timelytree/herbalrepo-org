@@ -13,6 +13,7 @@
     "gulp-plumber": "*",
     "gulp-prettify": "*",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "*",
     "gulp-uglify": "^2.1.2",
     "gulp-useref": "*"

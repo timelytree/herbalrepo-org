@@ -171,7 +171,7 @@
     }
     .herbIMG {
       @include centerImage;
-      background-image: url('../images/preloader.svg');
+      background-image: url('../../images/preloader.svg');
       background-size: 75px;
       width: 100%;
       padding-top: 100%;

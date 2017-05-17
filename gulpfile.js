@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
+    replace = require('gulp-replace'),
     cleanCSS = require('gulp-clean-css');
 
 var config = {
@@ -26,6 +27,7 @@ gulp.task('scss', function() {
     .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
     .pipe(scss())
     .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(replace('app/', ''))
     .pipe(gulp.dest(config.cssDestPath))
 });
 
