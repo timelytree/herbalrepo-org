@@ -1,4 +1,8 @@
 class ContributionsController < ApplicationController
+  def index
+    @categories = Category.all
+  end
+
   def create
     @contribution = Contribute.create(contribution_params)
 

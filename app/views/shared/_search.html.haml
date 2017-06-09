@@ -1,0 +1,5 @@
+#searchCONTAINER
+  - if (params[:controller] == 'herbs' && params[:action] == 'index') || (params[:controller] == 'herbs' && params[:action] == 'show')
+    %input{id: 'searchBAR', class: 'search', type: 'text', autocomplete: :off, placeholder: 'search for an herb...'}
+  - else
+    %input{id: 'searchBAR', class: 'search', type: 'text', autocomplete: :off, placeholder: 'filter herbs...'}

@@ -1,13 +1,6 @@
 .wrapper#herbIndexPAGE
-  = render 'layouts/adminTOOLBAR'
-  = render 'layouts/loginFORM'
-  = render 'herbs/newHerbPANEL'
+  = render 'shared/nav'
   .console
-    = render 'layouts/nav'
-    #leftPANEL
-      = render 'categories/categoryLIST'
-      %h6.title ALL HERBS
+    .content
+      = render 'shared/logo'
       = render 'herbs/herbLIST'
-    #rightPANEL.flex-c
-      #selectIND Select an herb or category to view more information
-    %img{src: '../images/logo.png', id: 'logo'}

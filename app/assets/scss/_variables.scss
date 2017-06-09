@@ -76,6 +76,8 @@ $url_7: url('https://fonts.gstatic.com/s/quattrocento/v8/Uvi-cRwyvqFpl9j3oT2mqsh
 $font1: 'Quattrocento Sans', sans-serif, monospace;
 $font2: 'Quattrocento', serif, monospace;
 $transWhite: rgba(250, 250, 250, 0.97);
+$boxShadowColour: rgba(0, 0, 0, 0.2);
+$brandGreen: #719130;
 
 $blue50: #E3F2FD;
 $blue100: #BBDEFB;
@@ -307,4 +309,32 @@ $red900: #B71C1C;
   -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
   box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #909;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #909;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #909;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #909;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #909;
+}
+
+@mixin optional-at-root($sel) { @at-root #{if(not &, $sel, selector-append(&, $sel))} { @content; } }
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') { @content; }
+  @include optional-at-root(':-moz-placeholder') { @content; }
+  @include optional-at-root('::-moz-placeholder') { @content; }
+	@include optional-at-root(':-ms-input-placeholder') { @content; }
+	@include optional-at-root('::-ms-input-placeholder') { @content; }
+  @include optional-at-root('::placeholder') { @content; }
 }

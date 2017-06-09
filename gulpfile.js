@@ -31,17 +31,31 @@ gulp.task('scss', function() {
     .pipe(gulp.dest(config.cssDestPath))
 });
 
-gulp.task('js', function() {
+gulp.task('herbJS', function() {
   return gulp.src([
       config.jsPath + 'lazyload.min.js',
       config.jsPath + 'showdown.min.js',
+      config.jsPath + 'list.min.js',
       config.jsPath + '1_scriptFrame.js',
       config.jsPath + '2_scriptCore.js',
       config.jsPath + '3_scriptInit.js',
       config.jsPath + '4_scriptExec.js'
     ])
     .pipe(concat('scripts.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
+    .pipe(gulp.dest(config.jsDestPath))
+});
+
+gulp.task('adminJS', function() {
+  return gulp.src([
+      // config.jsPath + 'lazyload.min.js',
+      // config.jsPath + 'showdown.min.js',
+      // config.jsPath + 'list.min.js',
+      config.jsPath + '1_scriptFrame.js',
+      config.jsPath + 'admin.js',
+    ])
+    .pipe(concat('admin.js'))
+    // .pipe(uglify())
     .pipe(gulp.dest(config.jsDestPath))
 });
 
@@ -63,4 +77,4 @@ gulp.task('watch', function() {
   gulp.watch(config.videoPath + '/**/*', ['videos']);
 });
 
-gulp.task('default', ['watch', 'scss', 'js', 'images', 'videos']);
+gulp.task('default', ['watch', 'scss', 'herbJS', 'adminJS', 'images', 'videos']);

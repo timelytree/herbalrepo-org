@@ -7,7 +7,7 @@ html, body {
   margin: 0;
   position: relative;
   line-height: 1;
-  background: $gray100;
+  background: $gray50;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
@@ -89,15 +89,17 @@ a {
 
 .console {
   z-index: 2;
-  width: calc(100% - 50px);
-  height: calc(100% - 50px);
-  top: 25px;
-  left: 25px;
-  border: 1px solid $gray300;
+  width: calc(100% + 25px);
+  height: calc(100% - 130px);
+  padding-top: 25px;
+  overflow-y: scroll;
 }
 
 .content {
   z-index: 3;
+  width: 584px;
+  height: auto;
+  left: calc(50% - 584px/2 - 25px);
 }
 
 input[type="text"], textarea {
@@ -175,21 +177,145 @@ textarea {
 
 ///////////////////////////////////////////////////////////////// Other elements
 //------------------------------------------------------------------------------
-#logo {
-  display: none;
-  position: absolute;
-  bottom: -10%;
-  left: -10%;
-  width: 40%;
-  margin-right: 10px;
-  opacity: 0.05;
+#nav {
+  width: 100%;
+  height: 130px;
+  position: relative;
+  z-index: 10;
+  #navButtons, #navCategories {
+    @include display-flex;
+    @include flex-row;
+    @include flex-center;
+    position: relative;
+    border-bottom: 1px solid $gray300;
+    width: 100%;
+    li {
+      list-style: none;
+      transition: 150ms;
+      &:hover, &.active {
+        transition: 150ms;
+      }
+    }
+  }
+  #navButtons {
+    height: 30px;
+    background: $gray50;
+    li {
+      &:hover, &.active {
+        background-color: white;
+      }
+      a {
+        @include flex-c;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0 20px;
+      }
+    }
+  }
+  #navCategories {
+    height: 100px;
+    background-color: white;
+    li {
+      width: 105px;
+      height: 100%;
+      position: relative;
+      &:hover, &.active {
+        &:after {
+          transition: 150ms;
+          height: 2px;
+        }
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: $brandGreen;
+      }
+      a {
+        @include flex-c;
+        width: 100%;
+        height: 100%;
+        img {
+          width: 30px;
+          margin-bottom: 10px;
+        }
+        p {
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 12px;
+          line-height: 14px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }
+
+#searchCONTAINER, #logoCONTAINER {
+  margin-bottom: 50px;
+}
+
+#searchCONTAINER {
+  p {
+    width :100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  #searchBAR {
+    @include placeholder {
+      opacity: 1;
+      font-style: italic;
+      color: $gray500;
+    }
+    width: 100%;
+    margin:0 auto;
+    border-radius: 4px;
+    font-size: 20px;
+    line-height: 22px;
+    padding: 15px;
+    transition: 150ms;
+    &:active, &:focus {
+      transition: 150ms;
+      border-color: $brandGreen;
+    }
+  }
+}
+
+#logoCONTAINER {
+  text-align: center;
+  a {
+    display: inline-block;
+  }
+  #logo {
+    width: 150px;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 #loginB, #adminTOOLBAR {
   position: absolute;
   bottom: 0;
   right: 25px;
   height: 25px;
+  z-index: 10;
 }
 
 #loginB, #logoutB {
@@ -296,73 +422,89 @@ textarea {
   }
 }
 
-#nav {
-  @include display-flex;
-  @include flex-middle;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50px;
-  border-right: 1px solid $gray300;
-  border-bottom: 1px solid $gray300;
-  z-index: 1000;
-  background: $gray100;
-  .navB {
-    @include flex-c;
-    height: 100%;
-    border-right: 1px solid $gray300;
-    padding: 0 15px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 14px;
-    &.highlightB {
-      background: $green100;
-    }
-    &:hover {
-      background: white;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  .shareB {
-    @include flex-c;
-    width: 50px;
-    img {
-      width: 19px;
-      opacity: 0.7;
-    }
-  }
-}
+// #nav {
+//   @include display-flex;
+//   @include flex-middle;
+//   display: none;
+//   position: relative;
+//   width: 100%;
+//   height: 50px;
+//   border-bottom: 1px solid $gray300;
+//   z-index: 10;
+//   background: $gray100;
+//   .navB {
+//     @include flex-c;
+//     height: 100%;
+//     padding: 0 15px;
+//     cursor: pointer;
+//     text-transform: uppercase;
+//     font-size: 12px;
+//     line-height: 14px;
+//     &.highlightB {
+//       background: $green100;
+//     }
+//     &:hover {
+//       background: white;
+//     }
+//     &:last-child {
+//       margin-right: 0;
+//     }
+//   }
+//   .shareB {
+//     @include flex-c;
+//     width: 50px;
+//     img {
+//       width: 19px;
+//       opacity: 0.7;
+//     }
+//   }
+// }
 
-#leftPANEL, #rightPANEL {
-  width: 50%;
-  height: 100%;
-  float: left;
-  position: relative;
-  z-index: 10;
-}
-#leftPANEL {
-  padding-top: 50px;
-  padding-bottom: 10px;
-  border-right: 1px solid $gray300;
-  overflow-y: scroll;
-  .title {
-    display: none;
-    padding: 0 10px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
-}
+// #leftPANEL {
+//   margin-right: 25px;
+//   float: left;
+//   z-index: 10;
+//   position: absolute;
+//   top: 0;
+//   left: calc(50% - 512px - 25px);
+//   width: 584px;
+//   height: 100%;
+//   padding-top: 25px;
+//   .description {
+//     margin-bottom: 25px;
+//   }
+// }
 #rightPANEL {
   background: white;
+  width: 415px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 568px;
+  border-bottom: 0 none;
+  position: fixed;
+  top: 125px;
+  right: calc(50% - 512px + 25px);
+  -webkit-box-shadow: 0 1px 2px #777;
+  -moz-box-shadow: 0 2px 1px #777;
+  box-shadow: 0 2px 1px #777;
   &.active {
     #editHerbB {
       opacity: 1;
       visibility: visible;
     }
+  }
+  a {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  img {
+    width: 150px;
+    margin-bottom: 25px;
+  }
+  #selectIND {
+    margin-top: 25px;
+    width: 60%;
+    font-weight: 600;
+    text-align: center;
   }
 }
 
@@ -403,6 +545,9 @@ textarea {
   display: none;
 }
 
+.title {
+  margin-bottom: 10px;
+}
 
 
 //

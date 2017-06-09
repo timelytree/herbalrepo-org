@@ -1,21 +1,8 @@
 .wrapper#categoryPAGE
-  = render 'layouts/adminTOOLBAR'
-  = render 'layouts/loginFORM'
-  = render 'herbs/newHerbPANEL'
+  = render 'shared/nav'
   .console
-    = render 'layouts/nav'
-    #leftPANEL
-      = render 'categories/categoryLIST'
-      %h6.title
-        - if params[:controller] == 'categories'
-          = @category.name
-        - elsif session[:current_category] == nil
-          All Herbs
-        - else
-          = session[:current_category]
-      = render 'herbs/herbLIST'
-    .categoryPANEL#rightPANEL.flex-c
-      %div.flex-c
-        %img{src: "../images/categories/#{strip_string(@category.name.downcase)}.svg", class: 'categoryIMG'}
+    .content
+      #categoryTITLE
+        %img{src: "../images/categories/#{strip_string(@category.name.downcase)}.svg"}
         %h5= @category.name
-    %img{src: '../images/logo.png', id: 'logo'}
+      = render 'herbs/herbLIST'

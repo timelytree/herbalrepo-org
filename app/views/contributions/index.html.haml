@@ -1,11 +1,12 @@
 .wrapper.page#contributePAGE
+  = render 'layouts/nav'
+  = render 'categories/categoryLIST'
   = render 'layouts/adminTOOLBAR'
   = render 'layouts/loginFORM'
   = render 'herbs/newHerbPANEL'
   .console
     #closeB
       %img{src: '../images/icons/close_icon_black.svg'}
-    = render 'layouts/nav'
     #leftPANEL
       %h6.header CONTRIBUTE
       .Row

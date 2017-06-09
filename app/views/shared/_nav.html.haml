@@ -1,0 +1,14 @@
+%nav#nav
+  %ul#navButtons
+    %li
+      %a{href: "/"} Home
+    %li
+      %a{href: "/about"} About
+    %li
+      %a{href: "/contribute"} Contribute
+  %ul#navCategories
+    - @categories.each do |category|
+      %li{class: "navCategoryTILE #{session[:current_category] == category.name.downcase ? 'active' : ''}", data:{category: category.name.downcase}}
+        %a{href: "/category/#{category.slug}"}
+          %img{src: "../images/icons/#{strip_string(category.name.downcase)}_icon_black.svg"}
+          %p= category.name
