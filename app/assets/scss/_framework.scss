@@ -85,6 +85,31 @@ a {
 
 .wrapper {
   z-index: 1;
+  &.minimized {
+    .console {
+      height: calc(100% - 100px);
+    }
+    #nav {
+      height: 100px;
+      #navCategories {
+        height: 50px;
+        li {
+          img {
+            @include transform(translateY(5px));
+            margin: 0;
+            transition: 150ms;
+          }
+          a {
+            p {
+              @include transform(translateY(-15px));
+              opacity: 0;
+              transition: 150ms;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .console {
@@ -93,6 +118,7 @@ a {
   height: calc(100% - 150px);
   padding-top: 25px;
   overflow-y: scroll;
+  transition: 150ms;
 }
 
 .content {
@@ -118,15 +144,9 @@ input[type="text"] {
 input[type="submit"] {
   border: 0;
   border-radius: 0;
-  padding: 10px 15px;
-  background: $gray300;
-  font-size: 12px;
-  line-height: 14px;
-  text-transform: uppercase;
-  transition: 150ms;
-  &:hover {
-    background: $green200;
-  }
+  background: transparent;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 #flashNOTICE {
@@ -208,6 +228,7 @@ input[type="submit"] {
   height: 150px;
   position: relative;
   z-index: 10;
+  transition: 150ms;
   #navButtons, #navCategories {
     @include display-flex;
     @include flex-row;
@@ -252,6 +273,7 @@ input[type="submit"] {
   #navCategories {
     height: 100px;
     background-color: white;
+    transition: 150ms;
     li {
       width: 105px;
       height: 100%;
@@ -278,6 +300,7 @@ input[type="submit"] {
         img {
           width: 30px;
           margin-bottom: 10px;
+          transition: 150ms;
         }
         p {
           text-transform: uppercase;
@@ -285,6 +308,7 @@ input[type="submit"] {
           font-size: 12px;
           line-height: 14px;
           font-weight: 700;
+          transition: 150ms;
         }
       }
     }
@@ -325,6 +349,10 @@ input[type="submit"] {
   #logo {
     width: 150px;
     margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  p {
+    font-weight: 700;
   }
 }
 

@@ -1,0 +1,13 @@
+.wrapper#adminNEW
+  .console
+    .content
+      = form_tag('/login', method: 'post', id: 'loginFORM', class: 'flex-c') do
+        .container.flex-c
+          .box
+            %label.subtitle{for: 'usernameFIELD'} Username
+            %input{type: 'text', name: 'username', id: 'usernameFIELD', autocomplete: :off, placeholder: 'username'}
+          .box
+            %label.subtitle{for: 'passwordFIELD'} Password
+            %input{type: 'password', name: 'password', id: 'passwordFIELD', autocomplete: :off, placeholder: 'password'}
+          .box
+            %input{type: 'submit', value: 'SUBMIT'}

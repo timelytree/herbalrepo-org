@@ -1,4 +1,6 @@
 class AdminController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @categories = Category.all
     @herbs = Herb.all
@@ -12,5 +14,13 @@ class AdminController < ApplicationController
   def edit
     @herb = Herb.find_by_slug(params[:slug])
     @categories = Category.all
+  end
+
+  private
+
+  def authenticate_user!
+    if !logged_in?
+      redirect_to login_path
+    end
   end
 end

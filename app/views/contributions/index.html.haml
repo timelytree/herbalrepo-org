@@ -1,14 +1,11 @@
 .wrapper.page#contributePAGE
-  = render 'layouts/nav'
-  = render 'categories/categoryLIST'
-  = render 'layouts/adminTOOLBAR'
-  = render 'layouts/loginFORM'
-  = render 'herbs/newHerbPANEL'
+  = render 'shared/nav'
   .console
-    #closeB
-      %img{src: '../images/icons/close_icon_black.svg'}
-    #leftPANEL
-      %h6.header CONTRIBUTE
+    .content
+      .imgCONTAINER
+        %img{src: '../images/contribute.png'}
+        %a{href: 'http://www.chrischapmanfineart.com/art/bush-poppy/', target: '_blank'} Image by Chris Chapman
+      %h6.title CONTRIBUTE
       .Row
         %p This is an official call-out to the writers, scientists, artists, designers, coders, and all out there. Whether you want to write an entire review of a medicinal plant, or want to change even a single line, fill out the form below to submit something. You might just find you've had some fun contributing to the world of knowledge!
       .Row
@@ -33,7 +30,3 @@
           = text_area_tag 'contribution[text]', '', required: true
         .Row
           = submit_tag 'submit'
-    #rightPANEL.flex-c
-      %img{src: '../images/contribute.png'}
-      %a{href: 'http://www.chrischapmanfineart.com/art/bush-poppy/', target: '_blank'} Image by Chris Chapman
-    %img{src: '../images/logo.png', id: 'logo'}

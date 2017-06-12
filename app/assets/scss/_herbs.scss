@@ -72,8 +72,8 @@
   }
 }
 
-#herbCONTAINER {
-  padding: 10px;
+#herbCONTAINER, #rightPANEL {
+  padding: 15px;
   background: white;
   border-radius: 3px;
   margin-bottom: 50px;
@@ -100,6 +100,12 @@
     line-height: 16px;
     border-bottom: 1px solid $gray300;
     padding-bottom: 5px;
+  }
+  h4 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
   }
   h6 {
     font-size: 12px;
@@ -136,9 +142,9 @@
   .glance {
     background: $gray100;
     position: relative;
-    padding: 20px;
-    left: -25px;
-    width: calc(100% + 50px);
+    padding: 15px;
+    left: -15px;
+    width: calc(100% + 30px);
     > ul {
       display: inline-block;
       width: 100%;
@@ -175,263 +181,23 @@
   }
 }
 
-// #herbPAGE {
-//   #editHerbB {
-//     display: block;
-//   }
-//   #herbPANEL {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     overflow-y: scroll;
-//     overflow-x: hidden;
-//     z-index: 100;
-//     background: white;
-//     padding: 25px;
-//     transition: 150ms;
-//   }
-// }
-//
-// #editHerbB {
-//   position: absolute;
-//   top: 25px;
-//   right: 25px;
-//   z-index: 1000;
-//   padding: 8px 15px;
-//   background: $red500;
-//   color: white;
-//   cursor: pointer;
-//   transition: 150ms;
-//   &:hover {
-//     transition: 150ms;
-//     background: $red700;
-//   }
-// }
-//
-// #newHerbPANEL, #editHerbPANEL {
-//   position: absolute;
-//   top: 25px;
-//   left: 25px;
-//   width: calc(100% - 50px);
-//   height: calc(100% - 50px);
-//   background: $gray100;
-//   z-index: 100;
-//   opacity: 0;
-//   visibility: hidden;
-//   overflow: hidden;
-//   transition: 150ms;
-//   &.active {
-//     opacity: 1;
-//     visibility: visible;
-//   }
-//   .inputCONTAINER, .previewCONTAINER {
-//     position: absolute;
-//     top: 0;
-//     height: 100%;
-//     border: 1px solid $gray300;
-//     textarea {
-//       margin: 0;
-//     }
-//   }
-//   .inputCONTAINER {
-//     padding-top: 0;
-//     left: 0;
-//     width: 50%;
-//     overflow: hidden;
-//     .section {
-//       display: inline-block;
-//       width: 100%;
-//       margin-bottom: 25px;
-//       padding: 0 25px;
-//       .box {
-//         float: left;
-//         margin-right: 25px;
-//       }
-//     }
-//     .subtitle {
-//       margin-bottom: 5px;
-//     }
-//     input[type="text"], input[type="password"], input[type="file"] {
-//       font-size: 12px;
-//       line-height: 12px;
-//       border: 1px solid $gray300;
-//       padding: 5px;
-//       font-family: monospace;
-//       width: 200px;
-//       margin-top: 5px;
-//       transition: 150ms;
-//       &:focus {
-//         transition: 150ms;
-//         border-color: black;
-//       }
-//     }
-//     .informationSECTION {
-//       padding: 0;
-//       height: calc(100% - 50px);
-//       overflow: hidden;
-//       textarea {
-//         width: calc(100% + 25px);
-//         height: 100%;
-//         padding: 25px;
-//         padding-right: 50px;
-//         border: 0;
-//         font-size: 14px;
-//         line-height: 16px;
-//         font-family: monospace;
-//       }
-//     }
-//   }
-//   .previewCONTAINER {
-//     left: 50%;
-//     width: calc(50% + 25px);
-//     padding: 25px;
-//     padding-right: 50px;
-//     background: white;
-//     overflow-y: scroll;
-//     border-left: 0;
-//   }
-//   .formTOOLBAR {
-//     @include display-flex;
-//     @include flex-end;
-//     width: 100%;
-//     height: 50px;
-//     border-bottom: 1px solid $gray300;
-//     background: $gray100;
-//     z-index: 100;
-//     position: relative;
-//     .saveB, .cancelB, .editInfoB, .newInfoB, .draftB {
-//       @include flex-c;
-//       border: 0;
-//       background: transparent;
-//       border-radius: 0;
-//       font-size: 12px;
-//       line-height: 14px;
-//       padding: 0px 25px;
-//       cursor: pointer;
-//       border-left: 1px solid $gray300;
-//       transition: 150ms;
-//       &:hover {
-//         transition: 150ms;
-//         background: white;
-//       }
-//     }
-//     .draftB {
-//       position: relative;
-//       background: $red100;
-//       width: 85px;
-//       transition: 150ms;
-//       &:hover {
-//         &:before {
-//           transition: 250ms;
-//           opacity: 1;
-//         }
-//       }
-//       &:before {
-//         content: '';
-//         width: 2px;
-//         height: 100%;
-//         background: $gray400;
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         opacity: 0;
-//         transition: 150ms;
-//       }
-//       &:after {
-//         content: 'DRAFT';
-//       }
-//       &.live {
-//         background: $green100;
-//         &:hover {
-//           background: white;
-//         }
-//         &:before {
-//           left: 100%;
-//         }
-//         &:after {
-//           content: 'LIVE';
-//         }
-//       }
-//     }
-//     .editInfoB, .newInfoB {
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       height: 49px;
-//       border-left: 0;
-//       border-right: 1px solid $gray300;
-//       &.active {
-//         background: white;
-//       }
-//     }
-//   }
-//   .formGeneralINFO {
-//     position: absolute;
-//     top: 50px;
-//     left: 0;
-//     width: 100%;
-//     z-index: 50;
-//     padding-top: 25px;
-//     background: $gray100;
-//     border-bottom: 1px solid $gray300;
-//     @include transform(translateY(-120%));
-//     transition: 150ms;
-//     &.active {
-//       @include transform(translateY(0));
-//     }
-//     .categoriesBOX {
-//       width: 100%;
-//       .checkboxROW {
-//         display: inline-block;
-//         label {
-//           display: inline-block;
-//           float: left;
-//           margin-right: 5px;
-//           font-size: 12px;
-//           line-height: 14px;
-//           float: left;
-//           cursor: pointer;
-//           border: 1px solid $gray300;
-//           padding: 10px;
-//           transition: 150ms;
-//           &:hover {
-//             background: white;
-//           }
-//         }
-//         input[type="checkbox"] {
-//           display: none;
-//           &:checked {
-//             + label {
-//               background: white;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// #editHerbPANEL {
-//   opacity: 1;
-//   visibility: visible;
-// }
-
-///////////////////////////////////////////////////////////////////////// Create
-//------------------------------------------------------------------------------
 
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //
