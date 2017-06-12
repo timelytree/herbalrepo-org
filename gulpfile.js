@@ -49,8 +49,8 @@ gulp.task('herbJS', function() {
 gulp.task('adminJS', function() {
   return gulp.src([
       // config.jsPath + 'lazyload.min.js',
-      // config.jsPath + 'showdown.min.js',
-      // config.jsPath + 'list.min.js',
+      config.jsPath + 'showdown.min.js',
+      config.jsPath + 'list.min.js',
       config.jsPath + '1_scriptFrame.js',
       config.jsPath + 'admin.js',
     ])
@@ -72,7 +72,8 @@ gulp.task('videos', function() {
 // General gulp watch task
 gulp.task('watch', function() {
   gulp.watch(config.scssPath + '/*.scss', ['scss']);
-  gulp.watch(config.jsPath + '/*.js', ['js']);
+  gulp.watch(config.jsPath + '/*.js', ['herbJS']);
+  gulp.watch(config.jsPath + '/*.js', ['adminJS']);
   gulp.watch(config.imgPath + '/**/*', ['images']);
   gulp.watch(config.videoPath + '/**/*', ['videos']);
 });

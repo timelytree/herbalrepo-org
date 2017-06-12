@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/contribute', to: 'contributions#index'
   post '/contribute', to: 'contributions#create'
 
-  # get '/herbs/:id', to: 'herbs#show'
-  # post '/herbs', to: 'herbs#create'
-  # patch '/herbs', to: 'herbs#update'
+  get '/admin', to: 'admin#index'
+  get '/admin/new-herb', to: 'admin#new'
+  get '/admin/edit/:slug', to: 'admin#edit'
 end

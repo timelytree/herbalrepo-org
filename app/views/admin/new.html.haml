@@ -1,0 +1,41 @@
+.wrapper#adminNEW
+  .console
+    = form_tag('/herbs', method: 'post', multipart: true, class: 'form flex-c') do
+      .content
+        #adminTOOLBAR
+          %h5 NEW HERB
+          #adminBUTTONS
+            %a{class: 'button', href: '/admin'} Admin
+            %a{class: 'button', href: '/admin/new-herb'} New Herb
+            %a{class: 'button', href: '/'} View Website
+        #information
+          .card
+            %label.subtitle{for: 'name'} Name
+            %input{type: 'text', name: 'herbs[name]', id: 'name', autocomplete: :off, placeholder: 'Name'}
+          .card
+            %label.subtitle{for: 'latin_name'} Latin name
+            %input{type: 'text', name: 'herbs[latin_name]', id: 'latin_name', autocomplete: :off, placeholder: 'Latin Name'}
+          .card
+            %label.subtitle{for: 'image'} Upload Image
+            %input{type: 'file', name: 'herbs[image]', id: 'image'}
+          .card
+            .subtitle Category
+            .categoriesBOX
+              - @categories.each_with_index do |c, ind|
+                .checkboxROW
+                  %input{type: 'checkbox', name: 'herbs[category_ids][]', id: "categoryCHECKBOX-#{ind}", class: 'checkbox', value: c.id, data:{id:c.id}}
+                  %label{for: "categoryCHECKBOX-#{ind}"}= c.name
+          .card
+            .subtitle Draft Status
+            .draftBOX
+              .checkboxROW
+                %input{type: 'radio', name: 'herbs[draft_status]', id: "draft_status_draft", class: 'radio', value: 'draft'}
+                %label{for: "draft_status_draft"} Draft
+              .checkboxROW
+                %input{type: 'radio', name: 'herbs[draft_status]', id: "draft_status_live", class: 'radio', value: 'live'}
+                %label{for: "draft_status_live"} Live
+      #panels
+        %textarea{name: 'herbs[information]', id: 'leftPANEL', class: '', autocomplete: :off, placeholder: 'Information'}
+        #rightPANEL.card
+      .card
+        %input{type: 'submit', value: 'SUBMIT'}

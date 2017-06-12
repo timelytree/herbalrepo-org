@@ -1,0 +1,9 @@
+#herbLIST
+  = render 'shared/search'
+  %ul.list
+    - @herbs.each_with_index do |herb|
+      %li.herbITEM
+        %a{href: "/admin/edit/#{herb.slug}"}
+          .herbItemINFO
+            %p.herbName= herb.name
+            %p.herbLatinName= herb.latin_name

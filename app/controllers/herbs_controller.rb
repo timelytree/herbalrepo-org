@@ -29,21 +29,21 @@ class HerbsController < ApplicationController
       upload(file, file_name, file_ext)
       @herb.update(thumbnail: "#{file_name}.#{file_ext}")
       flash[:notice] = "Herb [#{@herb.name.upcase}] created successfully"
-      redirect_to root_path
+      redirect_to admin_path
     else
       flash[:error] = "Something went wrong, try again!"
-      redirect_to root_path
+      redirect_to admin_path
     end
   end
 
   def update
-    @herb = Herb.find_by_slug(params[:slug])
+    @herb = Herb.find_by_slug(params[:herbs][:slug])
     if @herb.update(herb_params)
       flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
-      redirect_to "/herbs/#{@herb.slug}"
+      redirect_to "/admin/edit/#{@herb.slug}"
     else
       flash[:error] = "Something went wrong, try again!"
-      redirect_to "/herbs/#{@herb.slug}"
+      redirect_to "/admin/edit/#{@herb.slug}"
     end
   end
 
