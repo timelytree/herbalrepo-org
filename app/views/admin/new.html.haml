@@ -1,5 +1,7 @@
 .wrapper#adminNEW
   .console
+    = form_tag('/logout', method: 'delete', class: 'button') do
+      %input{type: 'submit', value: 'Logout'}
     = form_tag('/herbs', method: 'post', multipart: true, class: 'form flex-c') do
       .content
         #adminTOOLBAR
@@ -8,8 +10,6 @@
             %a{class: 'button', href: '/admin'} Admin
             %a{class: 'button', href: '/admin/new-herb'} New Herb
             %a{class: 'button', href: '/'} View Website
-            = form_tag('/logout', method: 'delete', class: 'button') do
-              %input{type: 'submit', value: 'Logout'}
         #information
           .card
             %label.subtitle{for: 'name'} Name
