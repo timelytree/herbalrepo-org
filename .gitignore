@@ -16,3 +16,4 @@ bower.json
 /config/database.yml
 /vendor/cache/
 /-backup
+/public/.htaccess
