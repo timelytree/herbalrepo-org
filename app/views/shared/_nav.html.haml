@@ -9,6 +9,9 @@
     %li
       %a{href: 'https://www.pinterest.com/herbalrepo/', target: '_blank', class: 'navB shareB'}
         %img{src: '../images/icons/pinterest_icon_black.svg'}
+  #menuB
+    %img{src: '../images/icons/menu_icon_black.svg'}
+    %img{src: '../images/icons/close_icon_black.svg'}
   %ul#navCategories
     - @categories.each do |category|
       %li{class: "navCategoryTILE #{session[:current_category] == category.name.downcase ? 'active' : ''}", data:{category: category.name.downcase}}

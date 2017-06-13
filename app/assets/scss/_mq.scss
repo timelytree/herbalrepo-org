@@ -1,274 +1,176 @@
 /////////////////////////////////////////////////////////////////////// 771-1366
 @media only screen and (min-width: 771px) and (max-width: 1150px) {
-  .categoryTILE {
-    width: calc(33.333% - 6.66667px);
-    padding-top: calc(33.333% - 6.66667px);
-    &:nth-child(5n) {
-      margin-right: 10px;
-    }
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
-    &:nth-child(n + 4) {
-      margin-top: 10px;
-    }
-    div {
-      img {
-        margin-bottom: 5px;
-      }
-    }
-  }
+
 }
 
 //////////////////////////////////////////////////////////////////////////// 770
 @media only screen and (max-width: 770px) {
-  #nav {
-    width: 100%;
-    border-right: 0;
-  }
 
-  #logo {
-    width: 80%;
-  }
-
-  #loginB, #adminTOOLBAR {
-    display: none;
-  }
-
-  #leftPANEL, #rightPANEL {
-    width: 100%;
-    float: none;
-  }
-
-  #leftPANEL {
-    border-right: 0;
-    .title {
-      display: block;
-    }
-  }
-
-  #categoryPAGE {
-    #rightPANEL {
-      display: none;
-    }
-  }
-
-  #categoryListTOGGLE {
-    display: block;
-    position: absolute;
-    top: -30px;
-    width: 100%;
-    height: 30px;
-    border-bottom: 1px solid $gray300;
-    &.active {
-      p {
-        opacity: 0;
-      }
-      img {
-        opacity: 1;
-      }
-    }
-    p {
-      @include flex-c;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      font-size: 12px;
-      line-height: 14px;
-      text-transform: uppercase;
-      opacity: 1;
-    }
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      width: 15px;
-      opacity: 0;
-    }
-  }
-
-  #herbPAGE {
-    #leftPANEL {
-      overflow-y: hidden;
-      padding-bottom: 0;
-      height: 0;
-      &.active {
-        height: auto;
-        #categoryLIST {
-          margin-top: 0;
-        }
-      }
-      #categoryLIST {
-        margin-top: -200px;
-        margin-bottom: 0;
-        transition: 150ms;
-      }
-      .title {
-        display: none;
-      }
-    }
-    #rightPANEL {
-      height: calc(100% - 30px);
-      z-index: 100;
-      transition: 150ms;
-      &.active {
-        visibility: visible;
-        margin-top: 30px;
-        height: calc(100% - 60px);
-      }
-      #selectIND {
-        display: none;
-      }
-    }
-    #herbLIST {
-      display: none;
-    }
-  }
 }
 
 //////////////////////////////////////////////////////////////////////////// 737
 @media only screen and (max-width: 737px) {
-  .console {
-    /*width: calc(100% - 30px);
-    height: calc(100% - 30px);
-    top: 15px;
-    left: 15px;*/
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
 
-  #logo {
-    width: 50%;
-    bottom: -20%;
-    left: -10%;
-  }
-
-  #nav {
-    height: 30px;
-    .shareB {
-      width: 30px;
-      img {
-        width: 12px;
-      }
-    }
-  }
-
-  #closeB {
-    height: 30px;
-    width: 30px;
-    img {
-      width: 12px;
-    }
-  }
-
-  .categoryTILE {
-    p {
-      font-size: 10px;
-      line-height: 12px;
-    }
-  }
-
-  #leftPANEL {
-    padding: 30px 30px 0 0;
-    width: calc(100% + 30px);
-  }
-
-  #herbPAGE {
-    #rightPANEL {
-      #herbPANEL {
-        padding: 15px;
-        width: calc(100% + 30px);
-        padding-right: 45px;
-        section {
-          margin-bottom: 15px;
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-
-  .page {
-    #leftPANEL {
-      padding: 45px 45px 15px 15px;
-    }
-  }
 }
 
 //////////////////////////////////////////////////////////////////////////// 415
 @media only screen and (max-width: 415px) {
-  #logo {
-    width: 80%;
-    bottom: -10%;
-    left: -10%;
+  .console {
+    padding-top: 0;
+    width: calc(100% + 15px);
+    height: calc(100% - 100px);
+  }
+
+  .content {
+    width: calc(100% - 15px);
+    left: 0;
+    padding: 15px;
+  }
+
+  #logoCONTAINER, #searchCONTAINER, #categoryTITLE, #herbCONTAINER {
+    margin-bottom: 15px;
+  }
+
+  #logoCONTAINER {
+    #logo {
+      width: 100px;
+    }
+  }
+
+  #herbCONTAINER {
+    .glance {
+      > ul {
+        li {
+          width: 50%;
+        }
+      }
+    }
   }
 
   #herbLIST {
     .herbITEM {
       width: calc(50% - 5px);
-      margin-bottom: 10px;
-      margin-right: 10px;
+      // margin-right: 5px;
       &:nth-child(3n) {
         margin-right: 10px;
       }
       &:nth-child(2n) {
         margin-right: 0;
       }
-      .herbItemINFO {
-        p {
-          &:first-child {
-            font-size: 14px;
-            line-height: 16px;
-            margin-bottom: 2px;
+      .herbItemINFO p:last-child {
+        font-size: 70%;
+      }
+    }
+  }
+
+  #categoryTITLE {
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  #menuB {
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: white;
+    z-index: 100;
+    border-bottom: 1px solid $gray300;
+    cursor: pointer;
+    img {
+      height: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      transition: 150ms;
+      &:first-child { opacity: 1; }
+      &:last-child { opacity: 0; }
+    }
+  }
+
+  #nav {
+    height: 100px;
+    &.active {
+      #menuB {
+        img {
+          transition: 150ms;
+          &:first-child { opacity: 0; }
+          &:last-child { opacity: 1; }
+        }
+      }
+      #navCategories {
+        transition: 150ms;
+        top: 100px;
+      }
+    }
+    #navCategories {
+      width: 100%;
+      height: calc(100% - 100px);
+      overflow-y: scroll;
+      position: fixed;
+      top: 100%;
+      display: block;
+      transition: 150ms;
+      .navCategoryTILE  {
+        width: calc(50% - 5px);
+        padding-top: calc(50% - 5px);
+        float: left;
+        height: auto;
+        margin-right: 10px;
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+        &:after {
+          display: none;
+        }
+        &.active {
+          a {
+            p {
+              background-color: #719130;
+              color: white;
+              padding: 4px 8px;
+            }
           }
-          &:last-child {
-            font-size: 10px;
-            line-height: 12px;
-          }
+        }
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
         }
       }
     }
   }
 
-  .categoryTILE {
-    width: calc(33.333% - 6.66667px);
-    padding-top: calc(33.333% - 6.66667px);
-    &:nth-child(5n) {
-      margin-right: 10px;
-    }
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
-    &:nth-child(n + 4) {
-      margin-top: 10px;
-    }
-    div {
-      img {
-        margin-bottom: 5px;
-      }
-    }
-  }
 }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //

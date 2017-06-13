@@ -25,7 +25,8 @@ var core = {
     herbEditPanelTOGGLE: 'herbEditPanelTOGGLE'
   },
   mobile: {
-    categoryListANIM: 'categoryListANIM'
+    categoryListANIM: 'categoryListANIM',
+    menuINT: 'menuINT'
   }
 }
 
@@ -148,8 +149,23 @@ function headerAnimOnSCROLL() {
   cons.onscroll = myEfficientFn;
 }
 
+/////////////////////////////////////////////////////////////// mobile functions
+//------------------------------------------------------------------------------
+function menuINT() {
+  var menuB = E('menuB'),
+      nav = E('nav'),
+      stat = false;
 
-
+  menuB.onclick = function() {
+    if (!stat) {
+      addC(nav, 'active');
+      stat = true;
+    } else {
+      remC(nav, 'active');
+      stat = false;
+    }
+  }
+}
 
 
 

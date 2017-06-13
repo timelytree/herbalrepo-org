@@ -67,7 +67,8 @@ var core = {
     herbEditPanelTOGGLE: 'herbEditPanelTOGGLE'
   },
   mobile: {
-    categoryListANIM: 'categoryListANIM'
+    categoryListANIM: 'categoryListANIM',
+    menuINT: 'menuINT'
   }
 }
 
@@ -190,8 +191,23 @@ function headerAnimOnSCROLL() {
   cons.onscroll = myEfficientFn;
 }
 
+/////////////////////////////////////////////////////////////// mobile functions
+//------------------------------------------------------------------------------
+function menuINT() {
+  var menuB = E('menuB'),
+      nav = E('nav'),
+      stat = false;
 
-
+  menuB.onclick = function() {
+    if (!stat) {
+      addC(nav, 'active');
+      stat = true;
+    } else {
+      remC(nav, 'active');
+      stat = false;
+    }
+  }
+}
 
 
 
@@ -213,7 +229,8 @@ function headerAnimOnSCROLL() {
 //------------------------------------------------------------------------------
 function globalInit() {
   run(init.global.flashNOTICE);
-  run(core.global.headerAnimOnSCROLL);
+  if (w.Width > 414) { run(core.global.headerAnimOnSCROLL); }
+  if (w.Width < 414) { run(core.mobile.menuINT); }
   switch (p.Current) {
     case 'herbIndexPAGE':
       run(core.global.lazyLoad);
@@ -247,3 +264,16 @@ document.addEventListener('DOMContentLoaded', function() {
   if ( w.Width > 737 ) { desktop(); }
   if ( w.Width < 737 ) { mobile(); }
 });
+
+// window.onresize = function resizeElements() {
+//   if (timeout) { return false; }
+//   else {
+//     var timeout = window.setTimeout(function() {
+//       getWindowDimensions();
+//       if (w.Width > 414) { run(core.global.headerAnimOnSCROLL); }
+//       clearTimeout(timeout);
+//   }, 2000);
+//
+//   }
+//
+// }
