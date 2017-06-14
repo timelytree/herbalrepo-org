@@ -87,9 +87,9 @@ function flashNOTICE() {
       timer = null;
 
   if (notice) {
-    addC(notice, 'activeFlashNOTICE');
+    addC(notice, 'active');
     timer = window.setTimeout(function() {
-      remC(notice, 'activeFlashNOTICE');
+      remC(notice, 'active');
       clearTimeout(timer);
     }, 2500);
   }

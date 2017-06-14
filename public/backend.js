@@ -46,7 +46,8 @@ var core = {
     listFilter: 'listFilter',
     showdownINIT: 'showdownINIT',
     markdown: 'markdown',
-    highlightCATEGORIES: 'highlightCATEGORIES'
+    highlightCATEGORIES: 'highlightCATEGORIES',
+    nameFILL: 'nameFILL'
   }
 }
 
@@ -61,9 +62,9 @@ function flashNOTICE() {
       timer = null;
 
   if (notice) {
-    addC(notice, 'activeFlashNOTICE');
+    addC(notice, 'active');
     timer = window.setTimeout(function() {
-      remC(notice, 'activeFlashNOTICE');
+      remC(notice, 'active');
       clearTimeout(timer);
     }, 2500);
   }
@@ -113,13 +114,13 @@ function listFilter() {
 }
 
 function markdown() {
-  var leftPANEL = E('leftPANEL'),
-      rightPANEL = E('rightPANEL'),
-      text = leftPANEL.innerHTML,
+  var textarea = E('leftPANEL').getElementsByTagName('textarea')[0],
+      previewTEXT = E('previewTEXT'),
+      text = textarea.innerHTML,
       html = showdownCONVERT.makeHtml(text);
 
-  rightPANEL.innerHTML = html;
-  leftPANEL.oninput = function() { rightPANEL.innerHTML = showdownCONVERT.makeHtml(leftPANEL.value); }
+  previewTEXT.innerHTML = html;
+  textarea.oninput = function() { previewTEXT.innerHTML = showdownCONVERT.makeHtml(textarea.value); }
 }
 
 function highlightCATEGORIES() {
@@ -135,6 +136,30 @@ function highlightCATEGORIES() {
     }
   }
 }
+
+function nameFILL() {
+  var nameINPUT = E('name'),
+      namePREVIEW = E('previewNAME'),
+      sciNameINPUT = E('latin_name'),
+      sciNamePREVIEW = E('previewSciNAME');
+
+  if (nameINPUT.value != '') { namePREVIEW.innerHTML = nameINPUT.value; }
+  else { namePREVIEW.innerHTML = nameINPUT.placeholder; }
+
+  if (sciNameINPUT.value != '') { sciNamePREVIEW.innerHTML = sciNameINPUT.value; }
+  else { sciNamePREVIEW.innerHTML = sciNameINPUT.placeholder; }
+
+  nameINPUT.oninput = function() { namePREVIEW.innerHTML = nameINPUT.value; }
+  sciNameINPUT.oninput = function() { sciNamePREVIEW.innerHTML = sciNameINPUT.value; }
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -161,11 +186,13 @@ function globalInit() {
     case 'adminNEW':
       run(core.global.showdownINIT);
       run(core.global.markdown);
+      run(core.global.nameFILL);
       break;
     case 'adminEDIT':
       run(core.global.showdownINIT);
       run(core.global.markdown);
       run(core.global.highlightCATEGORIES);
+      run(core.global.nameFILL);
       break;
   }
 }
@@ -176,6 +203,4 @@ document.addEventListener('DOMContentLoaded', function() {
   getWindowDimensions();
   recCurrPage();
   globalInit();
-  // if ( w.Width > 737 ) { desktop(); }
-  // if ( w.Width < 737 ) { mobile(); }
 });

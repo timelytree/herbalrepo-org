@@ -1,35 +1,34 @@
 .wrapper#adminEDIT
   .console
-    = form_tag('/logout', method: 'delete', class: 'button') do
-      %input{type: 'submit', value: 'Logout'}
-    = form_tag('/herbs', method: 'patch', multipart: true, class: 'form flex-c') do
-      %input{type: 'hidden', name: 'herbs[slug]', value: @herb.slug, autocomplete: :off}
-      .content
-        #adminTOOLBAR
-          %h5 EDIT HERB
-          #adminBUTTONS
-            %a{class: 'button', href: '/admin'} Admin
-            %a{class: 'button', href: '/admin/new-herb'} New Herb
-            %a{class: 'button', href: '/'} View Website
-
-        #information
-          .card
+    = render 'admin/nav'
+    .content
+      = form_tag('/herbs', method: 'patch', multipart: true, class: 'herbFORM') do
+        %input{type: 'hidden', name: 'herbs[slug]', value: @herb.slug, autocomplete: :off}
+        #sidebar
+          %section
+            %input{type: 'submit', id: 'submitB', value: 'SUBMIT'}
+            %button#deleteB DELETE
+            %a{href: "/herbs/#{@herb.slug}", id: 'viewB', target: '_blank'}
+              %img{src: "../../images/icons/external_link_icon_black.svg"}
+          %section
             %label.subtitle{for: 'name'} Name
             %input{type: 'text', name: 'herbs[name]', id: 'name', autocomplete: :off, placeholder: @herb.name, value: @herb.name}
-          .card
+          %section
             %label.subtitle{for: 'latin_name'} Latin name
             %input{type: 'text', name: 'herbs[latin_name]', id: 'latin_name', autocomplete: :off, placeholder: @herb.latin_name, value: @herb.latin_name}
-          .card
-            %label.subtitle{for: 'image'} Upload Image
-            %input{type: 'file', name: 'herbs[image]', id: 'image'}
-          .card
+          %section
+            .subtitle Upload Image
+            #imageUploadCONTAINER
+              %label{for: 'image'} Click here to upload
+              %input{type: 'file', name: 'herbs[image]', id: 'image'}
+          %section
             .subtitle Category
             .categoriesBOX{data:{categories:@herb.categories.ids}}
               - @categories.each_with_index do |c, ind|
                 .checkboxROW
                   %input{type: 'checkbox', name: 'herbs[category_ids][]', id: "categoryCHECKBOX-#{ind}", class: 'checkbox', value: c.id, data:{id:c.id}}
                   %label{for: "categoryCHECKBOX-#{ind}"}= c.name
-          .card
+          %section
             .subtitle Draft Status
             .draftBOX
               .checkboxROW
@@ -38,8 +37,11 @@
               .checkboxROW
                 %input{type: 'radio', name: 'herbs[draft_status]', id: "draft_status_live", class: 'radio', value: 'live', checked: @herb.draft_status == 'live' ? true : false}
                 %label{for: "draft_status_live"} Live
-      #panels
-        %textarea{name: 'herbs[information]', id: 'leftPANEL', class: '', autocomplete: :off, placeholder: 'Information'}= @herb.information
-        #rightPANEL.card
-      .card
-        %input{type: 'submit', value: 'SUBMIT'}
+        #leftPANEL
+          %textarea{name: 'herbs[information]', class: '', autocomplete: :off, placeholder: 'Information'}= @herb.information
+        #rightPANEL
+          %section
+            #previewNAME
+            #previewSciNAME
+          %section
+            #previewTEXT

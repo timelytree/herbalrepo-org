@@ -1,12 +1,5 @@
 .wrapper#adminINDEX
   .console
-    = form_tag('/logout', method: 'delete', class: 'button') do
-      %input{type: 'submit', value: 'Logout'}
+    = render 'admin/nav'
     .content
-      #adminTOOLBAR
-        %h5 ALL HERBS
-        #adminBUTTONS
-          %a{class: 'button', href: '/admin'} Admin
-          %a{class: 'button', href: '/admin/new-herb'} New Herb
-          %a{class: 'button', href: '/'} View Website
       = render 'admin/herbLIST'

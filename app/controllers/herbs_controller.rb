@@ -12,10 +12,10 @@ class HerbsController < ApplicationController
     if @back[:controller] == 'herbs' && @back[:action] == 'index' || @back[:controller] == 'herbs' && session[:current_category] == nil
       session.delete(:current_category)
       @herbs = Herb.all
-      @title = 'ALL HERBS'
     elsif @back[:controller] == 'categories' || @back[:controller] == 'herbs' && session[:current_category] != nil
       @herbs = Category.find_by_name(session[:current_category]).herbs
-      @title = session[:current_category]
+    else
+      @herbs = Herb.all
     end
   end
 

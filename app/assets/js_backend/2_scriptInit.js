@@ -7,11 +7,13 @@ function globalInit() {
     case 'adminNEW':
       run(core.global.showdownINIT);
       run(core.global.markdown);
+      run(core.global.nameFILL);
       break;
     case 'adminEDIT':
       run(core.global.showdownINIT);
       run(core.global.markdown);
       run(core.global.highlightCATEGORIES);
+      run(core.global.nameFILL);
       break;
   }
 }
@@ -22,6 +24,4 @@ document.addEventListener('DOMContentLoaded', function() {
   getWindowDimensions();
   recCurrPage();
   globalInit();
-  // if ( w.Width > 737 ) { desktop(); }
-  // if ( w.Width < 737 ) { mobile(); }
 });

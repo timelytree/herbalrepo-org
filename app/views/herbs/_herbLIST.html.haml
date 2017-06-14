@@ -9,15 +9,3 @@
             .herbItemINFO
               %p.herbName= herb.name
               %p.herbLatinName= herb.latin_name
-  -# - if logged_in?
-  -#   - @herbs.each_with_index do |herb|
-  -#     - if herb.draft_status == 'draft'
-  -#       %a{href: "/herbs/#{herb.slug}", class: 'herbITEM draftHerbITEM'}
-  -#         .draftCOVER.flex-c
-  -#           %p.draftTITLE DRAFT
-  -#           %p= herb.name
-  -#           %p= herb.latin_name
-  -#         .herbIMG{data:{original:"../uploads/#{herb.thumbnail}"}}
-  -#         .herbItemINFO
-  -#           %p= herb.name
-  -#           %p= herb.latin_name
