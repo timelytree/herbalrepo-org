@@ -178,7 +178,6 @@ function headerAnimOnSCROLL() {
   };
 
   var myEfficientFn = debounce(function() {
-    console.log('asd');
     if ((!stat) && (cons.scrollTop > 50)) {
       addC(wrapper, 'minimized');
       stat = true;
