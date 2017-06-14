@@ -189,7 +189,7 @@ textarea {
       padding: 0;
       height: 40px;
       border-bottom: 1px solid $gray300;
-      #submitB, #deleteB, #viewB {
+      #submitB, #deleteB, #viewB, #cancelB {
         @include flex-c;
         height: 100%;
         float: left;
@@ -200,7 +200,7 @@ textarea {
           transition: 150ms;
         }
       }
-      #submitB, #deleteB {
+      #submitB, #deleteB, #cancelB {
         width: calc(50% - 20px);
         border: 0;
         border-right: 1px solid $gray300;
@@ -211,14 +211,14 @@ textarea {
         line-height: 14px;
         font-weight: 700;
       }
+      #deleteB, #cancelB {
+        &:hover {
+          background: $brandRed;
+        }
+      }
       #submitB {
         &:hover {
           background: $brandGreen;
-        }
-      }
-      #deleteB {
-        &:hover {
-          background: $brandRed;
         }
       }
       #viewB {
@@ -371,6 +371,9 @@ textarea {
     line-height: 16px;
     border-bottom: 1px solid $gray300;
     padding-bottom: 5px;
+    &:first-child {
+      margin-top: 0;
+    }
   }
   h4 {
     font-weight: 600;
