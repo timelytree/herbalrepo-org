@@ -1,0 +1,340 @@
+////////////////////////////////////////////////////////////////////////// Fonts
+//------------------------------------------------------------------------------
+//fonts
+$font_0: 'Quattrocento Sans';
+$font_1: 'Quattrocento';
+
+//urls
+$url_0: url('https://fonts.gstatic.com/s/quattrocentosans/v9/efd6FGWWGX5Z3ztwLBrG9X1YW00lgGbZnyY5SugJ188.woff2');
+$url_1: url('https://fonts.gstatic.com/s/quattrocentosans/v9/efd6FGWWGX5Z3ztwLBrG9czpYVnxV7fe3GzmF357o4o.woff2');
+$url_2: url('https://fonts.gstatic.com/s/quattrocentosans/v9/tXSgPxDl7Lk8Zr_5qX8FIYp00bKbsn_D4ns3hxoGOcoU24FapfJwyacJ6xNu5rm9.woff2');
+$url_3: url('https://fonts.gstatic.com/s/quattrocentosans/v9/tXSgPxDl7Lk8Zr_5qX8FISMwD46KpV4ZaXo4aI1TkGT3rGVtsTkPsbDajuO5ueQw.woff2');
+$url_4: url('https://fonts.gstatic.com/s/quattrocento/v8/WZDISdyil4HsmirlOdBRFIjoYw3YTyktCCer_ilOlhE.woff2');
+$url_5: url('https://fonts.gstatic.com/s/quattrocento/v8/WZDISdyil4HsmirlOdBRFBampu5_7CjHW5spxoeN3Vs.woff2');
+$url_6: url('https://fonts.gstatic.com/s/quattrocento/v8/Uvi-cRwyvqFpl9j3oT2mqkqWMeizceScn2Xpn1ZpsKI.woff2');
+$url_7: url('https://fonts.gstatic.com/s/quattrocento/v8/Uvi-cRwyvqFpl9j3oT2mqshHwsiXhsDb0smKjAA7Bek.woff2');
+
+@font-face {
+	font-family: $font_0;
+	font-style: normal;
+	font-weight: 400;
+	src: local('Quattrocento Sans'), local('QuattrocentoSans'), $url_0 format('woff2');
+	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
+}
+@font-face {
+	font-family: $font_0;
+	font-style: normal;
+	font-weight: 400;
+	src: local('Quattrocento Sans'), local('QuattrocentoSans'), $url_1 format('woff2');
+	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
+}
+@font-face {
+	font-family: $font_0;
+	font-style: normal;
+	font-weight: 700;
+	src: local('Quattrocento Sans Bold'), local('QuattrocentoSans-Bold'), $url_2 format('woff2');
+	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
+}
+@font-face {
+	font-family: $font_0;
+	font-style: normal;
+	font-weight: 700;
+	src: local('Quattrocento Sans Bold'), local('QuattrocentoSans-Bold'), $url_3 format('woff2');
+	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
+}
+@font-face {
+	font-family: $font_1;
+	font-style: normal;
+	font-weight: 400;
+	src: local('Quattrocento'), $url_4 format('woff2');
+	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
+}
+@font-face {
+	font-family: $font_1;
+	font-style: normal;
+	font-weight: 400;
+	src: local('Quattrocento'), $url_5 format('woff2');
+	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
+}
+@font-face {
+	font-family: $font_1;
+	font-style: normal;
+	font-weight: 700;
+	src: local('Quattrocento Bold'), local('Quattrocento-Bold'), $url_6 format('woff2');
+	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
+}
+@font-face {
+	font-family: $font_1;
+	font-style: normal;
+	font-weight: 700;
+	src: local('Quattrocento Bold'), local('Quattrocento-Bold'), $url_7 format('woff2');
+	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
+}
+
+///////////////////////////////////////////////////////////////////////// Mixins
+//------------------------------------------------------------------------------
+$font1: 'Quattrocento Sans', sans-serif, monospace;
+$font2: 'Quattrocento', serif, monospace;
+$transWhite: rgba(250, 250, 250, 0.97);
+$boxShadowColour: rgba(0, 0, 0, 0.2);
+$brandGreen: #719130;
+
+$blue50: #E3F2FD;
+$blue100: #BBDEFB;
+$blue200: #90CAF9;
+$blue300: #64B5F6;
+$blue400: #42A5F5;
+$blue500: #2196F3;
+$blue600: #1E88E5;
+$blue700: #1976D2;
+$blue800: #1565C0;
+$blue900: #0D47A1;
+
+$gray50: #FAFAFA;
+$gray100: #F5F5F5;
+$gray200: #EEEEEE;
+$gray300: #E0E0E0;
+$gray400: #BDBDBD;
+$gray500: #9E9E9E;
+$gray600: #757575;
+$gray700: #616161;
+$gray800: #424242;
+$gray900: #212121;
+
+$bluegray50: #ECEFF1;
+$bluegray100: #CFD8DC;
+$bluegray200: #B0BEC5;
+$bluegray300: #90A4AE;
+$bluegray400: #78909C;
+$bluegray500: #607D8B;
+$bluegray600: #546E7A;
+$bluegray700: #455A64;
+$bluegray800: #37474F;
+$bluegray900: #263238;
+
+$green50: #E8F5E9;
+$green100: #C8E6C9;
+$green200: #A5D6A7;
+$green300: #81C784;
+$green400: #66BB6A;
+$green500: #4CAF50;
+$green600: #43A047;
+$green700: #388E3C;
+$green800: #2E7D32;
+$green900: #1B5E20;
+
+$red50: #FFEBEE;
+$red100: #FFCDD2;
+$red200: #EF9A9A;
+$red300: #E57373;
+$red400: #EF5350;
+$red500: #F44336;
+$red600: #E53935;
+$red700: #D32F2F;
+$red800: #C62828;
+$red900: #B71C1C;
+
+///////////////////////////////////////////////////////////////////////// Mixins
+//------------------------------------------------------------------------------
+@mixin flex-c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+@mixin flex-r {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin display-inline-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@mixin flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@mixin flex-wrap {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin flex-no-wrap {
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+@mixin flex-start {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+@mixin flex-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@mixin flex-end {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+@mixin flex-top {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  -ms-grid-row-align: flex-start;
+  align-items: flex-start;
+}
+
+@mixin flex-middle {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+@mixin flex-bottom {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  -ms-grid-row-align: flex-end;
+  align-items: flex-end;
+}
+
+@mixin flex-between {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@mixin self-start {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+@mixin self-end {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+@mixin animation($str) {
+  -webkit-animation: $str;
+  -moz-animation: $str;
+  -ms-animation: $str;
+  -o-animation: $str;
+  animation: $str;
+}
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin centerImage {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin boxShadow {
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #909;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #909;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #909;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #909;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #909;
+}
+
+@mixin optional-at-root($sel) { @at-root #{if(not &, $sel, selector-append(&, $sel))} { @content; } }
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') { @content; }
+  @include optional-at-root(':-moz-placeholder') { @content; }
+  @include optional-at-root('::-moz-placeholder') { @content; }
+	@include optional-at-root(':-ms-input-placeholder') { @content; }
+	@include optional-at-root('::-ms-input-placeholder') { @content; }
+  @include optional-at-root('::placeholder') { @content; }
+}
