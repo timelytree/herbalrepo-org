@@ -20,14 +20,9 @@ class HerbsController < ApplicationController
   end
 
   def create
-    file = params[:herbs][:image]
-    file_name = Time.now.to_i
-    file_ext = file.content_type.split('/')[1]
     @herb = Herb.create(herb_params)
 
     if @herb.save
-      upload(file, file_name, file_ext)
-      @herb.update(thumbnail: "#{file_name}.#{file_ext}")
       flash[:notice] = "Herb [#{@herb.name.upcase}] created successfully"
       redirect_to admin_path
     else
@@ -55,6 +50,7 @@ class HerbsController < ApplicationController
       :latin_name,
       :information,
       :draft_status,
+      :thumbnail,
       category_ids: []
     )
   end

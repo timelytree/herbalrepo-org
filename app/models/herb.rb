@@ -1,6 +1,8 @@
 class Herb < ActiveRecord::Base
   has_and_belongs_to_many :categories
 
+  mount_uploader :thumbnail, ImageUploader
+
   before_save :generate_slug
 
   def as_json(options={})
