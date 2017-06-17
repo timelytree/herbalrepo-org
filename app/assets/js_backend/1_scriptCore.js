@@ -9,7 +9,7 @@ var core = {
     highlightCATEGORIES: 'highlightCATEGORIES',
     nameFILL: 'nameFILL',
     uploadImagePREVIEW: 'uploadImagePREVIEW',
-    formDELETE: 'formDELETE'
+    herbDELETE: 'herbDELETE'
   }
 }
 
@@ -137,7 +137,7 @@ function uploadImagePREVIEW() {
   input.onchange = function() { displayIMG(this); }
 }
 
-function formDELETE() {
+function herbDELETE() {
   var button = E('deleteB');
   deleteB.onclick = function() {
     $.ajax({
@@ -145,12 +145,10 @@ function formDELETE() {
       type: 'DELETE',
       beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
       success: function(response) {
-        window.location.replace('/admin');
+        window.location.href = '/admin';
       }
     });
   }
-
-
 }
 
 
