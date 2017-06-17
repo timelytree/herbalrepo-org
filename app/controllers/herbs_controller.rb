@@ -19,6 +19,11 @@ class HerbsController < ApplicationController
     end
   end
 
+  def new
+    @herb = Herb.new
+    @categories = Category.all
+  end
+
   def create
     @herb = Herb.create(herb_params)
 
@@ -29,6 +34,11 @@ class HerbsController < ApplicationController
       flash[:error] = "Something went wrong, try again!"
       redirect_to admin_path
     end
+  end
+
+  def edit
+    @herb = Herb.find_by_slug(params[:slug])
+    @categories = Category.all
   end
 
   def update
