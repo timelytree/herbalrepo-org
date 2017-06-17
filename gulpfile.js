@@ -53,7 +53,7 @@ gulp.task('js_frontend', function() {
       config.js_frontend + '2_scriptInit.js',
     ])
     .pipe(concat('frontend.js'))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(config.publicPath))
 });
 
@@ -68,7 +68,7 @@ gulp.task('js_backend', function() {
       config.js_backend + '2_scriptInit.js',
     ])
     .pipe(concat('backend.js'))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(config.publicPath))
 });
 

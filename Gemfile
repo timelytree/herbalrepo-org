@@ -13,6 +13,7 @@ gem 'mysql2'
 gem 'rename'
 gem 'redcarpet'
 gem 'carrierwave'
+gem 'turnout'
 
 group :development do
   gem 'thin'

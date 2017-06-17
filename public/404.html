@@ -4,87 +4,51 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700" />
-  <style>
-  body {
-    background-color: #F5F5F5;
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    -ms-grid-row-align: center;
-    align-items: center;
-  }
-  .dialog {
-    margin: 0;
-    padding: 25px;
-    box-sizing: border-box;
-  }
-  #url {
-    font-size: 50px;
-    line-height: 52px;
-    color: #616161;
-    margin-bottom: 25px;
-  }
-  p {
-    margin: 0;
-    color: #212121;
-  }
-  #homeB {
-    display: inline-block;
-    margin-top: 25px;
-    text-decoration: none;
-    color: #616161;
-    padding: 10px 19px;
-    background: rgba(0, 0, 0, 0.05);
-    transition: 150ms;
-  }
-  #homeB:hover {
-    transition: 150ms;
-    background: rgba(0, 0, 0, 0.1);
-  }
-  #url, p {
-    width: 415px;
-  }
-  @media screen only and (max-width: 415px) {
-    #url, p {
-      width: 100%;
-    }
-  }
-  </style>
+  <link rel="stylesheet" href="./frontend.css" />
 </head>
 
 <body>
-  <script>
-  function getURL() {
-    var pathname = window.location.pathname,
-        urlDIV = document.getElementById('url');
-    urlDIV.innerHTML = pathname;
-  }
+  <style>
+    #logo, h6 {
+      margin-bottom: 25px;
+    }
+    #logo {
+      width: 150px;
+    }
+    h6, p {
+      max-width: 300px;
+      text-align: center;
+    }
+    p {
+      font-weight: 700;
+    }
+    #url {
+      font-size: 50px;
+      line-height: 52px;
+      color: #616161;
+      margin-bottom: 25px;
+    }
+    #homeB {
+      font-weight: 700;
+      text-decoration: underline;
+      color: #719130;
+    }
+    #homeB:hover {
+      color: black;
+    }
+  </style>
 
-  document.addEventListener("DOMContentLoaded", function() {
-    getURL();
-  });
+  <script>
+    function getURL() {
+      var pathname = window.location.pathname, urlDIV = document.getElementById('url');
+      urlDIV.innerHTML = pathname;
+    } document.addEventListener("DOMContentLoaded", function() { getURL(); });
   </script>
 
-  <div class="dialog">
+  <div class="wrapper flex-c">
+    <img src="./images/logo.png" id="logo" />
     <div id="url"></div>
-    <p>Looks like the page you were looking for doesn't exist.</p>
+    <h6>Looks like the page you were looking for doesn't exist.</h6>
     <a id="homeB" href="/">BACK TO HOME</a>
   </div>
 </body>
