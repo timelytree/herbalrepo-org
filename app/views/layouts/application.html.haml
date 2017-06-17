@@ -26,5 +26,6 @@
           ga('send', 'pageview');
         }
   %body.body#body
-    = render 'layouts/flashNOTICE'
+    - if params[:controller] == 'admin'
+      = render 'layouts/flashNOTICE'
     = yield

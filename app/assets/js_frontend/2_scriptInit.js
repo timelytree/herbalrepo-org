@@ -1,7 +1,6 @@
 /////////////////////////////////////////////////////// initialization functions
 //------------------------------------------------------------------------------
 function globalInit() {
-  run(init.global.flashNOTICE);
   if (w.Width > 414) { run(core.global.headerAnimOnSCROLL); }
   if (w.Width < 414) { run(core.mobile.menuINT); }
   switch (p.Current) {

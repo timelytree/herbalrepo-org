@@ -43,7 +43,6 @@ function run(func, params) { window[func](params); }
 /////////////////////////////////////////////////////////////////// function key
 var init = {
   global: {
-    flashNOTICE: 'flashNOTICE'
   },
   desktop: {
   },
@@ -71,30 +70,6 @@ var core = {
     menuINT: 'menuINT'
   }
 }
-
-//////////////////////////////////////////////////// temporary storage variables
-//------------------------------------------------------------------------------
-
-
-///////////////////////////////////////////////////////////////// init functions
-//------------------------------------------------------------------------------
-function flashNOTICE() {
-  var notice = E('flashNOTICE'),
-      countdown = cE('countdown'),
-      num = 3,
-      flash = false,
-      i = 0,
-      timer = null;
-
-  if (notice) {
-    addC(notice, 'active');
-    timer = window.setTimeout(function() {
-      remC(notice, 'active');
-      clearTimeout(timer);
-    }, 2500);
-  }
-}
-
 ///////////////////////////////////////////////////////////////// core functions
 //------------------------------------------------------------------------------
 function showdownINIT() {
@@ -227,7 +202,6 @@ function menuINT() {
 /////////////////////////////////////////////////////// initialization functions
 //------------------------------------------------------------------------------
 function globalInit() {
-  run(init.global.flashNOTICE);
   if (w.Width > 414) { run(core.global.headerAnimOnSCROLL); }
   if (w.Width < 414) { run(core.mobile.menuINT); }
   switch (p.Current) {
