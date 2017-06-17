@@ -19,6 +19,9 @@
       transition: 150ms;
       background-color: $gray200;
     }
+    &.draft {
+      border-color: $brandRed;
+    }
     a {
       padding: 10px;
     }

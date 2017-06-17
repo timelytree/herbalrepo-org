@@ -2,7 +2,7 @@
   = render 'shared/search'
   %ul.list
     - @herbs.each_with_index do |herb|
-      %li.herbITEM
+      %li.herbITEM{class: herb.draft_status == 'draft' ? 'draft' : ''}
         %a{href: "/admin/edit/#{herb.slug}"}
           .herbItemINFO
             %p.herbName= herb.name
