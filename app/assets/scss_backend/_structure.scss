@@ -21,16 +21,31 @@
   height: calc(100% - 50px);
 }
 
-input[type="text"], textarea {
+input[type="text"], input[type="password"], textarea {
+  border: 0;
+  border-radius: 0;
   @include placeholder {
     opacity: 1;
     color: $gray500;
   }
 }
 
-textarea {
+input[type="text"], input[type="password"] {
+  border: 1px solid $gray300;
+}
+
+
+input[type="submit"] {
   border: 0;
   border-radius: 0;
+  background: transparent;
+  transition: 150ms;
+  &:hover {
+    transition: 150ms;
+  }
+}
+
+textarea {
   font-size: 12px;
   font-family: monospace;
 }

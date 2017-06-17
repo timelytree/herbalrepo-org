@@ -10,13 +10,13 @@ class SessionsController < ApplicationController
       redirect_to admin_path
     else
       flash[:error] = "Something is wrong with your username or password, try again!"
-      redirect_to admin_path
+      redirect_to login_path
     end
   end
 
   def destroy
     session[:user_id] = nil
     flash[:notice] = "Logout successful"
-    redirect_to root_path
+    redirect_to login_path
   end
 end

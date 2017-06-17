@@ -2,8 +2,10 @@
 //------------------------------------------------------------------------------
 function globalInit() {
   run(core.global.flashNOTICE);
-  run(core.global.listFilter);
   switch (p.Current) {
+    case 'adminINDEX':
+      run(core.global.listFilter);
+      break;
     case 'adminNEW':
       run(core.global.showdownINIT);
       run(core.global.markdown);
