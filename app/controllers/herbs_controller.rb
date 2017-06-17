@@ -42,6 +42,15 @@ class HerbsController < ApplicationController
     end
   end
 
+  def destroy
+    @herb = Herb.find_by_slug(params[:slug])
+
+    @herb.destroy
+    flash[:notice] = "Herb [#{@herb.name.upcase}] was deleted"
+
+    redirect_to action: 'index', status: 303
+  end
+
   private
 
   def herb_params

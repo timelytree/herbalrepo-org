@@ -8,7 +8,8 @@ var core = {
     markdown: 'markdown',
     highlightCATEGORIES: 'highlightCATEGORIES',
     nameFILL: 'nameFILL',
-    uploadImagePREVIEW: 'uploadImagePREVIEW'
+    uploadImagePREVIEW: 'uploadImagePREVIEW',
+    formDELETE: 'formDELETE'
   }
 }
 
@@ -136,7 +137,21 @@ function uploadImagePREVIEW() {
   input.onchange = function() { displayIMG(this); }
 }
 
+function formDELETE() {
+  var button = E('deleteB');
+  deleteB.onclick = function() {
+    $.ajax({
+      url: '/herbs/'+gA(this, 'slug')+'',
+      type: 'DELETE',
+      beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+      success: function(response) {
+        window.location.replace('/admin');
+      }
+    });
+  }
 
+
+}
 
 
 

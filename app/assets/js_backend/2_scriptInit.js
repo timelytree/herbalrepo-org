@@ -16,6 +16,7 @@ function globalInit() {
       run(core.global.highlightCATEGORIES);
       run(core.global.nameFILL);
       run(core.global.uploadImagePREVIEW);
+      run(core.global.formDELETE);
       break;
   }
 }

@@ -62,6 +62,7 @@ gulp.task('js_backend', function() {
   return gulp.src([
       config.js_libraries + 'showdown.min.js',
       config.js_libraries + 'list.min.js',
+      config.js_libraries + 'jqueryAjax.min.js',
       config.js_libraries + '_scriptFrame.js',
       config.js_backend + '1_scriptCore.js',
       config.js_backend + '2_scriptInit.js',

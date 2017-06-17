@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/herbs/:slug', to: 'herbs#show'
   post '/herbs', to: 'herbs#create'
   patch '/herbs', to: 'herbs#update'
+  delete '/herbs/:slug', to: 'herbs#destroy'
 
   get '/category', to: 'pages#landing'
   get '/category/:slug', to: 'categories#show'

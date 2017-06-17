@@ -7,7 +7,7 @@
         #sidebar
           %section
             %input{type: 'submit', id: 'submitB', value: 'SUBMIT'}
-            %button#deleteB DELETE
+            #deleteB{data:{slug: @herb.slug}} DELETE
             %a{href: "/herbs/#{@herb.slug}", id: 'viewB', target: '_blank'}
               %img{src: "../../images/icons/external_link_icon_black.svg"}
           %section

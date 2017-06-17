@@ -213,6 +213,7 @@ textarea {
         font-weight: 700;
       }
       #deleteB, #cancelB {
+        cursor: pointer;
         &:hover {
           background: $brandRed;
         }
