@@ -5,6 +5,9 @@
       - if herb.draft_status == 'live'
         %li.herbITEM
           %a{href: "/herbs/#{herb.slug}"}
+            - if herb.thumbnail.url == nil
+              .thumbnailMissingIND
+                %p Image not available
             .herbIMG{data:{original:"#{herb.thumbnail.url.to_s}"}}
             .herbItemINFO
               %p.herbName= herb.name

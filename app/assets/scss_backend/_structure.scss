@@ -281,6 +281,14 @@ textarea {
         }
       }
     }
+    #imagePreviewCONTAINER {
+      display: none;
+      width: 100%;
+      height: auto;
+      &.active {
+        display: block;
+      }
+    }
     #imageUploadCONTAINER {
       width: 100%;
       height: 100%;

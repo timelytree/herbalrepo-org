@@ -20,40 +20,27 @@
     &:nth-child(3n) {
       margin-right: 0;
     }
-    &.draftHerbITEM {
-      .draftCOVER {
+    .thumbnailMissingIND {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-top: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      p {
+        @include flex-c;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(250, 250, 250, 0.95);
-        border: 5px solid $gray300;
-        transition: 250ms;
-        &:hover {
-          transition: 250ms;
-          background: rgba(255, 255, 255, 1);
-        }
-        .draftTITLE {
-          font-size: 20px;
-          line-height: 22px;
-          font-weight: 700;
-          margin-bottom: 15px;
-          padding-bottom: 15px;
-          width: 80%;
-          border-bottom: 1px solid $gray400;
-          text-align: center;
-        }
-        p:last-child {
-          font-style: italic;
-          font-size: 12px;
-          line-height: 14px;
-        }
+        margin: auto;
+        text-align: center;
       }
     }
     .herbIMG {
       @include centerImage;
-      background-image: url('../../images/preloader.svg');
+      background-image: url('../../images/herb_placeholder.png');
       background-size: 75px;
       width: 100%;
       padding-top: 100%;

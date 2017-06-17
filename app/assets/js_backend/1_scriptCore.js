@@ -7,7 +7,8 @@ var core = {
     showdownINIT: 'showdownINIT',
     markdown: 'markdown',
     highlightCATEGORIES: 'highlightCATEGORIES',
-    nameFILL: 'nameFILL'
+    nameFILL: 'nameFILL',
+    uploadImagePREVIEW: 'uploadImagePREVIEW'
   }
 }
 
@@ -113,7 +114,27 @@ function nameFILL() {
   sciNameINPUT.oninput = function() { sciNamePREVIEW.innerHTML = sciNameINPUT.value; }
 }
 
+function uploadImagePREVIEW() {
+  var input = E('thumbnail'),
+      previewCONTAINER = E('imagePreviewCONTAINER');
 
+  function displayIMG(input) {
+    var reader = new FileReader();
+    if (input.files && input.files[0]) {
+      reader.onload = function (e) {
+        var image = new Image();
+        image.src = e.target.result;
+        image.onload = function() {
+          previewCONTAINER.setAttribute('src', e.target.result);
+          addC(previewCONTAINER, 'active');
+        }
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  input.onchange = function() { displayIMG(this); }
+}
 
 
 

@@ -8,12 +8,14 @@ function globalInit() {
       run(core.global.showdownINIT);
       run(core.global.markdown);
       run(core.global.nameFILL);
+      run(core.global.uploadImagePREVIEW);
       break;
     case 'adminEDIT':
       run(core.global.showdownINIT);
       run(core.global.markdown);
       run(core.global.highlightCATEGORIES);
       run(core.global.nameFILL);
+      run(core.global.uploadImagePREVIEW);
       break;
   }
 }
