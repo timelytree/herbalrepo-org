@@ -7,11 +7,12 @@ Rails.application.routes.draw do
 
   get '/herbs', to: 'herbs#index'
   get '/herbs/:slug', to: 'herbs#show'
-  get '/admin/new-herb', to: 'herbs#new'
   post '/herbs', to: 'herbs#create'
-  get '/admin/edit/:slug', to: 'herbs#edit'
   patch '/herbs', to: 'herbs#update'
   delete '/herbs/:slug', to: 'herbs#destroy'
+
+  get '/admin/new-herb', to: 'herbs#new'
+  get '/admin/edit/:slug', to: 'herbs#edit'
 
   get '/category', to: 'pages#landing'
   get '/category/:slug', to: 'categories#show'

@@ -24,11 +24,11 @@ function flashNOTICE() {
       timer = null;
 
   if (notice) {
-    addC(notice, 'active');
+    delayAddC(notice, 'active', 250);
     timer = window.setTimeout(function() {
       remC(notice, 'active');
       clearTimeout(timer);
-    }, 2500);
+    }, 3000);
   }
 }
 

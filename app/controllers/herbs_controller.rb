@@ -47,7 +47,7 @@ class HerbsController < ApplicationController
       flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
       redirect_to "/admin/edit/#{@herb.slug}"
     else
-      flash[:error] = "Something went wrong, try again!"
+      flash.now[:error] = "Something went wrong, try again!"
       redirect_to "/admin/edit/#{@herb.slug}"
     end
   end
