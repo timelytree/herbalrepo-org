@@ -46,10 +46,10 @@ class HerbsController < ApplicationController
 
     if @herb.update(herb_params)
       flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
-      redirect_to "/admin/herb/edit/#{@herb.slug}"
+      redirect_to "/admin/herb/#{@herb.slug}/edit"
     else
       flash.now[:error] = "Something went wrong, try again!"
-      redirect_to "/admin/herb/edit/#{@herb.slug}"
+      redirect_to "/admin/herb/#{@herb.slug}/edit"
     end
   end
 

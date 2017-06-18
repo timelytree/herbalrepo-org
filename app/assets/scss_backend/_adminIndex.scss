@@ -1,4 +1,9 @@
 #adminINDEX, #adminShowUserHerbs {
+  .header {
+    width: 120px;
+    border-right: 1px solid $gray300;
+    height: 100%;
+  }
   #searchBAR {
     @include placeholder {
       opacity: 1;
@@ -8,7 +13,7 @@
     }
     float: left;
     height: 100%;
-    width: calc(100% - 100px);
+    width: calc(100% - 240px);
     padding: 0;
     margin: 0;
     border: 0;
@@ -19,7 +24,6 @@
   .toolbar {
     padding-left: 0;
     .toolbarB {
-      width: 100px;
       padding: 0;
     }
   }

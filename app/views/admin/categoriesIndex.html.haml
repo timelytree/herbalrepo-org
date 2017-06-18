@@ -1,8 +1,12 @@
 .wrapper#categoriesINDEX
   .console
     = render 'admin/nav'
+    .toolbar
+      .header ALL CATEGORIES
+      .buttons
+        %a{class: 'toolbarB', href: '/admin/category/new'} New Category
     .content
       %ul.list
         - @categories.each do |category|
           %li.item
-            %a{href: "/admin/category/edit/#{category.slug}"}= category.name
+            %a{href: "/admin/category/#{category.slug}/edit"}= category.name

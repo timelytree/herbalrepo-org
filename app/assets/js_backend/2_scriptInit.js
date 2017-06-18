@@ -18,10 +18,14 @@ function globalInit() {
       run(core.global.highlightCATEGORIES);
       run(core.global.nameFILL);
       run(core.global.uploadImagePREVIEW);
-      run(core.global.herbDELETE);
+      run(core.global.itemDELETE, 'herbs');
       break;
     case 'adminShowUserHerbs':
       run(core.global.listFilter, 'adminShowUserHerbs');
+      break;
+    case 'categoryEDIT':
+      run(core.global.uploadImagePREVIEW);
+      run(core.global.itemDELETE, 'categories');
       break;
   }
 }

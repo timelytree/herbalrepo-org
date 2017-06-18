@@ -3,6 +3,6 @@
   .console
     .content
       #categoryTITLE
-        %img{src: "../images/categories/#{strip_string(@category.name.downcase)}.svg"}
+        %img{src: "#{public_path}/#{@category.thumbnail.url.to_s}"}
         %h5= @category.name
       = render 'herbs/herbLIST'

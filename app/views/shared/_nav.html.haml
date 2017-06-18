@@ -16,5 +16,5 @@
     - @categories.each do |category|
       %li{class: "navCategoryTILE #{session[:current_category] == category.name.downcase ? 'active' : ''}", data:{category: category.name.downcase}}
         %a{href: "/category/#{category.slug}"}
-          %img{src: "../images/icons/#{strip_string(category.name.downcase)}_icon_black.svg"}
+          %img{src: "#{public_path}/#{category.icon.url.to_s}"}
           %p= category.name

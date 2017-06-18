@@ -2,13 +2,13 @@
   .buttons
     .primary
       %a{class: 'primaryNavB', href: '/admin/herbs'} Herbs
-      -# %a{class: 'primaryNavB', href: '/admin/categories'} Categories
+      %a{class: 'primaryNavB', href: '/admin/categories'} Categories
       -# %a{class: 'primaryNavB', href: '/admin/users'} Users
     .secondary
       %a{class: 'secondaryNavB', href: '/', target: '_blank'} View Website
       = form_tag('/logout', method: 'delete') do
         %input{type: 'submit', value: 'Logout', class: 'secondaryNavB', id: 'logoutB'}
-  %a{href: "/admin/user/#{current_user.slug}", class: 'profile'}
+  %a{href: "/admin/user/#{current_user.slug}/herbs", class: 'profile'}
     - if current_user.avatar
       %img{src: '#', class: 'avatar'}
     - else

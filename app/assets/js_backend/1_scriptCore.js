@@ -9,7 +9,7 @@ var core = {
     highlightCATEGORIES: 'highlightCATEGORIES',
     nameFILL: 'nameFILL',
     uploadImagePREVIEW: 'uploadImagePREVIEW',
-    herbDELETE: 'herbDELETE'
+    itemDELETE: 'itemDELETE'
   }
 }
 
@@ -116,36 +116,42 @@ function nameFILL() {
 }
 
 function uploadImagePREVIEW() {
-  var input = E('thumbnail'),
-      previewCONTAINER = E('imagePreviewCONTAINER');
+  var inputs = document.querySelectorAll("input[type=file]"),
+      previews = cE('imagePreviewCONTAINER');
 
-  function displayIMG(input) {
-    var reader = new FileReader();
+  function displayIMG(input, num) {
+    var reader = new FileReader(),
+        preview = previews[num];
     if (input.files && input.files[0]) {
       reader.onload = function (e) {
         var image = new Image();
         image.src = e.target.result;
         image.onload = function() {
-          previewCONTAINER.setAttribute('src', e.target.result);
-          addC(previewCONTAINER, 'active');
+          preview.setAttribute('src', e.target.result);
+          addC(preview, 'active');
         }
       }
       reader.readAsDataURL(input.files[0]);
     }
   }
 
-  input.onchange = function() { displayIMG(this); }
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].onchange = function() {
+      var num = gA(this, 'num');
+      displayIMG(this, num);
+    }
+  }
 }
 
-function herbDELETE() {
+function itemDELETE(controller) {
   var button = E('deleteB');
   deleteB.onclick = function() {
     $.ajax({
-      url: '/herbs/'+gA(this, 'slug')+'',
+      url: '/'+controller+'/'+gA(this, 'slug')+'',
       type: 'DELETE',
       beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
       success: function(response) {
-        window.location.href = '/admin';
+        window.location.href = '/admin/'+controller+'';
       }
     });
   }
