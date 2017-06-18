@@ -1,0 +1,12 @@
+.wrapper#adminShowUserHerbs
+  .console
+    = render 'admin/nav'
+    .content
+      #userProfile
+        - if @user.avatar
+          %img{src: '#', id: 'userAvatar'}
+        - else
+          %img{src: '../../images/userPlaceholder.png', id: 'userAvatar'}
+        %h5= @user.name
+        %p= @user.username
+      = render 'admin/herbLIST'

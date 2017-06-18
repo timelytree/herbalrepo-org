@@ -1,0 +1,17 @@
+#userProfile {
+  @include flex-c;
+  width: 100%;
+  margin: 25px 0 10px 0;
+  #userAvatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(0, 0, 0, 0.1), 0 2px 5px 4px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(0, 0, 0, 0.1), 0 2px 5px 4px rgba(0,0,0,.1);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(0, 0, 0, 0.1), 0 2px 5px 4px rgba(0,0,0,.1);
+  }
+  h5 {
+    margin-bottom: 5px;
+  }
+}

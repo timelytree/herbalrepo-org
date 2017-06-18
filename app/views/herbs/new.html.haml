@@ -3,6 +3,7 @@
     = render 'admin/nav'
     .content
       = form_tag('/herbs', method: 'post', multipart: true, class: 'herbFORM') do
+        %input{type: 'hidden', name: 'herbs[user_id]', value: session[:user_id], autocomplete: :off}
         #sidebar
           %section
             %input{type: 'submit', id: 'submitB', value: 'SUBMIT'}

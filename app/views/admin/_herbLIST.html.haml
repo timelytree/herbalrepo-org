@@ -3,7 +3,9 @@
   %ul.list
     - @herbs.each_with_index do |herb|
       %li.herbITEM{class: herb.draft_status == 'draft' ? 'draft' : ''}
-        %a{href: "/admin/edit/#{herb.slug}"}
-          .herbItemINFO
-            %p.herbName= herb.name
-            %p.herbLatinName= herb.latin_name
+        .buttons
+          %a{href: "/admin/edit/#{herb.slug}"} Edit Herb
+          %a{href: "/admin/user/#{herb.user.slug}"}= "Posted by #{herb.user.username.downcase}"
+        .herbItemINFO
+          %p.herbName= herb.name
+          %p.herbLatinName= herb.latin_name

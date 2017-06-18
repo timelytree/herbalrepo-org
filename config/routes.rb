@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   post '/contribute', to: 'contributions#create'
 
   get '/admin', to: 'admin#index'
+
+  get '/admin/user/:slug', to: 'admin#showUserHerbs'
+  patch '/admin/user', to: 'admin#updateUserProfile'
 end

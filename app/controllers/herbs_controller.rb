@@ -70,6 +70,7 @@ class HerbsController < ApplicationController
       :information,
       :draft_status,
       :thumbnail,
+      :user_id,
       category_ids: []
     )
   end
