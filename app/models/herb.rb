@@ -6,6 +6,9 @@ class Herb < ActiveRecord::Base
 
   before_save :generate_slug
 
+  validates :name, presence: true
+  validates :latin_name, presence: true
+
   def as_json(options={})
     {
       id: self.id,
@@ -23,18 +26,10 @@ class Herb < ActiveRecord::Base
   end
 
   def generate_slug
-    #strip the string & downcase
     name = self.name.strip.downcase
-    #blow away apostrophes
     name.gsub! /['`]/, ""
-    # @ --> at, and & --> and
-      # title.gsub! /\s*@\s*/, " at "
-      # title.gsub! /\s*&\s*/, " and "
-    #replace all non alphanumeric, underscore or periods with underscore
     name.gsub! /[^0-9A-Za-z]/, '-'
-    #convert double dash to single dash
     name.gsub! /-+/,"-"
-    #strip off leading/trailing dash
     name.gsub! /\A[-\.]+|[-\.]+\z/, ""
     self.slug = name
   end

@@ -68,11 +68,11 @@ function showdownINIT() {
   });
 }
 
-function listFilter() {
+function listFilter(page) {
   var options = {
     valueNames: ['herbName', 'herbLatinName']
   };
-  var hackerList = new List('herbLIST', options);
+  var hackerList = new List(page, options);
 }
 
 function markdown() {

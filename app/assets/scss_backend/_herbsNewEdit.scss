@@ -4,6 +4,35 @@
   .content {
     padding-top: 0;
   }
+
+  .toolbar {
+    @include flex-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .toolbarB {
+      cursor: pointer;
+      font-weight: 700;
+      width: 100px;
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    #deleteB, #cancelB {
+      &:hover { background-color: $brandRed; }
+    }
+    #submitB {
+      &:hover { background-color: $brandGreen; }
+    }
+    #viewB {
+      width: 50px;
+      &:hover { background-color: $gray200; }
+      img {
+        width: 15px;
+      }
+    }
+  }
 }
 
 .herbFORM {
@@ -13,20 +42,21 @@
   padding-top: 50px;
 }
 
-#herbHEADER {
-  @include display-flex;
-  @include flex-row;
-  @include flex-middle;
-  width: 100%;
-  height: 50px;
-  border-bottom: 1px solid $gray300;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: white;
-  padding: 0 25px;
-  // font-weight: 700;
-}
+
+// #herbHEADER {
+//   @include display-flex;
+//   @include flex-row;
+//   @include flex-middle;
+//   width: 100%;
+//   height: 50px;
+//   border-bottom: 1px solid $gray300;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   background: white;
+//   padding: 0 25px;
+//   // font-weight: 700;
+// }
 
 #sidebar, #leftPANEL, #rightPANEL {
   height: 100%;
@@ -44,58 +74,11 @@
 
 #sidebar {
   width: 300px;
+  padding-top: 15px;
   section {
     width: 100%;
     margin-bottom: 15px;
     padding: 0 15px;
-    &:first-child {
-      padding: 0;
-      height: 40px;
-      border-bottom: 1px solid $gray300;
-      #submitB, #deleteB, #viewB, #cancelB {
-        @include flex-c;
-        height: 100%;
-        float: left;
-        background: white;
-        transition: 150ms;
-        &:hover {
-          color: white;
-          transition: 150ms;
-        }
-      }
-      #submitB, #deleteB, #cancelB {
-        width: calc(50% - 20px);
-        border: 0;
-        border-right: 1px solid $gray300;
-        border-radius: 0;
-        margin: 0;
-        padding: 0;
-        font-size: 12px;
-        line-height: 14px;
-        font-weight: 700;
-      }
-      #deleteB, #cancelB {
-        cursor: pointer;
-        &:hover {
-          background: $brandRed;
-        }
-      }
-      #submitB {
-        &:hover {
-          background: $brandGreen;
-        }
-      }
-      #viewB {
-        width: 40px;
-        cursor: pointer;
-        &:hover {
-          background: $gray200;
-        }
-        img {
-          width: 15px;
-        }
-      }
-    }
     .subtitle {
       margin-bottom: 5px;
     }

@@ -6,17 +6,17 @@ function globalInit() {
   switch (p.Current) {
     case 'herbIndexPAGE':
       run(core.global.lazyLoad);
-      run(core.global.listFilter);
+      run(core.global.listFilter, 'herbIndexPAGE');
       break;
     case 'herbPAGE':
       run(core.global.lazyLoad);
-      run(core.global.listFilter);
+      run(core.global.listFilter, 'herbPAGE');
       run(core.global.showdownINIT);
       run(core.global.markdown);
       break;
     case 'categoryPAGE':
       run(core.global.lazyLoad);
-      run(core.global.listFilter);
+      run(core.global.listFilter, 'categoryPAGE');
       break;
   }
 }

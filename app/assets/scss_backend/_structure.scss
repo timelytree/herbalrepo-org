@@ -19,7 +19,6 @@
 .content {
   z-index: 3;
   height: calc(100% - 50px);
-  padding-top: 50px;
 }
 
 input[type="text"], input[type="password"], textarea {
@@ -122,9 +121,9 @@ textarea {
       }
     }
     .secondaryNavB {
-      border-right: 1px solid $gray300;
+      // border-right: 1px solid $gray300;
       &:first-child {
-        border-left: 1px solid $gray300;
+        // border-left: 1px solid $gray300;
       }
     }
     #logoutB {
@@ -154,28 +153,41 @@ textarea {
   }
 }
 
-#searchCONTAINER {
+.toolbar {
+  @include display-flex;
+  @include flex-row;
+  @include flex-middle;
   width: 100%;
   height: 50px;
-  position: fixed;
-  top: 50px;
-  left: 0;
-  #searchBAR {
-    @include placeholder {
-      opacity: 1;
-      font-size: 20px;
-      line-height: 22px;
-      color: $gray500;
+  background: white;
+  border-bottom: 1px solid $gray300;
+  padding-left: 25px;
+  .header {
+    @include flex-r;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    span {
+      font-weight: 700;
+      margin-left: 5px;
     }
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
+  }
+  .toolbarB {
+    @include flex-c;
     border: 0;
-    text-align: center;
-    border-bottom: 1px solid $gray300;
-    font-size: 20px;
-    line-height: 22px;
+    border-radius: 0;
+    background: transparent;
+    height: 50px;
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 16px;
+    float: left;
+    border-left: 1px solid $gray300;
+    transition: 150ms;
+    &:hover {
+      transition: 150ms;
+      text-decoration: underline;
+    }
   }
 }
 

@@ -1,5 +1,8 @@
 .wrapper#adminINDEX
   .console
     = render 'admin/nav'
+    .toolbar
+      %input{id: 'searchBAR', class: 'search', type: 'text', autocomplete: :off, placeholder: 'search for an herb...'}
+      %a{class: 'toolbarB', href: '/admin/herb/new'} New Herb
     .content
       = render 'admin/herbLIST'

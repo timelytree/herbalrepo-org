@@ -4,7 +4,7 @@ function globalInit() {
   run(core.global.flashNOTICE);
   switch (p.Current) {
     case 'adminINDEX':
-      run(core.global.listFilter);
+      run(core.global.listFilter, 'adminINDEX');
       break;
     case 'adminNEW':
       run(core.global.showdownINIT);
@@ -19,6 +19,9 @@ function globalInit() {
       run(core.global.nameFILL);
       run(core.global.uploadImagePREVIEW);
       run(core.global.herbDELETE);
+      break;
+    case 'adminShowUserHerbs':
+      run(core.global.listFilter, 'adminShowUserHerbs');
       break;
   }
 }

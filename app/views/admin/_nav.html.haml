@@ -3,10 +3,9 @@
     .primary
       %a{class: 'primaryNavB', href: '/admin/herbs'} Herbs
       -# %a{class: 'primaryNavB', href: '/admin/categories'} Categories
-      -# %a{class: 'primaryNavB', href: '/admin/users'} Users
+      %a{class: 'primaryNavB', href: '/admin/users'} Users
     .secondary
       %a{class: 'secondaryNavB', href: '/', target: '_blank'} View Website
-      %a{class: 'secondaryNavB', href: '/admin/herb/new'} New Herb
       = form_tag('/logout', method: 'delete') do
         %input{type: 'submit', value: 'Logout', class: 'secondaryNavB', id: 'logoutB'}
   %a{href: "/admin/user/#{@loggedInUser.slug}", class: 'profile'}

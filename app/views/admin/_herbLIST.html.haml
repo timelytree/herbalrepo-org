@@ -1,5 +1,4 @@
 #herbLIST
-  = render 'shared/search'
   %ul.list
     - @herbs.each_with_index do |herb|
       %li.herbITEM{class: herb.draft_status == 'draft' ? 'draft' : ''}

@@ -4,13 +4,16 @@
     .content
       = form_tag('/herbs', method: 'patch', multipart: true, class: 'herbFORM') do
         %input{type: 'hidden', name: 'herbs[slug]', value: @herb.slug, autocomplete: :off}
-        #herbHEADER= "Now Editing: #{@herb.name}"
-        #sidebar
-          %section
-            %input{type: 'submit', id: 'submitB', value: 'SAVE'}
-            #deleteB{data:{slug: @herb.slug}} DELETE
-            %a{href: "/herbs/#{@herb.slug}", id: 'viewB', target: '_blank'}
+        .toolbar
+          .header
+            Now Editing:
+            %span= @herb.name
+          .buttons
+            %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
+            .toolbarB#deleteB{data:{slug: @herb.slug}} DELETE
+            %a{href: "/herbs/#{@herb.slug}", id: 'viewB', class: 'toolbarB', target: '_blank'}
               %img{src: "#{public_path}/images/icons/external_link_icon_black.svg"}
+        #sidebar
           %section
             %label.subtitle{for: 'name'} Name
             %input{type: 'text', name: 'herbs[name]', id: 'name', autocomplete: :off, placeholder: @herb.name, value: @herb.name}
