@@ -94,29 +94,55 @@ textarea {
 }
 
 #nav {
-  @include flex-r;
+  @include display-flex;
+  @include flex-between;
   width: 100%;
   height: 50px;
   background: white;
   border-bottom: 1px solid $gray300;
   padding-left: 10px;
-  .navB {
-    @include flex-c;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    height: 50px;
-    padding: 0 15px;
+  .buttons, .profile {
+    @include flex-r;
+    height: 100%;
+  }
+  .buttons {
+    .navB {
+      @include flex-c;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      height: 50px;
+      padding: 0 15px;
+      font-size: 14px;
+      line-height: 16px;
+      transition: 150ms;
+      &:hover {
+        transition: 150ms;
+        text-decoration: underline;
+      }
+    }
+    #logoutB {
+      opacity: 0.3;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .profile {
+    padding: 0 10px;
     transition: 150ms;
     &:hover {
       transition: 150ms;
-      text-decoration: underline;
+      p {
+        text-decoration: underline;
+      }
     }
-  }
-  #logoutB {
-    opacity: 0.3;
-    &:hover {
-      opacity: 1;
+    img {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin-right: 10px;
+      border: 1px solid $gray300;
     }
   }
 }

@@ -22,10 +22,12 @@ class HerbsController < ApplicationController
   def new
     @herb = Herb.new
     @categories = Category.all
+    @user = User.find_by_id(session[:user_id])
   end
 
   def create
     @herb = Herb.create(herb_params)
+    @user = User.find_by_id(session[:user_id])
 
     if @herb.save
       flash[:notice] = "Herb [#{@herb.name.upcase}] created successfully"
@@ -39,10 +41,13 @@ class HerbsController < ApplicationController
   def edit
     @herb = Herb.find_by_slug(params[:slug])
     @categories = Category.all
+    @user = User.find_by_id(session[:user_id])
   end
 
   def update
     @herb = Herb.find_by_slug(params[:herbs][:slug])
+    @user = User.find_by_id(session[:user_id])
+
     if @herb.update(herb_params)
       flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
       redirect_to "/admin/edit/#{@herb.slug}"

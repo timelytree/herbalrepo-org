@@ -5,11 +5,13 @@ class AdminController < ApplicationController
     user_check
     @categories = Category.all
     @herbs = Herb.all
+    @user = User.find_by_id(session[:user_id])
   end
 
   def showUserHerbs
     @user = User.find_by_slug(params[:slug])
     @herbs = @user.herbs
+    @user = User.find_by_id(session[:user_id])
   end
 
   def updateUserProfile

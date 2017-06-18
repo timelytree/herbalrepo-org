@@ -1,6 +1,13 @@
 #nav
-  %a{class: 'navB', href: '/admin'} Home
-  %a{class: 'navB', href: '/admin/new-herb'} New Herb
-  %a{class: 'navB', href: '/'} View Website
-  = form_tag('/logout', method: 'delete') do
-    %input{type: 'submit', value: 'Logout', class: 'navB', id: 'logoutB'}
+  .buttons
+    %a{class: 'navB', href: '/admin'} Home
+    %a{class: 'navB', href: '/admin/new-herb'} New Herb
+    %a{class: 'navB', href: '/'} View Website
+    = form_tag('/logout', method: 'delete') do
+      %input{type: 'submit', value: 'Logout', class: 'navB', id: 'logoutB'}
+  %a{href: "/admin/user/#{@user.slug}", class: 'profile'}
+    - if @user.avatar
+      %img{src: '#', class: 'avatar'}
+    - else
+      %img{src: '../../images/userPlaceholder.png', class: 'avatar'}
+    %p= @user.name
