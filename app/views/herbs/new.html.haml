@@ -18,10 +18,10 @@
             %input{type: 'text', name: 'herbs[latin_name]', id: 'latin_name', autocomplete: :off, placeholder: 'Latin Name'}
           %section
             .subtitle Upload Image
-            %img{src: '', id: 'imagePreviewCONTAINER'}
-            #imageUploadCONTAINER
+            %img{src: '', class: 'imagePreviewCONTAINER'}
+            .imageUploadCONTAINER
               %label{for: 'thumbnail'} Click here to upload
-              %input{type: 'file', name: 'herbs[thumbnail]', id: 'thumbnail'}
+              %input{type: 'file', name: 'herbs[thumbnail]', id: 'thumbnail', data:{num: 0}}
           %section
             .subtitle Category
             .categoriesBOX

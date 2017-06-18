@@ -22,10 +22,10 @@
             %input{type: 'text', name: 'herbs[latin_name]', id: 'latin_name', autocomplete: :off, placeholder: @herb.latin_name, value: @herb.latin_name}
           %section
             .subtitle Upload Image
-            %img{src: "#{public_path}/#{@herb.thumbnail.url.to_s}", id: 'imagePreviewCONTAINER', class: @herb.thumbnail.url != nil ? 'active' : ''}
-            #imageUploadCONTAINER
+            %img{src: "#{public_path}/#{@herb.thumbnail.url.to_s}", class: "imagePreviewCONTAINER #{@herb.thumbnail.url != nil ? 'active' : ''}"}
+            .imageUploadCONTAINER
               %label{for: 'thumbnail'} Click here to upload
-              %input{type: 'file', name: 'herbs[thumbnail]', id: 'thumbnail'}
+              %input{type: 'file', name: 'herbs[thumbnail]', id: 'thumbnail', data:{num: 0}}
           %section
             .subtitle Category
             .categoriesBOX{data:{categories:@herb.categories.ids}}
