@@ -4,8 +4,10 @@
     - @herbs.each_with_index do |herb|
       %li.herbITEM{class: herb.draft_status == 'draft' ? 'draft' : ''}
         .buttons
-          %a{href: "/admin/edit/#{herb.slug}"} Edit Herb
-          %a{href: "/admin/user/#{herb.user.slug}"}= "Posted by #{herb.user.username.downcase}"
+          %a{href: "/admin/herb/edit/#{herb.slug}"} Edit Herb
+          %a{href: "/admin/user/#{herb.user.slug}"}
+            Posted by:
+            %span= herb.user.username.downcase
         .herbItemINFO
           %p.herbName= herb.name
           %p.herbLatinName= herb.latin_name

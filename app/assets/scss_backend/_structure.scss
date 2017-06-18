@@ -101,12 +101,12 @@ textarea {
   background: white;
   border-bottom: 1px solid $gray300;
   padding-left: 10px;
-  .buttons, .profile {
+  .buttons, .profile, .primary, .secondary {
     @include flex-r;
     height: 100%;
   }
   .buttons {
-    .navB {
+    .primaryNavB, .secondaryNavB {
       @include flex-c;
       border: 0;
       border-radius: 0;
@@ -121,8 +121,15 @@ textarea {
         text-decoration: underline;
       }
     }
+    .secondaryNavB {
+      border-right: 1px solid $gray300;
+      &:first-child {
+        border-left: 1px solid $gray300;
+      }
+    }
     #logoutB {
       opacity: 0.3;
+      border: 0;
       &:hover {
         opacity: 1;
       }

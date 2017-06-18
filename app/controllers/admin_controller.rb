@@ -1,17 +1,21 @@
 class AdminController < ApplicationController
   before_action :authenticate_user!
 
-  def index
+  def herbsIndex
     user_check
     @categories = Category.all
     @herbs = Herb.all
-    @user = User.find_by_id(session[:user_id])
+    @loggedInUser = User.find_by_id(session[:user_id])
   end
 
   def showUserHerbs
+    @loggedInUser = User.find_by_id(session[:user_id])
     @user = User.find_by_slug(params[:slug])
     @herbs = @user.herbs
-    @user = User.find_by_id(session[:user_id])
+  end
+
+  def categoriesIndex
+    @categories = Category.all
   end
 
   def updateUserProfile

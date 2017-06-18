@@ -22,38 +22,38 @@ class HerbsController < ApplicationController
   def new
     @herb = Herb.new
     @categories = Category.all
-    @user = User.find_by_id(session[:user_id])
+    @loggedInUser = User.find_by_id(session[:user_id])
   end
 
   def create
     @herb = Herb.create(herb_params)
-    @user = User.find_by_id(session[:user_id])
+    @loggedInUser = User.find_by_id(session[:user_id])
 
     if @herb.save
       flash[:notice] = "Herb [#{@herb.name.upcase}] created successfully"
-      redirect_to admin_path
+      redirect_to '/admin/herbs'
     else
       flash[:error] = "Something went wrong, try again!"
-      redirect_to admin_path
+      redirect_to '/admin/herbs'
     end
   end
 
   def edit
     @herb = Herb.find_by_slug(params[:slug])
     @categories = Category.all
-    @user = User.find_by_id(session[:user_id])
+    @loggedInUser = User.find_by_id(session[:user_id])
   end
 
   def update
     @herb = Herb.find_by_slug(params[:herbs][:slug])
-    @user = User.find_by_id(session[:user_id])
+    @loggedInUser = User.find_by_id(session[:user_id])
 
     if @herb.update(herb_params)
       flash[:notice] = "Herb [#{@herb.name.upcase}] updated successfully"
-      redirect_to "/admin/edit/#{@herb.slug}"
+      redirect_to "/admin/herb/edit/#{@herb.slug}"
     else
       flash.now[:error] = "Something went wrong, try again!"
-      redirect_to "/admin/edit/#{@herb.slug}"
+      redirect_to "/admin/herb/edit/#{@herb.slug}"
     end
   end
 
@@ -78,11 +78,5 @@ class HerbsController < ApplicationController
       :user_id,
       category_ids: []
     )
-  end
-
-  def upload(file, name, ext)
-    File.open(Rails.root.join('public', 'uploads', "#{name}.#{ext}"), 'wb') do |f|
-      f.write(file.read)
-    end
   end
 end

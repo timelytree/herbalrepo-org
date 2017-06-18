@@ -1,13 +1,17 @@
 #nav
   .buttons
-    %a{class: 'navB', href: '/admin'} Home
-    %a{class: 'navB', href: '/admin/new-herb'} New Herb
-    %a{class: 'navB', href: '/'} View Website
-    = form_tag('/logout', method: 'delete') do
-      %input{type: 'submit', value: 'Logout', class: 'navB', id: 'logoutB'}
-  %a{href: "/admin/user/#{@user.slug}", class: 'profile'}
-    - if @user.avatar
+    .primary
+      %a{class: 'primaryNavB', href: '/admin/herbs'} Herbs
+      %a{class: 'primaryNavB', href: '/admin/categories'} Categories
+      %a{class: 'primaryNavB', href: '/admin/users'} Users
+    .secondary
+      %a{class: 'secondaryNavB', href: '/', target: '_blank'} View Website
+      %a{class: 'secondaryNavB', href: '/admin/herb/new'} New Herb
+      = form_tag('/logout', method: 'delete') do
+        %input{type: 'submit', value: 'Logout', class: 'secondaryNavB', id: 'logoutB'}
+  %a{href: "/admin/user/#{@loggedInUser.slug}", class: 'profile'}
+    - if @loggedInUser.avatar
       %img{src: '#', class: 'avatar'}
     - else
-      %img{src: '../../images/userPlaceholder.png', class: 'avatar'}
-    %p= @user.name
+      %img{src: "#{public_path}/images/userPlaceholder.png", class: 'avatar'}
+    %p= @loggedInUser.name

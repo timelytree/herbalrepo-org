@@ -10,7 +10,7 @@
             %input{type: 'submit', id: 'submitB', value: 'SAVE'}
             #deleteB{data:{slug: @herb.slug}} DELETE
             %a{href: "/herbs/#{@herb.slug}", id: 'viewB', target: '_blank'}
-              %img{src: "../../images/icons/external_link_icon_black.svg"}
+              %img{src: "#{public_path}/images/icons/external_link_icon_black.svg"}
           %section
             %label.subtitle{for: 'name'} Name
             %input{type: 'text', name: 'herbs[name]', id: 'name', autocomplete: :off, placeholder: @herb.name, value: @herb.name}
@@ -19,7 +19,7 @@
             %input{type: 'text', name: 'herbs[latin_name]', id: 'latin_name', autocomplete: :off, placeholder: @herb.latin_name, value: @herb.latin_name}
           %section
             .subtitle Upload Image
-            %img{src: "#{@herb.thumbnail.url.to_s}", id: 'imagePreviewCONTAINER', class: @herb.thumbnail.url != nil ? 'active' : ''}
+            %img{src: "#{public_path}/#{@herb.thumbnail.url.to_s}", id: 'imagePreviewCONTAINER', class: @herb.thumbnail.url != nil ? 'active' : ''}
             #imageUploadCONTAINER
               %label{for: 'thumbnail'} Click here to upload
               %input{type: 'file', name: 'herbs[thumbnail]', id: 'thumbnail'}

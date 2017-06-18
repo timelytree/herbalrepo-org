@@ -23,4 +23,8 @@ module ApplicationHelper
     string.gsub! /\A[-\.]+|[-\.]+\z/, ""
     return string
   end
+
+  def public_path
+    return image_url('/')
+  end
 end
