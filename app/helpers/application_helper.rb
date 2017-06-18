@@ -27,4 +27,18 @@ module ApplicationHelper
   def public_path
     return image_url('/')
   end
+
+  def admin_section
+    if params[:controller] == 'admin'
+      return true
+    elsif params[:controller] == 'sessions'
+      return true
+    elsif params[:controller] == 'herbs' && (params[:action] == 'new' || params[:action] == 'edit')
+      return true
+    elsif params[:controller] == 'categories' && (params[:action] == 'new' || params[:action] == 'edit')
+      return true
+    else
+      return false
+    end
+  end
 end

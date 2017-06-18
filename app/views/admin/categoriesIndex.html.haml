@@ -1,0 +1,8 @@
+.wrapper#categoriesINDEX
+  .console
+    = render 'admin/nav'
+    .content
+      %ul.list
+        - @categories.each do |category|
+          %li.item
+            %a{href: "/admin/category/edit/#{category.slug}"}= category.name

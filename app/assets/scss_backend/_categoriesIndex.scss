@@ -1,0 +1,57 @@
+#categoriesINDEX {
+  .content {
+    padding-top: 0;
+  }
+
+  .list {
+    display: inline-block;
+    padding: 15px;
+    width: 100%;
+    .item {
+      width: calc(20% - 8px);
+      margin-right: 10px;
+      list-style: none;
+      background: white;
+      margin-bottom: 10px;
+      float: left;
+      border: 1px solid $gray300;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      &:nth-child(5n) {
+        margin-right: 0;
+      }
+      &:hover {
+        background-color: $gray200;
+      }
+      a {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

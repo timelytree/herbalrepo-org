@@ -11,13 +11,14 @@ Rails.application.routes.draw do
   patch '/herbs', to: 'herbs#update'
   delete '/herbs/:slug', to: 'herbs#destroy'
 
-  get '/admin', to: 'admin#index'
+  get '/admin', to: 'admin#herbsIndex'
   get '/admin/herbs', to: 'admin#herbsIndex'
   get '/admin/herb/new', to: 'herbs#new'
   get '/admin/herb/edit/:slug', to: 'herbs#edit'
   get '/admin/user/:slug', to: 'admin#showUserHerbs'
   get '/admin/categories', to: 'admin#categoriesIndex'
-  post '/admin/category/edit/:slug', to: 'admin#editCategory'
+  get '/admin/category/edit/:slug', to: 'categories#edit'
+  post '/admin/category/edit/:slug', to: 'categories#update'
   patch '/admin/user', to: 'users#update'
 
   get '/category/:slug', to: 'categories#show'

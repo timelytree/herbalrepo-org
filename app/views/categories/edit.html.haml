@@ -1,0 +1,11 @@
+.wrapper#categoriesEDIT
+  .console
+    = render 'admin/nav'
+    .content
+      = form_tag('/categories', method: 'patch', multipart: true, class: 'generalFORM') do
+        %input{type: 'hidden', name: 'herbs[id]', value: @category.id, autocomplete: :off}
+        %section
+          %label.subtitle{for: 'name'} Name
+          %input{type: 'text', name: 'categories[name]', id: 'name', autocomplete: :off, placeholder: @category.name, value: @category.name}
+        %section
+          %input{type: 'submit', id: 'submitB', value: 'SAVE'}
