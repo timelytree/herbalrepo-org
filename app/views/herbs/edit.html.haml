@@ -4,9 +4,10 @@
     .content
       = form_tag('/herbs', method: 'patch', multipart: true, class: 'herbFORM') do
         %input{type: 'hidden', name: 'herbs[slug]', value: @herb.slug, autocomplete: :off}
+        #herbHEADER= "Now Editing: #{@herb.name}"
         #sidebar
           %section
-            %input{type: 'submit', id: 'submitB', value: 'SUBMIT'}
+            %input{type: 'submit', id: 'submitB', value: 'SAVE'}
             #deleteB{data:{slug: @herb.slug}} DELETE
             %a{href: "/herbs/#{@herb.slug}", id: 'viewB', target: '_blank'}
               %img{src: "../../images/icons/external_link_icon_black.svg"}
