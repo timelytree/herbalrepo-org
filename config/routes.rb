@@ -22,8 +22,10 @@ Rails.application.routes.draw do
   get '/admin/herbs', to: 'admin#herbsIndex'
   get '/admin/herb/new', to: 'herbs#new'
   get '/admin/herb/edit/:slug', to: 'herbs#edit'
+  get '/admin/user/:slug/herbs', to: 'admin#showUserHerbs'
   # Users
-  get '/admin/user/:slug', to: 'admin#showUserHerbs'
+  get '/admin/users', to: 'users#index'
+  get '/admin/user/new', to: 'users#new'
   patch '/admin/user', to: 'users#update'
   # Categories
   get '/admin/categories', to: 'admin#categoriesIndex'

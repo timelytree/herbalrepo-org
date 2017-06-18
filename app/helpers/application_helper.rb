@@ -37,6 +37,8 @@ module ApplicationHelper
       return true
     elsif params[:controller] == 'categories' && (params[:action] == 'new' || params[:action] == 'edit')
       return true
+    elsif params[:controller] == 'users' && (params[:action] == 'new' || params[:action] == 'edit' || params[:action] == 'index')
+      return true
     else
       return false
     end

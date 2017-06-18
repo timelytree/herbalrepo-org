@@ -3,14 +3,14 @@
     .primary
       %a{class: 'primaryNavB', href: '/admin/herbs'} Herbs
       -# %a{class: 'primaryNavB', href: '/admin/categories'} Categories
-      %a{class: 'primaryNavB', href: '/admin/users'} Users
+      -# %a{class: 'primaryNavB', href: '/admin/users'} Users
     .secondary
       %a{class: 'secondaryNavB', href: '/', target: '_blank'} View Website
       = form_tag('/logout', method: 'delete') do
         %input{type: 'submit', value: 'Logout', class: 'secondaryNavB', id: 'logoutB'}
-  %a{href: "/admin/user/#{@loggedInUser.slug}", class: 'profile'}
-    - if @loggedInUser.avatar
+  %a{href: "/admin/user/#{current_user.slug}", class: 'profile'}
+    - if current_user.avatar
       %img{src: '#', class: 'avatar'}
     - else
       %img{src: "#{public_path}/images/userPlaceholder.png", class: 'avatar'}
-    %p= @loggedInUser.name
+    %p= current_user.name

@@ -1,12 +1,12 @@
 #herbLIST
   %ul.list
     - @herbs.each_with_index do |herb|
-      %li.herbITEM{class: herb.draft_status == 'draft' ? 'draft' : ''}
+      %li.item{class: herb.draft_status == 'draft' ? 'draft' : ''}
         .buttons
           %a{href: "/admin/herb/edit/#{herb.slug}"} Edit Herb
-          %a{href: "/admin/user/#{herb.user.slug}"}
+          %a{href: "/admin/user/#{herb.user.slug}/herbs"}
             Posted by:
             %span= herb.user.username.downcase
-        .herbItemINFO
+        .itemINFO
           %p.herbName= herb.name
           %p.herbLatinName= herb.latin_name

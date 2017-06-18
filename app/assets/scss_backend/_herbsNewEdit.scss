@@ -1,12 +1,11 @@
 /////////////////////////////////////////////////////////////////////// New/Edit
 //------------------------------------------------------------------------------
-#adminNEW, #adminEDIT {
+#adminNEW, #adminEDIT, #usersNEW {
   .content {
     padding-top: 0;
   }
 
   .toolbar {
-    @include flex-between;
     position: absolute;
     top: 0;
     left: 0;

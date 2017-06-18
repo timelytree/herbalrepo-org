@@ -1,0 +1,23 @@
+.wrapper#usersNEW
+  .console
+    = render 'admin/nav'
+    .content
+      = form_tag('/herbs', method: 'post', multipart: true, class: 'generalFORM') do
+        %input{type: 'hidden', name: 'users[user_id]', value: session[:user_id], autocomplete: :off}
+        .toolbar
+          .header New User
+          .buttons
+            %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
+            %a{href: "/admin/users", class: 'toolbarB', id: 'cancelB'} CANCEL
+        %section
+          %label.subtitle{for: 'name'} Name
+          %input{type: 'text', name: 'users[name]', id: 'name', autocomplete: :off, placeholder: 'Name'}
+        %section
+          %label.subtitle{for: 'username'} Username
+          %input{type: 'text', name: 'users[username]', id: 'username', autocomplete: :off, placeholder: 'Username'}
+        %section
+          %label.subtitle{for: 'user_type'} User Type
+          %input{type: 'text', name: 'users[user_type]', id: 'user_type', autocomplete: :off, placeholder: 'User Type'}
+        %section
+          %label.subtitle{for: 'password'} Password
+          %input{type: 'password', name: 'users[password]', id: 'password', autocomplete: :off, placeholder: 'Password'}

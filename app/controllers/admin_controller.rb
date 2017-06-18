@@ -5,13 +5,11 @@ class AdminController < ApplicationController
   # ----------------------------------------------------------------------------
   def herbsIndex
     user_check
-    @loggedInUser = User.find_by_id(session[:user_id])
     @categories = Category.all
     @herbs = Herb.all
   end
 
   def showUserHerbs
-    @loggedInUser = User.find_by_id(session[:user_id])
     @user = User.find_by_slug(params[:slug])
     @herbs = @user.herbs
   end
@@ -20,7 +18,6 @@ class AdminController < ApplicationController
   # ----------------------------------------------------------------------------
   def categoriesIndex
     @categories = Category.all
-    @loggedInUser = User.find_by_id(session[:user_id])
   end
 
   # ////////////////////////////////////////////////////////////////////// Users
