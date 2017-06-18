@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @category = Category.find_by_id(params[:categories][:id])
+    @category = Category.find_by_slug(params[:categories][:slug])
 
     if @category.update(category_params)
       flash[:notice] = "Herb [#{@category.name.upcase}] updated successfully"
