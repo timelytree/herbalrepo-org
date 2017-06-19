@@ -144,7 +144,14 @@ function uploadImagePREVIEW() {
 }
 
 function itemDELETE(controller) {
-  var button = E('deleteB');
+  var deleteB = E('deleteB'),
+      warningB = E('warningB'),
+      cancelWarningB = E('cancelWarningB'),
+      warningCONTAINER = cE('warning')[0];
+
+  warningB.onclick = function() { addC(warningCONTAINER, 'active'); }
+  cancelWarningB.onclick = function() { remC(warningCONTAINER, 'active'); }
+
   deleteB.onclick = function() {
     $.ajax({
       url: '/'+controller+'/'+gA(this, 'slug')+'',

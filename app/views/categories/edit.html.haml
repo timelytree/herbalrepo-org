@@ -5,12 +5,16 @@
       = form_tag('/categories', method: 'patch', multipart: true, class: 'generalFORM') do
         %input{type: 'hidden', name: 'categories[slug]', value: @category.slug, autocomplete: :off}
         .toolbar
+          .warning
+            %p Delete <span>permanently</span>?
+            #deleteB{data:{slug: @category.slug}} YES DELETE FOREVER
+            #cancelWarningB CANCEL
           .header
             Now Editing:
             %span= @category.name
           .buttons
             %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
-            .toolbarB#deleteB{data:{slug: @category.slug}} DELETE
+            .toolbarB#warningB DELETE
             %a{href: "/category/#{@category.slug}", id: 'viewB', class: 'toolbarB', target: '_blank'}
               %img{src: "#{public_path}/images/icons/external_link_icon_black.svg"}
         %section

@@ -17,7 +17,7 @@
         text-decoration: none;
       }
     }
-    #deleteB, #cancelB {
+    #warningB, #cancelB {
       &:hover { background-color: $brandRed; }
     }
     #submitB {
