@@ -82,6 +82,7 @@ GEM
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (2.99.3)
+    mini_magick (4.7.1)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
     multi_json (1.12.1)
@@ -182,6 +183,7 @@ DEPENDENCIES
   haml-rails
   jbuilder
   listen
+  mini_magick
   mysql2
   pry
   pry-nav

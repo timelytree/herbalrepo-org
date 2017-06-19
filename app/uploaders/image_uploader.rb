@@ -1,4 +1,5 @@
 class ImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
   storage :file
   after :remove, :delete_empty_upstream_dirs
 
@@ -17,22 +18,11 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png svg)
   end
 
-  # Process files as they are uploaded:
-  # process scale: [200, 300]
-  #
-  # def scale(width, height)
-  #   # do something
-  # end
+  version :icon do
+    process resize_to_fit: [30, 30]
+  end
 
-  # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process resize_to_fit: [50, 50]
-  # end
-
-  # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
-
+  version :thumb do
+    process resize_to_fit: [175, 175]
+  end
 end

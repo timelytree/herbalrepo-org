@@ -8,7 +8,7 @@
             - if herb.thumbnail.url == nil
               .thumbnailMissingIND
                 %p Image not available
-            .herbIMG{data:{original:"#{herb.thumbnail.url.to_s}"}}
+            .herbIMG{data:{original:"#{herb.thumbnail.thumb.url.to_s}"}}
             .herbItemINFO
               %p.herbName= herb.name
               %p.herbLatinName= herb.latin_name

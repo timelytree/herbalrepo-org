@@ -12,6 +12,7 @@ gem 'bcrypt'
 gem 'mysql2'
 gem 'rename'
 gem 'redcarpet'
+gem 'mini_magick'
 gem 'carrierwave'
 gem 'turnout'
 
