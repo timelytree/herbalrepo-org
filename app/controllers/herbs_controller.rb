@@ -7,6 +7,7 @@ class HerbsController < ApplicationController
 
   def show
     @herb = Herb.find_by_slug(params[:slug])
+    draft_check(@herb)
     @categories = Category.all
     @back = Rails.application.routes.recognize_path(request.referrer)
     if @back[:controller] == 'herbs' && @back[:action] == 'index' || @back[:controller] == 'herbs' && session[:current_category] == nil
@@ -74,5 +75,11 @@ class HerbsController < ApplicationController
       :user_id,
       category_ids: []
     )
+  end
+
+  def draft_check(herb)
+    if herb.draft_status != 'live' && !logged_in?
+      raise ActionController::RoutingError.new('Not Found')
+    end
   end
 end
