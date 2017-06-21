@@ -6,8 +6,11 @@ class Herb < ActiveRecord::Base
 
   before_save :generate_slug
 
+  # before_validation :check_slug
+
   validates :name, presence: true
   validates :latin_name, presence: true
+  # validate :check_slug
 
   def as_json(options={})
     {
@@ -32,5 +35,12 @@ class Herb < ActiveRecord::Base
     name.gsub! /-+/,"-"
     name.gsub! /\A[-\.]+|[-\.]+\z/, ""
     self.slug = name
+  end
+
+  def check_slug
+    # binding.pry
+    if self.slug == generate_slug
+      errors.add(:slug, 'already has an active term')
+    end
   end
 end
