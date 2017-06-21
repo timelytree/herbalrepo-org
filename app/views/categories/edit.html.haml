@@ -5,6 +5,8 @@
       = form_tag('/categories', method: 'patch', multipart: true, class: 'generalFORM') do
         %input{type: 'hidden', name: 'categories[slug]', value: @category.slug, autocomplete: :off}
         .toolbar
+          .loading
+            %img{src: "#{public_path}/images/spinner.svg"}
           .warning
             %p Delete <span>permanently</span>?
             #deleteB{data:{slug: @category.slug}} YES DELETE FOREVER

@@ -5,6 +5,8 @@
       = form_tag('/herbs', method: 'patch', multipart: true, class: 'herbFORM') do
         %input{type: 'hidden', name: 'herbs[slug]', value: @herb.slug, autocomplete: :off}
         .toolbar
+          .loading
+            %img{src: "#{public_path}/images/spinner.svg"}
           .warning
             %p Delete <span>permanently</span>?
             #deleteB{data:{slug: @herb.slug}} YES DELETE FOREVER

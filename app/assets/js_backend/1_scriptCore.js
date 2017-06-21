@@ -146,6 +146,7 @@ function uploadImagePREVIEW() {
 function itemDELETE(controller) {
   var deleteB = E('deleteB'),
       warningB = E('warningB'),
+      loadingCONTAINER = cE('loading')[0],
       cancelWarningB = E('cancelWarningB'),
       warningCONTAINER = cE('warning')[0];
 
@@ -153,6 +154,7 @@ function itemDELETE(controller) {
   cancelWarningB.onclick = function() { remC(warningCONTAINER, 'active'); }
 
   deleteB.onclick = function() {
+    addC(loadingCONTAINER, 'active');
     $.ajax({
       url: '/'+controller+'/'+gA(this, 'slug')+'',
       type: 'DELETE',
