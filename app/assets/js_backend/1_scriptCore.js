@@ -87,7 +87,7 @@ function markdown() {
 
 function highlightCATEGORIES() {
   categoryCHECKBOXES = cE('checkbox'),
-  categories = JSON.parse(gA(cE('categoriesBOX')[0], 'categories'));
+  categories = JSON.parse(gA(cE('checkboxCONTAINER')[0], 'categories'));
 
   for (var i = 0; i < categories.length; i++) {
     var num = categories[i];

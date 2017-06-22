@@ -1,13 +1,9 @@
 .wrapper#categoryNEW
-  .console
+  .container
     = render 'admin/nav'
-    .content
-      = form_tag('/categories', method: 'post', multipart: true, class: 'generalFORM') do
-        .toolbar
-          .header New Category
-          .buttons
-            %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
-            %a{href: "/admin/categories", class: 'toolbarB', id: 'cancelB'} CANCEL
+    = form_tag('/categories', method: 'post', multipart: true, class: 'categoryFORM') do
+      = render 'admin/toolbar', page: 'categoryNEW', header: 'New Category'
+      .content
         %section
           %label.subtitle{for: 'name'} Name
           %input{type: 'text', name: 'categories[name]', id: 'name', autocomplete: :off, placeholder: @category.name, value: @category.name}

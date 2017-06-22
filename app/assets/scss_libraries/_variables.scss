@@ -1,85 +1,9 @@
-////////////////////////////////////////////////////////////////////////// Fonts
-//------------------------------------------------------------------------------
-//fonts
-$font_0: 'Quattrocento Sans';
-$font_1: 'Quattrocento';
-
-//urls
-$url_0: url('https://fonts.gstatic.com/s/quattrocentosans/v9/efd6FGWWGX5Z3ztwLBrG9X1YW00lgGbZnyY5SugJ188.woff2');
-$url_1: url('https://fonts.gstatic.com/s/quattrocentosans/v9/efd6FGWWGX5Z3ztwLBrG9czpYVnxV7fe3GzmF357o4o.woff2');
-$url_2: url('https://fonts.gstatic.com/s/quattrocentosans/v9/tXSgPxDl7Lk8Zr_5qX8FIYp00bKbsn_D4ns3hxoGOcoU24FapfJwyacJ6xNu5rm9.woff2');
-$url_3: url('https://fonts.gstatic.com/s/quattrocentosans/v9/tXSgPxDl7Lk8Zr_5qX8FISMwD46KpV4ZaXo4aI1TkGT3rGVtsTkPsbDajuO5ueQw.woff2');
-$url_4: url('https://fonts.gstatic.com/s/quattrocento/v8/WZDISdyil4HsmirlOdBRFIjoYw3YTyktCCer_ilOlhE.woff2');
-$url_5: url('https://fonts.gstatic.com/s/quattrocento/v8/WZDISdyil4HsmirlOdBRFBampu5_7CjHW5spxoeN3Vs.woff2');
-$url_6: url('https://fonts.gstatic.com/s/quattrocento/v8/Uvi-cRwyvqFpl9j3oT2mqkqWMeizceScn2Xpn1ZpsKI.woff2');
-$url_7: url('https://fonts.gstatic.com/s/quattrocento/v8/Uvi-cRwyvqFpl9j3oT2mqshHwsiXhsDb0smKjAA7Bek.woff2');
-
-@font-face {
-	font-family: $font_0;
-	font-style: normal;
-	font-weight: 400;
-	src: local('Quattrocento Sans'), local('QuattrocentoSans'), $url_0 format('woff2');
-	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
-}
-@font-face {
-	font-family: $font_0;
-	font-style: normal;
-	font-weight: 400;
-	src: local('Quattrocento Sans'), local('QuattrocentoSans'), $url_1 format('woff2');
-	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
-}
-@font-face {
-	font-family: $font_0;
-	font-style: normal;
-	font-weight: 700;
-	src: local('Quattrocento Sans Bold'), local('QuattrocentoSans-Bold'), $url_2 format('woff2');
-	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
-}
-@font-face {
-	font-family: $font_0;
-	font-style: normal;
-	font-weight: 700;
-	src: local('Quattrocento Sans Bold'), local('QuattrocentoSans-Bold'), $url_3 format('woff2');
-	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
-}
-@font-face {
-	font-family: $font_1;
-	font-style: normal;
-	font-weight: 400;
-	src: local('Quattrocento'), $url_4 format('woff2');
-	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
-}
-@font-face {
-	font-family: $font_1;
-	font-style: normal;
-	font-weight: 400;
-	src: local('Quattrocento'), $url_5 format('woff2');
-	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
-}
-@font-face {
-	font-family: $font_1;
-	font-style: normal;
-	font-weight: 700;
-	src: local('Quattrocento Bold'), local('Quattrocento-Bold'), $url_6 format('woff2');
-	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
-}
-@font-face {
-	font-family: $font_1;
-	font-style: normal;
-	font-weight: 700;
-	src: local('Quattrocento Bold'), local('Quattrocento-Bold'), $url_7 format('woff2');
-	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
-}
-
-///////////////////////////////////////////////////////////////////////// Mixins
-//------------------------------------------------------------------------------
-$font1: 'Quattrocento Sans', sans-serif, monospace;
-$font2: 'Quattrocento', serif, monospace;
-$transWhite: rgba(250, 250, 250, 0.97);
-$boxShadowColour: rgba(0, 0, 0, 0.2);
+//////////////////////////////////////////////////////////////////////// Colours
+//-----------------------------------------------------------------------------
 $brandGreen: #719130;
 $brandRed: #913030;
 $brandOrange: #ED8E00;
+$boxShadowColour: rgba(0, 0, 0, 0.2);
 
 $blue50: #E3F2FD;
 $blue100: #BBDEFB;
@@ -136,8 +60,35 @@ $red700: #D32F2F;
 $red800: #C62828;
 $red900: #B71C1C;
 
-///////////////////////////////////////////////////////////////////////// Mixins
-//------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////// Custom Mixins
+//-----------------------------------------------------------------------------
+@mixin subtitle {
+	font-size: 12px;
+	line-height: 14px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+@mixin centerImage {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin boxShadow {
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
+}
+
+::-webkit-input-placeholder { color: $gray500; } // WebKit, Blink, Edge
+:-moz-placeholder { color: $gray500; opacity:  1; } // Mozilla Firefox 4 to 18
+::-moz-placeholder { color: $gray500; opacity:  1; } // Mozilla Firefox 19+
+:-ms-input-placeholder { color: $gray500; } // Internet Explorer 10-11
+::-ms-input-placeholder { color: $gray500; } // Microsoft Edge
+
+//////////////////////////////////////////////////////////////// General Mixins
+//-----------------------------------------------------------------------------
 @mixin flex-c {
   display: -webkit-box;
   display: -webkit-flex;
@@ -301,36 +252,6 @@ $red900: #B71C1C;
           transform: $transforms;
 }
 
-@mixin centerImage {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-@mixin boxShadow {
-  -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
-  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.25);
-}
-
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #909;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #909;
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #909;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #909;
-}
-::-ms-input-placeholder { /* Microsoft Edge */
-   color:    #909;
-}
-
 @mixin optional-at-root($sel) { @at-root #{if(not &, $sel, selector-append(&, $sel))} { @content; } }
 @mixin placeholder {
   @include optional-at-root('::-webkit-input-placeholder') { @content; }
@@ -339,4 +260,79 @@ $red900: #B71C1C;
 	@include optional-at-root(':-ms-input-placeholder') { @content; }
 	@include optional-at-root('::-ms-input-placeholder') { @content; }
   @include optional-at-root('::placeholder') { @content; }
+}
+
+///////////////////////////////////////////////////////////////////////// Fonts
+//-----------------------------------------------------------------------------
+//fonts
+$font_0: 'Quattrocento Sans';
+$font_1: 'Quattrocento';
+$font1: 'Quattrocento Sans', sans-serif, monospace;
+$font2: 'Quattrocento', serif, monospace;
+
+//urls
+$url_0: url('https://fonts.gstatic.com/s/quattrocentosans/v9/efd6FGWWGX5Z3ztwLBrG9X1YW00lgGbZnyY5SugJ188.woff2');
+$url_1: url('https://fonts.gstatic.com/s/quattrocentosans/v9/efd6FGWWGX5Z3ztwLBrG9czpYVnxV7fe3GzmF357o4o.woff2');
+$url_2: url('https://fonts.gstatic.com/s/quattrocentosans/v9/tXSgPxDl7Lk8Zr_5qX8FIYp00bKbsn_D4ns3hxoGOcoU24FapfJwyacJ6xNu5rm9.woff2');
+$url_3: url('https://fonts.gstatic.com/s/quattrocentosans/v9/tXSgPxDl7Lk8Zr_5qX8FISMwD46KpV4ZaXo4aI1TkGT3rGVtsTkPsbDajuO5ueQw.woff2');
+$url_4: url('https://fonts.gstatic.com/s/quattrocento/v8/WZDISdyil4HsmirlOdBRFIjoYw3YTyktCCer_ilOlhE.woff2');
+$url_5: url('https://fonts.gstatic.com/s/quattrocento/v8/WZDISdyil4HsmirlOdBRFBampu5_7CjHW5spxoeN3Vs.woff2');
+$url_6: url('https://fonts.gstatic.com/s/quattrocento/v8/Uvi-cRwyvqFpl9j3oT2mqkqWMeizceScn2Xpn1ZpsKI.woff2');
+$url_7: url('https://fonts.gstatic.com/s/quattrocento/v8/Uvi-cRwyvqFpl9j3oT2mqshHwsiXhsDb0smKjAA7Bek.woff2');
+
+@font-face {
+	font-family: $font_0;
+	font-style: normal;
+	font-weight: 400;
+	src: local('Quattrocento Sans'), local('QuattrocentoSans'), $url_0 format('woff2');
+	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
+}
+@font-face {
+	font-family: $font_0;
+	font-style: normal;
+	font-weight: 400;
+	src: local('Quattrocento Sans'), local('QuattrocentoSans'), $url_1 format('woff2');
+	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
+}
+@font-face {
+	font-family: $font_0;
+	font-style: normal;
+	font-weight: 700;
+	src: local('Quattrocento Sans Bold'), local('QuattrocentoSans-Bold'), $url_2 format('woff2');
+	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
+}
+@font-face {
+	font-family: $font_0;
+	font-style: normal;
+	font-weight: 700;
+	src: local('Quattrocento Sans Bold'), local('QuattrocentoSans-Bold'), $url_3 format('woff2');
+	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
+}
+@font-face {
+	font-family: $font_1;
+	font-style: normal;
+	font-weight: 400;
+	src: local('Quattrocento'), $url_4 format('woff2');
+	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
+}
+@font-face {
+	font-family: $font_1;
+	font-style: normal;
+	font-weight: 400;
+	src: local('Quattrocento'), $url_5 format('woff2');
+	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
+}
+@font-face {
+	font-family: $font_1;
+	font-style: normal;
+	font-weight: 700;
+	src: local('Quattrocento Bold'), local('Quattrocento-Bold'), $url_6 format('woff2');
+	unicode-range: U +0100-024F, U +1E00-1EFF, U +20A0-20AB, U +20AD-20CF, U +2C60-2C7F, U +A720-A7FF;
+}
+@font-face {
+	font-family: $font_1;
+	font-style: normal;
+	font-weight: 700;
+	src: local('Quattrocento Bold'), local('Quattrocento-Bold'), $url_7 format('woff2');
+	unicode-range: U +0000-00FF, U +0131, U +0152-0153, U +02C6, U +02DA, U +02DC, U +2000-206F, U +2074, U +20AC, U +2212, U +2215;
 }

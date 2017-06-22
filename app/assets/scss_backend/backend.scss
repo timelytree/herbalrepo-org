@@ -1,9 +1,11 @@
 @import '../scss_libraries/variables';
 @import '../scss_libraries/normalize';
-@import 'base';
-@import 'structure';
-@import 'adminIndex';
-@import 'herbsNewEdit';
-@import 'adminLOGIN';
-@import 'users';
-@import 'categoriesIndex';
+@import '1_base';
+@import '2_structure';
+@import '3_components';
+@import '4_custom';
+// @import 'adminIndex';
+// @import 'herbsNewEdit';
+// @import 'adminLOGIN';
+// @import 'users';
+// @import 'categoriesIndex';

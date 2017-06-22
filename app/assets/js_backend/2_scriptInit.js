@@ -3,16 +3,16 @@
 function globalInit() {
   run(core.global.flashNOTICE);
   switch (p.Current) {
-    case 'adminINDEX':
-      run(core.global.listFilter, 'adminINDEX');
+    case 'herbsINDEX':
+      run(core.global.listFilter, 'herbsINDEX');
       break;
-    case 'adminNEW':
+    case 'herbNEW':
       run(core.global.showdownINIT);
       run(core.global.markdown);
       run(core.global.nameFILL);
       run(core.global.uploadImagePREVIEW);
       break;
-    case 'adminEDIT':
+    case 'herbEDIT':
       run(core.global.showdownINIT);
       run(core.global.markdown);
       run(core.global.highlightCATEGORIES);
@@ -20,12 +20,15 @@ function globalInit() {
       run(core.global.uploadImagePREVIEW);
       run(core.global.itemDELETE, 'herbs');
       break;
-    case 'adminShowUserHerbs':
-      run(core.global.listFilter, 'adminShowUserHerbs');
+    case 'herbsSHOW':
+      run(core.global.listFilter, 'herbsSHOW');
       break;
     case 'categoryEDIT':
       run(core.global.uploadImagePREVIEW);
       run(core.global.itemDELETE, 'categories');
+      break;
+    case 'categoryNEW':
+      run(core.global.uploadImagePREVIEW);
       break;
   }
 }

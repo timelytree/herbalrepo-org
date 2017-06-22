@@ -18,17 +18,17 @@ Rails.application.routes.draw do
   # ////////////////////////////////////////////////////////////////////// Admin
   # ----------------------------------------------------------------------------
   # Herbs
-  get '/admin', to: 'admin#herbsIndex'
-  get '/admin/herbs', to: 'admin#herbsIndex'
+  get '/admin', to: 'admin#herbsINDEX'
+  get '/admin/herbs', to: 'admin#herbsINDEX'
   get '/admin/herb/new', to: 'herbs#new'
   get '/admin/herb/:slug/edit', to: 'herbs#edit'
-  get '/admin/user/:slug/herbs', to: 'admin#showUserHerbs'
+  get '/admin/user/:slug/herbs', to: 'admin#herbsSHOW'
   # Users
   get '/admin/users', to: 'users#index'
   get '/admin/user/new', to: 'users#new'
   patch '/admin/user', to: 'users#update'
   # Categories
-  get '/admin/categories', to: 'admin#categoriesIndex'
+  get '/admin/categories', to: 'admin#categoriesINDEX'
   get '/admin/category/new', to: 'categories#new'
   get '/admin/category/:slug/edit', to: 'categories#edit'
   post '/admin/category/:slug/edit', to: 'categories#update'

@@ -1,0 +1,6 @@
+%ul.list
+  - @categories.each do |category|
+    %li.item
+      .buttons
+        %a{href: "/admin/category/#{category.slug}/edit"} Edit Category
+      %p= category.name

@@ -1,24 +1,10 @@
-.wrapper#adminEDIT
-  .console
+.wrapper#herbEDIT
+  .container
     = render 'admin/nav'
-    .content
-      = form_tag('/herbs', method: 'patch', multipart: true, class: 'herbFORM') do
-        %input{type: 'hidden', name: 'herbs[slug]', value: @herb.slug, autocomplete: :off}
-        .toolbar
-          .loading
-            %img{src: "#{public_path}/images/spinner.svg"}
-          .warning
-            %p Delete <span>permanently</span>?
-            #deleteB{data:{slug: @herb.slug}} YES DELETE FOREVER
-            #cancelWarningB CANCEL
-          .header
-            Now Editing:
-            %span= @herb.name
-          .buttons
-            %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
-            .toolbarB#warningB DELETE
-            %a{href: "/herbs/#{@herb.slug}", id: 'viewB', class: 'toolbarB', target: '_blank'}
-              %img{src: "#{public_path}/images/icons/external_link_icon_black.svg"}
+    = form_tag('/herbs', method: 'patch', multipart: true, class: 'herbFORM') do
+      %input{type: 'hidden', name: 'herbs[slug]', value: @herb.slug, autocomplete: :off}
+      = render 'admin/toolbar', page: 'herbEDIT', header: "Now Editing: <span>#{@herb.name}</span>"
+      .content
         #sidebar
           %section
             %label.subtitle{for: 'name'} Name
@@ -34,18 +20,18 @@
               %input{type: 'file', name: 'herbs[thumbnail]', id: 'thumbnail', data:{num: 0}}
           %section
             .subtitle Category
-            .categoriesBOX{data:{categories:@herb.categories.ids}}
+            .checkboxCONTAINER{data:{categories:@herb.categories.ids}}
               - @categories.each_with_index do |c, ind|
-                .checkboxROW
+                .row
                   %input{type: 'checkbox', name: 'herbs[category_ids][]', id: "categoryCHECKBOX-#{ind}", class: 'checkbox', value: c.id, data:{id:c.id}}
                   %label{for: "categoryCHECKBOX-#{ind}"}= c.name
           %section
             .subtitle Draft Status
-            .draftBOX
-              .checkboxROW
+            .radioCONTAINER
+              .row
                 %input{type: 'radio', name: 'herbs[draft_status]', id: "draft_status_draft", class: 'radio', value: 'draft', checked: @herb.draft_status == 'draft' ? true : false}
                 %label{for: "draft_status_draft"} Draft
-              .checkboxROW
+              .row
                 %input{type: 'radio', name: 'herbs[draft_status]', id: "draft_status_live", class: 'radio', value: 'live', checked: @herb.draft_status == 'live' ? true : false}
                 %label{for: "draft_status_live"} Live
         #leftPANEL

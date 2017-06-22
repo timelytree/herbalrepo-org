@@ -1,0 +1,83 @@
+/////////////////////////////////////////////////////////////////////// general
+//-----------------------------------------------------------------------------
+.wrapper, .container, .content {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  z-index: 1;
+  height: 100%;
+}
+
+.container {
+  z-index: 2;
+  height: 100%;
+}
+
+.content {
+  z-index: 3;
+  height: calc(100% - 100px);
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 700;
+}
+
+input[type="text"], input[type="password"], textarea {
+  border: 0;
+  border-radius: 0;
+  border: 1px solid $gray300;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
+  line-height: 14px;
+  background: transparent;
+  transition: 150ms;
+  &:active, &:focus {
+    transition: 150ms;
+    border-color: $gray500;
+    background: white;
+  }
+}
+
+textarea {
+  font-size: 12px;
+  font-family: monospace;
+}
+
+// .generalFORM {
+//   padding: 25px;
+//   padding-top: 75px;
+//   input[type="text"], input[type="password"] {
+//     padding: 5px;
+//     margin-top: 5px;
+//   }
+//   section {
+//     margin-bottom: 15px;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

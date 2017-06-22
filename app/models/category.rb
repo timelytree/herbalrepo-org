@@ -6,6 +6,8 @@ class Category < ActiveRecord::Base
 
   before_save :generate_slug
 
+  validates :name, uniqueness: true
+
   def generate_slug
     name = self.name.strip.downcase
     name.gsub! /['`]/, ""

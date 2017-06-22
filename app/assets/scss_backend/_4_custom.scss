@@ -1,0 +1,120 @@
+//////////////////////////////////////////////////////////////////// herbsINDEX
+//-----------------------------------------------------------------------------
+#herbsINDEX {
+  .toolbar {
+    .header, .toolbarB {
+      position: absolute;
+      top: 0;
+      z-index: 10;
+    }
+    .header {
+      left: 0;
+      padding-left: 25px;
+    }
+    .toolbarB {
+      right: 0;
+    }
+  }
+
+  #searchBAR {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    padding-left: 123px;
+    padding-right: 135px;
+  }
+
+  .list {
+    .buttons {
+      a {
+        width: 50%;
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////// categoriesINDEX
+//-----------------------------------------------------------------------------
+#categoriesINDEX {
+  .list {
+    .buttons {
+      a {
+        border-right: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////// herbsSHOW
+//-----------------------------------------------------------------------------
+#herbsSHOW {
+  .toolbar {
+    .header, .toolbarB {
+      position: absolute;
+      top: 0;
+      z-index: 10;
+    }
+    .header {
+      left: 0;
+      padding-left: 25px;
+    }
+    .toolbarB {
+      right: 0;
+    }
+  }
+
+  #searchBAR {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    padding-left: 140px;
+    padding-right: 135px;
+  }
+
+  #userProfile {
+    @include flex-c;
+    width: 100%;
+    margin: 25px 0 10px 0;
+    #userAvatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(0, 0, 0, 0.1), 0 2px 5px 4px rgba(0,0,0,.1);
+      -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(0, 0, 0, 0.1), 0 2px 5px 4px rgba(0,0,0,.1);
+      box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(0, 0, 0, 0.1), 0 2px 5px 4px rgba(0,0,0,.1);
+    }
+    h5 {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////// Login
+//-----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

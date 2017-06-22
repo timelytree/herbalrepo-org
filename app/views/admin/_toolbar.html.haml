@@ -1,0 +1,39 @@
+.toolbar
+  .header= header.html_safe
+  - if page == 'herbsINDEX' || page == 'herbsSHOW'
+    %input{id: 'searchBAR', class: 'search', type: 'text', autocomplete: :off, placeholder: 'search for an herb...'}
+    %a{class: 'toolbarB', href: '/admin/herb/new'} New Herb
+  - if page == 'categoriesINDEX'
+    %a{class: 'toolbarB', href: '/admin/category/new'} New Category
+  - if page == 'herbNEW'
+    .buttons
+      %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
+      %a{href: "/admin", class: 'toolbarB', id: 'cancelB'} CANCEL
+  - if page == 'herbEDIT'
+    .loading
+      %img{src: "#{public_path}/images/spinner.svg"}
+    .warning
+      %p Delete <span>permanently</span>?
+      #deleteB{data:{slug: @herb.slug}} YES DELETE FOREVER
+      #cancelWarningB CANCEL
+    .buttons
+      %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
+      .toolbarB#warningB DELETE
+      %a{href: "/herbs/#{@herb.slug}", class: 'toolbarB mini-toolbarB', target: '_blank'}
+        %img{src: "#{public_path}/images/icons/external_link_icon_black.svg"}
+  - if page == 'categoryEDIT'
+    .loading
+      %img{src: "#{public_path}/images/spinner.svg"}
+    .warning
+      %p Delete <span>permanently</span>?
+      #deleteB{data:{slug: @category.slug}} YES DELETE FOREVER
+      #cancelWarningB CANCEL
+    .buttons
+      %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
+      .toolbarB#warningB DELETE
+      %a{href: "/category/#{@category.slug}", class: 'toolbarB mini-toolbarB', target: '_blank'}
+        %img{src: "#{public_path}/images/icons/external_link_icon_black.svg"}
+  - if page == 'categoryNEW'
+    .buttons
+      %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
+      %a{href: "/admin/categories", class: 'toolbarB', id: 'cancelB'} CANCEL

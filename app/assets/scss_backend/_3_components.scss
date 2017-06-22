@@ -1,0 +1,588 @@
+////////////////////////////////////////////////////////////////// Flash Notice
+//-----------------------------------------------------------------------------
+#flashNOTICE {
+  position: absolute;
+  bottom: -100px;
+  left: 25px;
+  width: calc(100% - 50px);
+  height: 50px;
+  background: $brandGreen;
+  z-index: 10000;
+  border-radius: 4px;
+  border: 1px solid white;
+  visibility: hidden;
+  transition: 150ms;
+  &.active {
+    @include transform(translateY(-125px));
+    visibility: visible;
+  }
+  p {
+    color: white;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .countdown {
+    @include flex-c;
+    display: none;
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+    height: 100%;
+    width: 25px;
+    color: white;
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////// Nav
+//-----------------------------------------------------------------------------
+#nav {
+  @include display-flex;
+  @include flex-between;
+  width: 100%;
+  height: 50px;
+  background: white;
+  border-bottom: 1px solid $gray300;
+  padding-left: 10px;
+
+  .buttons, .profile, .primary, .secondary {
+    @include flex-r;
+    height: 100%;
+  }
+
+  .buttons {
+    .primaryNavB, .secondaryNavB {
+      @include flex-c;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      height: 50px;
+      padding: 0 15px;
+      font-size: 14px;
+      line-height: 16px;
+      transition: 150ms;
+      &:hover {
+        transition: 150ms;
+        text-decoration: underline;
+      }
+    }
+    #logoutB {
+      opacity: 0.3;
+      border: 0;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .profile {
+    padding: 0 25px;
+    transition: 150ms;
+    &:hover {
+      transition: 150ms;
+      p {
+        text-decoration: underline;
+      }
+    }
+    img {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin-right: 10px;
+      border: 1px solid $gray300;
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////////////// Toolbar
+//-----------------------------------------------------------------------------
+.toolbar {
+  @include display-flex;
+  @include flex-row;
+  @include flex-middle;
+  @include flex-between;
+  width: 100%;
+  height: 50px;
+  background: white;
+  border-bottom: 1px solid $gray300;
+  padding-left: 25px;
+  position: relative;
+  overflow: hidden;
+
+  .header, .toolbarB {
+    height: 100%;
+  }
+
+  .header {
+    @include flex-r;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    border-right: 1px solid $gray300;
+    padding-right: 25px;
+    span {
+      font-weight: 700;
+      margin-left: 5px;
+    }
+  }
+
+  .loading, .warning {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $brandOrange;
+  }
+  .loading {
+    display: none;
+    top: 0;
+    z-index: 20;
+    &.active {
+      display: block;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  .warning {
+    @include flex-r;
+    top: -50px;
+    z-index: 10;
+    transition: 150ms;
+    &.active {
+      transition: 150ms;
+      @include transform(translateY(50px));
+    }
+    .spinner {
+
+    }
+    #deleteB, #cancelWarningB, p, span {
+      color: white;
+    }
+    #deleteB, #cancelWarningB, span {
+      font-weight: 700;
+    }
+    #deleteB, #cancelWarningB {
+      margin-left: 10px;
+      padding: 5px 8px;
+      border: 2px solid white;
+      cursor: pointer;
+      transition: 150ms;
+      &:hover {
+        transition: 150ms;
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+
+  .toolbarB {
+    @include flex-c;
+    @include subtitle;
+    border: 0;
+    border-radius: 0;
+    height: 50px;
+    width: 120px;
+    float: left;
+    border-left: 1px solid $gray300;
+    background-color: white;
+    cursor: pointer;
+    transition: 150ms;
+    &:hover {
+      transition: 150ms;
+      text-decoration: underline;
+    }
+  }
+
+  .mini-toolbarB {
+    width: 50px;
+    &:hover { background-color: $gray200; }
+    img {
+      width: 15px;
+    }
+  }
+
+  #searchBAR {
+    @include placeholder {
+      font-size: 20px;
+      line-height: 22px;
+    }
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    text-align: center;
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////// List
+//-----------------------------------------------------------------------------
+.list {
+  display: inline-block;
+  padding: 15px;
+  width: 100%;
+  .item {
+    width: calc(20% - 8px);
+    margin-right: 10px;
+    list-style: none;
+    background: white;
+    margin-bottom: 10px;
+    float: left;
+    border: 1px solid $gray300;
+    border-radius: 4px;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+    &:nth-child(5n) {
+      margin-right: 0;
+    }
+    &.draft {
+      border-color: $brandRed;
+    }
+    &:hover {
+      .buttons { @include display-flex; }
+    }
+  }
+
+  .buttons {
+    @include flex-row;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 10;
+    a {
+      @include flex-c;
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      &:hover {
+        background-color: $gray200;
+      }
+      &:first-child {
+        border-right: 1px solid $gray300;
+      }
+      &:last-child {
+        span {
+          margin-left: 5px;
+          font-weight: 700;
+          text-transform: none;
+        }
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////// Herb Form
+//-----------------------------------------------------------------------------
+.herbFORM {
+  height: 100%;
+  width: 100%;
+}
+
+#sidebar, #leftPANEL, #rightPANEL {
+  height: 100%;
+  float: left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#sidebar, #leftPANEL {
+  border-right: 1px solid $gray300;
+}
+
+#leftPANEL, #rightPANEL {
+  width: calc(50% - 150px);
+}
+
+#sidebar {
+  width: 300px;
+  padding: 15px;
+  section {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .subtitle {
+    margin-bottom: 5px;
+  }
+}
+
+.checkboxCONTAINER, .radioCONTAINER {
+  width: 100%;
+  .row {
+    display: inline-block;
+    label {
+      display: inline-block;
+      float: left;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      font-size: 12px;
+      line-height: 14px;
+      float: left;
+      cursor: pointer;
+      border: 1px solid $gray300;
+      padding: 5px 8px;
+      transition: 150ms;
+      &:hover {
+        background: $gray200;
+      }
+    }
+    .checkbox, .radio {
+      display: none;
+      &:checked {
+        + label {
+          background: $gray200;
+        }
+      }
+    }
+  }
+}
+
+.imagePreviewCONTAINER {
+  display: none;
+  width: 100%;
+  height: auto;
+  &.active {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+.imageUploadCONTAINER {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  label {
+    @include flex-c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $gray300;
+    z-index: 10;
+    background: transparent;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms;
+    &:hover {
+      transition: 150ms;
+      background: $gray200;
+    }
+  }
+  input[type="file"] {
+    opacity: 0;
+  }
+}
+
+#leftPANEL {
+  background: white;
+  textarea {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border: 0;
+  }
+}
+
+#rightPANEL {
+  padding: 15px;
+  section {
+    width: 512px;
+    margin: 0 auto;
+    &:first-child {
+      margin-bottom: 15px;
+      #previewNAME {
+        font-size: 24px;
+        line-height: 26px;
+        margin-bottom: 5px;
+      }
+      #previewSciNAME {
+        font-style: italic;
+      }
+    }
+  }
+}
+
+#previewTEXT {
+  width: 100%;
+  padding: 15px;
+  background: white;
+  border-radius: 3px;
+  min-height: 200px;
+  p, h1, h2, h3, h4, h5, h6, ul, li, div, a, section {
+    font-family: $font2;
+    color: black;
+  }
+  a {
+    display: inline-block;
+    color: $blue800;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 16px;
+    border-bottom: 1px solid $gray300;
+    padding-bottom: 5px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h4 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  h6 {
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  ul, ol {
+    padding-left: 15px;
+  }
+  ol {
+    li {
+      word-break: break-all;
+    }
+    li, a {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  .glance {
+    background: $gray100;
+    position: relative;
+    padding: 15px;
+    left: -15px;
+    width: calc(100% + 30px);
+    > ul {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      padding-left: 0;
+      > li {
+        padding: 5px;
+      }
+      li {
+        width: 33.333%;
+        float: left;
+        list-style: none;
+        font-weight: 700;
+        ul {
+          display: inline-block;
+          width: 100%;
+          padding: 0;
+          margin-bottom: 5px;
+          li {
+            font-weight: 400;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .summary {
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////// Category Form
+//-----------------------------------------------------------------------------
+.categoryFORM {
+  .content {
+    padding-top: 25px;
+    width: 300px;
+    margin: 0 auto;
+    section {
+      margin-bottom: 15px;
+    }
+  }
+
+  .imagePreviewCONTAINER {
+    display: none;
+    width: 100%;
+    height: auto;
+    margin: 5px auto;
+    width: 150px;
+    &.active {
+      display: block;
+    }
+  }
+  .imageUploadCONTAINER {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    label {
+      @include flex-c;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $gray300;
+      z-index: 10;
+      background: transparent;
+      font-size: 10px;
+      line-height: 12px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 150ms;
+      &:hover {
+        transition: 150ms;
+        background: $gray200;
+      }
+    }
+    input[type="file"] {
+      opacity: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
