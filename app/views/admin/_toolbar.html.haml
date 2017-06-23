@@ -12,33 +12,45 @@
     %a{class: 'toolbarB', href: '/admin/category/new'} New Category
   - if page == 'herbNEW'
     .buttons
-      %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
+      .toolbarB#submitB
+        .buttonLOADING
+          %img{src: "#{public_path}/images/spinner_black.svg"}
+        %input{type: 'submit', value: 'SAVE'}
       %a{href: "/admin", class: 'toolbarB', id: 'cancelB'} CANCEL
   - if page == 'herbEDIT'
     .loading
-      %img{src: "#{public_path}/images/spinner.svg"}
+      %img{src: "#{public_path}/images/spinner_white.svg"}
     .warning
       %p Delete <span>permanently</span>?
       #deleteB{data:{slug: @herb.slug}} YES DELETE FOREVER
       #cancelWarningB CANCEL
     .buttons
-      %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
+      .toolbarB#submitB
+        .buttonLOADING
+          %img{src: "#{public_path}/images/spinner_black.svg"}
+        %input{type: 'submit', value: 'SAVE'}
       .toolbarB#warningB DELETE
       %a{href: "/herbs/#{@herb.slug}", class: 'toolbarB mini-toolbarB', target: '_blank'}
         %img{src: "#{public_path}/images/icons/external_link_icon_black.svg"}
   - if page == 'categoryEDIT'
     .loading
-      %img{src: "#{public_path}/images/spinner.svg"}
+      %img{src: "#{public_path}/images/spinner_white.svg"}
     .warning
       %p Delete <span>permanently</span>?
       #deleteB{data:{slug: @category.slug}} YES DELETE FOREVER
       #cancelWarningB CANCEL
     .buttons
-      %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
+      .toolbarB#submitB
+        .buttonLOADING
+          %img{src: "#{public_path}/images/spinner_black.svg"}
+        %input{type: 'submit', value: 'SAVE'}
       .toolbarB#warningB DELETE
       %a{href: "/category/#{@category.slug}", class: 'toolbarB mini-toolbarB', target: '_blank'}
         %img{src: "#{public_path}/images/icons/external_link_icon_black.svg"}
   - if page == 'categoryNEW'
     .buttons
-      %input{type: 'submit', class: 'toolbarB', id: 'submitB', value: 'SAVE'}
+      .toolbarB#submitB
+        .buttonLOADING
+          %img{src: "#{public_path}/images/spinner_black.svg"}
+        %input{type: 'submit', value: 'SAVE'}
       %a{href: "/admin/categories", class: 'toolbarB', id: 'cancelB'} CANCEL

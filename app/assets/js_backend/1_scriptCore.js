@@ -9,7 +9,7 @@ var core = {
     highlightCATEGORIES: 'highlightCATEGORIES',
     nameFILL: 'nameFILL',
     uploadImagePREVIEW: 'uploadImagePREVIEW',
-    itemDELETE: 'itemDELETE'
+    itemACTION: 'itemACTION'
   }
 }
 
@@ -143,26 +143,33 @@ function uploadImagePREVIEW() {
   }
 }
 
-function itemDELETE(controller) {
+function itemACTION(controller) {
   var deleteB = E('deleteB'),
+      saveB = E('submitB'),
       warningB = E('warningB'),
       loadingCONTAINER = cE('loading')[0],
       cancelWarningB = E('cancelWarningB'),
       warningCONTAINER = cE('warning')[0];
 
-  warningB.onclick = function() { addC(warningCONTAINER, 'active'); }
-  cancelWarningB.onclick = function() { remC(warningCONTAINER, 'active'); }
+  if (deleteB) {
+    warningB.onclick = function() { addC(warningCONTAINER, 'active'); }
+    cancelWarningB.onclick = function() { remC(warningCONTAINER, 'active'); }
 
-  deleteB.onclick = function() {
-    addC(loadingCONTAINER, 'active');
-    $.ajax({
-      url: '/'+controller+'/'+gA(this, 'slug')+'',
-      type: 'DELETE',
-      beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-      success: function(response) {
-        window.location.href = '/admin/'+controller+'';
-      }
-    });
+    deleteB.onclick = function() {
+      addC(loadingCONTAINER, 'active');
+      $.ajax({
+        url: '/'+controller+'/'+gA(this, 'slug')+'',
+        type: 'DELETE',
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+        success: function(response) {
+          window.location.href = '/admin/'+controller+'';
+        }
+      });
+    }
+  }
+
+  saveB.onclick = function() {
+    addC(this, 'active');
   }
 }
 
