@@ -7,16 +7,19 @@
       .content
         %section
           %label.subtitle{for: 'name'} Name
-          %input{type: 'text', name: 'categories[name]', id: 'name', autocomplete: :off, placeholder: @category.name, value: @category.name}
+          .sectionWRAPPER
+            %input{type: 'text', name: 'categories[name]', id: 'name', autocomplete: :off, placeholder: 'Name', value: @category.name}
         %section
-          .subtitle Upload Icon
-          %img{src: "#{public_path}/#{@category.icon.url.to_s}", class: "imagePreviewCONTAINER #{@category.thumbnail.url != nil ? 'active' : ''}"}
-          .imageUploadCONTAINER
-            %label{for: 'icon'} Click here to upload
-            %input{type: 'file', name: 'categories[icon]', id: 'icon', data:{num:0}}
+          .subtitle Icon
+          .sectionWRAPPER
+            %img{src: "#{public_path}/#{@category.icon.url.to_s}", class: "imagePreviewCONTAINER #{@category.thumbnail.url != nil ? 'active' : ''}"}
+            .imageUploadCONTAINER
+              %label{for: 'icon'} Click here to upload
+              %input{type: 'file', name: 'categories[icon]', id: 'icon', data:{num:0}}
         %section
-          .subtitle Upload Thumbnail
-          %img{src: "#{public_path}/#{@category.thumbnail.url.to_s}", class: "imagePreviewCONTAINER #{@category.thumbnail.url != nil ? 'active' : ''}"}
-          .imageUploadCONTAINER
-            %label{for: 'thumbnail'} Click here to upload
-            %input{type: 'file', name: 'categories[thumbnail]', id: 'thumbnail', data:{num:1}}
+          .subtitle Thumbnail
+          .sectionWRAPPER
+            %img{src: "#{public_path}/#{@category.thumbnail.url.to_s}", class: "imagePreviewCONTAINER #{@category.thumbnail.url != nil ? 'active' : ''}"}
+            .imageUploadCONTAINER
+              %label{for: 'thumbnail'} Click here to upload
+              %input{type: 'file', name: 'categories[thumbnail]', id: 'thumbnail', data:{num:1}}

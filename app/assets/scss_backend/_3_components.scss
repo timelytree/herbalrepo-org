@@ -556,11 +556,20 @@
 //-----------------------------------------------------------------------------
 .categoryFORM {
   .content {
+    @include display-flex;
+    @include flex-row;
+    @include flex-center;
     padding-top: 25px;
-    width: 300px;
-    margin: 0 auto;
     section {
-      margin-bottom: 15px;
+      width: 200px;
+      box-sizing: border-box;
+      margin-right: 15px;
+      .sectionWRAPPER {
+        background-color: white;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 5px;
+      }
     }
   }
 
@@ -568,8 +577,6 @@
     display: none;
     width: 100%;
     height: auto;
-    margin: 5px auto;
-    width: 150px;
     &.active {
       display: block;
     }
