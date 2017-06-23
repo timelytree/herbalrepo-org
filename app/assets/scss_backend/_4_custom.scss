@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 #herbsINDEX {
   .toolbar {
-    .header, .toolbarB {
+    .header, .toolbarB, .sortBUTTONS {
       position: absolute;
       top: 0;
       z-index: 10;
@@ -10,6 +10,9 @@
     .header {
       left: 0;
       padding-left: 25px;
+    }
+    .sortBUTTONS {
+      right: 120px;
     }
     .toolbarB {
       right: 0;
@@ -23,7 +26,7 @@
     z-index: 5;
     width: 100%;
     padding-left: 123px;
-    padding-right: 135px;
+    padding-right: 406px;
   }
 
   .list {
@@ -31,6 +34,9 @@
       a {
         width: 50%;
       }
+    }
+    .draftStatus {
+      display: none;
     }
   }
 }
@@ -52,7 +58,7 @@
 //-----------------------------------------------------------------------------
 #herbsSHOW {
   .toolbar {
-    .header, .toolbarB {
+    .header, .toolbarB, .sortBUTTONS {
       position: absolute;
       top: 0;
       z-index: 10;
@@ -60,6 +66,9 @@
     .header {
       left: 0;
       padding-left: 25px;
+    }
+    .sortBUTTONS {
+      right: 120px;
     }
     .toolbarB {
       right: 0;
@@ -73,7 +82,18 @@
     z-index: 5;
     width: 100%;
     padding-left: 140px;
-    padding-right: 135px;
+    padding-right: 406px;
+  }
+
+  .list {
+    .buttons {
+      a {
+        width: 50%;
+      }
+    }
+    .draftStatus {
+      display: none;
+    }
   }
 
   #userProfile {

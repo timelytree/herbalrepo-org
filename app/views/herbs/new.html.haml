@@ -1,7 +1,7 @@
 .wrapper#herbNEW
   .container
     = render 'admin/nav'
-    = form_tag('/herbs', method: 'post', multipart: true, class: 'categoryFORM') do
+    = form_tag('/herbs', method: 'post', multipart: true, class: 'herbFORM') do
       %input{type: 'hidden', name: 'herbs[user_id]', value: session[:user_id], autocomplete: :off}
       = render 'admin/toolbar', page: 'herbNEW', header: 'New Herb'
       .content

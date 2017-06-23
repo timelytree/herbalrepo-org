@@ -70,7 +70,7 @@ function showdownINIT() {
 
 function listFilter(page) {
   var options = {
-    valueNames: ['herbName', 'herbLatinName']
+    valueNames: ['herbName', 'herbLatinName', 'draftStatus']
   };
   var hackerList = new List(page, options);
 }

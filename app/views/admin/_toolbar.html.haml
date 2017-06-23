@@ -1,8 +1,13 @@
 .toolbar
   .header= header.html_safe
   - if page == 'herbsINDEX' || page == 'herbsSHOW'
-    %input{id: 'searchBAR', class: 'search', type: 'text', autocomplete: :off, placeholder: 'search for an herb...'}
-    %a{class: 'toolbarB', href: '/admin/herb/new'} New Herb
+    %input#searchBAR.search{type: 'text', autocomplete: :off, placeholder: 'search for an herb...'}
+    %ul.sortBUTTONS
+      %li Sort by:
+      %li.sort{data:{sort:'herbName'}} Name
+      %li.sort{data:{sort:'herbLatinName'}} Latin Name
+      %li.sort{data:{sort:'draftStatus'}} Draft Status
+    %a.toolbarB{href: '/admin/herb/new'} New Herb
   - if page == 'categoriesINDEX'
     %a{class: 'toolbarB', href: '/admin/category/new'} New Category
   - if page == 'herbNEW'
