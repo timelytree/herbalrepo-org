@@ -37,8 +37,8 @@
         #leftPANEL
           %textarea{name: 'herbs[information]', class: '', autocomplete: :off, placeholder: 'Information'}= @herb.information
         #rightPANEL
-          %section
-            #previewNAME
-            #previewSciNAME
-          %section
-            #previewTEXT
+          .herbCONTAINER
+            #herbNAME
+            #herbLatinNAME
+            #info
+              #previewTEXT

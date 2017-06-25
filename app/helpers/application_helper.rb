@@ -43,4 +43,8 @@ module ApplicationHelper
       return false
     end
   end
+
+  def unindent(s)
+    s.gsub(/^#{s.scan(/^[ \t]+(?=\S)/).min}/, '')
+  end
 end

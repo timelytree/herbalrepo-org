@@ -2,9 +2,9 @@
   = render 'shared/nav'
   .console
     .content
-      #herbCONTAINER
+      .herbCONTAINER
         #herbNAME= @herb.name
         #herbLatinNAME= @herb.latin_name
-        #description
+        #info
           = @herb.information.html_safe
       = render 'herbs/herbLIST'

@@ -101,9 +101,9 @@ function highlightCATEGORIES() {
 
 function nameFILL() {
   var nameINPUT = E('name'),
-      namePREVIEW = E('previewNAME'),
+      namePREVIEW = E('herbNAME'),
       sciNameINPUT = E('latin_name'),
-      sciNamePREVIEW = E('previewSciNAME');
+      sciNamePREVIEW = E('herbLatinNAME');
 
   if (nameINPUT.value != '') { namePREVIEW.innerHTML = nameINPUT.value; }
   else { namePREVIEW.innerHTML = nameINPUT.placeholder; }

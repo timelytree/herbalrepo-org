@@ -75,7 +75,7 @@ function lazyLoad() {
 }
 
 function markdown() {
-  var container = E('description'),
+  var container = E('info'),
       text = container.innerHTML,
       html = showdownCONVERT.makeHtml(text);
 
