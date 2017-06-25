@@ -31,14 +31,17 @@
     margin-top: 25px;
   }
 
-  .introduction, .preparation, .directions, .adversity {
+  .glance, .introduction, .preparation, .directions, .adversity {
     margin-bottom: 25px;
+  }
+
+  .introduction, .preparation, .directions, .adversity {
     background: white;
     padding: 15px;
     border-radius: 4px;
   }
 
-  .references {
+  .glance, .references {
     h3 {
       position: static;
       padding-bottom: 0;
@@ -96,33 +99,44 @@
   }
 
   .glance {
-    background: $gray100;
-    position: relative;
-    padding: 15px;
-    left: -15px;
-    width: calc(100% + 30px);
-    > ul {
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-      padding-left: 0;
-      > li {
-        padding: 5px;
-      }
+    padding: 25px 0;
+
+    ul {
+      padding: 0;
       li {
-        width: 33.333%;
-        float: left;
         list-style: none;
-        font-weight: 700;
-        ul {
-          display: inline-block;
-          width: 100%;
-          padding: 0;
-          margin-bottom: 5px;
-          li {
-            font-weight: 400;
-            width: 100%;
-          }
+        margin: 0;
+      }
+    }
+
+    > ul {
+      @include display-flex;
+      @include flex-row;
+      > li {
+        @include subtitle;
+        width: 33.333%;
+        padding: 45px 5px 0 5px;
+        margin-top: 15px;
+        position: relative;
+        text-align: center;
+        &:before {
+          content: '';
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          top: 0;
+          left: calc(50% - 15px);
+        }
+        &:nth-child(1):before { background-image: url('../images/icons/health_icon_black.svg'); }
+        &:nth-child(2):before { background-image: url('../images/icons/globe_icon_black.svg'); }
+        &:nth-child(3):before { background-image: url('../images/icons/plant_icon_black.svg'); }
+      }
+      ul {
+        margin-top: 5px;
+        li {
+          font-size: 16px;
+          line-height: 18px;
+          text-transform: none;
         }
       }
     }

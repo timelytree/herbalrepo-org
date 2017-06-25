@@ -24,39 +24,43 @@ class HerbsController < ApplicationController
     @herb = Herb.new
     @categories = Category.all
     @textareaPLACEHOLDER = %q(
-    [introduction--]
-    ### INTRODUCTION
-    [--introduction]
+      [glance--]
 
-    [preparation--]
-    ### PREPARATION
-    #### TEA
-    - Put 1.8g (1 tsp) of loosely ground Valerian Root into a cup.
-    - Pour 250mL (1 cup) of 95˚C water into the cup.
-    - Cover and let steep for 20-30 mins.
-    - For best effects, let steep in room-temperature water for 12-24 hours.
+      [--glance]
 
-    #### TINCTURE
-    - Fill a 500mL (1 pint) jar half-way with loosely-ground Valerian Root
-    - Fill the rest with 80- or 100-proof vodka (1:1 ratio, herb:vodka)
-    - Mix thoroughly
-    - Let sit out of direct sunlight for 6 weeks
-    - Give the jar a shake every day.
-    - After 6 weeks, strain using a cheese cloth and discard solids.
-    [--preparation]
+      [introduction--]
+      ### INTRODUCTION
+      [--introduction]
 
-    [directions--]
-    ### DIRECTIONS FOR USE & DOSAGE
-    [--directions]
+      [preparation--]
+      ### PREPARATION
+      #### TEA
+      - Put 1.8g (1 tsp) of loosely ground Valerian Root into a cup.
+      - Pour 250mL (1 cup) of 95˚C water into the cup.
+      - Cover and let steep for 20-30 mins.
+      - For best effects, let steep in room-temperature water for 12-24 hours.
 
-    [adversity--]
-    ### ADVERSE EFFECTS & CONTRAINDICATIONS
-    [--adversity]
+      #### TINCTURE
+      - Fill a 500mL (1 pint) jar half-way with loosely-ground Valerian Root
+      - Fill the rest with 80- or 100-proof vodka (1:1 ratio, herb:vodka)
+      - Mix thoroughly
+      - Let sit out of direct sunlight for 6 weeks
+      - Give the jar a shake every day.
+      - After 6 weeks, strain using a cheese cloth and discard solids.
+      [--preparation]
 
-    [references--]
-    ### REFERENCES
-    1. 
-    [--references]
+      [directions--]
+      ### DIRECTIONS FOR USE & DOSAGE
+      [--directions]
+
+      [adversity--]
+      ### ADVERSE EFFECTS & CONTRAINDICATIONS
+      [--adversity]
+
+      [references--]
+      ### REFERENCES
+      1.
+      [--references]
     )
   end
 
