@@ -25,7 +25,12 @@ class HerbsController < ApplicationController
     @categories = Category.all
     @textareaPLACEHOLDER = %q(
       [glance--]
-
+      - Treats
+        -
+      - Location
+        -
+      - Type
+        -
       [--glance]
 
       [introduction--]
