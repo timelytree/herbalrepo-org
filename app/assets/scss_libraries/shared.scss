@@ -125,7 +125,7 @@
           height: 25px;
           position: absolute;
           top: 0;
-          left: calc(50% - 15px);
+          left: calc(50% - 12.5px);
         }
         &:nth-child(1):before { background-image: url('../images/icons/health_icon_black.svg'); }
         &:nth-child(2):before { background-image: url('../images/icons/globe_icon_black.svg'); }
