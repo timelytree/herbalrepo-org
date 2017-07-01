@@ -1,0 +1,292 @@
+/////////////////////////////////////////////////////////////////// Nav Buttons
+//-----------------------------------------------------------------------------
+#navBUTTONS {
+  @include display-flex;
+  @include flex-row;
+  position: fixed;
+  top: 25px;
+  left: calc((50% + 768px/2) + 25px);
+  width: 40%;
+  z-index: 50;
+  transition: 150ms;
+  #homeB {
+    margin-right: 25px;
+  }
+
+  .shareB {
+    width: 50px;
+  }
+}
+
+.navB {
+  @include flex-c;
+  list-style: none;
+  height: 50px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: 100ms;
+  &:hover {
+    p {
+      text-decoration: underline;
+    }
+    &:before, &:after {
+      transition: 100ms;
+      @include transform(translateY(5px));
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &:before, &:after {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: 100ms;
+  }
+  &:before {
+    content: '';
+    bottom: 4px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+  }
+  &:after {
+    @include subtitle;
+    content: attr(data-tooltip);
+    bottom: -20px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 2px;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  img {
+    height: 15px;
+    margin-bottom: 5px;
+  }
+  p {
+    @include subtitle;
+  }
+}
+
+//////////////////////////////////////////////////////////////////// Search Bar
+//-----------------------------------------------------------------------------
+#searchCONTAINER {
+  @include cardShadow;
+  border-radius: 4px;
+  position: fixed;
+  top: 25px;
+  left: calc(50% - 768px/2);
+  width: 768px;
+  z-index: 100;
+  transition: 150ms;
+  #searchBAR {
+    width: 100%;
+    margin:0 auto;
+    border-radius: 4px;
+    font-size: 20px;
+    line-height: 22px;
+    padding: 13px 15px;
+    border-color: transparent;
+    transition: 100ms;
+    &:active, &:focus {
+      transition: 100ms;
+      border-color: $brandGreen;
+      box-shadow: none;
+    }
+  }
+  #herbSearchCloseB {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 30px);
+    opacity: 0;
+    visibility: hidden;
+    margin-right: 0;
+    transition: 150ms;
+    &:before, &:after {
+      display: none;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////// categoriesNAV
+//-----------------------------------------------------------------------------
+#categories {
+  @include flex-r;
+  @include cardShadow;
+  width: 500px;
+  height: 75px;
+  background: white;
+  border-radius: 4px;
+  position: relative;
+  left: calc(50% - 500px/2);
+  margin-bottom: 25px;
+  z-index: 25;
+  transition: 150ms;
+
+  .categoryTILE {
+    width: 100px;
+    height: 100%;
+    list-style: none;
+    &.active {
+      p {
+        color: $brandGreen;
+      }
+    }
+  }
+
+  .categoryTILE {
+    @include flex-c;
+    cursor: pointer;
+    &:hover {
+      p {
+        transition: 100ms;
+        color: $brandGreen;
+      }
+    }
+    img {
+      width: 30px;
+      margin-bottom: 10px;
+    }
+    p {
+      @include subtitle;
+      text-align: center;
+      transition: 100ms;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////// Footer
+//-----------------------------------------------------------------------------
+#footer {
+  height: 500px;
+  background-color: $gray300;
+}
+
+///////////////////////////////////////////////////////////////////// Herb List
+//-----------------------------------------------------------------------------
+#herbLIST {
+  display: inline-block;
+  width: 768px;
+  left: calc(50% - 768px/2);
+  transition: 150ms;
+  .herbITEM {
+    @include cardShadow;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: calc(25% - 7.5px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid transparent;
+    transition: 150ms;
+    &:hover {
+      transition: 150ms;
+      @include transform(translate(1px, 2px));
+      border-color: $gray400;
+    }
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    .thumbnailMissingIND {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-top: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      p {
+        @include flex-c;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        text-align: center;
+      }
+    }
+    .herbIMG {
+      @include centerImage;
+      background-image: url('../../images/herb_placeholder.png');
+      background-size: 75px;
+      width: 100%;
+      padding-top: 100%;
+    }
+    .herbItemINFO {
+      background: white;
+      padding: 10px;
+      p {
+        color: black;
+        &.herbLatinName {
+          font-style: italic;
+          font-size: 80%;
+        }
+      }
+      .category {
+        display: none;
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////// "All Herbs" Search Slideout Panel
+//-----------------------------------------------------------------------------
+#herbsSEARCH {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(100% + 50px);
+  padding-top: 100px;
+  padding-right: 50px;
+  overflow-y: scroll;
+  z-index: 75;
+  opacity: 0;
+  visibility: hidden;
+  transition: 150ms;
+  #herbLIST {
+    transition: 150ms;
+    position: relative;
+    top: 25px;
+    opacity: 0;
+  }
+}
+
+//////////////////////////////////////////////////////////// Backdrop Container
+//-----------------------------------------------------------------------------
+.backdropIMG {
+  @include centerImage;
+  background-image: url('../../images/backdrop.jpg');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: 150ms;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

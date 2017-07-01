@@ -1,10 +1,10 @@
-.wrapper#herbPAGE
+.wrapper#herbShowPAGE
   = render 'shared/nav'
-  .console
+  = render 'shared/herbsSEARCH'
+  .container
     .content
       .herbCONTAINER
         #herbNAME= @herb.name
         #herbLatinNAME= @herb.latin_name
         #info
           = @herb.information.html_safe
-      = render 'herbs/herbLIST'

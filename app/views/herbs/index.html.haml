@@ -1,6 +1,10 @@
 .wrapper#herbIndexPAGE
   = render 'shared/nav'
-  .console
+  = render 'shared/herbsSEARCH'
+  .container
     .content
-      = render 'shared/logo'
-      = render 'herbs/herbLIST'
+      #logoCONTAINER
+        %img{src: "#{public_path}/images/logo.png"}
+        %h6 An encyclopedia of the world's plant medicines
+        %p Here we aim to describe herbs and plants that have beneficial medicinal properties, focusing primarily on modern scientific investigations. We strive to provide accurate dosage information for ingestion methods such as teas, tinctures, and capsules.
+  .backdropIMG

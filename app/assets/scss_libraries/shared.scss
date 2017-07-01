@@ -1,6 +1,7 @@
 .herbCONTAINER {
   width: 512px;
   margin: 0 auto;
+  padding: 0 1px;
   p, h1, h2, h3, h4, h5, h6, ul, li, div, a, section {
     font-family: $font2;
     color: black;
@@ -28,14 +29,16 @@
   }
 
   #info {
-    margin-top: 25px;
+    // margin-top: 25px;
   }
 
   .glance, .introduction, .preparation, .directions, .adversity {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
+    position: relative;
   }
 
   .introduction, .preparation, .directions, .adversity {
+    @include cardShadow;
     background: white;
     padding: 15px;
     border-radius: 4px;
@@ -61,11 +64,10 @@
     font-size: 16px;
     line-height: 18px;
     background: $gray50;
-    position: relative;
-    top: -15px;
-    left: -15px;
-    width: calc(100% + 30px);
-    padding-bottom: 10px;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 100%;
   }
   h4 {
     font-weight: 600;

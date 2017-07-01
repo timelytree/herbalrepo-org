@@ -11,20 +11,14 @@ var init = {
 var core = {
   global: {
     showdownINIT: 'showdownINIT',
-    loginFormTOGGLE: 'loginFormTOGGLE',
-    navINT: 'navINT',
     lazyLoad: 'lazyLoad',
     markdown: 'markdown',
-    listFilter: 'listFilter',
-    headerAnimOnSCROLL: 'headerAnimOnSCROLL'
+    searchAllHerbs: 'searchAllHerbs',
+    categoriesNavINT: 'categoriesNavINT'
   },
   desktop: {
-    populateHerbPanel: 'populateHerbPanel',
-    herbCreatePanelTOGGLE: 'herbCreatePanelTOGGLE',
-    herbEditPanelTOGGLE: 'herbEditPanelTOGGLE'
   },
   mobile: {
-    categoryListANIM: 'categoryListANIM',
     menuINT: 'menuINT'
   }
 }
@@ -67,8 +61,10 @@ function showdownINIT() {
 }
 
 function lazyLoad() {
-  var myLazyLoad = new LazyLoad({
-    container: document.getElementById('herbLIST'),
+  var herbLIST = E('herbLIST');
+
+  new LazyLoad({
+    container: herbLIST,
     elements_selector: ".herbIMG",
     callback_set: function(d) { d.style.backgroundSize = 'cover'; }
   });
@@ -82,64 +78,80 @@ function markdown() {
   container.innerHTML = html;
 }
 
-function listFilter() {
-  var options = {
-    valueNames: ['herbName', 'herbLatinName']
-  };
+function searchAllHerbs(pageID) {
+  var input = E('searchBAR'),
+      wrapper = cE('wrapper')[0],
+      closeB = E('herbSearchCloseB'),
+      categoriesCONTAINER = E('categories'),
+      categoryTiles = cE('categoryTILE'),
+      categorySTAT = false;
 
-  var hackerList = new List('herbLIST', options);
+  var categoriesLIST = JSON.parse(gA(categoriesCONTAINER, 'categories')),
+      searchLIST = ['herbName', 'herbLatinName'].concat(categoriesLIST);
+
+  var list = new List(pageID, options = {
+    valueNames: searchLIST
+  });
+
+  function clear() {
+    for (var i = 0; i < categoryTiles.length; i++) { remC(categoryTiles[i], 'active'); }
+    categorySTAT = false;
+  }
+
+  input.onfocus = function() { addC(wrapper, 'active'); }
+
+  herbSearchCloseB.onclick = function() {
+    input.value = '';
+    remC(wrapper, 'active');
+    var timer = window.setTimeout(function() {
+      list.search();
+      clear();
+      clearTimeout(timer);
+    }, 200);
+  }
+
+  input.oninput = function() {
+    var text = this.value;
+    list.search(text);
+    if (categorySTAT) { clear(); }
+  }
+
+  for (var i = 0; i < categoryTiles.length; i++) {
+    categoryTiles[i].onclick = function() {
+      var name = gA(this, 'name');
+      clear();
+      categorySTAT = true;
+      addC(this, 'active');
+      input.focus();
+      input.value = name;
+      list.search(name);
+    }
+  }
+
 }
 
-function headerAnimOnSCROLL() {
-  var cons = cE('console')[0],
-      wrapper = cE('wrapper')[0],
-      stat = false;
-
-  function debounce(func, wait, immediate) {
-  	var timeout;
-  	return function() {
-  		var context = this, args = arguments;
-  		var later = function() {
-  			timeout = null;
-  			if (!immediate) func.apply(context, args);
-  		};
-  		var callNow = immediate && !timeout;
-  		clearTimeout(timeout);
-  		timeout = setTimeout(later, wait);
-  		if (callNow) func.apply(context, args);
-  	};
-  };
-
-  var myEfficientFn = debounce(function() {
-    if ((!stat) && (cons.scrollTop > 50)) {
-      addC(wrapper, 'minimized');
-      stat = true;
-    } else if ((stat) && (cons.scrollTop < 50)) {
-      remC(wrapper, 'minimized');
-      stat = false;
-    }
-  }, 20);
-
-  cons.onscroll = myEfficientFn;
+function categoriesNavINT() {
+  // var closeB = E('categoriesNavCloseB'),
+  //     container = E('categories');
 }
 
 /////////////////////////////////////////////////////////////// mobile functions
 //------------------------------------------------------------------------------
-function menuINT() {
-  var menuB = E('menuB'),
-      nav = E('nav'),
-      stat = false;
-
-  menuB.onclick = function() {
-    if (!stat) {
-      addC(nav, 'active');
-      stat = true;
-    } else {
-      remC(nav, 'active');
-      stat = false;
-    }
-  }
-}
+// function menuINT() {
+//   var menuB = E('menuB'),
+//       nav = E('nav'),
+//       stat = false;
+//
+//   menuB.onclick = function() {
+//     if (!stat) {
+//       addC(nav, 'active');
+//       stat = true;
+//     } else {
+//       remC(nav, 'active');
+//       stat = false;
+//     }
+//   }
+// }
 
 
 

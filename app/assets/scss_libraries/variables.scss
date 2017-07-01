@@ -3,6 +3,7 @@
 $brandGreen: #719130;
 $brandRed: #913030;
 $brandOrange: #ED8E00;
+$brandGray: #F4F6F8;
 $boxShadowColour: rgba(0, 0, 0, 0.2);
 
 $blue50: #E3F2FD;
@@ -73,6 +74,17 @@ $red900: #B71C1C;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@mixin cardShadow {
+  -webkit-box-shadow: 0 0 0 1px rgba(63,63,68,0.05), 0 1px 3px 0 rgba(63,63,68,0.15);
+  -moz-box-shadow: 0 0 0 1px rgba(63,63,68,0.05), 0 1px 3px 0 rgba(63,63,68,0.15);
+  box-shadow: 0 0 0 1px rgba(63,63,68,0.05), 0 1px 3px 0 rgba(63,63,68,0.15);
+}
+
+@mixin card {
+	@include cardShadow;
+	border-radius: 4px;
 }
 
 @mixin boxShadow {

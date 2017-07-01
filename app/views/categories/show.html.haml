@@ -1,8 +1,0 @@
-.wrapper#categoryPAGE
-  = render 'shared/nav'
-  .console
-    .content
-      #categoryTITLE
-        %img{src: "#{public_path}/#{@category.thumbnail.url.to_s}"}
-        %h5= @category.name
-      = render 'herbs/herbLIST'

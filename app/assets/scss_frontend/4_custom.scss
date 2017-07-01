@@ -1,0 +1,158 @@
+///////////////////////////////////////////////// Searching For Herbs Animation
+//-----------------------------------------------------------------------------
+.wrapper {
+  &.active {
+    #searchCONTAINER {
+      #herbSearchCloseB {
+        @include transform(translateX(-5px));
+        transition-delay: 400ms;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    #navBUTTONS {
+      @include transform(translateY(10px));
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #herbsSEARCH {
+      opacity: 1;
+      visibility: visible;
+      #herbLIST {
+        @include transform(translateY(-25px));
+        transition-delay: 200ms;
+        opacity: 1;
+      }
+    }
+
+    .container, .backdropIMG {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////// Home Page
+//-----------------------------------------------------------------------------
+#herbIndexPAGE {
+  min-width: 100vw;
+  min-height: 100vh;
+
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    @include flex-c;
+    height: 100%;
+  }
+
+  #logoCONTAINER {
+    @include flex-c;
+    @include cardShadow;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 4px;
+    width: 100%;
+
+    img, h6 {
+      margin-bottom: 25px;
+    }
+
+    img {
+      width: 150px;
+    }
+
+    h6 {
+      font-weight: 700;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////// Herb Show Page
+//-----------------------------------------------------------------------------
+#herbShowPAGE {
+  .herbCONTAINER {
+    width: 100%;
+  }
+}
+
+//////////////////////////////////////////////////////////////////// About Page
+//-----------------------------------------------------------------------------
+#aboutPAGE {
+  .container {
+    min-height: 100vh;
+  }
+
+  .content {
+    @include card;
+    background: white;
+    padding: 25px;
+
+    .imgCONTAINER {
+      @include flex-c;
+      margin-bottom: 25px;
+      img {
+        width: 100px;
+        margin-bottom: 10px;
+      }
+      a {
+        color: $blue700;
+        font-style: italic;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    h6 {
+      @include subtitle;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    li {
+      list-style: none;
+      padding-left: 25px;
+      margin-bottom: 5px;
+    }
+
+    .Row {
+      margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

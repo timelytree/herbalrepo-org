@@ -29,12 +29,20 @@ gulp.task('scss_frontend', function() {
     config.scss_libraries + 'variables.scss',
     config.scss_libraries + 'normalize.scss',
     config.scss_libraries + 'shared.scss',
-    config.scss_frontend + 'base.scss',
-    config.scss_frontend + 'structure.scss',
-    config.scss_frontend + 'herbs.scss',
-    config.scss_frontend + 'pages.scss',
-    config.scss_frontend + 'categories.scss',
-    config.scss_frontend + 'mq.scss'
+    config.scss_frontend + '1_base.scss',
+    config.scss_frontend + '2_structure.scss',
+    config.scss_frontend + '3_components.scss',
+    config.scss_frontend + '4_custom.scss',
+    config.scss_frontend + '5_mq.scss'
+    // config.scss_libraries + 'variables.scss',
+    // config.scss_libraries + 'normalize.scss',
+    // config.scss_libraries + 'shared.scss',
+    // config.scss_frontend + 'base.scss',
+    // config.scss_frontend + 'structure.scss',
+    // config.scss_frontend + 'herbs.scss',
+    // config.scss_frontend + 'pages.scss',
+    // config.scss_frontend + 'categories.scss',
+    // config.scss_frontend + 'mq.scss'
   ])
   .pipe(concat('frontend.css'))
   .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
@@ -74,7 +82,7 @@ gulp.task('js_frontend', function() {
     config.js_frontend + '2_scriptInit.js',
   ])
   .pipe(concat('frontend.js'))
-  .pipe(uglify())
+  // .pipe(uglify())
   .pipe(gulp.dest(config.publicPath))
 });
 
@@ -89,7 +97,7 @@ gulp.task('js_backend', function() {
     config.js_backend + '2_scriptInit.js',
   ])
   .pipe(concat('backend.js'))
-  .pipe(uglify())
+  // .pipe(uglify())
   .pipe(gulp.dest(config.publicPath))
 });
 

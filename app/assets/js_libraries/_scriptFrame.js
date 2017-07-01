@@ -3,6 +3,7 @@
 // Get a single DOM element by its id or multiple elements by class name
 function E(id) { return document.getElementById(id); }
 function cE(className) { return document.getElementsByClassName(className); }
+function tE(tagName) { return document.getElementsByTagName(tagName); }
 // Create an element, assign class, id, and style attributes, and then return that element
 function gE(type, className, id, style) {
   var element = document.createElement(type);
@@ -30,3 +31,17 @@ function gA(item, att) { return item.getAttribute('data-'+att+''); }
 function sA(item, attName, att) { item.setAttribute('data-'+attName+'', att); }
 // Run a function within scriptInit.js using the global window object
 function run(func, params) { window[func](params); }
+// Force an event to fire
+function fireEvent(element, event) {
+  if (document.createEventObject) {
+    // dispatch for IE
+    var evt = document.createEventObject();
+    return element.fireEvent('on'+event,evt)
+  }
+  else{
+    // dispatch for firefox + others
+    var evt = document.createEvent("HTMLEvents");
+    evt.initEvent(event, true, true ); // event type,bubbling,cancelable
+    return !element.dispatchEvent(evt);
+  }
+}

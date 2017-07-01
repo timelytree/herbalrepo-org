@@ -1,9 +1,0 @@
-#searchCONTAINER
-  - if (params[:controller] == 'herbs' && params[:action] == 'index')
-    %input{id: 'searchBAR', class: 'search', type: 'text', autocomplete: :off, placeholder: 'search for an herb...'}
-  - elsif (params[:controller] == 'categories')
-    %input{id: 'searchBAR', class: 'search', type: 'text', autocomplete: :off, placeholder: "#{session[:current_category].split.map(&:capitalize).join(' ')}: filter herbs..."}
-  - elsif (params[:controller] == 'herbs' && params[:action] == 'show' && session[:current_category] != nil)
-    %input{id: 'searchBAR', class: 'search', type: 'text', autocomplete: :off, placeholder: "#{session[:current_category].split.map(&:capitalize).join(' ')}: filter herbs..."}
-  - else
-    %input{id: 'searchBAR', class: 'search', type: 'text', autocomplete: :off, placeholder: 'search for an herb...'}

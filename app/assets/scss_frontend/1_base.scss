@@ -1,8 +1,8 @@
-////////////////////////////////////////////////////////////////////// Framework
-//------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////// Framework
+//-----------------------------------------------------------------------------
 html, body {
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
   position: relative;
@@ -12,15 +12,14 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
-  overflow: hidden;
 }
 
 body {
   overflow-y: scroll;
 }
 
-/////////////////////////////////////////////////////////////////////////// Text
-//------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////// Text
+//-----------------------------------------------------------------------------
 input, textarea { outline: none; padding: 0; }
 textarea { resize: none; }
 
@@ -52,43 +51,22 @@ a {
   }
 }
 
-///////////////////////////////////////////////////////////////// Flex structure
-//------------------------------------------------------------------------------
+//////////////////////////////////////////////////////////////// Flex structure
+//-----------------------------------------------------------------------------
 .flex-c { @include display-flex; @include flex-column; @include flex-no-wrap; @include flex-center; @include flex-middle; }
 .flex-r { @include display-flex; @include flex-row; @include flex-no-wrap; @include flex-center; @include flex-middle; }
 .col { @include display-flex; @include flex-column; @include flex-no-wrap; }
 .row { @include display-flex; @include flex-row; @include flex-no-wrap; }
 .wrap { @include flex-wrap; }
-////////////////////////////////////////////////////////// [justify] positioning
+///////////////////////////////////////////////////////// [justify] positioning
 .start { @include flex-start; }
 .center { @include flex-center; }
 .end { @include flex-end; }
-//////////////////////////////////////////////////////////// [align] positioning
+/////////////////////////////////////////////////////////// [align] positioning
 .top { @include flex-top; }
 .middle { @include flex-middle; }
 .bottom { @include flex-bottom; }
 .self-start { @include self-start; }
 .self-end { @include self-end; }
-//////////////////////////////////////////////////////////////////////// spacing
+/////////////////////////////////////////////////////////////////////// spacing
 .between { @include flex-between; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

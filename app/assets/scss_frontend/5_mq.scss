@@ -1,0 +1,172 @@
+////////////////////////////////////////////////////////////////////// < 1024px
+//-----------------------------------------------------------------------------
+@media only screen and (max-width: 1024px) {
+  #searchCONTAINER {
+    width: 640px;
+    left: calc(50% - 640px/2);
+  }
+
+  #navBUTTONS {
+    left: calc((50% + 640px/2) + 25px)
+  }
+}
+
+/////////////////////////////////////////////////////////////////////// < 768px
+//-----------------------------------------------------------------------------
+@media only screen and (max-width: 768px) {
+  .container {
+    padding-top: 175px;
+  }
+
+  #searchCONTAINER {
+    width: 640px;
+    left: calc(50% - 640px/2);
+    #searchBAR {
+      padding-right: 75px;
+    }
+
+    #herbSearchCloseB {
+      left: auto;
+      right: -5px;
+      padding: 0 15px;
+      img {
+        display: none;
+      }
+    }
+  }
+
+  #navBUTTONS {
+    @include flex-r;
+    width: 100%;
+    left: 0;
+    top: 100px;
+  }
+
+  #herbLIST {
+    width: 640px;
+    left: calc(50% - 640px/2);
+    .herbITEM {
+      width: calc(33.3333% - 6.66667px);
+      &:nth-child(4n) {
+        margin-right: 10px;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////////////// < 737px
+//-----------------------------------------------------------------------------
+@media only screen and (max-width: 737px) {
+  .container {
+    padding: 145px 15px 0 15px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  #searchCONTAINER {
+    width: calc(100% - 30px);
+    left: 15px;
+    top: 15px;
+  }
+
+  #navBUTTONS {
+    @include card;
+    background: white;
+    width: calc(100% - 60px);
+    padding-top: 10px;
+    top: 60px;
+    left: 30px;
+  }
+
+  #herbLIST {
+    width: 640px;
+    left: calc(50% - 640px/2);
+    .herbITEM {
+      width: calc(33.3333% - 6.66667px);
+      &:nth-child(4n) {
+        margin-right: 10px;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  #herbsSEARCH {
+    // top: 80px;
+    width: calc(100% + 30px);
+    // height: calc(100% - 80px);
+    padding: 80px 45px 0 15px;
+  }
+
+  #categories {
+    @include flex-wrap;
+    height: auto;
+    width: 100%;
+    left: 0;
+    padding: 20px 0 5px 0;
+    .categoryTILE {
+      width: 33.3333%;
+      margin-bottom: 10px;
+    }
+  }
+
+  #herbLIST {
+    width: 100%;
+    left: 0;
+    .herbITEM {
+      width: calc(50% - 5px);
+      &:nth-child(3n) {
+        margin-right: 10px
+      }
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      .herbItemINFO {
+        p {
+          &.herbLatinName {
+            font-size: 70%;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+/////////////////////////////////////////////////////////////////////// < 415px
+//-----------------------------------------------------------------------------
+@media only screen and (max-width: 415px) {
+  .herbCONTAINER h3 {
+    font-size: 13px;
+    line-height: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

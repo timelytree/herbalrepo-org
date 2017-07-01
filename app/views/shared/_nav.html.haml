@@ -1,20 +1,21 @@
-%nav#nav
-  %ul#navButtons
-    %li
-      %a{href: "/"} Home
-    %li
-      %a{href: "/about"} About
-    %li
-      %a{href: "/contribute"} Contribute
-    %li
-      %a{href: 'https://www.pinterest.com/herbalrepo/', target: '_blank', class: 'navB shareB'}
-        %img{src: '../images/icons/pinterest_icon_black.svg'}
-  #menuB
-    %img{src: '../images/icons/menu_icon_black.svg'}
-    %img{src: '../images/icons/close_icon_black.svg'}
-  %ul#navCategories
-    - @categories.each do |category|
-      %li{class: "navCategoryTILE #{session[:current_category] == category.name.downcase ? 'active' : ''}", data:{category: category.name.downcase}}
-        %a{href: "/category/#{category.slug}"}
-          %img{src: "#{public_path}/#{category.icon.url.to_s}"}
-          %p= category.name
+-# ////////////////////////////////////////////////////////////////// searchBAR
+#searchCONTAINER
+  %input{id: 'searchBAR', type: 'text', autocomplete: :off, placeholder: 'search for an herb...'}
+  .navB#herbSearchCloseB{data:{tooltip:'Cancel Searching'}}
+    %img{src: "#{public_path}/images/icons/close_icon_black.svg"}
+    %p Cancel
+
+-# ///////////////////////////////////////////////////////////////// navBUTTONS
+#navBUTTONS
+  %a.navB#homeB{href: '/', data:{tooltip: 'Back to Home'}}
+    %img{src: "#{public_path}/images/logo.png"}
+    %p Home
+  %a.navB#aboutB{href: '/about', data:{tooltip: 'Learn About Us'}}
+    %img{src: "#{public_path}/images/icons/plant_icon_black.svg"}
+    %p About
+  -# %a.navB#contributeB{href: '/', data:{tooltip: 'Contribute Some Knowledge'}}
+  -#   %img{src: "#{public_path}/images/icons/plant_icon_black.svg"}
+  -#   %p Contribute
+  -# %li.navB#pinterestB
+  -#   %a{href: 'https://www.pinterest.com/herbalrepo/', target: '_blank'}
+  -#     %img{src: '../images/icons/pinterest_icon_black.svg'}
