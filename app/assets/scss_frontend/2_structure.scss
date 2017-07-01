@@ -22,7 +22,8 @@
   width: 640px;
   margin: 0 auto;
   margin-bottom: 25px;
-  overflow: visible;
+  padding: 1px;
+  // overflow: visible;
 }
 
 input[type="text"], textarea {

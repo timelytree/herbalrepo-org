@@ -43,6 +43,20 @@ function gA(item, att) { return item.getAttribute('data-'+att+''); }
 function sA(item, attName, att) { item.setAttribute('data-'+attName+'', att); }
 // Run a function within scriptInit.js using the global window object
 function run(func, params) { window[func](params); }
+// Force an event to fire
+function fireEvent(element, event) {
+  if (document.createEventObject) {
+    // dispatch for IE
+    var evt = document.createEventObject();
+    return element.fireEvent('on'+event,evt)
+  }
+  else{
+    // dispatch for firefox + others
+    var evt = document.createEvent("HTMLEvents");
+    evt.initEvent(event, true, true ); // event type,bubbling,cancelable
+    return !element.dispatchEvent(evt);
+  }
+}
 
 //////////////////////////////////////////////////////////// Initialization list
 //------------------------------------------------------------------------------
