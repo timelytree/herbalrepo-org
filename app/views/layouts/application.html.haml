@@ -13,7 +13,7 @@
     - else
       %script{src: '/frontend.js', type: 'text/javascript'}
       %link{href: '/frontend.css', rel: 'stylesheet', type: 'text/css'}
-    - if params[:controller] != 'admin'
+    - if params[:controller] == 'herbs' && (params[:action] == 'index' || params[:action] == 'show')
       :javascript
         var host = window.location.host.split(':')[0];
         if (host != 'localhost') {
