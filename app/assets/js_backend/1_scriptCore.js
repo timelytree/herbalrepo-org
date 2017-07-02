@@ -1,20 +1,19 @@
-//////////////////////////////////////////////////////////// Initialization list
-//------------------------------------------------------------------------------
-var core = {
-  global: {
-    flashNOTICE: 'flashNOTICE',
-    listFilter: 'listFilter',
-    showdownINIT: 'showdownINIT',
-    markdown: 'markdown',
-    highlightCATEGORIES: 'highlightCATEGORIES',
-    nameFILL: 'nameFILL',
-    uploadImagePREVIEW: 'uploadImagePREVIEW',
-    itemACTION: 'itemACTION'
-  }
+////////////////////////////////////////////////////////////////// Function Key
+//-----------------------------------------------------------------------------
+var func = {
+  flashNOTICE: 'flashNOTICE',
+  listFilter: 'listFilter',
+  showdownINIT: 'showdownINIT',
+  markdown: 'markdown',
+  highlightCATEGORIES: 'highlightCATEGORIES',
+  nameFILL: 'nameFILL',
+  uploadImagePREVIEW: 'uploadImagePREVIEW',
+  itemACTION: 'itemACTION',
+  sectionTOGGLE: 'sectionTOGGLE'
 }
 
-///////////////////////////////////////////////////////////////// Core functions
-//------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////// Functions
+//-----------------------------------------------------------------------------
 function flashNOTICE() {
   var notice = E('flashNOTICE'),
       countdown = cE('countdown'),
@@ -173,7 +172,21 @@ function itemACTION(controller) {
   }
 }
 
+function sectionTOGGLE() {
+  var referencesCONTAINER = cE('references')[0],
+      referencesB = referencesCONTAINER.firstElementChild,
+      stat = false;
 
+  referencesB.onclick = function() {
+    if (!stat) {
+      addC(referencesCONTAINER, 'active');
+      stat = true;
+    } else {
+      remC(referencesCONTAINER, 'active');
+      stat = false;
+    }
+  }
+}
 
 
 

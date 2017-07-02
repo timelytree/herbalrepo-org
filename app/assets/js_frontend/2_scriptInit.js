@@ -1,59 +1,29 @@
-/////////////////////////////////////////////////////// initialization functions
-//------------------------------------------------------------------------------
-function globalInit() {
-  // if (w.Width > 414) { run(core.global.headerAnimOnSCROLL); }
-  // if (w.Width < 414) { run(core.mobile.menuINT); }
+//////////////////////////////////// Code execution and execution order control
+//-----------------------------------------------------------------------------
+function Engange() {
   switch (p.Current) {
     case 'herbIndexPAGE':
-      run(core.global.lazyLoad);
-      run(core.global.searchAllHerbs, 'herbIndexPAGE');
-      run(core.global.categoriesNavINT);
+      run(func.lazyLoad);
+      run(func.searchAllHerbs, 'herbIndexPAGE');
       break;
-    // case 'categoryShowPAGE':
-    //   run(core.global.lazyLoad);
-    //   run(core.global.searchAllHerbs);
-    //   run(core.global.categoriesNavINT);
-    //   break;
     case 'herbShowPAGE':
-      run(core.global.lazyLoad);
-      run(core.global.searchAllHerbs, 'herbShowPAGE');
-      run(core.global.categoriesNavINT);
-      run(core.global.showdownINIT);
-      run(core.global.markdown);
+      run(func.lazyLoad);
+      run(func.searchAllHerbs, 'herbShowPAGE');
+      run(func.showdownINIT);
+      run(func.markdown);
+      run(func.sectionTOGGLE);
       break;
     case 'aboutPAGE':
-      run(core.global.lazyLoad);
-      run(core.global.searchAllHerbs, 'aboutPAGE');
-      run(core.global.categoriesNavINT);
+      run(func.lazyLoad);
+      run(func.searchAllHerbs, 'aboutPAGE');
       break;
   }
 }
 
-function desktop() {
-}
-
-function mobile() {
-}
-
-///////////////////////////////////// code execution and execution order control
-//------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////// Init
+//-----------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
   getWindowDimensions();
   recCurrPage();
-  globalInit();
-  if ( w.Width > 737 ) { desktop(); }
-  if ( w.Width < 737 ) { mobile(); }
+  Engange();
 });
-
-// window.onresize = function resizeElements() {
-//   if (timeout) { return false; }
-//   else {
-//     var timeout = window.setTimeout(function() {
-//       getWindowDimensions();
-//       if (w.Width > 414) { run(core.global.headerAnimOnSCROLL); }
-//       clearTimeout(timeout);
-//   }, 2000);
-//
-//   }
-//
-// }

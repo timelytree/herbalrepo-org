@@ -55,32 +55,19 @@ function fireEvent(element, event) {
   }
 }
 
-/////////////////////////////////////////////////////////////////// function key
-var init = {
-  global: {
-  },
-  desktop: {
-  },
-  mobile: {
-  }
+////////////////////////////////////////////////////////////////// Function Key
+//-----------------------------------------------------------------------------
+var func = {
+  showdownINIT: 'showdownINIT',
+  lazyLoad: 'lazyLoad',
+  markdown: 'markdown',
+  searchAllHerbs: 'searchAllHerbs',
+  categoriesINT: 'categoriesINT',
+  sectionTOGGLE: 'sectionTOGGLE'
 }
 
-var core = {
-  global: {
-    showdownINIT: 'showdownINIT',
-    lazyLoad: 'lazyLoad',
-    markdown: 'markdown',
-    searchAllHerbs: 'searchAllHerbs',
-    categoriesNavINT: 'categoriesNavINT'
-  },
-  desktop: {
-  },
-  mobile: {
-    menuINT: 'menuINT'
-  }
-}
-///////////////////////////////////////////////////////////////// core functions
-//------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////// Functions
+//-----------------------------------------------------------------------------
 function showdownINIT() {
   showdown.extension('divClass', function () {
     var x = 0;
@@ -184,31 +171,25 @@ function searchAllHerbs(pageID) {
       list.search(name);
     }
   }
-
 }
 
-function categoriesNavINT() {
-  // var closeB = E('categoriesNavCloseB'),
-  //     container = E('categories');
+function sectionTOGGLE() {
+  var referencesCONTAINER = cE('references')[0],
+      referencesB = referencesCONTAINER.firstElementChild,
+      stat = false;
+
+  referencesB.onclick = function() {
+    if (!stat) {
+      addC(referencesCONTAINER, 'active');
+      stat = true;
+    } else {
+      remC(referencesCONTAINER, 'active');
+      stat = false;
+    }
+  }
 }
 
-/////////////////////////////////////////////////////////////// mobile functions
-//------------------------------------------------------------------------------
-// function menuINT() {
-//   var menuB = E('menuB'),
-//       nav = E('nav'),
-//       stat = false;
-//
-//   menuB.onclick = function() {
-//     if (!stat) {
-//       addC(nav, 'active');
-//       stat = true;
-//     } else {
-//       remC(nav, 'active');
-//       stat = false;
-//     }
-//   }
-// }
+
 
 
 
@@ -226,62 +207,32 @@ function categoriesNavINT() {
 
 //
 
-/////////////////////////////////////////////////////// initialization functions
-//------------------------------------------------------------------------------
-function globalInit() {
-  // if (w.Width > 414) { run(core.global.headerAnimOnSCROLL); }
-  // if (w.Width < 414) { run(core.mobile.menuINT); }
+//////////////////////////////////// Code execution and execution order control
+//-----------------------------------------------------------------------------
+function Engange() {
   switch (p.Current) {
     case 'herbIndexPAGE':
-      run(core.global.lazyLoad);
-      run(core.global.searchAllHerbs, 'herbIndexPAGE');
-      run(core.global.categoriesNavINT);
+      run(func.lazyLoad);
+      run(func.searchAllHerbs, 'herbIndexPAGE');
       break;
-    // case 'categoryShowPAGE':
-    //   run(core.global.lazyLoad);
-    //   run(core.global.searchAllHerbs);
-    //   run(core.global.categoriesNavINT);
-    //   break;
     case 'herbShowPAGE':
-      run(core.global.lazyLoad);
-      run(core.global.searchAllHerbs, 'herbShowPAGE');
-      run(core.global.categoriesNavINT);
-      run(core.global.showdownINIT);
-      run(core.global.markdown);
+      run(func.lazyLoad);
+      run(func.searchAllHerbs, 'herbShowPAGE');
+      run(func.showdownINIT);
+      run(func.markdown);
+      run(func.sectionTOGGLE);
       break;
     case 'aboutPAGE':
-      run(core.global.lazyLoad);
-      run(core.global.searchAllHerbs, 'aboutPAGE');
-      run(core.global.categoriesNavINT);
+      run(func.lazyLoad);
+      run(func.searchAllHerbs, 'aboutPAGE');
       break;
   }
 }
 
-function desktop() {
-}
-
-function mobile() {
-}
-
-///////////////////////////////////// code execution and execution order control
-//------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////// Init
+//-----------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
   getWindowDimensions();
   recCurrPage();
-  globalInit();
-  if ( w.Width > 737 ) { desktop(); }
-  if ( w.Width < 737 ) { mobile(); }
+  Engange();
 });
-
-// window.onresize = function resizeElements() {
-//   if (timeout) { return false; }
-//   else {
-//     var timeout = window.setTimeout(function() {
-//       getWindowDimensions();
-//       if (w.Width > 414) { run(core.global.headerAnimOnSCROLL); }
-//       clearTimeout(timeout);
-//   }, 2000);
-//
-//   }
-//
-// }

@@ -1,44 +1,46 @@
-/////////////////////////////////////////////////////// Initialization functions
-//------------------------------------------------------------------------------
-function globalInit() {
-  run(core.global.flashNOTICE);
+//////////////////////////////////// Code execution and execution order control
+//-----------------------------------------------------------------------------
+function Engage() {
+  run(func.flashNOTICE);
   switch (p.Current) {
     case 'herbsINDEX':
-      run(core.global.listFilter, 'herbsINDEX');
+      run(func.listFilter, 'herbsINDEX');
       break;
     case 'herbNEW':
-      run(core.global.showdownINIT);
-      run(core.global.markdown);
-      run(core.global.nameFILL);
-      run(core.global.uploadImagePREVIEW);
-      run(core.global.itemACTION, 'herbs'); // delete or save Herb or Category
+      run(func.showdownINIT);
+      run(func.markdown);
+      run(func.nameFILL);
+      run(func.uploadImagePREVIEW);
+      run(func.itemACTION, 'herbs'); // delete or save Herb or Category
+      run(func.sectionTOGGLE);
       break;
     case 'herbEDIT':
-      run(core.global.showdownINIT);
-      run(core.global.markdown);
-      run(core.global.highlightCATEGORIES);
-      run(core.global.nameFILL);
-      run(core.global.uploadImagePREVIEW);
-      run(core.global.itemACTION, 'herbs'); // delete or save Herb or Category
+      run(func.showdownINIT);
+      run(func.markdown);
+      run(func.highlightCATEGORIES);
+      run(func.nameFILL);
+      run(func.uploadImagePREVIEW);
+      run(func.itemACTION, 'herbs'); // delete or save Herb or Category
+      run(func.sectionTOGGLE);
       break;
     case 'herbsSHOW':
-      run(core.global.listFilter, 'herbsSHOW');
+      run(func.listFilter, 'herbsSHOW');
       break;
     case 'categoryEDIT':
-      run(core.global.uploadImagePREVIEW);
-      run(core.global.itemACTION, 'categories'); // delete or save Herb or Category
+      run(func.uploadImagePREVIEW);
+      run(func.itemACTION, 'categories'); // delete or save Herb or Category
       break;
     case 'categoryNEW':
-      run(core.global.uploadImagePREVIEW);
-      run(core.global.itemACTION, 'herbs'); // delete or save Herb or Category
+      run(func.uploadImagePREVIEW);
+      run(func.itemACTION, 'herbs'); // delete or save Herb or Category
       break;
   }
 }
 
-///////////////////////////////////// Code execution and execution order control
-//------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////// Init
+//-----------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
   getWindowDimensions();
   recCurrPage();
-  globalInit();
+  Engage();
 });

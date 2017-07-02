@@ -58,23 +58,22 @@ function fireEvent(element, event) {
   }
 }
 
-//////////////////////////////////////////////////////////// Initialization list
-//------------------------------------------------------------------------------
-var core = {
-  global: {
-    flashNOTICE: 'flashNOTICE',
-    listFilter: 'listFilter',
-    showdownINIT: 'showdownINIT',
-    markdown: 'markdown',
-    highlightCATEGORIES: 'highlightCATEGORIES',
-    nameFILL: 'nameFILL',
-    uploadImagePREVIEW: 'uploadImagePREVIEW',
-    itemACTION: 'itemACTION'
-  }
+////////////////////////////////////////////////////////////////// Function Key
+//-----------------------------------------------------------------------------
+var func = {
+  flashNOTICE: 'flashNOTICE',
+  listFilter: 'listFilter',
+  showdownINIT: 'showdownINIT',
+  markdown: 'markdown',
+  highlightCATEGORIES: 'highlightCATEGORIES',
+  nameFILL: 'nameFILL',
+  uploadImagePREVIEW: 'uploadImagePREVIEW',
+  itemACTION: 'itemACTION',
+  sectionTOGGLE: 'sectionTOGGLE'
 }
 
-///////////////////////////////////////////////////////////////// Core functions
-//------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////// Functions
+//-----------------------------------------------------------------------------
 function flashNOTICE() {
   var notice = E('flashNOTICE'),
       countdown = cE('countdown'),
@@ -233,7 +232,21 @@ function itemACTION(controller) {
   }
 }
 
+function sectionTOGGLE() {
+  var referencesCONTAINER = cE('references')[0],
+      referencesB = referencesCONTAINER.firstElementChild,
+      stat = false;
 
+  referencesB.onclick = function() {
+    if (!stat) {
+      addC(referencesCONTAINER, 'active');
+      stat = true;
+    } else {
+      remC(referencesCONTAINER, 'active');
+      stat = false;
+    }
+  }
+}
 
 
 
@@ -253,47 +266,49 @@ function itemACTION(controller) {
 
 //
 
-/////////////////////////////////////////////////////// Initialization functions
-//------------------------------------------------------------------------------
-function globalInit() {
-  run(core.global.flashNOTICE);
+//////////////////////////////////// Code execution and execution order control
+//-----------------------------------------------------------------------------
+function Engage() {
+  run(func.flashNOTICE);
   switch (p.Current) {
     case 'herbsINDEX':
-      run(core.global.listFilter, 'herbsINDEX');
+      run(func.listFilter, 'herbsINDEX');
       break;
     case 'herbNEW':
-      run(core.global.showdownINIT);
-      run(core.global.markdown);
-      run(core.global.nameFILL);
-      run(core.global.uploadImagePREVIEW);
-      run(core.global.itemACTION, 'herbs'); // delete or save Herb or Category
+      run(func.showdownINIT);
+      run(func.markdown);
+      run(func.nameFILL);
+      run(func.uploadImagePREVIEW);
+      run(func.itemACTION, 'herbs'); // delete or save Herb or Category
+      run(func.sectionTOGGLE);
       break;
     case 'herbEDIT':
-      run(core.global.showdownINIT);
-      run(core.global.markdown);
-      run(core.global.highlightCATEGORIES);
-      run(core.global.nameFILL);
-      run(core.global.uploadImagePREVIEW);
-      run(core.global.itemACTION, 'herbs'); // delete or save Herb or Category
+      run(func.showdownINIT);
+      run(func.markdown);
+      run(func.highlightCATEGORIES);
+      run(func.nameFILL);
+      run(func.uploadImagePREVIEW);
+      run(func.itemACTION, 'herbs'); // delete or save Herb or Category
+      run(func.sectionTOGGLE);
       break;
     case 'herbsSHOW':
-      run(core.global.listFilter, 'herbsSHOW');
+      run(func.listFilter, 'herbsSHOW');
       break;
     case 'categoryEDIT':
-      run(core.global.uploadImagePREVIEW);
-      run(core.global.itemACTION, 'categories'); // delete or save Herb or Category
+      run(func.uploadImagePREVIEW);
+      run(func.itemACTION, 'categories'); // delete or save Herb or Category
       break;
     case 'categoryNEW':
-      run(core.global.uploadImagePREVIEW);
-      run(core.global.itemACTION, 'herbs'); // delete or save Herb or Category
+      run(func.uploadImagePREVIEW);
+      run(func.itemACTION, 'herbs'); // delete or save Herb or Category
       break;
   }
 }
 
-///////////////////////////////////// Code execution and execution order control
-//------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////// Init
+//-----------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
   getWindowDimensions();
   recCurrPage();
-  globalInit();
+  Engage();
 });

@@ -1,29 +1,16 @@
-/////////////////////////////////////////////////////////////////// function key
-var init = {
-  global: {
-  },
-  desktop: {
-  },
-  mobile: {
-  }
+////////////////////////////////////////////////////////////////// Function Key
+//-----------------------------------------------------------------------------
+var func = {
+  showdownINIT: 'showdownINIT',
+  lazyLoad: 'lazyLoad',
+  markdown: 'markdown',
+  searchAllHerbs: 'searchAllHerbs',
+  categoriesINT: 'categoriesINT',
+  sectionTOGGLE: 'sectionTOGGLE'
 }
 
-var core = {
-  global: {
-    showdownINIT: 'showdownINIT',
-    lazyLoad: 'lazyLoad',
-    markdown: 'markdown',
-    searchAllHerbs: 'searchAllHerbs',
-    categoriesNavINT: 'categoriesNavINT'
-  },
-  desktop: {
-  },
-  mobile: {
-    menuINT: 'menuINT'
-  }
-}
-///////////////////////////////////////////////////////////////// core functions
-//------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////// Functions
+//-----------------------------------------------------------------------------
 function showdownINIT() {
   showdown.extension('divClass', function () {
     var x = 0;
@@ -127,31 +114,25 @@ function searchAllHerbs(pageID) {
       list.search(name);
     }
   }
-
 }
 
-function categoriesNavINT() {
-  // var closeB = E('categoriesNavCloseB'),
-  //     container = E('categories');
+function sectionTOGGLE() {
+  var referencesCONTAINER = cE('references')[0],
+      referencesB = referencesCONTAINER.firstElementChild,
+      stat = false;
+
+  referencesB.onclick = function() {
+    if (!stat) {
+      addC(referencesCONTAINER, 'active');
+      stat = true;
+    } else {
+      remC(referencesCONTAINER, 'active');
+      stat = false;
+    }
+  }
 }
 
-/////////////////////////////////////////////////////////////// mobile functions
-//------------------------------------------------------------------------------
-// function menuINT() {
-//   var menuB = E('menuB'),
-//       nav = E('nav'),
-//       stat = false;
-//
-//   menuB.onclick = function() {
-//     if (!stat) {
-//       addC(nav, 'active');
-//       stat = true;
-//     } else {
-//       remC(nav, 'active');
-//       stat = false;
-//     }
-//   }
-// }
+
 
 
 
