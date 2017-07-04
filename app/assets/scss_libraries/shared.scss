@@ -81,6 +81,11 @@
     font-style: italic;
   }
 
+  #herbIMG {
+    width: 250px;
+    margin: 25px auto;
+  }
+
   .glance, .introduction, .preparation, .directions, .adversity {
     margin-bottom: 50px;
     position: relative;
@@ -95,6 +100,7 @@
 
   .glance {
     padding: 25px 0;
+    border-bottom: 2px solid $gray300;
 
     h3 {
       position: static;
@@ -154,6 +160,9 @@
       ol {
         height: auto;
         opacity: 1;
+        padding: 15px;
+        margin: 15px 0;
+        padding-left: 25px;
       }
     }
     h2 {
@@ -184,7 +193,8 @@
       }
     }
     ol {
-      padding-left: 25px;
+      padding: 0;
+      margin: 0;
       height: 0;
       opacity: 0;
       transition: 150ms;
