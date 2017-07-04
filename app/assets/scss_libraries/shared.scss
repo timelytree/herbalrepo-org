@@ -20,7 +20,11 @@
       margin-bottom: 0;
     }
   }
-  h3 {
+
+  h1 {
+
+  }
+  h2 {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 16px;
@@ -31,19 +35,18 @@
     left: 0;
     width: 100%;
   }
-  h4 {
+  h3 {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 5px;
   }
-  h6 {
-    font-size: 12px;
-    line-height: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
+  h4 {
+    @include subtitle;
+    font-weight: 700;
   }
+
   ul {
     padding-left: 25px;
     li {
@@ -73,7 +76,16 @@
   }
 
   #herbLatinNAME {
+    font-size: 16px;
+    line-height: 18px;
     font-style: italic;
+  }
+
+  #metaDescription {
+    width: 300px;
+    font-weight: 700;
+    text-align: center;
+    margin: 25px auto;
   }
 
   .glance, .introduction, .preparation, .directions, .adversity {
@@ -151,7 +163,7 @@
         opacity: 1;
       }
     }
-    h3 {
+    h2 {
       @include card;
       position: relative;
       top: 0;
