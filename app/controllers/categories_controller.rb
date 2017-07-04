@@ -1,13 +1,4 @@
 class CategoriesController < ApplicationController
-  def show
-    @category = Category.find_by_slug(params[:slug])
-    @allHERBS = Herb.all
-    @herbs = @category.herbs
-    @categories = Category.all
-    @back = Rails.application.routes.recognize_path(request.referrer)
-    session[:current_category] = @category.name.downcase
-  end
-
   def new
     @category = Category.new
   end
@@ -45,10 +36,6 @@ class CategoriesController < ApplicationController
 
     if @category.destroy
       flash[:notice] = "Category [#{@category.name.upcase}] was deleted"
-      # redirect_to controller: 'admin', action: 'categoriesIndex', status: 303
-      # redirect_to controller: 'admin', action: 'categoriesIndex', status: 303
-      # status
-      # return :back
       head :ok
     end
   end

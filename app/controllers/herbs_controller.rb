@@ -2,9 +2,6 @@ class HerbsController < ApplicationController
   def index
     @categories = Category.all
     @herbs = Herb.all
-    # @featuredHERBS = Herb.last(20).reverse
-    # session.delete(:current_category)
-    # binding.pry
   end
 
   def show
@@ -12,15 +9,6 @@ class HerbsController < ApplicationController
     draft_check(@herb)
     @herbs = Herb.all
     @categories = Category.all
-    # @back = Rails.application.routes.recognize_path(request.referrer)
-    # if @back[:controller] == 'herbs' && @back[:action] == 'index' || @back[:controller] == 'herbs' && session[:current_category] == nil
-    #   session.delete(:current_category)
-    #   @herbs = Herb.all
-    # elsif @back[:controller] == 'categories' || @back[:controller] == 'herbs' && session[:current_category] != nil
-    #   @herbs = Category.find_by_name(session[:current_category]).herbs
-    # else
-    #   @herbs = Herb.all
-    # end
   end
 
   def new
