@@ -44,6 +44,12 @@ module ApplicationHelper
     end
   end
 
+  def frontend_section
+    if params[:controller] == 'herbs' && (params[:action] == 'index' || params[:action] == 'show')
+      return true
+    end
+  end
+
   def unindent(s)
     s.gsub(/^#{s.scan(/^[ \t]+(?=\S)/).min}/, '')
   end

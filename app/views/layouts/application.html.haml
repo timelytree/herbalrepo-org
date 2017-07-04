@@ -12,14 +12,14 @@
     = favicon_link_tag '/images/favicon.ico'
     = csrf_meta_tag
     - if admin_section
+      %meta(name="robots" content="noindex, nofollow")
       %script{src: '/backend.js', type: 'text/javascript'}
       %link{href: '/backend.css', rel: 'stylesheet', type: 'text/css'}
     - else
       %script{src: '/frontend.js', type: 'text/javascript'}
       %link{href: '/frontend.css', rel: 'stylesheet', type: 'text/css'}
-    - if params[:controller] == 'herbs' && (params[:action] == 'index' || params[:action] == 'show') && !logged_in?
+    - if frontend_section && !logged_in?
       :javascript
-        console.log('asd');
         var host = window.location.host.split(':')[0];
         if (host != 'localhost') {
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
