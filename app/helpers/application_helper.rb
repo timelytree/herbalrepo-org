@@ -47,6 +47,8 @@ module ApplicationHelper
   def frontend_section
     if params[:controller] == 'herbs' && (params[:action] == 'index' || params[:action] == 'show')
       return true
+    elsif params[:controller] == 'pages' && (params[:action] == 'about')
+      return true
     end
   end
 
