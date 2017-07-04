@@ -110,6 +110,7 @@ class HerbsController < ApplicationController
       :user_id,
       :seo_title,
       :seo_description,
+      :seo_thumbnail_alt_text,
       category_ids: []
     )
   end

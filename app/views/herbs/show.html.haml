@@ -6,6 +6,6 @@
       .herbCONTAINER
         %h1#herbNAME= @herb.name
         %h6#herbLatinNAME= @herb.latin_name
-        %img{src: "#{public_path}/#{@herb.thumbnail.url.to_s}", id: 'herbIMG'}
+        %img{src: "#{public_path}/#{@herb.thumbnail.url.to_s}", id: 'herbIMG', alt: @herb.seo_thumbnail_alt_text, title: @herb.seo_thumbnail_alt_text}
         #info
           = @herb.information.html_safe

@@ -40,6 +40,9 @@
           %section
             %label.subtitle{for: 'seo_description'} SEO Description
             %input{type: 'text', name: 'herbs[seo_description]', id: 'seo_description', autocomplete: :off, placeholder: @herb.seo_description, value: @herb.seo_description}
+          %section
+            %label.subtitle{for: 'seo_thumbnail_alt_text'} SEO Thumbnail Alt Text
+            %input{type: 'text', name: 'herbs[seo_thumbnail_alt_text]', id: 'seo_thumbnail_alt_text', autocomplete: :off, placeholder: @herb.seo_thumbnail_alt_text, value: @herb.seo_thumbnail_alt_text}
         #leftPANEL
           %textarea{name: 'herbs[information]', class: '', autocomplete: :off, placeholder: 'Information'}= @herb.information
         #rightPANEL
