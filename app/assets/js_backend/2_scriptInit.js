@@ -13,6 +13,7 @@ function Engage() {
       run(func.uploadImagePREVIEW);
       run(func.itemACTION, 'herbs'); // delete or save Herb or Category
       run(func.sectionTOGGLE);
+      run(func.seoCharacterFILL);
       break;
     case 'herbEDIT':
       run(func.showdownINIT);
@@ -22,6 +23,7 @@ function Engage() {
       run(func.uploadImagePREVIEW);
       run(func.itemACTION, 'herbs'); // delete or save Herb or Category
       run(func.sectionTOGGLE);
+      run(func.seoCharacterFILL);
       break;
     case 'herbsSHOW':
       run(func.listFilter, 'herbsSHOW');

@@ -69,7 +69,8 @@ var func = {
   nameFILL: 'nameFILL',
   uploadImagePREVIEW: 'uploadImagePREVIEW',
   itemACTION: 'itemACTION',
-  sectionTOGGLE: 'sectionTOGGLE'
+  sectionTOGGLE: 'sectionTOGGLE',
+  seoCharacterFILL: 'seoCharacterFILL'
 }
 
 ///////////////////////////////////////////////////////////////////// Functions
@@ -248,6 +249,19 @@ function sectionTOGGLE() {
   }
 }
 
+function seoCharacterFILL() {
+  var seoTitleINPUT = E('seo_title'),
+      seoTitleLABEL = document.querySelectorAll("[for='seo_title']")[0],
+      seoDescriptionINPUT = E('seo_description'),
+      seoDescriptionLABEL = document.querySelectorAll("[for='seo_description']")[0];
+
+  seoTitleLABEL.innerHTML = 'SEO Title ('+seoTitleINPUT.value.length+'/70)';
+  seoDescriptionLABEL.innerHTML = 'SEO Title ('+seoDescriptionINPUT.value.length+'/150)';
+
+  seoTitleINPUT.oninput = function() { seoTitleLABEL.innerHTML = 'SEO Title ('+seoTitleINPUT.value.length+'/70)'; }
+  seoDescriptionINPUT.oninput = function() { seoDescriptionLABEL.innerHTML = 'SEO Title ('+seoDescriptionINPUT.value.length+'/150)'; }
+}
+
 
 
 
@@ -281,6 +295,7 @@ function Engage() {
       run(func.uploadImagePREVIEW);
       run(func.itemACTION, 'herbs'); // delete or save Herb or Category
       run(func.sectionTOGGLE);
+      run(func.seoCharacterFILL);
       break;
     case 'herbEDIT':
       run(func.showdownINIT);
@@ -290,6 +305,7 @@ function Engage() {
       run(func.uploadImagePREVIEW);
       run(func.itemACTION, 'herbs'); // delete or save Herb or Category
       run(func.sectionTOGGLE);
+      run(func.seoCharacterFILL);
       break;
     case 'herbsSHOW':
       run(func.listFilter, 'herbsSHOW');
