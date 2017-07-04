@@ -6,7 +6,5 @@
       .herbCONTAINER
         %h1#herbNAME= @herb.name
         %h6#herbLatinNAME= @herb.latin_name
-        -# - if @herb.seo_meta_description
-        %p#metaDescription Lorem ipsum dolor sit amet
         #info
           = @herb.information.html_safe

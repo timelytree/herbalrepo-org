@@ -34,6 +34,12 @@
               .row
                 %input{type: 'radio', name: 'herbs[draft_status]', id: "draft_status_live", class: 'radio', value: 'live'}
                 %label{for: "draft_status_live"} Live
+          %section
+            %label.subtitle{for: 'seo_title'} SEO Title
+            %input{type: 'text', name: 'herbs[seo_title]', id: 'seo_title', autocomplete: :off, placeholder: 'SEO Title'}
+          %section
+            %label.subtitle{for: 'seo_description'} SEO Description
+            %input{type: 'text', name: 'herbs[seo_description]', id: 'seo_description', autocomplete: :off, placeholder: 'SEO Description'}
         #leftPANEL
           %textarea{name: 'herbs[information]', autocomplete: :off, placeholder: 'Information'}= unindent(@textareaPLACEHOLDER)
         #rightPANEL

@@ -120,6 +120,8 @@ class HerbsController < ApplicationController
       :draft_status,
       :thumbnail,
       :user_id,
+      :seo_title,
+      :seo_description,
       category_ids: []
     )
   end
