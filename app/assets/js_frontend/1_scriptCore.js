@@ -124,11 +124,6 @@ function sectionTOGGLE() {
       stat = false;
 
   referencesB.onclick = function() {
-    var timer = window.setTimeout(function() {
-      body = E('body'),
-      bodyScrollTop = body.scrollTop,
-      body.scrollTop = bodyScrollTop + referencesCONTAINER.clientHeight;
-    }, 175);
     if (!stat) {
       addC(referencesCONTAINER, 'active');
       stat = true;
