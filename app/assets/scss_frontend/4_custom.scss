@@ -52,10 +52,9 @@
 
   #logoCONTAINER {
     @include flex-c;
-    @include cardShadow;
+    @include card1;
     padding: 25px;
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 4px;
     width: 100%;
 
     img, h6 {
@@ -93,7 +92,7 @@
   }
 
   .content {
-    @include card;
+    @include card1;
     background: white;
     padding: 25px;
 

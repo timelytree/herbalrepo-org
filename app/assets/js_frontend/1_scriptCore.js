@@ -48,13 +48,15 @@ function showdownINIT() {
 }
 
 function lazyLoad() {
-  var herbLIST = E('herbLIST');
+  var lists = cE('herbLIST');
 
-  new LazyLoad({
-    container: herbLIST,
-    elements_selector: ".herbIMG",
-    callback_set: function(d) { d.style.backgroundSize = 'cover'; }
-  });
+  for (var i = 0; i < lists.length; i++) {
+    new LazyLoad({
+      container: lists[i],
+      elements_selector: ".herbIMG",
+      callback_set: function(d) { d.style.backgroundSize = 'cover'; }
+    });
+  }
 }
 
 function markdown() {

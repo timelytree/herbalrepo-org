@@ -2,12 +2,14 @@ class HerbsController < ApplicationController
   def index
     @categories = Category.all
     @herbs = Herb.all
+    @recentlyAddedHerbs = Herb.last(6).reverse
   end
 
   def show
     @herb = Herb.find_by_slug(params[:slug])
     draft_check(@herb)
     @herbs = Herb.all
+    @recentlyAddedHerbs = Herb.last(6).reverse
     @categories = Category.all
   end
 

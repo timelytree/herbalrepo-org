@@ -101,6 +101,7 @@
   .glance {
     padding: 25px 0;
     border-bottom: 2px solid $gray300;
+    border-top: 2px solid $gray300;
 
     h3 {
       position: static;
@@ -166,7 +167,7 @@
       }
     }
     h2 {
-      @include card;
+      @include card1;
       position: relative;
       top: 0;
       background: white;

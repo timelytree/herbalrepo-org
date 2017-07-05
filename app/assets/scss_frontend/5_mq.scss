@@ -75,7 +75,7 @@
   }
 
   #navBUTTONS {
-    @include card;
+    @include card1;
     background: white;
     width: calc(100% - 60px);
     padding-top: 10px;

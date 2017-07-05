@@ -75,8 +75,7 @@
 //////////////////////////////////////////////////////////////////// Search Bar
 //-----------------------------------------------------------------------------
 #searchCONTAINER {
-  @include cardShadow;
-  border-radius: 4px;
+  @include card1;
   position: fixed;
   top: 25px;
   left: calc(50% - 768px/2);
@@ -116,11 +115,10 @@
 //-----------------------------------------------------------------------------
 #categories {
   @include flex-r;
-  @include cardShadow;
+  @include card1;
   width: 500px;
   height: 75px;
   background: white;
-  border-radius: 4px;
   position: relative;
   left: calc(50% - 500px/2);
   margin-bottom: 25px;
@@ -166,9 +164,9 @@
   background-color: $gray300;
 }
 
-///////////////////////////////////////////////////////////////////// Herb List
+//////////////////////////////////////////////////////////////////// Herb Lists
 //-----------------------------------------------------------------------------
-#herbLIST {
+#herbLIST, #recentlyAddedHerbs {
   display: inline-block;
   width: 768px;
   left: calc(50% - 768px/2);
@@ -234,6 +232,43 @@
   }
 }
 
+#recentlyAddedHerbs {
+  margin-top: 25px;
+  position: relative;
+  width: 100%;
+  left: 0;
+  h2 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 15px;
+  }
+  .herbITEM {
+    @include cardShadow;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: calc(33.3333% - 6.666667px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid transparent;
+    transition: 150ms;
+    &:hover {
+      transition: 150ms;
+      @include transform(translate(1px, 2px));
+      border-color: $gray400;
+    }
+    &:nth-child(4n) {
+      margin-right: 10px;
+    }
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}
+
 ///////////////////////////////////////////// "All Herbs" Search Slideout Panel
 //-----------------------------------------------------------------------------
 #herbsSEARCH {
@@ -271,7 +306,50 @@
   transition: 150ms;
 }
 
+////////////////////////////////////////////////////////// Recently Added Herbs
+//-----------------------------------------------------------------------------
+// #recentlyAddedHerbs {
+//   padding: 15px;
+//   margin-top: 25px;
+//   position: relative;
 
+//   li {
+//     @include card2;
+//     @include display-flex;
+//     @include flex-row;
+//     list-style: none;
+//     margin-bottom: 5px;
+//     position: relative;
+//     display: inline-block;
+//     width: 50%;
+//     &:hover {
+//       background-color: $gray200;
+//       a {
+//         text-decoration: underline;
+//       }
+//     }
+//     &:last-child {
+//       margin-bottom: 0;
+//     }
+//     img {
+//       width: 50px;
+//       height: 50px;
+//     }
+//     a {
+//       @include display-flex;
+//       @include flex-row;
+//       @include flex-middle;
+//       @include flex-end;
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       padding-right: 15px;
+//       color: $blue500;
+//     }
+//   }
+// }
 
 
 

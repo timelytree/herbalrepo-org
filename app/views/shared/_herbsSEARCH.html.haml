@@ -7,7 +7,7 @@
         %p= category.name
 
   -# //////////////////////////////////////////////////////////////// Herb List
-  #herbLIST
+  #herbLIST.herbLIST
     %ul.list
       - @herbs.each_with_index do |herb|
         - if herb.draft_status == 'live'

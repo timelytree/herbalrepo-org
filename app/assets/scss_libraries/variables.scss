@@ -82,8 +82,13 @@ $red900: #B71C1C;
   box-shadow: 0 0 0 1px rgba(63,63,68,0.05), 0 1px 3px 0 rgba(63,63,68,0.15);
 }
 
-@mixin card {
+@mixin card1 {
 	@include cardShadow;
+	border-radius: 4px;
+}
+
+@mixin card2 {
+	border: 1px solid $gray300;
 	border-radius: 4px;
 }
 
