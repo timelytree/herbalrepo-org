@@ -23,6 +23,27 @@ var config = {
   videoDestPath: './public/videos/'
 }
 
+// var cache = function(name) {
+//   return through.obj(function(file, enc, cb) {
+//     log(+ new Date());
+//     this.push(file); // We'll just pass this file along
+//
+//     fs.stat(config.manifestPath, function(err) {
+//       if (err == null) {
+//         var json = JSON.parse(fs.readFileSync(config.manifestPath)),
+//             oldFileName = json[name];
+//         log(colors.red('DELETING'), oldFileName);
+//         fs.unlink(config.publicPath + oldFileName, function(err) {
+//           // TODO: emit an error if err
+//           cb();
+//         });
+//       } else {
+//         return cb(); // Nothing to remove :)
+//       }
+//     });
+//   });
+// };
+
 // Compiles Frontend SCSS in [assets/scss_frontend]
 gulp.task('scss_frontend', function() {
   return gulp.src([

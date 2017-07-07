@@ -2,7 +2,7 @@ class HerbsController < ApplicationController
   def index
     @categories = Category.all
     @herbs = Herb.all
-    @recentlyAddedHerbs = Herb.last(6).reverse
+    @recentlyAddedHerbs = Herb.where.not(draft_status: 'draft').last(3).reverse
   end
 
   def show

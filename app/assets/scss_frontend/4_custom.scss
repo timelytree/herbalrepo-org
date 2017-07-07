@@ -74,6 +74,15 @@
       text-align: center;
     }
   }
+
+  .herbLIST {
+    @include card1;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    .herbITEM {
+      margin-bottom: 0;
+    }
+  }
 }
 
 //////////////////////////////////////////////////////////////// Herb Show Page
