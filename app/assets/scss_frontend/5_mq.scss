@@ -42,7 +42,7 @@
     top: 100px;
   }
 
-  #herbLIST {
+  .herbLIST, #recentlyAddedHerbs {
     width: 640px;
     left: calc(50% - 640px/2);
     .herbITEM {
@@ -83,20 +83,6 @@
     left: 30px;
   }
 
-  #herbLIST {
-    width: 640px;
-    left: calc(50% - 640px/2);
-    .herbITEM {
-      width: calc(33.3333% - 6.66667px);
-      &:nth-child(4n) {
-        margin-right: 10px;
-      }
-      &:nth-child(3n) {
-        margin-right: 0;
-      }
-    }
-  }
-
   #herbsSEARCH {
     // top: 80px;
     width: calc(100% + 30px);
@@ -116,7 +102,7 @@
     }
   }
 
-  #herbLIST {
+  .herbLIST, #recentlyAddedHerbs {
     width: 100%;
     left: 0;
     .herbITEM {
@@ -131,7 +117,21 @@
       .herbItemINFO {
         p {
           &.herbLatinName {
-            font-size: 70%;
+            font-size: 65%;
+          }
+        }
+      }
+    }
+  }
+
+  #herbIndexPAGE {
+    .content {
+      .herbLIST {
+        .herbITEM {
+          width: 100%;
+          margin-bottom: 10px;
+          &:last-child {
+            margin-bottom: 0;
           }
         }
       }
