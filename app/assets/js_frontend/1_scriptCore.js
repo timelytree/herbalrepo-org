@@ -69,7 +69,7 @@ function markdown() {
 
 function searchAllHerbs(pageID) {
   var input = E('searchBAR'),
-      wrapper = cE('wrapper')[0],
+      body = E('body'),
       closeB = E('herbSearchCloseB'),
       categoriesCONTAINER = E('categories'),
       categoryTiles = cE('categoryTILE'),
@@ -87,11 +87,13 @@ function searchAllHerbs(pageID) {
     categorySTAT = false;
   }
 
-  input.onfocus = function() { addC(wrapper, 'active'); }
+  input.onfocus = function() {
+    addC(body, 'active');
+  }
 
   herbSearchCloseB.onclick = function() {
     input.value = '';
-    remC(wrapper, 'active');
+    remC(body, 'active');
     var timer = window.setTimeout(function() {
       list.search();
       clear();

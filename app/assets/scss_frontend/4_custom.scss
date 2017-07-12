@@ -1,7 +1,8 @@
 ///////////////////////////////////////////////// Searching For Herbs Animation
 //-----------------------------------------------------------------------------
-.wrapper {
+#body {
   &.active {
+    overflow: hidden;
     #searchCONTAINER {
       #herbSearchCloseB {
         @include transform(translateX(-5px));
