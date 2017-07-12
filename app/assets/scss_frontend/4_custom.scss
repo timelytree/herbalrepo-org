@@ -38,7 +38,6 @@
 //-----------------------------------------------------------------------------
 #herbIndexPAGE {
   min-width: 100vw;
-  min-height: 100vh;
 
   .container {
     width: 100%;
@@ -55,31 +54,6 @@
       .herbITEM {
         margin-bottom: 0;
       }
-    }
-  }
-
-  #logoCONTAINER {
-    @include flex-c;
-    @include card1;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.95);
-    width: 100%;
-
-    img, h6 {
-      margin-bottom: 25px;
-    }
-
-    img {
-      width: 150px;
-    }
-
-    h6 {
-      font-weight: 700;
-      text-align: center;
-    }
-
-    p {
-      text-align: center;
     }
   }
 }

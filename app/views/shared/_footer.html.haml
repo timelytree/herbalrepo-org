@@ -1,0 +1,22 @@
+%footer#footer
+  %section
+    %img{src: "#{public_path}/images/logo.png", alt: 'Company logo', id: 'logo'}
+  %section
+    %ul#links
+      %li Links
+      %li
+        %a{href: '/'} Home
+      %li
+        %a{href: '/about'} About
+    %ul#footerHerbs
+      %li Recently Added Herbs
+      - @footerHerbs.each do |herb|
+        %li
+          %a{href: "/herbs/#{herb.slug}"}= herb.name
+    %ul#socialLinks
+      %li Social Media
+      %li
+        %a{href: 'https://www.pinterest.com/herbalrepo/', target: '_blank'}
+          %img{src: '../images/icons/pinterest_icon_black.svg'}
+  %section
+    #copyright &copy; Copyright Herbal Repository 2017

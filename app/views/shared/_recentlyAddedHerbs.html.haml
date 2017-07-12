@@ -2,15 +2,14 @@
   %h2 Recently Added Herbs
   %ul
     - @recentlyAddedHerbs.each_with_index do |herb|
-      - if herb.draft_status == 'live'
-        %li.herbITEM
-          %a{href: "/herbs/#{herb.slug}"}
-            - if herb.thumbnail.url == nil
-              .thumbnailMissingIND
-                %p Image not available
-            .herbIMG{data:{original:"#{herb.thumbnail.thumb.url.to_s}"}}
-            .herbItemINFO
-              %p.herbName= herb.name
-              %p.herbLatinName= herb.latin_name
-              - herb.categories.each do |category|
-                %div{class: "category #{category.slug}"}= category.name
+      %li.herbITEM
+        %a{href: "/herbs/#{herb.slug}"}
+          - if herb.thumbnail.url == nil
+            .thumbnailMissingIND
+              %p Image not available
+          .herbIMG{data:{original:"#{herb.thumbnail.thumb.url.to_s}"}}
+          .herbItemINFO
+            %p.herbName= herb.name
+            %p.herbLatinName= herb.latin_name
+            - herb.categories.each do |category|
+              %div{class: "category #{category.slug}"}= category.name

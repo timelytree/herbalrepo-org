@@ -159,9 +159,94 @@
 
 //////////////////////////////////////////////////////////////////////// Footer
 //-----------------------------------------------------------------------------
+#logoCONTAINER {
+  @include flex-c;
+  @include card1;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+
+  img, h6 {
+    margin-bottom: 25px;
+  }
+
+  img {
+    width: 150px;
+  }
+
+  h6 {
+    font-weight: 700;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////// Footer
+//-----------------------------------------------------------------------------
 #footer {
-  height: 500px;
-  background-color: $gray300;
+  position: relative;
+  z-index: 1;
+  margin-top: 25px;
+  section {
+    width: 100%;
+    margin-bottom: 25px;
+    &:nth-child(1), &:nth-child(3) {
+      @include flex-r;
+    }
+    &:nth-child(2) {
+      @include display-flex;
+      @include flex-row;
+      @include flex-center;
+      background-color: $gray100;
+      padding: 25px 0;
+    }
+    #logo {
+      width: 100px;
+    }
+  }
+
+  ul {
+    margin-right: 50px;
+    &:last-child {
+      margin-right: 0;
+    }
+    li {
+      list-style: none;
+      &:first-child {
+        @include subtitle;
+        margin-bottom: 15px;
+      }
+      a {
+        &:hover {
+          color: $blue500;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  #socialLinks {
+    li {
+      &:not(:first-child) {
+        float: left;
+        margin-right: 5px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      img {
+        width: 20px;
+      }
+    }
+  }
+
+  #copyright {
+    @include subtitle;
+    font-weight: 400;
+  }
 }
 
 //////////////////////////////////////////////////////////////////// Herb Lists
@@ -282,6 +367,7 @@
   overflow-y: scroll;
   z-index: 75;
   opacity: 0;
+  background-color: $gray50;
   visibility: hidden;
   transition: 150ms;
   #herbLIST {

@@ -2,14 +2,16 @@ class HerbsController < ApplicationController
   def index
     @categories = Category.all
     @herbs = Herb.all
-    @recentlyAddedHerbs = Herb.where.not(draft_status: 'draft').last(3).reverse
+    @recentlyAddedHerbs = Herb.where(draft_status: 'live').last(3).reverse
+    @footerHerbs = Herb.where(draft_status: 'live').last(3).reverse
   end
 
   def show
     @herb = Herb.find_by_slug(params[:slug])
     draft_check(@herb)
     @herbs = Herb.all
-    @recentlyAddedHerbs = Herb.last(6).reverse
+    @recentlyAddedHerbs = Herb.where(draft_status: 'live').last(6).reverse
+    @footerHerbs = Herb.where(draft_status: 'live').last(3).reverse
     @categories = Category.all
   end
 
