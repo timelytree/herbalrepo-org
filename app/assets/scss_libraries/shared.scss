@@ -159,11 +159,10 @@
         }
       }
       ol {
-        height: auto;
+        transition-delay: 50ms;
+        position: static;
         opacity: 1;
-        padding: 15px;
         margin: 15px 0;
-        padding-left: 25px;
       }
     }
     h2 {
@@ -194,10 +193,10 @@
       }
     }
     ol {
-      padding: 0;
-      margin: 0;
-      height: 0;
+      position: fixed;
       opacity: 0;
+      padding-left: 25px;
+      z-index: -1;
       transition: 150ms;
     }
   }
