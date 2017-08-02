@@ -177,7 +177,8 @@ function nameFILL() {
 
 function uploadImagePREVIEW() {
   var inputs = document.querySelectorAll("input[type=file]"),
-      previews = cE('imagePreviewCONTAINER');
+      previews = cE('imagePreviewCONTAINER'),
+      postImagePreview = E('herbIMG');
 
   function displayIMG(input, num) {
     var reader = new FileReader(),
@@ -188,6 +189,7 @@ function uploadImagePREVIEW() {
         image.src = e.target.result;
         image.onload = function() {
           preview.setAttribute('src', e.target.result);
+          postImagePreview.setAttribute('src', e.target.result);
           addC(preview, 'active');
         }
       }
