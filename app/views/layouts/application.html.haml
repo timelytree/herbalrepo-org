@@ -31,6 +31,7 @@
           ga('send', 'pageview');
         }
   %body.body#body
+    = render 'layouts/noscript'
     - if admin_section
       = render 'layouts/flashNOTICE'
     = yield
