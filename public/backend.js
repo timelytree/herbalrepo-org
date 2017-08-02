@@ -258,8 +258,12 @@ function seoCharacterFILL() {
   seoTitleLABEL.innerHTML = 'SEO Title ('+seoTitleINPUT.value.length+'/70)';
   seoDescriptionLABEL.innerHTML = 'SEO Description ('+seoDescriptionINPUT.value.length+'/150)';
 
-  seoTitleINPUT.oninput = function() { seoTitleLABEL.innerHTML = 'SEO Title ('+seoTitleINPUT.value.length+'/70)'; }
-  seoDescriptionINPUT.oninput = function() { seoDescriptionLABEL.innerHTML = 'SEO Description ('+seoDescriptionINPUT.value.length+'/150)'; }
+  seoTitleINPUT.oninput = function() {
+    seoTitleLABEL.innerHTML = 'SEO Title ('+seoTitleINPUT.value.length+'/70)';
+  }
+  seoDescriptionINPUT.oninput = function() {
+    seoDescriptionLABEL.innerHTML = 'SEO Description ('+seoDescriptionINPUT.value.length+'/160)';
+  }
 }
 
 
