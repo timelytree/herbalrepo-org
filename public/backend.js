@@ -258,7 +258,7 @@ function seoCharacterFILL() {
       seoDescriptionLABEL = document.querySelectorAll("[for='seo_description']")[0];
 
   seoTitleLABEL.innerHTML = 'SEO Title ('+seoTitleINPUT.value.length+'/70)';
-  seoDescriptionLABEL.innerHTML = 'SEO Description ('+seoDescriptionINPUT.value.length+'/150)';
+  seoDescriptionLABEL.innerHTML = 'SEO Description ('+seoDescriptionINPUT.value.length+'/160)';
 
   seoTitleINPUT.oninput = function() {
     seoTitleLABEL.innerHTML = 'SEO Title ('+seoTitleINPUT.value.length+'/70)';
