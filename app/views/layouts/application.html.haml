@@ -13,11 +13,11 @@
     = csrf_meta_tag
     - if admin_section
       %meta(name="robots" content="noindex, nofollow")
-      %script{src: '/backend.js', type: 'text/javascript'}
       %link{href: '/backend.css', rel: 'stylesheet', type: 'text/css'}
+      %script{src: '/backend.js', type: 'text/javascript'}
     - else
-      %script{src: '/frontend.js', type: 'text/javascript'}
       %link{href: '/frontend.css', rel: 'stylesheet', type: 'text/css'}
+      %script{src: '/frontend.js', type: 'text/javascript'}
     - if frontend_section && !logged_in?
       :javascript
         var host = window.location.host.split(':')[0];
