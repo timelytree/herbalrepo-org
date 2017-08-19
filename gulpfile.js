@@ -6,7 +6,12 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     replace = require('gulp-replace'),
-    cleanCSS = require('gulp-clean-css');
+    cleanCSS = require('gulp-clean-css'),
+    fs = require('fs'),
+    through = require('through2'),
+    gutil   = require('gulp-util'),
+    log     = gutil.log,
+    colors  = gutil.colors;
 
 var config = {
   publicPath: './public/',
@@ -20,32 +25,31 @@ var config = {
   imgPath: './app/assets/images/',
   videoPath: './app/assets/videos/',
   imgDestPath: './public/images/',
-  videoDestPath: './public/videos/'
+  videoDestPath: './public/videos/',
+  frontendManifestPath: './public/'
 }
 
-// var cache = function(name) {
-//   return through.obj(function(file, enc, cb) {
-//     log(+ new Date());
-//     this.push(file); // We'll just pass this file along
-//
-//     fs.stat(config.manifestPath, function(err) {
-//       if (err == null) {
-//         var json = JSON.parse(fs.readFileSync(config.manifestPath)),
-//             oldFileName = json[name];
-//         log(colors.red('DELETING'), oldFileName);
-//         fs.unlink(config.publicPath + oldFileName, function(err) {
-//           // TODO: emit an error if err
-//           cb();
-//         });
-//       } else {
-//         return cb(); // Nothing to remove :)
-//       }
-//     });
-//   });
-// };
+// Check if manifest file exists
+// If not, create it
+// Populate it with JSON scaffold
+// Default path to './public/' (get root path of app)
+
+var cache = function(options) {
+  return through.obj(function(file, enc, cb) {
+    this.push(file);
+
+    fs.stat(options.path, function(err) {
+      var json = JSON.parse(fs.readFileSync(options.path + options.name + 'Manifest.json')),
+          oldName = json["name"];
+      fs.unlink(options.path + oldName, function(err) { log(colors.red('DELETING'), oldName) });
+      fs.writeFile(options.path + options.name + 'Manifest.json', '{"name":"'+options.name+'-'+options.timestamp+'.css"}', cb);
+    });
+  });
+}
 
 // Compiles Frontend SCSS in [assets/scss_frontend]
 gulp.task('scss_frontend', function() {
+  var timestamp = Date.now();
   return gulp.src([
     config.scss_libraries + 'variables.scss',
     config.scss_libraries + 'normalize.scss',
@@ -55,17 +59,9 @@ gulp.task('scss_frontend', function() {
     config.scss_frontend + '3_components.scss',
     config.scss_frontend + '4_custom.scss',
     config.scss_frontend + '5_mq.scss'
-    // config.scss_libraries + 'variables.scss',
-    // config.scss_libraries + 'normalize.scss',
-    // config.scss_libraries + 'shared.scss',
-    // config.scss_frontend + 'base.scss',
-    // config.scss_frontend + 'structure.scss',
-    // config.scss_frontend + 'herbs.scss',
-    // config.scss_frontend + 'pages.scss',
-    // config.scss_frontend + 'categories.scss',
-    // config.scss_frontend + 'mq.scss'
   ])
-  .pipe(concat('frontend.css'))
+  .pipe(concat('frontend-'+timestamp+'.css'))
+  .pipe(cache({ path: config.publicPath, timestamp: timestamp, name: 'frontend' }))
   .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
   .pipe(scss())
   .pipe(cleanCSS({compatibility: 'ie8'}))
@@ -75,6 +71,7 @@ gulp.task('scss_frontend', function() {
 
 // Compiles Backend SCSS in [assets/scss_backend]
 gulp.task('scss_backend', function() {
+  var timestamp = Date.now();
   return gulp.src([
     config.scss_libraries + 'variables.scss',
     config.scss_libraries + 'normalize.scss',
@@ -84,7 +81,8 @@ gulp.task('scss_backend', function() {
     config.scss_backend + '3_components.scss',
     config.scss_backend + '4_custom.scss'
   ])
-  .pipe(concat('backend.css'))
+  .pipe(concat('backend-'+timestamp+'.css'))
+  .pipe(cache({ path: config.publicPath, timestamp: timestamp, name: 'backend' }))
   .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
   .pipe(scss())
   .pipe(cleanCSS({compatibility: 'ie8'}))

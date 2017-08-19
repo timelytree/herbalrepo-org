@@ -16,6 +16,8 @@
     "gulp-replace": "^0.5.4",
     "gulp-sass": "*",
     "gulp-uglify": "^2.1.2",
-    "gulp-useref": "*"
+    "gulp-useref": "*",
+    "gutil": "^1.6.4",
+    "through2": "^2.0.3"
   }
 }

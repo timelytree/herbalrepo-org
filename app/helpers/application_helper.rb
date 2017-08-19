@@ -55,4 +55,12 @@ module ApplicationHelper
   def unindent(s)
     s.gsub(/^#{s.scan(/^[ \t]+(?=\S)/).min}/, '')
   end
+
+  def frontend_css_file
+    JSON.parse(File.read("#{Rails.root}/public/frontendManifest.json"))["name"]
+  end
+
+  def backend_css_file
+    JSON.parse(File.read("#{Rails.root}/public/backendManifest.json"))["name"]
+  end
 end
